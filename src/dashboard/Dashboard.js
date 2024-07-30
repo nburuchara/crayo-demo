@@ -216,6 +216,10 @@ const Styles = styled.div `
     padding-left: 1%;
 }
 
+.top-pane-btn-1:hover {
+    cursor: pointer;
+}
+
 .top-pane-btn-2 {
     float: left;
     width: 25%;
@@ -297,6 +301,10 @@ const Styles = styled.div `
     margin-right: 10%;
 }
 
+.top-pane-btn-1 label:hover {
+    cursor: pointer;
+}
+
 .top-pane-btn-2 label {
     font-size: 90%;
 }
@@ -370,6 +378,7 @@ export default class Dashboard extends Component {
 
             //* - - JOIN DISCORD - - *//
             joinDiscordBorderColor: "#ccc",
+            joinDiscordHovered: false,
 
             //* - - UPGRADE - - *//
             upgradeBgColor: "white",
@@ -511,11 +520,11 @@ export default class Dashboard extends Component {
     }
 
     joinDiscordEnter = () => {
-        this.setState({ joinDiscordBorderColor: "#FF3169" })
+        this.setState({ joinDiscordBorderColor: "#FF3169", joinDiscordHovered: true })
     }
 
     joinDiscordLeave = () => {
-        this.setState({ joinDiscordBorderColor: "#ccc" })
+        this.setState({ joinDiscordBorderColor: "#ccc", joinDiscordHovered: false })
     }
 
         //* - - DESKTOP SCREENS - - *//
@@ -593,7 +602,7 @@ export default class Dashboard extends Component {
                                 style={{border: `1px solid ${this.state.joinDiscordBorderColor}`}} className="top-pane-btn-1">
                                     <div>
                                         <div className="top-pane-btn-left">
-                                            <img src="/assets/discord-logo-icon.png"/> 
+                                            <img src={this.state.joinDiscordHovered ?  "/assets/discord-logo-icon-color.png" : "/assets/discord-logo-icon.png"}/> 
                                         </div>
                                         <div className="top-pane-btn-right">
                                             <label>Join discord</label>
