@@ -2,6 +2,8 @@ import React, {Component} from "react";
 import styled from "styled-components";
 import MediaQuery from 'react-responsive';
 
+import SearchTerms from './dash-helper-files/Search-Terms'
+
 const Styles = styled.div `
 
         // - - - - FULL PAGE - - - - //
@@ -63,6 +65,8 @@ const Styles = styled.div `
 
     //! - - Search Bar - - //
 
+    // - - SEARCH INPUT - - //
+
 .right-pane-header-left input {
     width: 100%;
     font-family: roboto;
@@ -70,28 +74,32 @@ const Styles = styled.div `
     border-radius: 5px;
 }
 
-// - - SEARCH RESULTS - - //
+.right-pane-header-left input:focus {
+    outline: 1px solid #898bf7;
+}
+
+    // - - SEARCH RESULTS - - //
 
 .searchResults {
     overflow-y: auto;
-    width: 95.5%;
+    width: 100%;
     position: relative;
     background-color: white;
-    height: 40vh;
+    height: 100%;
     border: 1px solid #cccccc;
     border-radius: 7px;
     // border-bottom-right-radius: 7px;
-    padding: 2%;
-    margin-top: 6%;
+    padding: 0.5%;
+    margin-top: 1.5%;
 }
 
     // - SEARCH RESULT CELL - //
 
 .searchResultCell {
     text-align: left;
-    padding-left: 2.5%;
-    padding-right: 2.5%;
-    margin-top: 2%;
+    padding-left: 0.5%;
+    padding-right: 0.5%;
+    margin-top: 0%;
     padding-bottom: 0px;
     border-radius: 5px;
     cursor: pointer;
@@ -100,7 +108,7 @@ const Styles = styled.div `
 .searchResultCell p {
     margin-top: 0px;
     margin-bottom: 0px;
-    font-family: poppins;
+    font-family: roboto;
     // margin-bottom: 
 }
 
@@ -120,71 +128,6 @@ const Styles = styled.div `
     font-size: 72%;
     padding-bottom: 1%;
     cursor: pointer;
-}
-
-    // - SEARCH RESULTS (CODE SNIPPETS)  - //
-
-.codeSnippetResult {
-    text-align: left;
-    padding-left: 2.5%;
-    padding-right: 2.5%;
-    padding-top: 0.5%;
-    padding-bottom: 2%;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.codeSnippetResult:after {
-    content: "";
-    display: table;
-    clear: both;
-}
-
-.codeSnippetCommand {
-    float: left;
-    text-align: left;
-    width: 12%;
-}
-
-.codeSnippetLine {
-    float: left;
-    text-align: left;
-    width: 88%;
-}
-
-.codeSnippetLineNoCommand {
-    // width: 100%;
-    
-}
-
-    // # COMMAND (GET/POST/DELETE) 
-
-.codeSnippetCommand span {
-    font-size: 30%;
-    padding: 12%;
-    // margin-top: 50%;
-    border-radius: 7px;
-    font-weight: bold;
-}
-
-    // # CODE LINE TEXT
-
-.codeSnippetLine p {
-    margin-top: 0px;
-    // margin-left: ;
-    font-family: poppins;
-    // margin-bottom: 7%;
-    font-size: 72.5%;
-}
-
-.codeSnippetLineNoCommand p {
-    text-align: left;
-    margin-top: 0px;
-    font-family: poppins;
-    font-size: 72.5%;
-    white-space: nowrap; /* Prevent text from wrapping */
-    overflow: hidden; /* Hide overflowing text */
-    text-overflow: ellipsis;
 }
 
 .searchResultCell:hover,
@@ -297,7 +240,7 @@ export default class Dashboard extends Component {
             } else {
 
                 this.setState({ isSearchLoading: true, searchedData: searchInput, searchCloseBtn: true }, () => {
-                    const filteredOptions = currentSectionSearching.filter(option => {
+                    const filteredOptions = SearchTerms.filter(option => {
                         const name = option.name.toLowerCase();
                         const searchWords = searchInput.toLowerCase().split(' '); // Split search input into words
                         const optionWords = name.split(' '); // Split name into words
@@ -406,64 +349,20 @@ export default class Dashboard extends Component {
                                             <div style={{borderBottom: "1px solid #ccc", paddingTop: "0%", paddingBottom: "2.5%"}} key={category}>
                                                 {options.map(option => (
                                                     <div>
-                                                        {category !== "Code Snippet" ? 
-                                                        (
-                                                            <div 
-                                                            onClick={() => this.searchedTermClicked(category, option, option.page)}
-                                                            className='searchResultCell' 
-                                                            key={option.id}>
-                                                                <p className='searchResultOption'>{option.highlightedName}</p>
-                                                                <p className='searchResultCategory'>{category} {option.subCat1 ? <label style={{cursor: "pointer"}}> {'>'} {option.subCat1}</label> : null } {option.subCat2 ? <label style={{cursor: "pointer"}}>{'>'} {option.subCat2}</label> : null } {option.subCat3 ? <label style={{cursor: "pointer"}}> {'>'} {option.subCat3}</label> : null } {option.subCat4 ? <label style={{cursor: "pointer"}}> {'>'} {option.subCat4}</label> : null } </p> 
-                                                            </div>
-                                                        ) : (
-                                                            <div>
-                                                                {option.command !== "" ? 
-                                                                (
-                                                                    <div 
-                                                                    onMouseEnter={() => this.currentSearchedCellEnter(option.id)}
-                                                                    onMouseLeave={this.currentSearchedCellLeave}
-                                                                    style={{backgroundColor: hoveredResultId === option.id ? "#F0F1FF" : "transparent", color: hoveredResultId === option.id ? "#1C1C8E" : "black"}} 
-                                                                    className='codeSnippetResult'>
-                                                                        <div className='codeSnippetCommand'>
-                                                                            <span style={{
-                                                                                backgroundColor: option.command !== "DELETE" ? option.command === "GET" ? "#e6f4fe" : "#d8eaed" : "#feeaed",
-                                                                                color: option.command !== "DELETE" ? option.command === "GET" ? "#0072dd"  : "#00815c" : "#cf375b"
-                                                                            }}>{option.command}</span>
-                                                                        </div>
-                                                                        <div 
-                                                                        className='codeSnippetLine' 
-                                                                        key={option.id}>
-                                                                            <p 
-                                                                            style={{marginLeft: option.command !== "DELETE" ? option.command === "GET" ? "0px" : "3%" : "7%"}}
-                                                                            className='searchResultOption'>/{option.highlightedName}</p>
-                                                                            {/* <p className='searchResultCategory'>{category}</p> */}
-                                                                        </div>
-                                                                    </div>
-                                                                ) : (
-                                                                    <div 
-                                                                    onMouseEnter={() => this.currentSearchedCellEnter(option.id)}
-                                                                    onMouseLeave={this.currentSearchedCellLeave}
-                                                                    style={{backgroundColor: hoveredResultId === option.id ? "#F0F1FF" : "transparent", color: hoveredResultId === option.id ? "#1C1C8E" : "black"}} 
-                                                                    className='codeSnippetResult'>
-                                                                        <div 
-                                                                        className='codeSnippetLineNoCommand' 
-                                                                        key={option.id}>
-                                                                            <p 
-                                                                            // style={{marginLeft: option.command !== "DELETE" ? option.command === "GET" ? "0px" : "3%" : "7%"}}
-                                                                            className='searchResultOption'>{option.highlightedName}</p>
-                                                                            {/* <p className='searchResultCategory'>{category}</p> */}
-                                                                        </div>
-                                                                    </div>
-                                                                )}
-                                                            </div>
-                                                        )}
+                                                        <div 
+                                                        onClick={() => this.searchedTermClicked(category, option, option.page)}
+                                                        className='searchResultCell' 
+                                                        key={option.id}>
+                                                            <p className='searchResultOption'>{option.highlightedName}</p>
+                                                            <p className='searchResultCategory'>{category} {option.subCat1 ? <label style={{cursor: "pointer"}}> {'>'} {option.subCat1}</label> : null } {option.subCat2 ? <label style={{cursor: "pointer"}}>{'>'} {option.subCat2}</label> : null } {option.subCat3 ? <label style={{cursor: "pointer"}}> {'>'} {option.subCat3}</label> : null } {option.subCat4 ? <label style={{cursor: "pointer"}}> {'>'} {option.subCat4}</label> : null } </p> 
+                                                        </div>
                                                     </div>
                                                 ))}
                                             </div>
                                         ))
                                     }
                                     {!isSearchLoading && !resultsFound && 
-                                        <div>
+                                        <div style={{height: "20%"}}>
                                             <p>no results found</p>
                                         </div>
                                     }
