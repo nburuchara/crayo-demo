@@ -51,36 +51,332 @@ const Styles = styled.div `
 
 .right-pane-header-left {
     float: left;
-    width: 75%;
+    width: 70%;
     text-align: left;
 }
 
 .right-pane-header-right {
     float: left;
-    width: 75%;
+    width: 30%;
     text-align: left;
 }
 
-    //! - - SEARCH BAR - - //
+    //! - - Search Bar - - //
 
 .right-pane-header-left input {
     width: 100%;
+    font-family: roboto;
+    padding: 1%;
+    border-radius: 5px;
+}
+
+// - - SEARCH RESULTS - - //
+
+.searchResults {
+    overflow-y: auto;
+    width: 95.5%;
+    position: relative;
+    background-color: white;
+    height: 40vh;
+    border: 1px solid #cccccc;
+    border-radius: 7px;
+    // border-bottom-right-radius: 7px;
+    padding: 2%;
+    margin-top: 6%;
+}
+
+    // - SEARCH RESULT CELL - //
+
+.searchResultCell {
+    text-align: left;
+    padding-left: 2.5%;
+    padding-right: 2.5%;
+    margin-top: 2%;
+    padding-bottom: 0px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.searchResultCell p {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    font-family: poppins;
+    // margin-bottom: 
+}
+
+.searchResultOption {
+    padding-top: 1%;
+    margin-bottom: 0px;
+    font-size: 80.5%;
+    overflow: hidden;          /* Hide the overflowing text */
+    display: -webkit-box;      /* Use the flexible box layout */
+    -webkit-box-orient: vertical; /* Set the box orientation to vertical */
+    -webkit-line-clamp: 2;     /* Number of lines to show before truncating */
+    line-clamp: 2;             /* Standard property for other browsers (future-proof) */
+    // line-height: 1.5em; 
+}
+
+.searchResultCategory {
+    font-size: 72%;
+    padding-bottom: 1%;
+    cursor: pointer;
+}
+
+    // - SEARCH RESULTS (CODE SNIPPETS)  - //
+
+.codeSnippetResult {
+    text-align: left;
+    padding-left: 2.5%;
+    padding-right: 2.5%;
+    padding-top: 0.5%;
+    padding-bottom: 2%;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.codeSnippetResult:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.codeSnippetCommand {
+    float: left;
+    text-align: left;
+    width: 12%;
+}
+
+.codeSnippetLine {
+    float: left;
+    text-align: left;
+    width: 88%;
+}
+
+.codeSnippetLineNoCommand {
+    // width: 100%;
+    
+}
+
+    // # COMMAND (GET/POST/DELETE) 
+
+.codeSnippetCommand span {
+    font-size: 30%;
+    padding: 12%;
+    // margin-top: 50%;
+    border-radius: 7px;
+    font-weight: bold;
+}
+
+    // # CODE LINE TEXT
+
+.codeSnippetLine p {
+    margin-top: 0px;
+    // margin-left: ;
+    font-family: poppins;
+    // margin-bottom: 7%;
+    font-size: 72.5%;
+}
+
+.codeSnippetLineNoCommand p {
+    text-align: left;
+    margin-top: 0px;
+    font-family: poppins;
+    font-size: 72.5%;
+    white-space: nowrap; /* Prevent text from wrapping */
+    overflow: hidden; /* Hide overflowing text */
+    text-overflow: ellipsis;
+}
+
+.searchResultCell:hover,
+.codeSnippetResult:hover {
+  background-color: #F0F1FF;
+  color: #1C1C8E;
 }
 
 
 `
 
+class TrieNode {
+    constructor() {
+        this.children = {};
+        this.isEndOfWord = false;
+    }
+}
+
+class Trie {
+    constructor() {
+        this.root = new TrieNode();
+    }
+
+    insert(word) {
+        let current = this.root;
+        for (let char of word) {
+            if (!current.children[char]) {
+                current.children[char] = new TrieNode();
+            }
+            current = current.children[char];
+        }
+        current.isEndOfWord = true;
+    }
+
+    search(word) {
+        let current = this.root;
+        for (let char of word) {
+            if (!current.children[char]) {
+                return false;
+            }
+            current = current.children[char];
+        }
+        return current.isEndOfWord;
+    }
+
+    startsWith(prefix) {
+        let current = this.root;
+        for (let char of prefix) {
+            if (!current.children[char]) {
+                return false;
+            }
+            current = current.children[char];
+        }
+        return true;
+    }
+}
+
 export default class Dashboard extends Component {
     constructor () {
         super()
         this.state = {
+            //* - - SEARCH BAR - - *//
+            searchedData: "",
+            searchBarBorderColor: "#dedede"
+        }
 
+            //* - TRIE NODE (for search functionality) - *//
+
+        this.trie = new Trie(); // Initialize the trie
+    }
+
+        //* - - PROGRAM FUNCTIONS - - *//
+
+    groupBy = (array, key) => {
+        return array.reduce((result, currentValue) => {
+            (result[currentValue[key]] = result[currentValue[key]] || []).push(currentValue);
+            return result;
+        }, {});
+    }
+
+    handleSearchChange = (e) => {
+        const { searchFilterTitle, searchFilterSelected, menuOption1, menuOption2, menuOption3, menuOption4 } = this.state; 
+        let { currentSectionSearching } = this.state;
+        this.setState({
+            searchedData: e.target.value,
+            isSearchLoading: true,
+            clearSearchBtn: true,
+            showDocsPopupHomescreen: false
+        });
+        
+        const searchInput = e.target.value.toLowerCase();
+        
+        // Clear previous timeout
+    
+    
+        // Set a new timeout to execute after 500ms
+        this.searchTimeout = setTimeout(() => {
+            if (searchInput.trim() === "") {
+                // Reset filteredOptions and loading state
+                this.setState({
+                    searchedData: "",
+                    searchCloseBtn: false,
+                    filteredOptions: [],
+                    isSearchLoading: false,
+                    resultsFound: false,
+                    showDocsPopupHomescreen: true,
+                    clearSearchBtn: false
+                });
+
+            } else {
+
+                this.setState({ isSearchLoading: true, searchedData: searchInput, searchCloseBtn: true }, () => {
+                    const filteredOptions = currentSectionSearching.filter(option => {
+                        const name = option.name.toLowerCase();
+                        const searchWords = searchInput.toLowerCase().split(' '); // Split search input into words
+                        const optionWords = name.split(' '); // Split name into words
+                    
+                        if (searchWords.length === 1) {
+                            // Special case: search input is a single word
+                            const searchWord = searchWords[0];
+                            return optionWords.some(optionWord => optionWord.startsWith(searchWord));
+                        } else {
+                            // Combine search words into a single substring
+                            const searchSubstring = searchWords.join(' ');
+                            return name.includes(searchSubstring);
+                        }
+                    });
+    
+                    const resultsFound = filteredOptions.length > 0; // Check if any results were found
+    
+                    const highlightedOptions = filteredOptions.map(option => ({
+                        ...option,
+                        highlightedName: this.highlightMatchedCharacters(option, searchInput)
+                    }));
+    
+                    const groupedResults = this.groupBy(highlightedOptions, 'category');
+    
+                    // Construct trie for each category
+                    const trieByCategory = {};
+                    Object.entries(groupedResults).forEach(([category, options]) => {
+                        trieByCategory[category] = new Trie();
+                        options.forEach(option => {
+                            trieByCategory[category].insert(option.name.toLowerCase());
+                        });
+                    });
+    
+                    // Update state after search logic is complete
+                    this.setState({
+                        trieByCategory,
+                        groupedOptions: groupedResults,
+                        filteredOptions: highlightedOptions,
+                        isSearchLoading: false, // Hide loading screen
+                        resultsFound: resultsFound
+                    });
+                });
+            }
+        }, 0); // Set debounce delay to 500ms
+    };
+
+    highlightMatchedCharacters(option, searchInput, isSearchLoading) {
+        const name = option.name.toLowerCase();
+        const searchRegex = new RegExp(`\\b${searchInput}`, 'i');
+        const match = name.match(searchRegex);
+        
+        if (!isSearchLoading && searchInput && match) {
+            // Match found and search input is not empty and not loading
+            const startIndex = match.index;
+            const endIndex = startIndex + searchInput.length;
+            const highlightedName = (
+                <span>
+                    {option.name.substring(0, startIndex)}
+                    <span style={{ fontWeight: "bold", color: "#2e2eff" }}>
+                        {option.name.substring(startIndex, endIndex)}
+                    </span>
+                    {option.name.substring(endIndex)}
+                </span>
+            );
+            return highlightedName;
+        } else {
+            // No match found or search input is empty or loading
+            return option.name;
         }
     }
 
         //* - - DESKTOP SCREENS - - *//
 
     desktop5Render = () => {
+
+        //* - POPUP SEARCH BAR VARS - *//
+        const { isSearchLoading, groupedOptions, resultsFound, hoveredResultId} = this.state;
+        const searchInput = this.state.searchedData.trim().toLowerCase();
+
         return (
             <div className="full-page">
                 <div className="left-pane">
@@ -90,8 +386,89 @@ export default class Dashboard extends Component {
                     <div className="right-pane-header">
                         <div className="right-pane-header-left">
                             <input
+                            style={{border: `1px solid ${this.state.searchBarBorderColor}`}}
+                            id='searchedData'
+                            type="text"
+                            value={this.state.searchedData}
+                            onChange={this.handleSearchChange}
+                            onClick={this.searchBarClicked}
                             placeholder="Search..."
                             />
+                            {searchInput !== "" && (
+                                <div className='searchResults'>
+                                    {isSearchLoading && 
+                                        <div>
+                                            <p>Loading...</p>
+                                        </div>
+                                    }
+                                    {!isSearchLoading && resultsFound && 
+                                        Object.entries(groupedOptions).map(([category, options]) => (
+                                            <div style={{borderBottom: "1px solid #ccc", paddingTop: "0%", paddingBottom: "2.5%"}} key={category}>
+                                                {options.map(option => (
+                                                    <div>
+                                                        {category !== "Code Snippet" ? 
+                                                        (
+                                                            <div 
+                                                            onClick={() => this.searchedTermClicked(category, option, option.page)}
+                                                            className='searchResultCell' 
+                                                            key={option.id}>
+                                                                <p className='searchResultOption'>{option.highlightedName}</p>
+                                                                <p className='searchResultCategory'>{category} {option.subCat1 ? <label style={{cursor: "pointer"}}> {'>'} {option.subCat1}</label> : null } {option.subCat2 ? <label style={{cursor: "pointer"}}>{'>'} {option.subCat2}</label> : null } {option.subCat3 ? <label style={{cursor: "pointer"}}> {'>'} {option.subCat3}</label> : null } {option.subCat4 ? <label style={{cursor: "pointer"}}> {'>'} {option.subCat4}</label> : null } </p> 
+                                                            </div>
+                                                        ) : (
+                                                            <div>
+                                                                {option.command !== "" ? 
+                                                                (
+                                                                    <div 
+                                                                    onMouseEnter={() => this.currentSearchedCellEnter(option.id)}
+                                                                    onMouseLeave={this.currentSearchedCellLeave}
+                                                                    style={{backgroundColor: hoveredResultId === option.id ? "#F0F1FF" : "transparent", color: hoveredResultId === option.id ? "#1C1C8E" : "black"}} 
+                                                                    className='codeSnippetResult'>
+                                                                        <div className='codeSnippetCommand'>
+                                                                            <span style={{
+                                                                                backgroundColor: option.command !== "DELETE" ? option.command === "GET" ? "#e6f4fe" : "#d8eaed" : "#feeaed",
+                                                                                color: option.command !== "DELETE" ? option.command === "GET" ? "#0072dd"  : "#00815c" : "#cf375b"
+                                                                            }}>{option.command}</span>
+                                                                        </div>
+                                                                        <div 
+                                                                        className='codeSnippetLine' 
+                                                                        key={option.id}>
+                                                                            <p 
+                                                                            style={{marginLeft: option.command !== "DELETE" ? option.command === "GET" ? "0px" : "3%" : "7%"}}
+                                                                            className='searchResultOption'>/{option.highlightedName}</p>
+                                                                            {/* <p className='searchResultCategory'>{category}</p> */}
+                                                                        </div>
+                                                                    </div>
+                                                                ) : (
+                                                                    <div 
+                                                                    onMouseEnter={() => this.currentSearchedCellEnter(option.id)}
+                                                                    onMouseLeave={this.currentSearchedCellLeave}
+                                                                    style={{backgroundColor: hoveredResultId === option.id ? "#F0F1FF" : "transparent", color: hoveredResultId === option.id ? "#1C1C8E" : "black"}} 
+                                                                    className='codeSnippetResult'>
+                                                                        <div 
+                                                                        className='codeSnippetLineNoCommand' 
+                                                                        key={option.id}>
+                                                                            <p 
+                                                                            // style={{marginLeft: option.command !== "DELETE" ? option.command === "GET" ? "0px" : "3%" : "7%"}}
+                                                                            className='searchResultOption'>{option.highlightedName}</p>
+                                                                            {/* <p className='searchResultCategory'>{category}</p> */}
+                                                                        </div>
+                                                                    </div>
+                                                                )}
+                                                            </div>
+                                                        )}
+                                                    </div>
+                                                ))}
+                                            </div>
+                                        ))
+                                    }
+                                    {!isSearchLoading && !resultsFound && 
+                                        <div>
+                                            <p>no results found</p>
+                                        </div>
+                                    }
+                                </div>
+                            )}
                             <h2>wth?</h2>
                         </div>
                         <div className="right-pane-header-right">
