@@ -107,16 +107,16 @@ const Styles = styled.div `
 
 .searchResultCell p {
     margin-top: 0px;
-    height: 100%;
+    height: 90%;
     margin-bottom: 0px;
     font-family: dm sans;
-
+    font-size: 85.5%;
 }
 
 .searchResultOption {
     padding-top: 1%;
     margin-bottom: 0px;
-    font-size: 90.5%;
+    font-size: 85.5%;
     overflow: hidden;          /* Hide the overflowing text */
     display: -webkit-box;      /* Use the flexible box layout */
     -webkit-box-orient: vertical; /* Set the box orientation to vertical */
@@ -132,7 +132,7 @@ const Styles = styled.div `
 
 .searchResultCell:hover,
 .codeSnippetResult:hover {
-  background-color: #f1f1f1;
+  background-color: #f7f7f7;
   color: #8A012C;
 }
 
@@ -154,13 +154,13 @@ const Styles = styled.div `
 
 .export-minutes {
     float: left;
-    width: 32.5%;
+    width: 30.5%;
     text-align: center;
     border: 1px solid #ccc;
-    margin-left: 3%;
+    margin-left: 1%;
     border-radius: 10px;
     padding-top: 1.5%;
-    padding-bottom: 0.5%;
+    padding-bottom: 1.15%;
 }
 
 .export-minutes:after {
@@ -170,6 +170,7 @@ const Styles = styled.div `
 }
 
 .export-minutes-left {
+    padding-top: 0.2%;
     float: left;
     width: 20%;
     text-align: center;
@@ -185,9 +186,8 @@ const Styles = styled.div `
 
 .right-pane-top-pane-buttons {
     float: right;
-    width: 56%;
+    width: 68%;
     text-align: right;
-    // border: 1px solid #ccc;
 }
 
 .right-pane-top-pane-buttons:after {
@@ -198,10 +198,11 @@ const Styles = styled.div `
 
 .top-pane-btn-1 {
     float: left;
-    width: 46%;
+    width: 36%;
     text-align: center;
     border: 1px solid #ccc;
-    margin-right: 6%;
+    margin-right: 3%;
+    margin-left: 8.5%;
     border-radius: 10px;
     padding-top: 1.25%;
     padding-bottom: 1%;
@@ -210,14 +211,29 @@ const Styles = styled.div `
 
 .top-pane-btn-2 {
     float: left;
-    width: 35%;
+    width: 25%;
     text-align: center;
     border: 1px solid #ccc;
-    margin-right: 2.5%;
+    margin-right: 3.5%;
+    margin-left: 2.5%;
     padding: 2%;
     border-radius: 10px;
-    padding-bottom: 4%;
+    padding-bottom: 3%;
     padding-top: 2%;
+}
+
+.top-pane-btn-3 {
+    float: left;
+    width: 6%;
+    text-align: center;
+    border: 1px solid #ccc;
+    margin-left: 2.5%;
+    padding: 2%;
+    border-radius: 10px;
+    padding-top: 2.5%;
+    padding-bottom: 2.5%;
+    padding-left: 3%;
+    padding-right: 3%;
 }
 
 .top-pane-btn-1:after {
@@ -230,7 +246,7 @@ const Styles = styled.div `
     float: left;
     width: 19%;
     text-align: center;
-    padding-top: 3.5%;
+    padding-top: 4.5%;
     padding-bottom: 3%;
 }
 
@@ -238,22 +254,21 @@ const Styles = styled.div `
     float: right;
     width: 80%;
     text-align: right;
-    padding-top: 2%;
+    padding-top: 3%;
     padding-bottom: 3%;
 }
 
     // # EXPORT MINUTES IMAGE
 
 .export-minutes-left img {
-    width: 75%;
-    // margin-top: 10%;
+    width: 65%;
 }
 
     // # EXPORT MINUTES LABEL
 
 .export-minutes-right label {
     font-family: dm sans;
-    font-size: 0.86em;
+    font-size: 0.83em;
     margin-top: 1.5%;
     margin-right: 12.5%;
     float: right;
@@ -263,17 +278,23 @@ const Styles = styled.div `
     // # TOP PANE RIGHT BUTTONS
 
 .top-pane-btn-1 img {
-    width: 80%;
+    width: 75%;
     margin-left: 15%;
 }
 
 .top-pane-btn-1 label {
-    font-size: 88%;
+    font-size: 85%;
     margin-right: 10%;
 }
 
 .top-pane-btn-2 label {
     font-size: 95%;
+}
+
+.top-pane-btn-3 h1 {
+    font-size: 100%;
+    margin-top: 0px;
+    margin-bottom: 0px;
 }
 
 
@@ -537,7 +558,7 @@ export default class Dashboard extends Component {
                                     </div>
                                 </div>
                                 <div className="top-pane-btn-3">
-                                   
+                                    <h1>N</h1>
                                 </div>
                             </div>
                         </div>
