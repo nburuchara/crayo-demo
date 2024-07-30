@@ -61,6 +61,8 @@ const Styles = styled.div `
     float: left;
     width: 30%;
     text-align: left;
+    display: flex;
+    flexDirection: row;
 }
 
     //! - - Search Bar - - //
@@ -68,7 +70,7 @@ const Styles = styled.div `
     // - - SEARCH INPUT - - //
 
 .right-pane-header-left input {
-    width: 100%;
+    width: 99%;
     font-family: roboto;
     padding: 1%;
     border-radius: 5px;
@@ -99,7 +101,7 @@ const Styles = styled.div `
     text-align: left;
     padding-left: 0.5%;
     padding-right: 0.5%;
-    margin-top: 0%;
+    margin-top: 0.5%;
     padding-bottom: 0px;
     border-radius: 5px;
     cursor: pointer;
@@ -107,15 +109,16 @@ const Styles = styled.div `
 
 .searchResultCell p {
     margin-top: 0px;
+    height: 100%;
     margin-bottom: 0px;
-    font-family: roboto;
-    // margin-bottom: 
+    font-family: dm sans;
+
 }
 
 .searchResultOption {
     padding-top: 1%;
     margin-bottom: 0px;
-    font-size: 80.5%;
+    font-size: 90.5%;
     overflow: hidden;          /* Hide the overflowing text */
     display: -webkit-box;      /* Use the flexible box layout */
     -webkit-box-orient: vertical; /* Set the box orientation to vertical */
@@ -125,7 +128,7 @@ const Styles = styled.div `
 }
 
 .searchResultCategory {
-    font-size: 72%;
+    font-size: 82%;
     padding-bottom: 1%;
     cursor: pointer;
 }
@@ -346,24 +349,22 @@ export default class Dashboard extends Component {
                                     }
                                     {!isSearchLoading && resultsFound && 
                                         Object.entries(groupedOptions).map(([category, options]) => (
-                                            <div style={{borderBottom: "1px solid #ccc", paddingTop: "0%", paddingBottom: "2.5%"}} key={category}>
+                                            <div style={{borderBottom: "1px solid #ccc", paddingTop: "0%", paddingBottom: "0.5%"}} key={category}>
                                                 {options.map(option => (
-                                                    <div>
-                                                        <div 
-                                                        onClick={() => this.searchedTermClicked(category, option, option.page)}
-                                                        className='searchResultCell' 
-                                                        key={option.id}>
-                                                            <p className='searchResultOption'>{option.highlightedName}</p>
-                                                            <p className='searchResultCategory'>{category} {option.subCat1 ? <label style={{cursor: "pointer"}}> {'>'} {option.subCat1}</label> : null } {option.subCat2 ? <label style={{cursor: "pointer"}}>{'>'} {option.subCat2}</label> : null } {option.subCat3 ? <label style={{cursor: "pointer"}}> {'>'} {option.subCat3}</label> : null } {option.subCat4 ? <label style={{cursor: "pointer"}}> {'>'} {option.subCat4}</label> : null } </p> 
-                                                        </div>
+                                                    <div 
+                                                    onClick={() => this.searchedTermClicked(category, option, option.page)}
+                                                    className='searchResultCell' 
+                                                    key={option.id}>
+                                                        <p className='searchResultOption'>{option.highlightedName}</p>
+                                                        <p className='searchResultCategory'>{category} {option.subCat1 ? <label style={{cursor: "pointer"}}> {'>'} {option.subCat1}</label> : null } {option.subCat2 ? <label style={{cursor: "pointer"}}>{'>'} {option.subCat2}</label> : null } {option.subCat3 ? <label style={{cursor: "pointer"}}> {'>'} {option.subCat3}</label> : null } {option.subCat4 ? <label style={{cursor: "pointer"}}> {'>'} {option.subCat4}</label> : null } </p> 
                                                     </div>
                                                 ))}
                                             </div>
                                         ))
                                     }
                                     {!isSearchLoading && !resultsFound && 
-                                        <div style={{height: "20%"}}>
-                                            <p>no results found</p>
+                                        <div>
+                                            <p style={{marginLeft: "0.5%", fontFamily: "dm sans"}}>No results found</p>
                                         </div>
                                     }
                                 </div>
@@ -371,7 +372,7 @@ export default class Dashboard extends Component {
                             <h2>wth?</h2>
                         </div>
                         <div className="right-pane-header-right">
-
+                            
                         </div>
                     </div>
                 </div>
