@@ -53,16 +53,14 @@ const Styles = styled.div `
 
 .right-pane-header-left {
     float: left;
-    width: 70%;
+    width: 60%;
     text-align: left;
 }
 
 .right-pane-header-right {
     float: left;
-    width: 30%;
-    text-align: left;
-    display: flex;
-    flexDirection: row;
+    width: 40%;
+    text-align: right;
 }
 
     //! - - Search Bar - - //
@@ -70,21 +68,21 @@ const Styles = styled.div `
     // - - SEARCH INPUT - - //
 
 .right-pane-header-left input {
-    width: 99%;
+    width: 83.5%;
     font-family: roboto;
-    padding: 1%;
+    padding: 1.15%;
     border-radius: 5px;
 }
 
 .right-pane-header-left input:focus {
-    outline: 1px solid #898bf7;
+    outline: 1px solid #E44778;
 }
 
     // - - SEARCH RESULTS - - //
 
 .searchResults {
     overflow-y: auto;
-    width: 100%;
+    width: 85%;
     position: relative;
     background-color: white;
     height: 100%;
@@ -124,7 +122,6 @@ const Styles = styled.div `
     -webkit-box-orient: vertical; /* Set the box orientation to vertical */
     -webkit-line-clamp: 2;     /* Number of lines to show before truncating */
     line-clamp: 2;             /* Standard property for other browsers (future-proof) */
-    // line-height: 1.5em; 
 }
 
 .searchResultCategory {
@@ -135,8 +132,148 @@ const Styles = styled.div `
 
 .searchResultCell:hover,
 .codeSnippetResult:hover {
-  background-color: #F0F1FF;
-  color: #1C1C8E;
+  background-color: #f1f1f1;
+  color: #8A012C;
+}
+
+    //! - - Top pane options - - !//
+
+    // - - TOP PANE OPTIONS - - //
+
+.right-pane-header-right {
+    
+}
+
+.right-pane-header-right:after {
+    content: "":
+    display: table;
+    clear: both;
+}
+
+    // - EXPORT MINUTES CONTAINER - //
+
+.export-minutes {
+    float: left;
+    width: 32.5%;
+    text-align: center;
+    border: 1px solid #ccc;
+    margin-left: 3%;
+    border-radius: 10px;
+    padding-top: 1.5%;
+    padding-bottom: 0.5%;
+}
+
+.export-minutes:after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.export-minutes-left {
+    float: left;
+    width: 20%;
+    text-align: center;
+}
+
+.export-minutes-right {
+    float: left;
+    width: 80%;
+    text-align: left;
+}
+
+    // - TOP RIGHT PANE BUTTONS CONTAINER - //
+
+.right-pane-top-pane-buttons {
+    float: right;
+    width: 56%;
+    text-align: right;
+    // border: 1px solid #ccc;
+}
+
+.right-pane-top-pane-buttons:after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.top-pane-btn-1 {
+    float: left;
+    width: 46%;
+    text-align: center;
+    border: 1px solid #ccc;
+    margin-right: 6%;
+    border-radius: 10px;
+    padding-top: 1.25%;
+    padding-bottom: 1%;
+    padding-left: 1%;
+}
+
+.top-pane-btn-2 {
+    float: left;
+    width: 35%;
+    text-align: center;
+    border: 1px solid #ccc;
+    margin-right: 2.5%;
+    padding: 2%;
+    border-radius: 10px;
+    padding-bottom: 4%;
+    padding-top: 2%;
+}
+
+.top-pane-btn-1:after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.top-pane-btn-left {
+    float: left;
+    width: 19%;
+    text-align: center;
+    padding-top: 3.5%;
+    padding-bottom: 3%;
+}
+
+.top-pane-btn-right {
+    float: right;
+    width: 80%;
+    text-align: right;
+    padding-top: 2%;
+    padding-bottom: 3%;
+}
+
+    // # EXPORT MINUTES IMAGE
+
+.export-minutes-left img {
+    width: 75%;
+    // margin-top: 10%;
+}
+
+    // # EXPORT MINUTES LABEL
+
+.export-minutes-right label {
+    font-family: dm sans;
+    font-size: 0.86em;
+    margin-top: 1.5%;
+    margin-right: 12.5%;
+    float: right;
+}
+
+
+    // # TOP PANE RIGHT BUTTONS
+
+.top-pane-btn-1 img {
+    width: 80%;
+    margin-left: 15%;
+}
+
+.top-pane-btn-1 label {
+    font-size: 88%;
+    margin-right: 10%;
+}
+
+.top-pane-btn-2 label {
+    font-size: 95%;
 }
 
 
@@ -302,7 +439,7 @@ export default class Dashboard extends Component {
             const highlightedName = (
                 <span>
                     {option.name.substring(0, startIndex)}
-                    <span style={{ fontWeight: "bold", color: "#2e2eff" }}>
+                    <span style={{ fontWeight: "bold", color: "#E44778" }}>
                         {option.name.substring(startIndex, endIndex)}
                     </span>
                     {option.name.substring(endIndex)}
@@ -372,7 +509,37 @@ export default class Dashboard extends Component {
                             <h2>wth?</h2>
                         </div>
                         <div className="right-pane-header-right">
-                            
+                            <div className="export-minutes">
+                                <div className="export-minutes-left">
+                                    <img src="/assets/export-minutes.png"/>
+                                </div>
+                                <div className="export-minutes-right">
+                                    <label>0 export points</label>
+                                </div>
+                            </div>
+                            <div className="right-pane-top-pane-buttons">
+                                <div className="top-pane-btn-1">
+                                    <div>
+                                        <div className="top-pane-btn-left">
+                                            <img src="/assets/discord-logo-icon.png"/> 
+                                        </div>
+                                        <div className="top-pane-btn-right">
+                                            <label>Join discord</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="top-pane-btn-2">
+                                    <div>
+
+                                    </div>
+                                    <div>
+                                        <label>Upgrade</label>
+                                    </div>
+                                </div>
+                                <div className="top-pane-btn-3">
+                                   
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
