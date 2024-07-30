@@ -68,6 +68,7 @@ const Styles = styled.div `
     // - - SEARCH INPUT - - //
 
 .right-pane-header-left input {
+    margin-top: 0.25%;
     width: 83.5%;
     font-family: roboto;
     padding: 1.15%;
@@ -75,7 +76,7 @@ const Styles = styled.div `
 }
 
 .right-pane-header-left input:focus {
-    outline: 1px solid #E44778;
+    outline: 1px solid #6096df;
 }
 
     // - - SEARCH RESULTS - - //
@@ -90,6 +91,7 @@ const Styles = styled.div `
     border-radius: 7px;
     // border-bottom-right-radius: 7px;
     padding: 0.5%;
+    padding-top: 0px;
     margin-top: 1.5%;
 }
 
@@ -99,7 +101,7 @@ const Styles = styled.div `
     text-align: left;
     padding-left: 0.5%;
     padding-right: 0.5%;
-    margin-top: 0.5%;
+    margin-top: 0px;
     padding-bottom: 0px;
     border-radius: 5px;
     cursor: pointer;
@@ -132,8 +134,8 @@ const Styles = styled.div `
 
 .searchResultCell:hover,
 .codeSnippetResult:hover {
-  background-color: #f7f7f7;
-  color: #8A012C;
+  background-color: #eef7fd;
+  color: #1c4c75;
 }
 
     //! - - Top pane options - - !//
@@ -163,6 +165,10 @@ const Styles = styled.div `
     padding-bottom: 1.15%;
 }
 
+.export-minutes:hover {
+    cursor: pointer;
+}
+
 .export-minutes:after {
     content: "";
     clear: both;
@@ -180,6 +186,7 @@ const Styles = styled.div `
     float: left;
     width: 80%;
     text-align: left;
+    padding-bottom: 0.5%;
 }
 
     // - TOP RIGHT PANE BUTTONS CONTAINER - //
@@ -202,7 +209,7 @@ const Styles = styled.div `
     text-align: center;
     border: 1px solid #ccc;
     margin-right: 3%;
-    margin-left: 8.5%;
+    margin-left: 6%;
     border-radius: 10px;
     padding-top: 1.25%;
     padding-bottom: 1%;
@@ -215,7 +222,7 @@ const Styles = styled.div `
     text-align: center;
     border: 1px solid #ccc;
     margin-right: 3.5%;
-    margin-left: 2.5%;
+    margin-left: 3.5%;
     padding: 2%;
     border-radius: 10px;
     padding-bottom: 3%;
@@ -227,7 +234,7 @@ const Styles = styled.div `
     width: 6%;
     text-align: center;
     border: 1px solid #ccc;
-    margin-left: 2.5%;
+    margin-left: 3.5%;
     padding: 2%;
     border-radius: 10px;
     padding-top: 2.5%;
@@ -268,27 +275,30 @@ const Styles = styled.div `
 
 .export-minutes-right label {
     font-family: dm sans;
-    font-size: 0.83em;
+    font-size: 83%;
     margin-top: 1.5%;
-    margin-right: 12.5%;
+    margin-right: 9.5%;
     float: right;
 }
 
+.export-minutes-right label:hover {
+    cursor: pointer;
+}
 
     // # TOP PANE RIGHT BUTTONS
 
 .top-pane-btn-1 img {
-    width: 75%;
+    width: 76%;
     margin-left: 15%;
 }
 
 .top-pane-btn-1 label {
-    font-size: 85%;
+    font-size: 86%;
     margin-right: 10%;
 }
 
 .top-pane-btn-2 label {
-    font-size: 95%;
+    font-size: 90%;
 }
 
 .top-pane-btn-3 h1 {
@@ -350,9 +360,24 @@ export default class Dashboard extends Component {
     constructor () {
         super()
         this.state = {
+
             //* - - SEARCH BAR - - *//
             searchedData: "",
-            searchBarBorderColor: "#dedede"
+            searchBarBorderColor: "#dedede",
+
+            //* - - EXPORT POINTS - - *//
+            exportPointsBorderColor: "#ccc",
+
+            //* - - JOIN DISCORD - - *//
+            joinDiscordBorderColor: "#ccc",
+
+            //* - - UPGRADE - - *//
+            upgradeBgColor: "white",
+            upgradeTxtColor: "black",
+
+            //* - - USER NAME BTN - - *//
+            userNameBgColor: "#c2175b",
+            userNameTxtColor: "white"
         }
 
             //* - TRIE NODE (for search functionality) - *//
@@ -360,7 +385,9 @@ export default class Dashboard extends Component {
         this.trie = new Trie(); // Initialize the trie
     }
 
-        //* - - PROGRAM FUNCTIONS - - *//
+        //* - - - - PROGRAM FUNCTIONS - - - - *//
+
+        //! - - SEARCH FUNCTIONS - - !//
 
     groupBy = (array, key) => {
         return array.reduce((result, currentValue) => {
@@ -460,7 +487,7 @@ export default class Dashboard extends Component {
             const highlightedName = (
                 <span>
                     {option.name.substring(0, startIndex)}
-                    <span style={{ fontWeight: "bold", color: "#E44778" }}>
+                    <span style={{ fontWeight: "bold", color: "#6096df" }}>
                         {option.name.substring(startIndex, endIndex)}
                     </span>
                     {option.name.substring(endIndex)}
@@ -471,6 +498,24 @@ export default class Dashboard extends Component {
             // No match found or search input is empty or loading
             return option.name;
         }
+    }
+
+        //! - - TOP PANE FUNCTIONS - - !//
+
+    exportPointsEnter = () => {
+        this.setState({ exportPointsBorderColor: "#FF3169" })
+    }
+
+    exportPointsLeave = () => {
+        this.setState({ exportPointsBorderColor: "#ccc" })
+    }
+
+    joinDiscordEnter = () => {
+        this.setState({ joinDiscordBorderColor: "#FF3169" })
+    }
+
+    joinDiscordLeave = () => {
+        this.setState({ joinDiscordBorderColor: "#ccc" })
     }
 
         //* - - DESKTOP SCREENS - - *//
@@ -507,7 +552,7 @@ export default class Dashboard extends Component {
                                     }
                                     {!isSearchLoading && resultsFound && 
                                         Object.entries(groupedOptions).map(([category, options]) => (
-                                            <div style={{borderBottom: "1px solid #ccc", paddingTop: "0%", paddingBottom: "0.5%"}} key={category}>
+                                            <div style={{borderBottom: "1px solid #ccc", paddingTop: "0.5%", paddingBottom: "0.5%"}} key={category}>
                                                 {options.map(option => (
                                                     <div 
                                                     onClick={() => this.searchedTermClicked(category, option, option.page)}
@@ -530,7 +575,10 @@ export default class Dashboard extends Component {
                             <h2>wth?</h2>
                         </div>
                         <div className="right-pane-header-right">
-                            <div className="export-minutes">
+                            <div 
+                            onMouseEnter={this.exportPointsEnter}
+                            onMouseLeave={this.exportPointsLeave}
+                            style={{border: `1px solid ${this.state.exportPointsBorderColor}`}} className="export-minutes">
                                 <div className="export-minutes-left">
                                     <img src="/assets/export-minutes.png"/>
                                 </div>
@@ -539,7 +587,10 @@ export default class Dashboard extends Component {
                                 </div>
                             </div>
                             <div className="right-pane-top-pane-buttons">
-                                <div className="top-pane-btn-1">
+                                <div 
+                                onMouseEnter={this.joinDiscordEnter}
+                                onMouseLeave={this.joinDiscordLeave}
+                                style={{border: `1px solid ${this.state.joinDiscordBorderColor}`}} className="top-pane-btn-1">
                                     <div>
                                         <div className="top-pane-btn-left">
                                             <img src="/assets/discord-logo-icon.png"/> 
@@ -551,13 +602,10 @@ export default class Dashboard extends Component {
                                 </div>
                                 <div className="top-pane-btn-2">
                                     <div>
-
-                                    </div>
-                                    <div>
                                         <label>Upgrade</label>
                                     </div>
                                 </div>
-                                <div className="top-pane-btn-3">
+                                <div style={{backgroundColor: this.state.userNameBgColor, color: this.state.userNameTxtColor, border: `1px solid ${this.state.userNameBgColor}`}} className="top-pane-btn-3">
                                     <h1>N</h1>
                                 </div>
                             </div>
