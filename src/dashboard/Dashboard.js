@@ -41,6 +41,7 @@ const Styles = styled.div `
     text-align: center;
     padding-left: 2%;
     padding-right: 2%;
+    background-color: #FBFBFF;
 }
 
     // - - HEADER (RIGHT PANE) - - //? SEARCH BAR & OPTIONS
@@ -74,14 +75,18 @@ const Styles = styled.div `
 .right-pane-header-left input {
     margin-top: 0.25%;
     width: 83.5%;
-    font-family: roboto;
+    font-family: dm sans;
     padding: 1.15%;
     border-radius: 5px;
 }
 
 .right-pane-header-left input:focus {
-    outline: 1px solid #6096df;
+    outline: 1.5px solid #2980b9;
 }
+
+// .right-pane-header-left input::placeholder {
+    
+// }
 
     // - - SEARCH RESULTS - - //
 
@@ -361,7 +366,7 @@ const Styles = styled.div `
     height: 100%;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.1);
     border-radius: 8px;
-    background: linear-gradient(1135deg, #add8e6, #d1a3ff);
+    background: linear-gradient(930deg, #add8e6, #D1A6FB);
 }
 
 .rp-sec1-mid-parent {
@@ -372,6 +377,7 @@ const Styles = styled.div `
     height: 100%;
     margin-left: 1.7%;
     border-radius: 8px;
+    background-color: white;
 }
 
 .rp-sec1-right-parent {
@@ -382,9 +388,30 @@ const Styles = styled.div `
     height: 100%;
     margin-left: 1.7%;
     border-radius: 8px;
+    background-color: white;
 }
 
+
     // - - WINDOW 1 (SECTION 1) - - //
+
+.window1-bottom-section:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.window1-bottom-left {
+    float: left;
+    width: 50%;
+    text-align: center;
+    padding-left
+}
+
+.window1-bottom-right {
+    float: left;
+    width: 50%;
+    text-align: center;
+}
 
     // # WINDOW 1 TEXT
 
@@ -397,6 +424,18 @@ const Styles = styled.div `
     font-family: dm sans;
     font-weight: 900;
     margin-top: 5%;
+    margin-bottom: 1%;
+ }
+
+ .rp-sec1-left-parent p {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    font-size: 90%;
+    text-align: left;
+    margin-left: 5%;
+    font-weight: bold;
+    font-family: dm sans;
+    color: white;
  }
 
     // # WINDOW 1 BUTTON
@@ -404,9 +443,9 @@ const Styles = styled.div `
 .rp-sec1-left-parent button {
     display: flex;
     left: 0;
-    margin-top: 30%;
-    margin-left: 5%;
-    padding: 3%;
+    margin-top: 48%;
+    margin-left: 10%;
+    padding: 6%;
     background-color: white;
     border: 2px solid white;
     border-radius: 10px;
@@ -419,7 +458,7 @@ const Styles = styled.div `
     position: relative;
     overflow: hidden;
     padding: 10px 20px;
-    font-size: 16px;
+    font-size: 100%;
     color: black;
     background-color: #3498db; /* Initial background color */
     border: none;
@@ -466,6 +505,113 @@ const Styles = styled.div `
     transform: translateX(0);
     opacity: 1;
     transition: transform 500ms, opacity 500ms;
+}
+
+    // # WINDOW 1 FLOATING IMAGE
+
+.window1-pic {
+    display: inline-block; /* Or any other suitable display property */
+    perspective: 1000px; /* Optional, adds depth perspective */
+  }
+  
+.levitate {
+    display: block; /* Ensure the image behaves like a block element */
+    animation: levitate 3s ease-in-out infinite;
+}
+  
+@keyframes levitate {
+    0% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+    100% {
+      transform: translateY(0);
+    }
+}
+
+
+    // - - WINDOW 2 (SECTION 1) - - //
+
+.rp-sec1-mid-parent h2 {
+    text-align: left;
+    padding-left: 5%;
+    padding-right: 5%;
+    color: black;
+    font-family: dm sans;
+    font-weight: 900;
+    margin-top: 5%;
+    margin-bottom: 1%;
+}
+
+.rp-sec1-mid-parent p {
+    margin-top: 0px;
+    // margin-bottom: 0px;
+    font-size: 80%;
+    text-align: left;
+    margin-left: 5%;
+    font-weight: bold;
+    font-family: dm sans;
+    color: black;
+}
+
+    // - TUTORIAL CONTAINER - //
+
+    // # TUTORIAL HEADER
+
+.tutorial-header:after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.tutorial-header-left {
+    float: left;
+    width: 70%;
+    text-align: center;
+}
+
+.tutorial-header-right {
+    float: left;
+    width: 30%;
+    text-align: center;
+    // border-left: 1px solid black;
+}
+
+    // # TUTORIAL HEADER IMG
+
+.tutorial-header-right img {
+    width: 58%;
+    margin-top: 8%;
+}
+
+    // # TUTORIAL CONTAINER
+
+.tutorial-cell:after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.tutorial-cell {
+    border: 1px solid #ccc;
+    margin-top: 3%;
+    margin-left: 4%;
+    margin-right: 4%;
+    border-radius: 10px;
+}
+
+.tutorial-cell-left {
+    float: left;
+    width: 30%;
+    text-align: center;
+}
+
+.tutorial-cell-right {
+    float: left;
+    width: 70%;
+    text-align: left;
 }
 
 
@@ -653,7 +799,7 @@ export default class Dashboard extends Component {
             const highlightedName = (
                 <span>
                     {option.name.substring(0, startIndex)}
-                    <span style={{ fontWeight: "bold", color: "#6096df" }}>
+                    <span style={{ fontWeight: "bold", color: "#2980b9" }}>
                         {option.name.substring(startIndex, endIndex)}
                     </span>
                     {option.name.substring(endIndex)}
@@ -685,7 +831,7 @@ export default class Dashboard extends Component {
     }
 
     startCreatingEnter = () => {
-        this.setState({ startCreatingArrow: true, startCreatingIconWidth: "15%", startCreatingBtnWidth: "48%"})
+        this.setState({ startCreatingArrow: true, startCreatingIconWidth: "15%", startCreatingBtnWidth: "90%"})
     }
 
     startCreatingLeave = () => {
@@ -796,27 +942,60 @@ export default class Dashboard extends Component {
                     <div className="right-pane-section-1">
                         <div className="rp-sec1-left-parent">
                             <h1>Create your first short-form piece of content</h1>
-                            <button 
-                            style={{width: this.state.startCreatingBtnWidth, fontSize: this.state.startCreatingBtnFontSize}}
-                            onMouseEnter={this.startCreatingEnter}
-                            onMouseLeave={this.startCreatingLeave}
-                            className="wash-button">
-                                Start Creating
-                                <CSSTransition
-                                in={this.state.startCreatingArrow}
-                                timeout={{enter: 500, exit: 0}}
-                                classNames="dialog-slide-left"
-                                unmountOnExit
-                                >
-                                    <img style={{width: this.state.startCreatingIconWidth}} src="/assets/start-creating-arrow.png"/>
-                                </CSSTransition>
-                            </button>
+                            <p>Generate short-form content using AI.</p>
+                            <div className="window1-bottom-section">
+                                <div className="window1-bottom-left">
+                                    <button 
+                                    style={{width: this.state.startCreatingBtnWidth, fontSize: this.state.startCreatingBtnFontSize}}
+                                    onMouseEnter={this.startCreatingEnter}
+                                    onMouseLeave={this.startCreatingLeave}
+                                    className="wash-button">
+                                        Start Creating
+                                        <CSSTransition
+                                        in={this.state.startCreatingArrow}
+                                        timeout={{enter: 500, exit: 0}}
+                                        classNames="dialog-slide-left"
+                                        unmountOnExit
+                                        >
+                                            <img style={{width: this.state.startCreatingIconWidth}} src="/assets/start-creating-arrow.png"/>
+                                        </CSSTransition>
+                                    </button>  
+                                </div>
+                                <div className="window1-bottom-right"> 
+                                    <div className="window1-pic">
+                                        <img className="levitate" style={{width: "67%", float: "right", marginTop: "9%"}} src="/assets/iphone-pic.png"/>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                         <div className="rp-sec1-mid-parent">
-                              
+                            <div className="tutorial-header">
+                                <div className="tutorial-header-left">
+                                    <h2>Take a guided tour</h2>
+                                    <p>Select a tutorial below to learn how to get the most out of the app.</p>
+                                </div>
+                                <div className="tutorial-header-right">
+                                    <img src="/assets/desktop-pic.png"/>
+                                </div>
+                            </div>
+                            <div style={{borderBottom: "1px solid black", marginLeft: "4%", marginRight: "4%"}}></div>
+                            
+                            <div className="tutorial-container">
+
+                                <div className="tutorial-cell">
+                                    <div className="tutorial-cell-left">
+                                        <img src="/assets/"/>
+                                    </div>
+                                    <div className="tutorial-cell-right">
+
+                                    </div>
+                                </div>
+
+                            </div>
+
                         </div>
                         <div className="rp-sec1-right-parent">
-                             
+                
                         </div>
                     </div>  
 
