@@ -462,7 +462,6 @@ const Styles = styled.div `
     padding: 10px 20px;
     font-size: 100%;
     color: black;
-    background-color: #3498db; /* Initial background color */
     border: none;
     cursor: pointer;
     transition: background-color 0.3s ease; /* Smooth transition for background color */
@@ -672,7 +671,6 @@ const Styles = styled.div `
     // border-right: 1px solid black;
 }
 
-
     // # TUTORIAL CELL TIMER IMAGE
 
 .tutorial-cell-timer-left img {
@@ -689,6 +687,25 @@ const Styles = styled.div `
     font-size: 75%;
     color: #2980B9;
     font-weight: 900;
+}
+
+    // # TUTORIAL CELL WATCH BUTTON
+
+.tutorial-cell-header button {
+    border: 1px solid #ccc;
+    background-color: white;
+    border-radius: 8px;
+    font-family: dm sans;
+    font-size: 80%;
+    font-weight: bold;
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+.tutorial-cell-header button:hover {
+    background-color: #2980B9;
+    color: white;
+    border: 2px solid #2980B9;
 }
 
 `
@@ -1063,7 +1080,7 @@ export default class Dashboard extends Component {
                                         <img src="/assets/tutorial-pic1.png"/>
                                     </div>
                                     <div className="tutorial-cell-right">
-                                        <div style={{display: "flex", justifyContent: "space-between"}}>
+                                        <div className="tutorial-cell-header" style={{display: "flex", justifyContent: "space-between"}}>
                                             <div className="tutorial-cell-timer">
                                                 <div className="tutorial-cell-timer-left">
                                                     <img src="/assets/tutorial-cell-timer2.png"/>
@@ -1072,7 +1089,7 @@ export default class Dashboard extends Component {
                                                     <p>3 min 26 sec</p>
                                                 </div>
                                             </div>
-                                            <button>
+                                            <button className="">
                                                 Watch
                                             </button>
                                         </div>
