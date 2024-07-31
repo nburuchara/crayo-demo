@@ -593,7 +593,6 @@ const Styles = styled.div `
     height: 15.5em;
     overflow: auto;
     // border: 1px solid black;
-
 }
 
     // # TUTORIAL CELL
@@ -631,7 +630,7 @@ const Styles = styled.div `
     // # TUTORIAL CELL MAIN IMAGE
 
 .tutorial-cell-left img {
-    width: 83.5%;
+    width: 78.5%;
     border: 1px solid #ccc;
     padding: 3%;
     padding-left: 6%;
@@ -821,7 +820,19 @@ export default class Dashboard extends Component {
             tutorialCell2BorderColor: "#ccc",
             tutorialCell2ImgBgColor: "white",
             tutorialCell2TimerColor: "#6a6a6a",
-            tutorialCell2MainTextColor: "#6a6a6a"
+            tutorialCell2MainTextColor: "#6a6a6a",
+
+            tutorialCell3Hovered: false,
+            tutorialCell3BorderColor: "#ccc",
+            tutorialCell3ImgBgColor: "white",
+            tutorialCell3TimerColor: "#6a6a6a",
+            tutorialCell3MainTextColor: "#6a6a6a",
+
+            tutorialCell4Hovered: false,
+            tutorialCell4BorderColor: "#ccc",
+            tutorialCell4ImgBgColor: "white",
+            tutorialCell4TimerColor: "#6a6a6a",
+            tutorialCell4MainTextColor: "#6a6a6a"
         }
 
             //* - TRIE NODE (for search functionality) - *//
@@ -1032,6 +1043,64 @@ export default class Dashboard extends Component {
         this.setState({ tutorialCell2BorderColor: "#ccc" }) 
     }
 
+
+    tutorialCell3Enter = () => {
+        this.setState({
+            tutorialCell3Hovered: true,
+            tutorialCell3BorderColor: "#999",
+            tutorialCell3MainTextColor: "#000",
+            tutorialCell3TimerColor: "#2980B9",
+            tutorialCell3ImgBgColor: "#2980B9"
+        })
+    }
+
+    tutorialCell3Leave = () => {
+        this.setState({
+            tutorialCell3Hovered: false,
+            tutorialCell3BorderColor: "#ccc",
+            tutorialCell3MainTextColor: "#6a6a6a",
+            tutorialCell3TimerColor: "#6a6a6a",
+            tutorialCell3ImgBgColor: "white"
+        })
+    }
+
+    tutorialBtn3Enter = () => { 
+        this.setState({ tutorialCell3BorderColor: "#2980B9" }) 
+    }
+
+    tutorialBtn3Leave = () => { 
+        this.setState({ tutorialCell3BorderColor: "#ccc" }) 
+    }
+
+
+    tutorialCell4Enter = () => {
+        this.setState({
+            tutorialCell4Hovered: true,
+            tutorialCell4BorderColor: "#999",
+            tutorialCell4MainTextColor: "#000",
+            tutorialCell4TimerColor: "#2980B9",
+            tutorialCell4ImgBgColor: "#2980B9"
+        })
+    }
+
+    tutorialCell4Leave = () => {
+        this.setState({
+            tutorialCell4Hovered: false,
+            tutorialCell4BorderColor: "#ccc",
+            tutorialCell4MainTextColor: "#6a6a6a",
+            tutorialCell4TimerColor: "#6a6a6a",
+            tutorialCell4ImgBgColor: "white"
+        })
+    }
+
+    tutorialBtn4Enter = () => { 
+        this.setState({ tutorialCell4BorderColor: "#2980B9" }) 
+    }
+
+    tutorialBtn4Leave = () => { 
+        this.setState({ tutorialCell4BorderColor: "#ccc" }) 
+    }
+
         //* - - DESKTOP SCREENS - - *//
 
     desktop5Render = () => {
@@ -1235,31 +1304,60 @@ export default class Dashboard extends Component {
                                 </div>
 
                                 <div
-                                style={{border: `1px solid ${this.state.tutorialCell2BorderColor}`}}
-                                onMouseEnter={this.tutorialCell2Enter}
-                                onMouseLeave={this.tutorialCell2Leave}
+                                style={{border: `1px solid ${this.state.tutorialCell3BorderColor}`}}
+                                onMouseEnter={this.tutorialCell3Enter}
+                                onMouseLeave={this.tutorialCell3Leave}
                                 className="tutorial-cell">
                                     <div className="tutorial-cell-left">
-                                        <img className={this.state.tutorialCell2Hovered ? "levitate2" : ""} style={{backgroundColor: this.state.tutorialCell2ImgBgColor}} src={this.state.tutorialCell2Hovered ? "/assets/tutorial-pic2-color.png" : "/assets/tutorial-pic2.png"}/>
+                                        <img className={this.state.tutorialCell3Hovered ? "levitate2" : ""} style={{backgroundColor: this.state.tutorialCell3ImgBgColor}} src={this.state.tutorialCell3Hovered ? "/assets/tutorial-pic3-color.png" : "/assets/tutorial-pic3.png"}/>
                                     </div>
                                     <div className="tutorial-cell-right">
                                         <div className="tutorial-cell-header" style={{display: "flex", justifyContent: "space-between"}}>
                                             <div className="tutorial-cell-timer">
                                                 <div className="tutorial-cell-timer-left">
-                                                    <img src={this.state.tutorialCell2Hovered ? "/assets/tutorial-cell-timer-color.png" : "/assets/tutorial-cell-timer.png"}/>
+                                                    <img src={this.state.tutorialCell3Hovered ? "/assets/tutorial-cell-timer-color.png" : "/assets/tutorial-cell-timer.png"}/>
                                                 </div>
                                                 <div className="tutorial-cell-timer-right">
-                                                    <p style={{color: this.state.tutorialCell2TimerColor}}>2 min 19 sec</p>
+                                                    <p style={{color: this.state.tutorialCell3TimerColor}}>3 min 35 sec</p>
                                                 </div>
                                             </div>
                                             <button 
-                                            onMouseEnter={this.tutorialBtn2Enter}
-                                            onMouseLeave={this.tutorialBtn2Leave}
-                                            style={{border: `1px solid ${this.state.tutorialCell2BorderColor}`}}>
+                                            onMouseEnter={this.tutorialBtn3Enter}
+                                            onMouseLeave={this.tutorialBtn3Leave}
+                                            style={{border: `1px solid ${this.state.tutorialCell3BorderColor}`}}>
                                                 Watch
                                             </button>
                                         </div>
-                                        <h5 style={{color: this.state.tutorialCell2MainTextColor}}>Learn how to make high-quality voice-overs for your videos.</h5>
+                                        <h5 style={{color: this.state.tutorialCell3MainTextColor}}>Learn how to make high-quality voice-overs for your videos.</h5>
+                                    </div>
+                                </div>
+
+                                <div
+                                style={{border: `1px solid ${this.state.tutorialCell4BorderColor}`}}
+                                onMouseEnter={this.tutorialCell4Enter}
+                                onMouseLeave={this.tutorialCell4Leave}
+                                className="tutorial-cell">
+                                    <div className="tutorial-cell-left">
+                                        <img className={this.state.tutorialCell4Hovered ? "levitate2" : ""} style={{backgroundColor: this.state.tutorialCell4ImgBgColor}} src={this.state.tutorialCell4Hovered ? "/assets/tutorial-pic4-color.png" : "/assets/tutorial-pic4.png"}/>
+                                    </div>
+                                    <div className="tutorial-cell-right">
+                                        <div className="tutorial-cell-header" style={{display: "flex", justifyContent: "space-between"}}>
+                                            <div className="tutorial-cell-timer">
+                                                <div className="tutorial-cell-timer-left">
+                                                    <img src={this.state.tutorialCell4Hovered ? "/assets/tutorial-cell-timer-color.png" : "/assets/tutorial-cell-timer.png"}/>
+                                                </div>
+                                                <div className="tutorial-cell-timer-right">
+                                                    <p style={{color: this.state.tutorialCell4TimerColor}}>2 min 56 sec</p>
+                                                </div>
+                                            </div>
+                                            <button 
+                                            onMouseEnter={this.tutorialBtn4Enter}
+                                            onMouseLeave={this.tutorialBtn4Leave}
+                                            style={{border: `1px solid ${this.state.tutorialCell4BorderColor}`}}>
+                                                Watch
+                                            </button>
+                                        </div>
+                                        <h5 style={{color: this.state.tutorialCell4MainTextColor}}>Learn how to make high-quality voice-overs for your videos.</h5>
                                     </div>
                                 </div>
 
