@@ -621,10 +621,10 @@ const Styles = styled.div `
     text-align: left;
 }
 
-    // # TUTORIAL CELL IMAGE
+    // # TUTORIAL CELL MAIN IMAGE
 
 .tutorial-cell-left img {
-    width: 80%;
+    width: 82%;
     border: 1px solid #ccc;
     padding: 3%;
     padding-left: 6%;
@@ -635,18 +635,61 @@ const Styles = styled.div `
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.08), 0 6px 20px 0 rgba(0, 0, 0, 0.08);
 }
 
-
-    // # TUTORIAL CELL TEXT
+    // # TUTORIAL CELL MAIN TEXT
 
 .tutorial-cell-right h5 {
     margin-top: 1%;
     margin-bottom: 1%;
-    font-size: 80%;
-    margin-left: 2.5%;
+    font-size: 75%;
+    margin-left: 5%;
+    margin-right: 5%;
     font-family: dm sans;
+    color: #5e626a;
+}
+
+.tutorial-cell-timer {
+    width: 50%;
+    margin-left: 3%;
+}
+
+.tutorial-cell-timer:after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.tutorial-cell-timer-left {
+    float: left;
+    width: 15%;
+    text-align: left;
+    // border-right: 1px solid black;
+}
+
+.tutorial-cell-timer-right {
+    float: left;
+    width: 60%;
+    text-align: left;
+    // border-right: 1px solid black;
 }
 
 
+    // # TUTORIAL CELL TIMER IMAGE
+
+.tutorial-cell-timer-left img {
+    width: 85%;
+    margin-left: 15%;
+    margin-top: 20%;
+}
+
+    // # TUTORIAL CELL TIMER TEXT  
+
+.tutorial-cell-timer-right p {
+    margin-top: 6%;
+    margin-bottom: 0px;
+    font-size: 75%;
+    color: #2980B9;
+    font-weight: 900;
+}
 
 `
 //* - TRIE NODE IMPLEMENTATION (for search functionality) - *//
@@ -1020,7 +1063,20 @@ export default class Dashboard extends Component {
                                         <img src="/assets/tutorial-pic1.png"/>
                                     </div>
                                     <div className="tutorial-cell-right">
-                                        <h5>Create AI-generated video</h5>
+                                        <div style={{display: "flex", justifyContent: "space-between"}}>
+                                            <div className="tutorial-cell-timer">
+                                                <div className="tutorial-cell-timer-left">
+                                                    <img src="/assets/tutorial-cell-timer2.png"/>
+                                                </div>
+                                                <div className="tutorial-cell-timer-right">
+                                                    <p>3 min 26 sec</p>
+                                                </div>
+                                            </div>
+                                            <button>
+                                                Watch
+                                            </button>
+                                        </div>
+                                        <h5>Learn how to create AI-generated video for your stories.</h5>
                                     </div>
                                 </div>
 
