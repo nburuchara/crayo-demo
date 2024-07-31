@@ -78,10 +78,12 @@ const Styles = styled.div `
     font-family: dm sans;
     padding: 1.15%;
     border-radius: 5px;
+    border: 1px solid #ccc;
 }
 
 .right-pane-header-left input:focus {
-    outline: 1.5px solid #2980b9;
+    outline: 2px solid #2980b9;
+    border: 1px solid #2980b9;
 }
 
 // .right-pane-header-left input::placeholder {
@@ -972,7 +974,7 @@ export default class Dashboard extends Component {
                             <div className="tutorial-header">
                                 <div className="tutorial-header-left">
                                     <h2>Take a guided tour</h2>
-                                    <p>Select a tutorial below to learn how to get the most out of the app.</p>
+                                    <p>Select a tutorial below to learn how you can get the most out of Crayo.</p>
                                 </div>
                                 <div className="tutorial-header-right">
                                     <img src="/assets/desktop-pic.png"/>
