@@ -379,7 +379,7 @@ const Styles = styled.div `
     height: 100%;
     margin-left: 1.7%;
     border-radius: 8px;
-    background-color: white;
+    background-color: #fff;
 }
 
 .rp-sec1-right-parent {
@@ -390,7 +390,7 @@ const Styles = styled.div `
     height: 100%;
     margin-left: 1.7%;
     border-radius: 8px;
-    background-color: white;
+    background-color: #fff;
 }
 
 
@@ -590,6 +590,8 @@ const Styles = styled.div `
 
     // # TUTORIAL CONTAINER
 
+    // # TUTORIAL CELL
+
 .tutorial-cell:after {
     content: "";
     clear: both;
@@ -598,23 +600,52 @@ const Styles = styled.div `
 
 .tutorial-cell {
     border: 1px solid #ccc;
-    margin-top: 3%;
+    margin-top: 5%;
     margin-left: 4%;
     margin-right: 4%;
     border-radius: 10px;
+    padding: 2%;
+    background-color: white;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.1);
 }
 
 .tutorial-cell-left {
     float: left;
-    width: 30%;
-    text-align: center;
+    width: 20%;
+    text-align: left;
 }
 
 .tutorial-cell-right {
     float: left;
-    width: 70%;
+    width: 80%;
     text-align: left;
 }
+
+    // # TUTORIAL CELL IMAGE
+
+.tutorial-cell-left img {
+    width: 80%;
+    border: 1px solid #ccc;
+    padding: 3%;
+    padding-left: 6%;
+    padding-right: 6%;
+    border-radius: 10px;
+    margin-top: 5%;
+    margin-left: 4%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.08), 0 6px 20px 0 rgba(0, 0, 0, 0.08);
+}
+
+
+    // # TUTORIAL CELL TEXT
+
+.tutorial-cell-right h5 {
+    margin-top: 1%;
+    margin-bottom: 1%;
+    font-size: 80%;
+    margin-left: 2.5%;
+    font-family: dm sans;
+}
+
 
 
 `
@@ -986,10 +1017,10 @@ export default class Dashboard extends Component {
 
                                 <div className="tutorial-cell">
                                     <div className="tutorial-cell-left">
-                                        <img src="/assets/"/>
+                                        <img src="/assets/tutorial-pic1.png"/>
                                     </div>
                                     <div className="tutorial-cell-right">
-
+                                        <h5>Create AI-generated video</h5>
                                     </div>
                                 </div>
 
