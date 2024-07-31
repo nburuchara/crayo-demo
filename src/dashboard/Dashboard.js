@@ -345,7 +345,7 @@ const Styles = styled.div `
     //! - - Section 1 (right pane) - - //
 
 .right-pane-section-1 {
-    height: 45vh;
+    height: 22em;
 }
 
 .right-pane-section-1:after {
@@ -368,7 +368,7 @@ const Styles = styled.div `
     float: left;
     width: 32%;
     text-align: center;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.06), 0 6px 20px 0 rgba(0, 0, 0, 0.06);
     height: 100%;
     margin-left: 1.7%;
     border-radius: 8px;
@@ -378,7 +378,7 @@ const Styles = styled.div `
     float: left;
     width: 32%;
     text-align: center;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.06), 0 6px 20px 0 rgba(0, 0, 0, 0.06);
     height: 100%;
     margin-left: 1.7%;
     border-radius: 8px;
@@ -386,14 +386,87 @@ const Styles = styled.div `
 
     // - - WINDOW 1 (SECTION 1) - - //
 
+    // # WINDOW 1 TEXT
+
 .rp-sec1-left-parent h1 {
     text-align: left;
     padding-left: 5%;
     padding-right: 5%;
     color: white;
+    font-size: 2.3em;
     font-family: dm sans;
-    margin-top: 3%;
+    font-weight: 900;
+    margin-top: 5%;
  }
+
+    // # WINDOW 1 BUTTON
+
+.rp-sec1-left-parent button {
+    display: flex;
+    left: 0;
+    margin-top: 30%;
+    margin-left: 5%;
+    padding: 3%;
+    background-color: white;
+    border: 2px solid white;
+    border-radius: 10px;
+    font-weight: bold;
+    font-size: 110%;
+    font-family: dm sans;
+}
+
+.wash-button {
+    position: relative;
+    overflow: hidden;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: black;
+    background-color: #3498db; /* Initial background color */
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Smooth transition for background color */
+  }
+  
+  .wash-button::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300%;
+    height: 300%;
+    background: rgba(255, 255, 255, 0.1); /* Color of the wash effect */
+    transition: transform 0.5s ease;
+    transform: translate(-50%, -50%) scale(0); /* Initial state */
+    border-radius: 50%;
+  }
+  
+  .wash-button:hover::before {
+    transform: translate(-50%, -50%) scale(1); /* Scale up on hover */
+  }
+  
+  .wash-button:hover {
+    background-color: #2980b9; /* Change background color on hover */
+    color: white;
+    width: 48%;
+  }
+
+    // # WINDOW 1 BUTTON IMAGE
+
+.rp-sec1-left-parent img {
+    width: 15%;
+    margin-left: 9%;
+}
+
+.dialog-slide-left-enter {
+    transform: translateX(-30%);
+    opacity: 0;
+}
+
+.dialog-slide-left-enter-active {
+    transform: translateX(0);
+    opacity: 1;
+    transition: transform 500ms, opacity 500ms;
+}
 
 
 `
@@ -466,7 +539,11 @@ export default class Dashboard extends Component {
 
             //* - - USER NAME BTN VAR(s) - - *//
             userNameBgColor: "#c2175b",
-            userNameTxtColor: "white"
+            userNameTxtColor: "white",
+
+            startCreatingBtnWidth: "auto",
+            startCreatingBtnFontSize: "100%",
+            startCreatingIconWidth: "0%"
         }
 
             //* - TRIE NODE (for search functionality) - *//
@@ -607,6 +684,14 @@ export default class Dashboard extends Component {
         this.setState({ joinDiscordBorderColor: "#ccc", joinDiscordHovered: false })
     }
 
+    startCreatingEnter = () => {
+        this.setState({ startCreatingArrow: true, startCreatingIconWidth: "15%", startCreatingBtnWidth: "48%"})
+    }
+
+    startCreatingLeave = () => {
+        this.setState({ startCreatingArrow: false, startCreatingIconWidth: "0px", startCreatingBtnWidth: "auto", })
+    }
+
         //* - - DESKTOP SCREENS - - *//
 
     desktop5Render = () => {
@@ -711,6 +796,21 @@ export default class Dashboard extends Component {
                     <div className="right-pane-section-1">
                         <div className="rp-sec1-left-parent">
                             <h1>Create your first short-form piece of content</h1>
+                            <button 
+                            style={{width: this.state.startCreatingBtnWidth, fontSize: this.state.startCreatingBtnFontSize}}
+                            onMouseEnter={this.startCreatingEnter}
+                            onMouseLeave={this.startCreatingLeave}
+                            className="wash-button">
+                                Start Creating
+                                <CSSTransition
+                                in={this.state.startCreatingArrow}
+                                timeout={{enter: 500, exit: 0}}
+                                classNames="dialog-slide-left"
+                                unmountOnExit
+                                >
+                                    <img style={{width: this.state.startCreatingIconWidth}} src="/assets/start-creating-arrow.png"/>
+                                </CSSTransition>
+                            </button>
                         </div>
                         <div className="rp-sec1-mid-parent">
                               
