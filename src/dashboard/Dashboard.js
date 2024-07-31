@@ -224,13 +224,17 @@ const Styles = styled.div `
     float: left;
     width: 25%;
     text-align: center;
-    border: 1px solid #ccc;
+    border: 1px solid #FF3169;
     margin-right: 3.5%;
     margin-left: 3.5%;
     padding: 2%;
     border-radius: 10px;
     padding-bottom: 3%;
     padding-top: 2%;
+    background-color: #FF3169;
+    color: white;
+    // font-weight: bold;
+    cursor: pointer;
 }
 
 .top-pane-btn-3 {
@@ -245,6 +249,7 @@ const Styles = styled.div `
     padding-bottom: 2.5%;
     padding-left: 3%;
     padding-right: 3%;
+    cursor: pointer;
 }
 
 .top-pane-btn-1:after {
@@ -309,10 +314,18 @@ const Styles = styled.div `
     font-size: 90%;
 }
 
+.top-pane-btn-2 label:hover {
+    cursor: pointer;
+}
+
 .top-pane-btn-3 h1 {
     font-size: 100%;
     margin-top: 0px;
     margin-bottom: 0px;
+}
+
+.top-pane-btn-3 h1:hover {
+    cursor: pointer;
 }
 
 
