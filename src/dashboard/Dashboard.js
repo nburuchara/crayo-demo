@@ -1,9 +1,13 @@
+//? - - PACKAGES - - //
 import React, {Component} from "react";
 import styled from "styled-components";
 import MediaQuery from 'react-responsive';
+import { CSSTransition } from 'react-transition-group';
 
+//? - - FILES - - //
 import SearchTerms from './dash-helper-files/Search-Terms'
 
+//? - - CSS - - //
 const Styles = styled.div `
 
         // - - - - FULL PAGE - - - - //
@@ -189,7 +193,7 @@ const Styles = styled.div `
     padding-bottom: 0.5%;
 }
 
-    // - TOP RIGHT PANE BUTTONS CONTAINER - //
+    // - TOP RIGHT PANE BUTTONS (ALL) CONTAINERS - //
 
 .right-pane-top-pane-buttons {
     float: right;
@@ -274,13 +278,13 @@ const Styles = styled.div `
     padding-bottom: 3%;
 }
 
-    // # EXPORT MINUTES IMAGE
+    // # EXPORT MINUTES BTN IMAGE
 
 .export-minutes-left img {
     width: 65%;
 }
 
-    // # EXPORT MINUTES LABEL
+    // # EXPORT MINUTES BTN TEXT
 
 .export-minutes-right label {
     font-family: dm sans;
@@ -294,12 +298,14 @@ const Styles = styled.div `
     cursor: pointer;
 }
 
-    // # TOP PANE RIGHT BUTTONS
+    // # TOP RIGHT BUTTONS IMG (DISCORD)
 
 .top-pane-btn-1 img {
     width: 76%;
     margin-left: 15%;
 }
+
+// # TOP RIGHT BUTTONS TEXT (DISCORD / UPGRADE / USER)
 
 .top-pane-btn-1 label {
     font-size: 86%;
@@ -328,9 +334,70 @@ const Styles = styled.div `
     cursor: pointer;
 }
 
+    //! - - Welcome back header - - //
+
+.welcome-header h3 {
+    text-align: left;
+    font-family: dm sans;
+}
+
+
+    //! - - Section 1 (right pane) - - //
+
+.right-pane-section-1 {
+    height: 45vh;
+}
+
+.right-pane-section-1:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.rp-sec1-left-parent {
+    float: left;
+    width: 32%;
+    text-align: center;
+    height: 100%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    background: linear-gradient(1135deg, #add8e6, #d1a3ff);
+}
+
+.rp-sec1-mid-parent {
+    float: left;
+    width: 32%;
+    text-align: center;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.1);
+    height: 100%;
+    margin-left: 1.7%;
+    border-radius: 8px;
+}
+
+.rp-sec1-right-parent {
+    float: left;
+    width: 32%;
+    text-align: center;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.1);
+    height: 100%;
+    margin-left: 1.7%;
+    border-radius: 8px;
+}
+
+    // - - WINDOW 1 (SECTION 1) - - //
+
+.rp-sec1-left-parent h1 {
+    text-align: left;
+    padding-left: 5%;
+    padding-right: 5%;
+    color: white;
+    font-family: dm sans;
+    margin-top: 3%;
+ }
+
 
 `
-
+//* - TRIE NODE IMPLEMENTATION (for search functionality) - *//
 class TrieNode {
     constructor() {
         this.children = {};
@@ -382,32 +449,32 @@ export default class Dashboard extends Component {
         super()
         this.state = {
 
-            //* - - SEARCH BAR - - *//
+            //* - - SEARCH BAR VAR(s) - - *//
             searchedData: "",
             searchBarBorderColor: "#dedede",
 
-            //* - - EXPORT POINTS - - *//
+            //* - - EXPORT POINTS VAR(s) - - *//
             exportPointsBorderColor: "#ccc",
 
-            //* - - JOIN DISCORD - - *//
+            //* - - JOIN DISCORD VAR(s) - - *//
             joinDiscordBorderColor: "#ccc",
             joinDiscordHovered: false,
 
-            //* - - UPGRADE - - *//
+            //* - - UPGRADE VAR(s) - - *//
             upgradeBgColor: "white",
             upgradeTxtColor: "black",
 
-            //* - - USER NAME BTN - - *//
+            //* - - USER NAME BTN VAR(s) - - *//
             userNameBgColor: "#c2175b",
             userNameTxtColor: "white"
         }
 
             //* - TRIE NODE (for search functionality) - *//
-
         this.trie = new Trie(); // Initialize the trie
+
     }
 
-        //* - - - - PROGRAM FUNCTIONS - - - - *//
+            //* - - - - - PROGRAM FUNCTIONS - - - - - *//
 
         //! - - SEARCH FUNCTIONS - - !//
 
@@ -522,7 +589,7 @@ export default class Dashboard extends Component {
         }
     }
 
-        //! - - TOP PANE FUNCTIONS - - !//
+        //! - - TOP RIGHT PANE FUNCTIONS - - !//
 
     exportPointsEnter = () => {
         this.setState({ exportPointsBorderColor: "#FF3169" })
@@ -554,6 +621,9 @@ export default class Dashboard extends Component {
                     <p>test</p>
                 </div>
                 <div className="right-pane">
+
+                    {/* - - TOP PANE - -  */}
+
                     <div className="right-pane-header">
                         <div className="right-pane-header-left">
                             <input
@@ -574,7 +644,7 @@ export default class Dashboard extends Component {
                                     }
                                     {!isSearchLoading && resultsFound && 
                                         Object.entries(groupedOptions).map(([category, options]) => (
-                                            <div style={{borderBottom: "1px solid #ccc", paddingTop: "0.5%", paddingBottom: "0.5%"}} key={category}>
+                                            <div style={{borderBottom: "1px solid #ccc", paddingTop: "0.5%", paddingBottom: "0.5%", position: "sticky"}} key={category}>
                                                 {options.map(option => (
                                                     <div 
                                                     onClick={() => this.searchedTermClicked(category, option, option.page)}
@@ -594,7 +664,6 @@ export default class Dashboard extends Component {
                                     }
                                 </div>
                             )}
-                            <h2>wth?</h2>
                         </div>
                         <div className="right-pane-header-right">
                             <div 
@@ -633,6 +702,24 @@ export default class Dashboard extends Component {
                             </div>
                         </div>
                     </div>
+
+                    {/* - - SECTION 1 - -  */}
+
+                    <div className="welcome-header">
+                        <h3>Welcome back Norman,</h3>
+                    </div>
+                    <div className="right-pane-section-1">
+                        <div className="rp-sec1-left-parent">
+                            <h1>Create your first short-form piece of content</h1>
+                        </div>
+                        <div className="rp-sec1-mid-parent">
+                              
+                        </div>
+                        <div className="rp-sec1-right-parent">
+                             
+                        </div>
+                    </div>  
+
                 </div>
             </div>
         )
