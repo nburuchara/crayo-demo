@@ -400,7 +400,7 @@ const Styles = styled.div `
 
 
 
-    // - - WINDOW 1 (SECTION 1) - - //
+    // - - WINDOW 1 (SECTION 1 - GET STARTED) - - //
 
 .window1-bottom-section:after {
     content: "";
@@ -540,7 +540,7 @@ const Styles = styled.div `
 
 
 
-    // - - WINDOW 2 (SECTION 1) - - //
+    // - - WINDOW 2 (SECTION 1 - TUTORIALS) - - //
 
 .rp-sec1-mid-parent h2 {
     text-align: left;
@@ -752,7 +752,7 @@ const Styles = styled.div `
 
 
 
-    // - - WINDOW 3 (SECTION 1) - - //
+    // - - WINDOW 3 (SECTION 1 - POPULAR APPS) - - //
 
 .rp-sec1-right-parent h1 {
     text-align: left;
@@ -883,7 +883,7 @@ const Styles = styled.div `
 
 
 
-    // - - PROJECTS - - //
+    // - - WINDOW 1 (SECTION 2 - PROJECTS) - - //
 
     // # PROJECTS HEADER CONTAINER
 
@@ -966,6 +966,26 @@ const Styles = styled.div `
     font-size: 80%;
 }
 
+    // - - WINDOW 2 (SECTION 2 - EXAMPLES) - - //
+
+.examples-header h2 {
+    text-align: left;
+    margin-top: 1%;
+    margin-left: 2.5%;
+    margin-bottom: 0px;
+    font-family: dm sans;
+}
+
+.examples-header p {
+    text-align: left;
+    margin-top: 0px;
+    margin-bottom: 3%;
+    margin-left: 3%;
+    font-size: 85%;
+    font-family: dm sans;
+    font-weight: bold;
+    color: #2890b9;
+}
 
 
 `
@@ -1985,7 +2005,15 @@ export default class Dashboard extends Component {
                             </div>
                         </div>
                         <div className="rp-sec2-right-parent">
-                            
+                            <div className="examples-header">
+                                <div className="examples-header-left">
+                                    <h2>Crayo Content "in the wild"</h2>
+                                    <p>See how creators are using Crayo</p>
+                                </div>
+                                <div className="examples-header-right">
+
+                                </div>
+                            </div>
                         </div>
                     </div>
 
