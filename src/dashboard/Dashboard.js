@@ -733,6 +733,63 @@ const Styles = styled.div `
     border: 2px solid #2980B9;
 }
 
+    // # TUTORIAL FOOTER
+
+.tutorial-footer h5 {
+    text-align: left;
+    margin-left: 5%;
+    font-family: dm sans;
+    color: #5e626a;
+}
+
+
+    // - - WINDOW 3 - - //
+
+.rp-sec1-right-parent h1 {
+    text-align: left;
+    padding-left: 4%;
+    padding-right: 4%;
+    color: black;
+    font-family: dm sans;
+    font-weight: 900;
+    margin-top: 3%;
+    margin-bottom: 0px;
+}
+
+.rp-sec1-right-parent h3 {
+    margin-top: 0px;
+    // margin-bottom: 0px;
+    font-size: 97.5%;
+    text-align: left;
+    margin-left: 4%;
+    font-weight: bold;
+    font-family: dm sans;
+    color: #2980b9;
+}
+
+    // - POPULAR APPS - //
+
+.popular-apps-row-container {
+    border: 1px solid black;
+    margin-left: 4%;
+    margin-right: 4%;
+    height: 32vh;
+}
+
+.popular-apps-row-container:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.popular-apps-cell { 
+    float: left;
+    width: 48%;
+    text-align: center;
+    border: 1px solid black;
+    border-radius: 9px;
+}
+
 `
 //* - TRIE NODE IMPLEMENTATION (for search functionality) - *//
 class TrieNode {
@@ -1553,11 +1610,28 @@ export default class Dashboard extends Component {
                                     </div>
                                 </div>
 
+                                <div className="tutorial-footer">
+                                    <h5>More guides coming soon!</h5>
+                                </div>
+
+                                <div style={{borderBottom: "1px solid #8a8a8a", marginTop: "5%", marginLeft: "4%", marginRight: "4%"}}></div>
+
                             </div>
 
                         </div>
                         <div className="rp-sec1-right-parent">
-                
+                            <h1>Popular Apps</h1>
+                            <h3>Try our user-favorite apps.</h3>
+                            <div className="popular-apps-container">
+                                <div className="popular-apps-row-container">
+                                    <div style={{marginRight: "2.8%"}} className="popular-apps-cell">
+                                        <img/>
+                                    </div>
+                                    <div className="popular-apps-cell">
+                                        
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>  
 
