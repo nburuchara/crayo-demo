@@ -1808,7 +1808,7 @@ export default class Dashboard extends Component {
                                         </div>
                                         <div className="popular-apps-cell-text-container">
                                             <h5>Download YouTube Videos</h5>
-                                            <p>Create AI avatars to say anything for UGC content.</p>
+                                            <p>Get YouTube videos in MP4 format directly in Crayo.</p>
                                         </div>
                                     </div>
                                     <div 
