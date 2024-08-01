@@ -344,6 +344,7 @@ const Styles = styled.div `
     //! - - Welcome back header - - //
 
 .welcome-header h3 {
+    margin-bottom: 1%;
     text-align: left;
     font-family: dm sans;
 }
@@ -392,6 +393,7 @@ const Styles = styled.div `
     border-radius: 8px;
     background-color: #fff;
 }
+
 
 
     // - - WINDOW 1 (SECTION 1) - - //
@@ -531,6 +533,7 @@ const Styles = styled.div `
       transform: translateY(0);
     }
 }
+
 
 
     // - - WINDOW 2 (SECTION 1) - - //
@@ -743,7 +746,8 @@ const Styles = styled.div `
 }
 
 
-    // - - WINDOW 3 - - //
+
+    // - - WINDOW 3 (SECTION 1) - - //
 
 .rp-sec1-right-parent h1 {
     text-align: left;
@@ -833,6 +837,29 @@ const Styles = styled.div `
     margin-left: 3%;
     margin-right: 3%;
     font-family: dm sans;
+}
+
+
+    //! - - Section 2 (right pane) - - //
+
+.right-pane-section-2 {
+    margin-top: 2%;
+    height: 37vh;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.08), 0 6px 20px 0 rgba(0, 0, 0, 0.08);
+    border-radius: 8px;
+    background-color: #fff;
+    width: 99.5%;
+}
+
+
+    // - - PROJECTS - - //
+
+.projects-section h1 {
+    text-align: left;
+    margin-left: 2%;
+    padding-top: 1%;
+    font-family: dm sans;
+    color: #2890b9;
 }
 
 `
@@ -1831,6 +1858,14 @@ export default class Dashboard extends Component {
                             
                         </div>
                     </div>  
+
+                    {/* - - SECTION 2 - -  */}
+
+                    <div className="right-pane-section-2">
+                        <div className="projects-section">
+                            <h1>My Content</h1>
+                        </div>
+                    </div>
 
                 </div>
             </div>
