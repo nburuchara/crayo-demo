@@ -885,15 +885,7 @@ const Styles = styled.div `
 
     // - - PROJECTS - - //
 
-.rp-sec2-left-parent h1 {
-    text-align: left;
-    margin-left: 4%;
-    margin-top: 1.5%;
-    font-family: dm sans;
-    color: #2890b9;
-}
-
-    // # PROJECTS CONTAINER HEADER
+    // # PROJECTS HEADER CONTAINER
 
 .projects-header:after {
     content: "";
@@ -914,7 +906,67 @@ const Styles = styled.div `
     text-align: center;
 }
 
-    // # PROJECTS CONTAINER HEADER TEXT
+    // # PROJECTS HEADER CONTAINER TEXT
+
+.projects-header-left h2 {
+    text-align: left;
+    margin-left: 3%;
+    margin-top: 1%;
+    margin-bottom: 0px;
+    font-family: dm sans;
+    color: #000;
+}
+
+.projects-header-left p {
+    margin-top: 0px;
+    margin-bottom: 3%;
+    margin-left: 3%;
+    font-size: 75%;
+    font-family: dm sans;
+    font-weight: bold;
+    color: #2890b9;
+}
+
+    // # PROJECTS HEADER CONTAINER BUTTON
+
+.projects-header-right button {
+    width: 88%;
+    padding: 6%;
+    margin-top: 5%;
+    border-radius: 8px;
+    background-color: #2890b9;
+    border: 2px solid #2890b9;
+    color: white;
+    font-weight: bold;
+    font-family: dm sans;
+    cursor: pointer;
+    font-size: 85%;
+}
+
+    // # PROJECTS PLACEHOLDER CONTAINER
+
+.projects-placeholder {
+    border: 1px solid #9a9a9a;
+    margin-left: 2%;
+    margin-right: 2%;
+    height: 74%;
+    border-radius: 8px;
+}
+
+.projects-placeholder img {
+    width: 6%;
+    margin-top: 9vh;
+}
+
+.projects-placeholder p { 
+    margin-top: 0px;
+    font-family: dm sans;
+    font-weight: bold;
+    color: #2890b9;
+    font-size: 80%;
+}
+
+
 
 `
 //* - TRIE NODE IMPLEMENTATION (for search functionality) - *//
@@ -1919,12 +1971,17 @@ export default class Dashboard extends Component {
                         <div className="rp-sec2-left-parent">
                             <div className="projects-header">
                                 <div className="projects-header-left">
-                                    <h1>My Projects</h1>
+                                    <h2>My Projects</h2>
+                                    <p>Create a new project.</p>
                                 </div>
                                 <div className="projects-header-right">
                                     <button>+ New Project</button>
                                 </div>
-                                
+                            </div>
+
+                            <div className="projects-placeholder">
+                                <img src="/assets/projects-placeholder.png"/>
+                                <p>No existing projects.</p>
                             </div>
                         </div>
                         <div className="rp-sec2-right-parent">
