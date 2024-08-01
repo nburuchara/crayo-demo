@@ -367,7 +367,8 @@ const Styles = styled.div `
     width: 32%;
     text-align: center;
     height: 100%;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.1);
+    // box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.1);
+    border: 1px solid #9a9a9a;
     border-radius: 8px;
     background: linear-gradient(930deg, #add8e6, #D1A6FB);
 }
@@ -376,7 +377,8 @@ const Styles = styled.div `
     float: left;
     width: 32%;
     text-align: center;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.06), 0 6px 20px 0 rgba(0, 0, 0, 0.06);
+    // box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.06), 0 6px 20px 0 rgba(0, 0, 0, 0.06);
+    border: 1px solid #9a9a9a;
     height: 100%;
     margin-left: 1.7%;
     border-radius: 8px;
@@ -387,7 +389,8 @@ const Styles = styled.div `
     float: left;
     width: 32%;
     text-align: center;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.06), 0 6px 20px 0 rgba(0, 0, 0, 0.06);
+    // box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.06), 0 6px 20px 0 rgba(0, 0, 0, 0.06);
+    border: 1px solid #9a9a9a;
     height: 100%;
     margin-left: 1.7%;
     border-radius: 8px;
@@ -671,6 +674,7 @@ const Styles = styled.div `
     margin-right: 5%;
     font-family: dm sans;
     color: #5e626a;
+    font-weight: normal;
 }
 
 .tutorial-cell-timer {
@@ -843,13 +847,19 @@ const Styles = styled.div `
     //! - - Section 2 (right pane) - - //
 
 .right-pane-section-2 {
+    // border: 1px solid black;
     margin-top: 2%;
-    height: 37vh;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.08), 0 6px 20px 0 rgba(0, 0, 0, 0.08);
-    border-radius: 8px;
-    background-color: #fff;
-    width: 99.5%;
+    height: 36.8vh;
+    width: 100%;
 }
+
+.right-pane-section-2:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.
 
 
     // - - PROJECTS - - //
@@ -860,6 +870,27 @@ const Styles = styled.div `
     padding-top: 1%;
     font-family: dm sans;
     color: #2890b9;
+}
+
+.rp-sec2-left-parent {
+    float: left;
+    width: 49%;
+    text-align: center;
+    border: 1px solid #9a9a9a;
+    height: 100%;
+    border-radius: 10px;
+    // box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.06), 0 6px 20px 0 rgba(0, 0, 0, 0.08);
+}
+
+.rp-sec2-right-parent {
+    float: left;
+    width: 49%;
+    text-align: center;
+    border: 1px solid #9a9a9a;
+    margin-left: 1.65%;
+    height: 100%;
+    border-radius: 10px;
+    // box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.06), 0 6px 20px 0 rgba(0, 0, 0, 0.06);
 }
 
 `
@@ -943,49 +974,49 @@ export default class Dashboard extends Component {
             tutorialCell1BorderColor: "#8a8a8a",
             tutorialCell1ImgBgColor: "white",
             tutorialCell1TimerColor: "#5e626a",
-            tutorialCell1MainTextColor: "#5e626a",
+            tutorialCell1MainTextColor: "#000",
 
             tutorialCell2Hovered: false,
             tutorialCell2BorderColor: "#8a8a8a",
             tutorialCell2ImgBgColor: "white",
             tutorialCell2TimerColor: "#5e626a",
-            tutorialCell2MainTextColor: "#5e626a",
+            tutorialCell2MainTextColor: "#000",
 
             tutorialCell3Hovered: false,
             tutorialCell3BorderColor: "#8a8a8a",
             tutorialCell3ImgBgColor: "white",
             tutorialCell3TimerColor: "#5e626a",
-            tutorialCell3MainTextColor: "#5e626a",
+            tutorialCell3MainTextColor: "#000",
 
             tutorialCell4Hovered: false,
             tutorialCell4BorderColor: "#8a8a8a",
             tutorialCell4ImgBgColor: "white",
             tutorialCell4TimerColor: "#5e626a",
-            tutorialCell4MainTextColor: "#5e626a",
+            tutorialCell4MainTextColor: "#000",
 
             tutorialCell5Hovered: false,
             tutorialCell5BorderColor: "#8a8a8a",
             tutorialCell5ImgBgColor: "white",
             tutorialCell5TimerColor: "#5e626a",
-            tutorialCell5MainTextColor: "#5e626a",
+            tutorialCell5MainTextColor: "#000",
 
             tutorialCell6Hovered: false,
             tutorialCell6BorderColor: "#8a8a8a",
             tutorialCell6ImgBgColor: "white",
             tutorialCell6TimerColor: "#5e626a",
-            tutorialCell6MainTextColor: "#5e626a",
+            tutorialCell6MainTextColor: "#000",
 
             tutorialCell7Hovered: false,
             tutorialCell7BorderColor: "#8a8a8a",
             tutorialCell7ImgBgColor: "white",
             tutorialCell7TimerColor: "#5e626a",
-            tutorialCell7MainTextColor: "#5e626a",
+            tutorialCell7MainTextColor: "#000",
 
             tutorialCell8Hovered: false,
             tutorialCell8BorderColor: "#8a8a8a",
             tutorialCell8ImgBgColor: "white",
             tutorialCell8TimerColor: "#5e626a",
-            tutorialCell8MainTextColor: "#5e626a",
+            tutorialCell8MainTextColor: "#000",
 
             popularApp1Hovered: false,
             popularApp2Hovered: false,
@@ -1158,7 +1189,7 @@ export default class Dashboard extends Component {
         this.setState({
             tutorialCell1Hovered: false,
             tutorialCell1BorderColor: "#8a8a8a",
-            tutorialCell1MainTextColor: "#5e626a",
+            // tutorialCell1MainTextColor: "#5e626a",
             tutorialCell1TimerColor: "#5e626a",
             tutorialCell1ImgBgColor: "white"
         })
@@ -1178,7 +1209,7 @@ export default class Dashboard extends Component {
         this.setState({
             tutorialCell2Hovered: false,
             tutorialCell2BorderColor: "#8a8a8a",
-            tutorialCell2MainTextColor: "#5e626a",
+            // tutorialCell2MainTextColor: "#5e626a",
             tutorialCell2TimerColor: "#5e626a",
             tutorialCell2ImgBgColor: "white"
         })
@@ -1198,7 +1229,7 @@ export default class Dashboard extends Component {
         this.setState({
             tutorialCell3Hovered: false,
             tutorialCell3BorderColor: "#8a8a8a",
-            tutorialCell3MainTextColor: "#5e626a",
+            // tutorialCell3MainTextColor: "#5e626a",
             tutorialCell3TimerColor: "#5e626a",
             tutorialCell3ImgBgColor: "white"
         })
@@ -1218,7 +1249,7 @@ export default class Dashboard extends Component {
         this.setState({
             tutorialCell4Hovered: false,
             tutorialCell4BorderColor: "#8a8a8a",
-            tutorialCell4MainTextColor: "#5e626a",
+            // tutorialCell4MainTextColor: "#5e626a",
             tutorialCell4TimerColor: "#5e626a",
             tutorialCell4ImgBgColor: "white"
         })
@@ -1238,7 +1269,7 @@ export default class Dashboard extends Component {
         this.setState({
             tutorialCell5Hovered: false,
             tutorialCell5BorderColor: "#8a8a8a",
-            tutorialCell5MainTextColor: "#5e626a",
+            // tutorialCell5MainTextColor: "#5e626a",
             tutorialCell5TimerColor: "#5e626a",
             tutorialCell5ImgBgColor: "white"
         })
@@ -1258,7 +1289,7 @@ export default class Dashboard extends Component {
         this.setState({
             tutorialCell6Hovered: false,
             tutorialCell6BorderColor: "#8a8a8a",
-            tutorialCell6MainTextColor: "#5e626a",
+            // tutorialCell6MainTextColor: "#5e626a",
             tutorialCell6TimerColor: "#5e626a",
             tutorialCell6ImgBgColor: "white"
         })
@@ -1278,7 +1309,7 @@ export default class Dashboard extends Component {
         this.setState({
             tutorialCell7Hovered: false,
             tutorialCell7BorderColor: "#8a8a8a",
-            tutorialCell7MainTextColor: "#5e626a",
+            // tutorialCell7MainTextColor: "#5e626a",
             tutorialCell7TimerColor: "#5e626a",
             tutorialCell7ImgBgColor: "white"
         })
@@ -1298,7 +1329,7 @@ export default class Dashboard extends Component {
         this.setState({
             tutorialCell8Hovered: false,
             tutorialCell8BorderColor: "#8a8a8a",
-            tutorialCell8MainTextColor: "#5e626a",
+            // tutorialCell8MainTextColor: "#5e626a",
             tutorialCell8TimerColor: "#5e626a",
             tutorialCell8ImgBgColor: "white"
         })
@@ -1518,7 +1549,7 @@ export default class Dashboard extends Component {
                                     <img src="/assets/desktop-pic.png"/>
                                 </div>
                             </div>
-                            <div style={{borderBottom: "1px solid #8a8a8a", marginLeft: "4%", marginRight: "4%", marginBottom: "1%"}}></div>
+                            <div style={{borderBottom: "1px solid #8a8a8a", marginLeft: "4%", marginRight: "4%"}}></div>
                             
                             <div className="tutorial-container">
 
@@ -1547,7 +1578,7 @@ export default class Dashboard extends Component {
                                                 Watch
                                             </button> */}
                                         </div>
-                                        <h5 style={{color: this.state.tutorialCell1MainTextColor}}>Learn how to create AI-generated video for your stories.</h5>
+                                        <h5 style={{color: this.state.tutorialCell1MainTextColor, fontWeight: this.state.tutorialCell1Hovered ? "bold" : ""}}>Learn how to create AI-generated video for your stories.</h5>
                                     </div>
                                 </div>
 
@@ -1576,7 +1607,7 @@ export default class Dashboard extends Component {
                                                 Watch
                                             </button> */}
                                         </div>
-                                        <h5 style={{color: this.state.tutorialCell2MainTextColor}}>Learn how to make high-quality voice-overs for your videos.</h5>
+                                        <h5 style={{color: this.state.tutorialCell2MainTextColor, fontWeight: this.state.tutorialCell2Hovered ? "bold" : ""}}>Learn how to make high-quality voice-overs for your videos.</h5>
                                     </div>
                                 </div>
 
@@ -1605,7 +1636,7 @@ export default class Dashboard extends Component {
                                                 Watch
                                             </button> */}
                                         </div>
-                                        <h5 style={{color: this.state.tutorialCell3MainTextColor}}>Learn how to create ChatGPT-like image videos.</h5>
+                                        <h5 style={{color: this.state.tutorialCell3MainTextColor, fontWeight: this.state.tutorialCell3Hovered ? "bold" : ""}}>Learn how to create ChatGPT-like image videos.</h5>
                                     </div>
                                 </div>
 
@@ -1634,7 +1665,7 @@ export default class Dashboard extends Component {
                                                 Watch
                                             </button> */}
                                         </div>
-                                        <h5 style={{color: this.state.tutorialCell4MainTextColor}}>Learn how to create splitscreen content using our gameplay library.</h5>
+                                        <h5 style={{color: this.state.tutorialCell4MainTextColor, fontWeight: this.state.tutorialCell4Hovered ? "bold" : ""}}>Learn how to create splitscreen content using our gameplay library.</h5>
                                     </div>
                                 </div>
 
@@ -1663,7 +1694,7 @@ export default class Dashboard extends Component {
                                                 Watch
                                             </button> */}
                                         </div>
-                                        <h5 style={{color: this.state.tutorialCell5MainTextColor}}>Learn how to create simulated text conversation videos for Instagram, Tiktok and Shorts.</h5>
+                                        <h5 style={{color: this.state.tutorialCell5MainTextColor, fontWeight: this.state.tutorialCell5Hovered ? "bold" : ""}}>Learn how to create simulated text conversation videos for Instagram, Tiktok and Shorts.</h5>
                                     </div>
                                 </div>
 
@@ -1692,7 +1723,7 @@ export default class Dashboard extends Component {
                                                 Watch
                                             </button> */}
                                         </div>
-                                        <h5 style={{color: this.state.tutorialCell6MainTextColor}}>Learn how to create AI avatars with fully customized speech for UGC content.</h5>
+                                        <h5 style={{color: this.state.tutorialCell6MainTextColor, fontWeight: this.state.tutorialCell6Hovered ? "bold" : ""}}>Learn how to create AI avatars with fully customized speech for UGC content.</h5>
                                     </div>
                                 </div>
 
@@ -1721,7 +1752,7 @@ export default class Dashboard extends Component {
                                                 Watch
                                             </button> */}
                                         </div>
-                                        <h5 style={{color: this.state.tutorialCell7MainTextColor}}>Learn how to add any type of AI voiceover from our vast library to your videos.</h5>
+                                        <h5 style={{color: this.state.tutorialCell7MainTextColor, fontWeight: this.state.tutorialCell7Hovered ? "bold" : ""}}>Learn how to add any type of AI voiceover from our vast library to your videos.</h5>
                                     </div>
                                 </div>
 
@@ -1750,7 +1781,7 @@ export default class Dashboard extends Component {
                                                 Watch
                                             </button> */}
                                         </div>
-                                        <h5 style={{color: this.state.tutorialCell8MainTextColor}}>Learn how to add any YouTube video directly into your content via Crayo.</h5>
+                                        <h5 style={{color: this.state.tutorialCell8MainTextColor, fontWeight: this.state.tutorialCell8Hovered ? "bold" : ""}}>Learn how to add any YouTube video directly into your content via Crayo.</h5>
                                     </div>
                                 </div>
 
@@ -1758,7 +1789,7 @@ export default class Dashboard extends Component {
                                     <h4>More guides coming soon!</h4>
                                 </div>
 
-                                <div style={{borderBottom: "1px solid #8a8a8a", marginTop: "5%", marginLeft: "4%", marginRight: "4%"}}></div>
+                                <div style={{borderBottom: "1px solid white", marginTop: "5%", marginLeft: "4%", marginRight: "4%"}}></div>
 
                             </div>
 
@@ -1843,7 +1874,7 @@ export default class Dashboard extends Component {
                                     onMouseLeave={this.popularApp6Leave}
                                     style={{border: `1px solid ${this.state.popularApp6Hovered ? "#2890b9" : "#ccc"}`, borderBottom: `5px solid ${this.state.popularApp6Hovered ? "#2890b9" : "#ccc"}`}} className="popular-apps-cell">
                                         <div style={{background: "white"}} className="popular-apps-cell-img-container">
-                                            <img src="/assets/more-apps-pic2.png"/>
+                                            <img src="/assets/more-apps-pic2.gif"/>
                                         </div>
                                         <div className="popular-apps-cell-text-container">
                                             <h5>All Apps</h5>
@@ -1852,7 +1883,7 @@ export default class Dashboard extends Component {
                                     </div>
                                 </div>
 
-                                <div style={{borderBottom: "1px solid #8a8a8a", marginTop: "4%", marginLeft: "4%", marginRight: "4%"}}></div>
+                                <div style={{borderBottom: "1px solid white", marginTop: "4%", marginLeft: "4%", marginRight: "4%"}}></div>
 
                             </div>
                             
@@ -1862,8 +1893,11 @@ export default class Dashboard extends Component {
                     {/* - - SECTION 2 - -  */}
 
                     <div className="right-pane-section-2">
-                        <div className="projects-section">
-                            <h1>My Content</h1>
+                        <div className="rp-sec2-left-parent">
+                            
+                        </div>
+                        <div className="rp-sec2-right-parent">
+                            
                         </div>
                     </div>
 
