@@ -15,6 +15,7 @@ const Styles = styled.div `
 .full-page { 
     height: 100vh;
     width: 100%;
+    position: fixed;
 }
 
 .full-page:after {
@@ -859,19 +860,6 @@ const Styles = styled.div `
     clear: both;
 }
 
-.
-
-
-    // - - PROJECTS - - //
-
-.projects-section h1 {
-    text-align: left;
-    margin-left: 2%;
-    padding-top: 1%;
-    font-family: dm sans;
-    color: #2890b9;
-}
-
 .rp-sec2-left-parent {
     float: left;
     width: 49%;
@@ -892,6 +880,41 @@ const Styles = styled.div `
     border-radius: 10px;
     // box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.06), 0 6px 20px 0 rgba(0, 0, 0, 0.06);
 }
+
+
+
+    // - - PROJECTS - - //
+
+.rp-sec2-left-parent h1 {
+    text-align: left;
+    margin-left: 4%;
+    margin-top: 1.5%;
+    font-family: dm sans;
+    color: #2890b9;
+}
+
+    // # PROJECTS CONTAINER HEADER
+
+.projects-header:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.projects-header-left {
+    float: left;
+    width: 70%;
+    text-align: left;
+    // border: 1px solid black;
+}
+
+.projects-header-right {
+    float: left;
+    width: 30%;
+    text-align: center;
+}
+
+    // # PROJECTS CONTAINER HEADER TEXT
 
 `
 //* - TRIE NODE IMPLEMENTATION (for search functionality) - *//
@@ -1894,7 +1917,15 @@ export default class Dashboard extends Component {
 
                     <div className="right-pane-section-2">
                         <div className="rp-sec2-left-parent">
-                            
+                            <div className="projects-header">
+                                <div className="projects-header-left">
+                                    <h1>My Projects</h1>
+                                </div>
+                                <div className="projects-header-right">
+                                    <button>+ New Project</button>
+                                </div>
+                                
+                            </div>
                         </div>
                         <div className="rp-sec2-right-parent">
                             
