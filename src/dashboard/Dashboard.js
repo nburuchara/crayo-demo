@@ -1820,7 +1820,7 @@ export default class Dashboard extends Component {
                                         </div>
                                         <div className="popular-apps-cell-text-container">
                                             <h5>All Apps</h5>
-                                            <p>See the full list of apps.</p>
+                                            <p>See our full list of apps.</p>
                                         </div>
                                     </div>
                                 </div>
