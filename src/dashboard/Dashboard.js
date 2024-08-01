@@ -739,7 +739,7 @@ const Styles = styled.div `
     text-align: left;
     margin-left: 5%;
     font-family: dm sans;
-    color: #5e626a;
+    color: #2890b9;
 }
 
 
@@ -915,53 +915,57 @@ export default class Dashboard extends Component {
             tutorialCell1Hovered: false,
             tutorialCell1BorderColor: "#8a8a8a",
             tutorialCell1ImgBgColor: "white",
-            tutorialCell1TimerColor: "#8a8a8a",
-            tutorialCell1MainTextColor: "#8a8a8a",
+            tutorialCell1TimerColor: "#5e626a",
+            tutorialCell1MainTextColor: "#5e626a",
 
             tutorialCell2Hovered: false,
             tutorialCell2BorderColor: "#8a8a8a",
             tutorialCell2ImgBgColor: "white",
-            tutorialCell2TimerColor: "#8a8a8a",
-            tutorialCell2MainTextColor: "#8a8a8a",
+            tutorialCell2TimerColor: "#5e626a",
+            tutorialCell2MainTextColor: "#5e626a",
 
             tutorialCell3Hovered: false,
             tutorialCell3BorderColor: "#8a8a8a",
             tutorialCell3ImgBgColor: "white",
-            tutorialCell3TimerColor: "#8a8a8a",
-            tutorialCell3MainTextColor: "#8a8a8a",
+            tutorialCell3TimerColor: "#5e626a",
+            tutorialCell3MainTextColor: "#5e626a",
 
             tutorialCell4Hovered: false,
             tutorialCell4BorderColor: "#8a8a8a",
             tutorialCell4ImgBgColor: "white",
-            tutorialCell4TimerColor: "#8a8a8a",
-            tutorialCell4MainTextColor: "#8a8a8a",
+            tutorialCell4TimerColor: "#5e626a",
+            tutorialCell4MainTextColor: "#5e626a",
 
             tutorialCell5Hovered: false,
             tutorialCell5BorderColor: "#8a8a8a",
             tutorialCell5ImgBgColor: "white",
-            tutorialCell5TimerColor: "#8a8a8a",
-            tutorialCell5MainTextColor: "#8a8a8a",
+            tutorialCell5TimerColor: "#5e626a",
+            tutorialCell5MainTextColor: "#5e626a",
 
             tutorialCell6Hovered: false,
             tutorialCell6BorderColor: "#8a8a8a",
             tutorialCell6ImgBgColor: "white",
-            tutorialCell6TimerColor: "#8a8a8a",
-            tutorialCell6MainTextColor: "#8a8a8a",
+            tutorialCell6TimerColor: "#5e626a",
+            tutorialCell6MainTextColor: "#5e626a",
 
             tutorialCell7Hovered: false,
             tutorialCell7BorderColor: "#8a8a8a",
             tutorialCell7ImgBgColor: "white",
-            tutorialCell7TimerColor: "#8a8a8a",
-            tutorialCell7MainTextColor: "#8a8a8a",
+            tutorialCell7TimerColor: "#5e626a",
+            tutorialCell7MainTextColor: "#5e626a",
 
             tutorialCell8Hovered: false,
             tutorialCell8BorderColor: "#8a8a8a",
             tutorialCell8ImgBgColor: "white",
-            tutorialCell8TimerColor: "#8a8a8a",
-            tutorialCell8MainTextColor: "#8a8a8a",
+            tutorialCell8TimerColor: "#5e626a",
+            tutorialCell8MainTextColor: "#5e626a",
 
             popularApp1Hovered: false,
             popularApp2Hovered: false,
+            popularApp3Hovered: false,
+            popularApp4Hovered: false,
+            popularApp5Hovered: false,
+            popularApp6Hovered: false,
 
         }
 
@@ -1090,23 +1094,22 @@ export default class Dashboard extends Component {
     exportPointsEnter = () => {
         this.setState({ exportPointsBorderColor: "#FF3169" })
     }
-
     exportPointsLeave = () => {
         this.setState({ exportPointsBorderColor: "#ccc" })
     }
 
+
     joinDiscordEnter = () => {
         this.setState({ joinDiscordBorderColor: "#FF3169", joinDiscordHovered: true })
     }
-
     joinDiscordLeave = () => {
         this.setState({ joinDiscordBorderColor: "#ccc", joinDiscordHovered: false })
     }
 
+
     startCreatingEnter = () => {
         this.setState({ startCreatingArrow: true, startCreatingIconWidth: "15%", startCreatingBtnWidth: "90%"})
     }
-
     startCreatingLeave = () => {
         this.setState({ startCreatingArrow: false, startCreatingIconWidth: "0px", startCreatingBtnWidth: "auto", })
     }
@@ -1124,13 +1127,12 @@ export default class Dashboard extends Component {
             tutorialCell1ImgBgColor: "#2980B9"
         })
     }
-
     tutorialCell1Leave = () => {
         this.setState({
             tutorialCell1Hovered: false,
             tutorialCell1BorderColor: "#8a8a8a",
-            tutorialCell1MainTextColor: "#8a8a8a",
-            tutorialCell1TimerColor: "#8a8a8a",
+            tutorialCell1MainTextColor: "#5e626a",
+            tutorialCell1TimerColor: "#5e626a",
             tutorialCell1ImgBgColor: "white"
         })
     }
@@ -1145,13 +1147,12 @@ export default class Dashboard extends Component {
             tutorialCell2ImgBgColor: "#2980B9"
         })
     }
-
     tutorialCell2Leave = () => {
         this.setState({
             tutorialCell2Hovered: false,
             tutorialCell2BorderColor: "#8a8a8a",
-            tutorialCell2MainTextColor: "#8a8a8a",
-            tutorialCell2TimerColor: "#8a8a8a",
+            tutorialCell2MainTextColor: "#5e626a",
+            tutorialCell2TimerColor: "#5e626a",
             tutorialCell2ImgBgColor: "white"
         })
     }
@@ -1166,13 +1167,12 @@ export default class Dashboard extends Component {
             tutorialCell3ImgBgColor: "#2980B9"
         })
     }
-
     tutorialCell3Leave = () => {
         this.setState({
             tutorialCell3Hovered: false,
             tutorialCell3BorderColor: "#8a8a8a",
-            tutorialCell3MainTextColor: "#8a8a8a",
-            tutorialCell3TimerColor: "#8a8a8a",
+            tutorialCell3MainTextColor: "#5e626a",
+            tutorialCell3TimerColor: "#5e626a",
             tutorialCell3ImgBgColor: "white"
         })
     }
@@ -1187,13 +1187,12 @@ export default class Dashboard extends Component {
             tutorialCell4ImgBgColor: "#2980B9"
         })
     }
-
     tutorialCell4Leave = () => {
         this.setState({
             tutorialCell4Hovered: false,
             tutorialCell4BorderColor: "#8a8a8a",
-            tutorialCell4MainTextColor: "#8a8a8a",
-            tutorialCell4TimerColor: "#8a8a8a",
+            tutorialCell4MainTextColor: "#5e626a",
+            tutorialCell4TimerColor: "#5e626a",
             tutorialCell4ImgBgColor: "white"
         })
     }
@@ -1208,13 +1207,12 @@ export default class Dashboard extends Component {
             tutorialCell5ImgBgColor: "#2980B9"
         })
     }
-
     tutorialCell5Leave = () => {
         this.setState({
             tutorialCell5Hovered: false,
             tutorialCell5BorderColor: "#8a8a8a",
-            tutorialCell5MainTextColor: "#8a8a8a",
-            tutorialCell5TimerColor: "#8a8a8a",
+            tutorialCell5MainTextColor: "#5e626a",
+            tutorialCell5TimerColor: "#5e626a",
             tutorialCell5ImgBgColor: "white"
         })
     }
@@ -1229,13 +1227,12 @@ export default class Dashboard extends Component {
             tutorialCell6ImgBgColor: "#2980B9"
         })
     }
-
     tutorialCell6Leave = () => {
         this.setState({
             tutorialCell6Hovered: false,
             tutorialCell6BorderColor: "#8a8a8a",
-            tutorialCell6MainTextColor: "#8a8a8a",
-            tutorialCell6TimerColor: "#8a8a8a",
+            tutorialCell6MainTextColor: "#5e626a",
+            tutorialCell6TimerColor: "#5e626a",
             tutorialCell6ImgBgColor: "white"
         })
     }
@@ -1250,13 +1247,12 @@ export default class Dashboard extends Component {
             tutorialCell7ImgBgColor: "#2980B9"
         })
     }
-
     tutorialCell7Leave = () => {
         this.setState({
             tutorialCell7Hovered: false,
             tutorialCell7BorderColor: "#8a8a8a",
-            tutorialCell7MainTextColor: "#8a8a8a",
-            tutorialCell7TimerColor: "#8a8a8a",
+            tutorialCell7MainTextColor: "#5e626a",
+            tutorialCell7TimerColor: "#5e626a",
             tutorialCell7ImgBgColor: "white"
         })
     }
@@ -1271,13 +1267,12 @@ export default class Dashboard extends Component {
             tutorialCell8ImgBgColor: "#2980B9"
         })
     }
-
     tutorialCell8Leave = () => {
         this.setState({
             tutorialCell8Hovered: false,
             tutorialCell8BorderColor: "#8a8a8a",
-            tutorialCell8MainTextColor: "#8a8a8a",
-            tutorialCell8TimerColor: "#8a8a8a",
+            tutorialCell8MainTextColor: "#5e626a",
+            tutorialCell8TimerColor: "#5e626a",
             tutorialCell8ImgBgColor: "white"
         })
     }
@@ -1289,7 +1284,6 @@ export default class Dashboard extends Component {
             popularApp1Hovered: true
          })
     }
-
     popularApp1Leave = () => {
         this.setState({ 
             popularApp1Hovered: false 
@@ -1302,10 +1296,57 @@ export default class Dashboard extends Component {
             popularApp2Hovered: true
          })
     }
-
     popularApp2Leave = () => {
         this.setState({ 
             popularApp2Hovered: false 
+         })
+    }
+
+
+    popularApp3Enter = () => {
+        this.setState({ 
+            popularApp3Hovered: true
+         })
+    }
+    popularApp3Leave = () => {
+        this.setState({ 
+            popularApp3Hovered: false 
+         })
+    }
+
+
+    popularApp4Enter = () => {
+        this.setState({ 
+            popularApp4Hovered: true
+         })
+    }
+    popularApp4Leave = () => {
+        this.setState({ 
+            popularApp4Hovered: false 
+         })
+    }
+
+
+    popularApp5Enter = () => {
+        this.setState({ 
+            popularApp5Hovered: true
+         })
+    }
+    popularApp5Leave = () => {
+        this.setState({ 
+            popularApp5Hovered: false 
+         })
+    }
+
+
+    popularApp6Enter = () => {
+        this.setState({ 
+            popularApp6Hovered: true
+         })
+    }
+    popularApp6Leave = () => {
+        this.setState({ 
+            popularApp6Hovered: false 
          })
     }
 
@@ -1706,7 +1747,7 @@ export default class Dashboard extends Component {
                                     onMouseLeave={this.popularApp1Leave}
                                     style={{marginRight: "2.8%", border: `1px solid ${this.state.popularApp1Hovered ? "#2890b9" : "#ccc"}`, borderBottom: `5px solid ${this.state.popularApp1Hovered ? "#2890b9" : "#ccc"}`}} className="popular-apps-cell">
                                         <div style={{background: "white"}} className="popular-apps-cell-img-container">
-                                            <img src="/assets/split-screen-pic.gif"/>
+                                            <img src="/assets/split-screen-pic2.gif"/>
                                         </div>
                                         <div className="popular-apps-cell-text-container">
                                             <h5>Splitscreen Video</h5>
@@ -1730,32 +1771,64 @@ export default class Dashboard extends Component {
 
                                 <div className="popular-apps-row-container">
                                     <div 
-                                    onMouseEnter={this.popularApp1Enter}
-                                    onMouseLeave={this.popularApp1Leave}
-                                    style={{marginRight: "2.8%", border: `1px solid ${this.state.popularApp1Hovered ? "#2890b9" : "#ccc"}`, borderBottom: `5px solid ${this.state.popularApp1Hovered ? "#2890b9" : "#ccc"}`}} className="popular-apps-cell">
-                                        <div className="popular-apps-cell-img-container">
-                                            <img src="/assets/split-screen-pic-color.png"/>
+                                    onMouseEnter={this.popularApp3Enter}
+                                    onMouseLeave={this.popularApp3Leave}
+                                    style={{marginRight: "2.8%", border: `1px solid ${this.state.popularApp3Hovered ? "#2890b9" : "#ccc"}`, borderBottom: `5px solid ${this.state.popularApp3Hovered ? "#2890b9" : "#ccc"}`}} className="popular-apps-cell">
+                                        <div style={{background: "white"}} className="popular-apps-cell-img-container">
+                                            <img src="/assets/ai-avatar-pic.gif"/>
                                         </div>
                                         <div className="popular-apps-cell-text-container">
-                                            <h5>Splitscreen Video</h5>
-                                            <p>Create splitscreen content w/ our gameplay library.</p>
+                                            <h5>AI Avatars</h5>
+                                            <p>Create AI avatars to say anything for UGC content.</p>
                                         </div>
                                     </div>
                                     <div 
-                                    onMouseEnter={this.popularApp2Enter}
-                                    onMouseLeave={this.popularApp2Leave}
-                                    style={{border: `1px solid ${this.state.popularApp2Hovered ? "#2890b9" : "#ccc"}`, borderBottom: `5px solid ${this.state.popularApp2Hovered ? "#2890b9" : "#ccc"}`}}
+                                    onMouseEnter={this.popularApp4Enter}
+                                    onMouseLeave={this.popularApp4Leave}
+                                    style={{border: `1px solid ${this.state.popularApp4Hovered ? "#2890b9" : "#ccc"}`, borderBottom: `5px solid ${this.state.popularApp4Hovered ? "#2890b9" : "#ccc"}`}}
                                     className="popular-apps-cell">
-                                        <div className="popular-apps-cell-img-container">
-                                            <img src="/assets/fake-text-pic2.png"/>
+                                        <div style={{background: "white"}} className="popular-apps-cell-img-container">
+                                            <img src="/assets/voice-over-pic.gif"/>
                                         </div>
                                         <div className="popular-apps-cell-text-container">
-                                            <h5>Fake Texts Video</h5>
-                                            <p>Create fake text conversation videos for Instagram, Tiktok, and Shorts.</p>
+                                            <h5>Voiceover Story</h5>
+                                            <p>Create wholesome, scary, or any type of story using AI voices.</p>
                                         </div>
                                     </div>
                                 </div>
+
+
+                                <div className="popular-apps-row-container">
+                                    <div 
+                                    onMouseEnter={this.popularApp5Enter}
+                                    onMouseLeave={this.popularApp5Leave}
+                                    style={{marginRight: "2.8%", border: `1px solid ${this.state.popularApp5Hovered ? "#2890b9" : "#ccc"}`, borderBottom: `5px solid ${this.state.popularApp5Hovered ? "#2890b9" : "#ccc"}`}} className="popular-apps-cell">
+                                        <div style={{background: "white"}} className="popular-apps-cell-img-container">
+                                            <img src="/assets/download-pic.gif"/>
+                                        </div>
+                                        <div className="popular-apps-cell-text-container">
+                                            <h5>Download YouTube Videos</h5>
+                                            <p>Create AI avatars to say anything for UGC content.</p>
+                                        </div>
+                                    </div>
+                                    <div 
+                                    onMouseEnter={this.popularApp6Enter}
+                                    onMouseLeave={this.popularApp6Leave}
+                                    style={{border: `1px solid ${this.state.popularApp6Hovered ? "#2890b9" : "#ccc"}`, borderBottom: `5px solid ${this.state.popularApp6Hovered ? "#2890b9" : "#ccc"}`}} className="popular-apps-cell">
+                                        <div style={{background: "white"}} className="popular-apps-cell-img-container">
+                                            <img src="/assets/more-apps-pic.png"/>
+                                        </div>
+                                        <div className="popular-apps-cell-text-container">
+                                            <h5>All Apps</h5>
+                                            <p>See the full list of apps.</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div style={{borderBottom: "1px solid #8a8a8a", marginTop: "4%", marginLeft: "4%", marginRight: "4%"}}></div>
+
                             </div>
+                            
                         </div>
                     </div>  
 
