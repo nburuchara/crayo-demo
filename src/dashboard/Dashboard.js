@@ -1831,7 +1831,7 @@ export default class Dashboard extends Component {
                                     onMouseLeave={this.popularApp5Leave}
                                     style={{marginRight: "2.8%", border: `1px solid ${this.state.popularApp5Hovered ? "#2890b9" : "#ccc"}`, borderBottom: `5px solid ${this.state.popularApp5Hovered ? "#2890b9" : "#ccc"}`}} className="popular-apps-cell">
                                         <div style={{background: "white"}} className="popular-apps-cell-img-container">
-                                            <img src="/assets/download-pic.gif"/>
+                                            <img src="/assets/download-pic2.gif"/>
                                         </div>
                                         <div className="popular-apps-cell-text-container">
                                             <h5>Download YouTube Videos</h5>
