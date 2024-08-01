@@ -1843,7 +1843,7 @@ export default class Dashboard extends Component {
                                     onMouseLeave={this.popularApp6Leave}
                                     style={{border: `1px solid ${this.state.popularApp6Hovered ? "#2890b9" : "#ccc"}`, borderBottom: `5px solid ${this.state.popularApp6Hovered ? "#2890b9" : "#ccc"}`}} className="popular-apps-cell">
                                         <div style={{background: "white"}} className="popular-apps-cell-img-container">
-                                            <img src="/assets/more-apps-pic.png"/>
+                                            <img src="/assets/more-apps-pic2.png"/>
                                         </div>
                                         <div className="popular-apps-cell-text-container">
                                             <h5>All Apps</h5>
