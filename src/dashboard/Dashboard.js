@@ -735,7 +735,7 @@ const Styles = styled.div `
 
     // # TUTORIAL FOOTER
 
-.tutorial-footer h5 {
+.tutorial-footer h4 {
     text-align: left;
     margin-left: 5%;
     font-family: dm sans;
@@ -758,8 +758,8 @@ const Styles = styled.div `
 
 .rp-sec1-right-parent h2 {
     margin-top: 0px;
-    // margin-bottom: 0px;
-    font-size: 100%;
+    margin-bottom: 0px;
+    font-size: 103%;
     text-align: left;
     margin-left: 4%;
     font-weight: bold;
@@ -769,7 +769,7 @@ const Styles = styled.div `
 
     // - POPULAR APPS - //
 .popular-apps-container {
-    height: 15.6em;
+    height: 15.53em;
     overflow: auto;
 }
 
@@ -1491,7 +1491,7 @@ export default class Dashboard extends Component {
                                     <img src="/assets/desktop-pic.png"/>
                                 </div>
                             </div>
-                            <div style={{borderBottom: "1px solid #8a8a8a", marginLeft: "4%", marginRight: "4%"}}></div>
+                            <div style={{borderBottom: "1px solid #8a8a8a", marginLeft: "4%", marginRight: "4%", marginBottom: "1%"}}></div>
                             
                             <div className="tutorial-container">
 
@@ -1728,7 +1728,7 @@ export default class Dashboard extends Component {
                                 </div>
 
                                 <div className="tutorial-footer">
-                                    <h5>More guides coming soon!</h5>
+                                    <h4>More guides coming soon!</h4>
                                 </div>
 
                                 <div style={{borderBottom: "1px solid #8a8a8a", marginTop: "5%", marginLeft: "4%", marginRight: "4%"}}></div>
@@ -1741,6 +1741,7 @@ export default class Dashboard extends Component {
                             <h2>Try our user-favorite apps.</h2>
                             <div style={{borderBottom: "1px solid #8a8a8a", marginLeft: "4%", marginRight: "4%", marginTop: "5.3%"}}></div>
                             <div className="popular-apps-container">
+
                                 <div className="popular-apps-row-container">
                                     <div 
                                     onMouseEnter={this.popularApp1Enter}
@@ -1796,7 +1797,6 @@ export default class Dashboard extends Component {
                                         </div>
                                     </div>
                                 </div>
-
 
                                 <div className="popular-apps-row-container">
                                     <div 
