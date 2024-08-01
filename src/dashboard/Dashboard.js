@@ -756,10 +756,10 @@ const Styles = styled.div `
     margin-bottom: 0px;
 }
 
-.rp-sec1-right-parent h3 {
+.rp-sec1-right-parent h2 {
     margin-top: 0px;
     // margin-bottom: 0px;
-    font-size: 97.5%;
+    font-size: 100%;
     text-align: left;
     margin-left: 4%;
     font-weight: bold;
@@ -768,12 +768,16 @@ const Styles = styled.div `
 }
 
     // - POPULAR APPS - //
+.popular-apps-container {
+    height: 15.6em;
+    overflow: auto;
+}
 
 .popular-apps-row-container {
-    border: 1px solid black;
     margin-left: 4%;
     margin-right: 4%;
-    height: 32vh;
+    height: auto;
+    margin-top: 3%;
 }
 
 .popular-apps-row-container:after {
@@ -786,8 +790,49 @@ const Styles = styled.div `
     float: left;
     width: 48%;
     text-align: center;
-    border: 1px solid black;
+    border: 1px solid #ccc;
     border-radius: 9px;
+    border-bottom: 5px solid #FF3169;
+}
+
+.popular-apps-cell:hover { 
+    cursor: pointer;
+}
+
+    // # POPULAR APPS CELL IMAGE
+
+.popular-apps-cell-img-container {
+    background: white;
+    width: 100%;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    border-bottom: 1px solid #ccc;
+    background: linear-gradient(930deg, #add8e6, #D1A6FB);
+}
+
+.popular-apps-cell img { 
+    width: 60%;
+}
+
+    // # POPULAR APPS CELL TEXT
+
+.popular-apps-cell-text-container h5 {
+    margin-top: 3%;
+    margin-bottom: 3%;
+    text-align: left;
+    margin-left: 3%;
+    font-family: dm sans;
+    color: #2890b9;
+}
+
+.popular-apps-cell-text-container p {
+    text-align: left;
+    font-size: 70%;
+    margin-top: 0px;
+    margin-bottom: 5%;
+    margin-left: 3%;
+    margin-right: 3%;
+    font-family: dm sans;
 }
 
 `
@@ -913,7 +958,11 @@ export default class Dashboard extends Component {
             tutorialCell8BorderColor: "#8a8a8a",
             tutorialCell8ImgBgColor: "white",
             tutorialCell8TimerColor: "#8a8a8a",
-            tutorialCell8MainTextColor: "#8a8a8a"
+            tutorialCell8MainTextColor: "#8a8a8a",
+
+            popularApp1Hovered: false,
+            popularApp2Hovered: false,
+
         }
 
             //* - TRIE NODE (for search functionality) - *//
@@ -1064,7 +1113,7 @@ export default class Dashboard extends Component {
 
         //! - - SECTION 1 FUNCTIONS - - !//
         
-        //? - - WINDOW 2 - - ?//
+        //* - - WINDOW 2 - - *//
 
     tutorialCell1Enter = () => {
         this.setState({
@@ -1231,6 +1280,33 @@ export default class Dashboard extends Component {
             tutorialCell8TimerColor: "#8a8a8a",
             tutorialCell8ImgBgColor: "white"
         })
+    }
+
+        //* - - WINDOW 3 - - *//
+
+    popularApp1Enter = () => {
+        this.setState({ 
+            popularApp1Hovered: true
+         })
+    }
+
+    popularApp1Leave = () => {
+        this.setState({ 
+            popularApp1Hovered: false 
+         })
+    }
+
+
+    popularApp2Enter = () => {
+        this.setState({ 
+            popularApp2Hovered: true
+         })
+    }
+
+    popularApp2Leave = () => {
+        this.setState({ 
+            popularApp2Hovered: false 
+         })
     }
 
 
@@ -1621,14 +1697,62 @@ export default class Dashboard extends Component {
                         </div>
                         <div className="rp-sec1-right-parent">
                             <h1>Popular Apps</h1>
-                            <h3>Try our user-favorite apps.</h3>
+                            <h2>Try our user-favorite apps.</h2>
+                            <div style={{borderBottom: "1px solid #8a8a8a", marginLeft: "4%", marginRight: "4%", marginTop: "5.3%"}}></div>
                             <div className="popular-apps-container">
                                 <div className="popular-apps-row-container">
-                                    <div style={{marginRight: "2.8%"}} className="popular-apps-cell">
-                                        <img/>
+                                    <div 
+                                    onMouseEnter={this.popularApp1Enter}
+                                    onMouseLeave={this.popularApp1Leave}
+                                    style={{marginRight: "2.8%", border: `1px solid ${this.state.popularApp1Hovered ? "#2890b9" : "#ccc"}`, borderBottom: `5px solid ${this.state.popularApp1Hovered ? "#2890b9" : "#ccc"}`}} className="popular-apps-cell">
+                                        <div style={{background: "white"}} className="popular-apps-cell-img-container">
+                                            <img src="/assets/split-screen-pic.gif"/>
+                                        </div>
+                                        <div className="popular-apps-cell-text-container">
+                                            <h5>Splitscreen Video</h5>
+                                            <p>Create splitscreen content w/ our gameplay library.</p>
+                                        </div>
                                     </div>
-                                    <div className="popular-apps-cell">
-                                        
+                                    <div 
+                                    onMouseEnter={this.popularApp2Enter}
+                                    onMouseLeave={this.popularApp2Leave}
+                                    style={{border: `1px solid ${this.state.popularApp2Hovered ? "#2890b9" : "#ccc"}`, borderBottom: `5px solid ${this.state.popularApp2Hovered ? "#2890b9" : "#ccc"}`}}
+                                    className="popular-apps-cell">
+                                        <div style={{background: "white"}} className="popular-apps-cell-img-container">
+                                            <img src="/assets/fake-text-pic.gif"/>
+                                        </div>
+                                        <div className="popular-apps-cell-text-container">
+                                            <h5>Fake Texts Video</h5>
+                                            <p>Create fake text conversation videos for Instagram, Tiktok, and Shorts.</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div className="popular-apps-row-container">
+                                    <div 
+                                    onMouseEnter={this.popularApp1Enter}
+                                    onMouseLeave={this.popularApp1Leave}
+                                    style={{marginRight: "2.8%", border: `1px solid ${this.state.popularApp1Hovered ? "#2890b9" : "#ccc"}`, borderBottom: `5px solid ${this.state.popularApp1Hovered ? "#2890b9" : "#ccc"}`}} className="popular-apps-cell">
+                                        <div className="popular-apps-cell-img-container">
+                                            <img src="/assets/split-screen-pic-color.png"/>
+                                        </div>
+                                        <div className="popular-apps-cell-text-container">
+                                            <h5>Splitscreen Video</h5>
+                                            <p>Create splitscreen content w/ our gameplay library.</p>
+                                        </div>
+                                    </div>
+                                    <div 
+                                    onMouseEnter={this.popularApp2Enter}
+                                    onMouseLeave={this.popularApp2Leave}
+                                    style={{border: `1px solid ${this.state.popularApp2Hovered ? "#2890b9" : "#ccc"}`, borderBottom: `5px solid ${this.state.popularApp2Hovered ? "#2890b9" : "#ccc"}`}}
+                                    className="popular-apps-cell">
+                                        <div className="popular-apps-cell-img-container">
+                                            <img src="/assets/fake-text-pic2.png"/>
+                                        </div>
+                                        <div className="popular-apps-cell-text-container">
+                                            <h5>Fake Texts Video</h5>
+                                            <p>Create fake text conversation videos for Instagram, Tiktok, and Shorts.</p>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
