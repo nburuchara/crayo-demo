@@ -1454,7 +1454,7 @@ export default class Dashboard extends Component {
                     </div>
                     <div className="right-pane-section-1">
                         <div className="rp-sec1-left-parent">
-                            <h1>Create your first short-form piece of content</h1>
+                            <h1><span style={{color: "#2890b9"}}>Create</span> your first short-form piece of content</h1>
                             <p>Generate short-form content using AI.</p>
                             <div className="window1-bottom-section">
                                 <div className="window1-bottom-left">
@@ -1748,7 +1748,7 @@ export default class Dashboard extends Component {
                                     onMouseLeave={this.popularApp1Leave}
                                     style={{marginRight: "2.8%", border: `1px solid ${this.state.popularApp1Hovered ? "#2890b9" : "#ccc"}`, borderBottom: `5px solid ${this.state.popularApp1Hovered ? "#2890b9" : "#ccc"}`}} className="popular-apps-cell">
                                         <div style={{background: "white"}} className="popular-apps-cell-img-container">
-                                            <img src="/assets/split-screen-pic2.gif"/>
+                                            <img src="/assets/split-screen-pic3.gif"/>
                                         </div>
                                         <div className="popular-apps-cell-text-container">
                                             <h5>Splitscreen Video</h5>
