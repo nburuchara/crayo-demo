@@ -968,15 +968,33 @@ const Styles = styled.div `
 
     // - - WINDOW 2 (SECTION 2 - EXAMPLES) - - //
 
-.examples-header h2 {
+.examples-header:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.examples-header-left {
+    float: left;
+    width: 70%;
+    text-align: left;
+}
+
+.examples-header-right {
+    float: left;
+    width: 30%;
+    text-align: left;
+}
+
+.examples-header-left h2 {
     text-align: left;
     margin-top: 1%;
-    margin-left: 2.5%;
+    margin-left: 3%;
     margin-bottom: 0px;
     font-family: dm sans;
 }
 
-.examples-header p {
+.examples-header-left p {
     text-align: left;
     margin-top: 0px;
     margin-bottom: 3%;
