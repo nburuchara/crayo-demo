@@ -1037,7 +1037,7 @@ const Styles = styled.div `
 }
 
 .creator-slider-container {
-    border: 1px solid black;
+    // border: 1px solid black;
     width: 99% !important;
     height: 25vh;
 }
@@ -1050,12 +1050,12 @@ const Styles = styled.div `
 
     // # CAROUSEL INNER CONTAINER
 
-.creator-profile {
+.creator-profile-col {
     float: left;
     width: 23%;
     text-align: center;
     border: 1px solid black;
-    height: 99%;
+    height: 100%;
     margin-left: 2.1%;
 }
 
@@ -1079,6 +1079,14 @@ const Styles = styled.div `
     border: 2px solid transparent;
     background-color: #2890b9;
     color: white;
+}
+
+    // # CREATOR PROFILE CELL
+
+.creator-profile-cell {
+    width: 100%;
+    border: 1px solid blue;
+    height: 49%;
 }
 
 
@@ -2211,21 +2219,39 @@ export default class Dashboard extends Component {
                                 <div className="slider-mid-container">
                                     <Slider ref={this.sliderRef} {...settings}>
                                         <div className="creator-slider-container">
-                                            <div style={{marginLeft: "0%"}} className="creator-profile">
+                                            <div style={{marginLeft: "0%"}} className="creator-profile-col">
+                                                <div className="creator-profile-cell">
+
+                                                </div>
+                                                <div className="creator-profile-cell">
+
+                                                </div>
+                                            </div>
+                                            <div className="creator-profile-col">
 
                                             </div>
-                                            <div className="creator-profile">
+                                            <div className="creator-profile-col">
 
                                             </div>
-                                            <div className="creator-profile">
-
-                                            </div>
-                                            <div className="creator-profile">
+                                            <div className="creator-profile-col">
 
                                             </div>
                                         </div>
                                         <div className="creator-slider-container">
-                                            <h3>2</h3>
+                                            <div style={{marginLeft: "0%"}} className="creator-profile-col">
+                                                <div className="">
+
+                                                </div>
+                                            </div>
+                                            <div className="creator-profile-col">
+
+                                            </div>
+                                            <div className="creator-profile-col">
+
+                                            </div>
+                                            <div className="creator-profile-col">
+
+                                            </div>
                                         </div>
                                         <div className="creator-slider-container">
                                             <h3>3</h3>
