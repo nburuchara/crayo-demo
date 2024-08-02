@@ -2242,8 +2242,8 @@ export default class Dashboard extends Component {
                         <div className="rp-sec2-right-parent">
                             <div className="examples-header">
                                 <div className="examples-header-left">
-                                    <h2>Crayo Content in the wild</h2>
-                                    <p>See how solo creators, brands & institutions are using Crayo.</p>
+                                    <h2>Content Samples</h2>
+                                    <p>See how solo creators and brands are using Crayo.</p>
                                 </div>
                                 <div className="examples-header-right">
 
