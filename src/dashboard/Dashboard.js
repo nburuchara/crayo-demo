@@ -3,6 +3,9 @@ import React, {Component} from "react";
 import styled from "styled-components";
 import MediaQuery from 'react-responsive';
 import { CSSTransition } from 'react-transition-group';
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 //? - - FILES - - //
 import SearchTerms from './dash-helper-files/Search-Terms'
@@ -2025,7 +2028,7 @@ export default class Dashboard extends Component {
                         <div className="rp-sec2-right-parent">
                             <div className="examples-header">
                                 <div className="examples-header-left">
-                                    <h2>Crayo Content "in the wild"</h2>
+                                    <h2>Crayo Content in the wild</h2>
                                     <p>See how creators are using Crayo</p>
                                 </div>
                                 <div className="examples-header-right">
