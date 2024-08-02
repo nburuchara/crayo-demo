@@ -1054,7 +1054,7 @@ const Styles = styled.div `
     float: left;
     width: 23%;
     text-align: center;
-    border: 1px solid black;
+    // border: 1px solid black;
     height: 100%;
     margin-left: 2.1%;
 }
@@ -1085,10 +1085,43 @@ const Styles = styled.div `
 
 .creator-profile-cell {
     width: 100%;
-    border: 1px solid blue;
+    // border: 1px solid blue;
     height: 49%;
 }
 
+    // # CREATOR PROFILE BACKGROUND CELL
+
+.creator-profile-cell-bg {
+    margin: auto;
+    width: 70%;
+    border: 1px solid #8a8a8a;
+    margin-top: 0px;
+    padding-top: 8%;
+    border-radius: 9px;
+    padding-bottom: 1%;
+    border-bottom: 5px solid #8a8a8a;
+}
+
+.creator-profile-cell-bg img {
+    text-align: center;
+    width: 50%;
+    margin: auto;
+    border: 1px solid #ccc;
+    border-radius: 50%;
+}
+
+.creator-profile-cell-bg h5 {
+    margin-top: 5%;
+    margin-bottom: 0px;
+    font-size: 45%;
+}
+
+.creator-profile-cell-bg p {
+    margin-top: 2%;
+    font-size: 45%;
+    font-weight: bold;
+    color: #2890b9;
+}
 
 
 `
@@ -1838,7 +1871,7 @@ export default class Dashboard extends Component {
                             <div className="tutorial-container">
 
                                 <div
-                                style={{border: `1px solid ${this.state.tutorialCell1BorderColor}`}}
+                                style={{border: `1px solid ${this.state.tutorialCell1BorderColor}`, borderBottom: `5px solid ${this.state.tutorialCell1BorderColor}`}}
                                 onMouseEnter={this.tutorialCell1Enter}
                                 onMouseLeave={this.tutorialCell1Leave}
                                 className="tutorial-cell">
@@ -1862,12 +1895,12 @@ export default class Dashboard extends Component {
                                                 Watch
                                             </button> */}
                                         </div>
-                                        <h5 style={{color: this.state.tutorialCell1MainTextColor, fontWeight: this.state.tutorialCell1Hovered ? "bold" : ""}}>Learn how to create AI-generated video for your stories.</h5>
+                                        <h5 style={{color: this.state.tutorialCell1MainTextColor}}>Learn how to create AI-generated video for your stories.</h5>
                                     </div>
                                 </div>
 
                                 <div
-                                style={{border: `1px solid ${this.state.tutorialCell2BorderColor}`}}
+                                style={{border: `1px solid ${this.state.tutorialCell2BorderColor}`, borderBottom: `5px solid ${this.state.tutorialCell2BorderColor}`}}
                                 onMouseEnter={this.tutorialCell2Enter}
                                 onMouseLeave={this.tutorialCell2Leave}
                                 className="tutorial-cell">
@@ -1891,12 +1924,12 @@ export default class Dashboard extends Component {
                                                 Watch
                                             </button> */}
                                         </div>
-                                        <h5 style={{color: this.state.tutorialCell2MainTextColor, fontWeight: this.state.tutorialCell2Hovered ? "bold" : ""}}>Learn how to make high-quality voice-overs for your videos.</h5>
+                                        <h5 style={{color: this.state.tutorialCell2MainTextColor}}>Learn how to make high-quality voice-overs for your videos.</h5>
                                     </div>
                                 </div>
 
                                 <div
-                                style={{border: `1px solid ${this.state.tutorialCell3BorderColor}`}}
+                                style={{border: `1px solid ${this.state.tutorialCell3BorderColor}`, borderBottom: `5px solid ${this.state.tutorialCell3BorderColor}`}}
                                 onMouseEnter={this.tutorialCell3Enter}
                                 onMouseLeave={this.tutorialCell3Leave}
                                 className="tutorial-cell">
@@ -1920,12 +1953,12 @@ export default class Dashboard extends Component {
                                                 Watch
                                             </button> */}
                                         </div>
-                                        <h5 style={{color: this.state.tutorialCell3MainTextColor, fontWeight: this.state.tutorialCell3Hovered ? "bold" : ""}}>Learn how to create ChatGPT-like image videos.</h5>
+                                        <h5 style={{color: this.state.tutorialCell3MainTextColor}}>Learn how to create ChatGPT-like image videos.</h5>
                                     </div>
                                 </div>
 
                                 <div
-                                style={{border: `1px solid ${this.state.tutorialCell4BorderColor}`}}
+                                style={{border: `1px solid ${this.state.tutorialCell4BorderColor}`, borderBottom: `5px solid ${this.state.tutorialCell4BorderColor}`}}
                                 onMouseEnter={this.tutorialCell4Enter}
                                 onMouseLeave={this.tutorialCell4Leave}
                                 className="tutorial-cell">
@@ -1949,12 +1982,12 @@ export default class Dashboard extends Component {
                                                 Watch
                                             </button> */}
                                         </div>
-                                        <h5 style={{color: this.state.tutorialCell4MainTextColor, fontWeight: this.state.tutorialCell4Hovered ? "bold" : ""}}>Learn how to create splitscreen content using our gameplay library.</h5>
+                                        <h5 style={{color: this.state.tutorialCell4MainTextColor}}>Learn how to create splitscreen content using our gameplay library.</h5>
                                     </div>
                                 </div>
 
                                 <div
-                                style={{border: `1px solid ${this.state.tutorialCell5BorderColor}`}}
+                                style={{border: `1px solid ${this.state.tutorialCell5BorderColor}`, borderBottom: `5px solid ${this.state.tutorialCell5BorderColor}`}}
                                 onMouseEnter={this.tutorialCell5Enter}
                                 onMouseLeave={this.tutorialCell5Leave}
                                 className="tutorial-cell">
@@ -1978,12 +2011,12 @@ export default class Dashboard extends Component {
                                                 Watch
                                             </button> */}
                                         </div>
-                                        <h5 style={{color: this.state.tutorialCell5MainTextColor, fontWeight: this.state.tutorialCell5Hovered ? "bold" : ""}}>Learn how to create simulated text conversation videos for Instagram, Tiktok and Shorts.</h5>
+                                        <h5 style={{color: this.state.tutorialCell5MainTextColor}}>Learn how to create simulated text conversation videos for Instagram, Tiktok and Shorts.</h5>
                                     </div>
                                 </div>
 
                                 <div
-                                style={{border: `1px solid ${this.state.tutorialCell6BorderColor}`}}
+                                style={{border: `1px solid ${this.state.tutorialCell6BorderColor}`, borderBottom: `5px solid ${this.state.tutorialCell6BorderColor}`}}
                                 onMouseEnter={this.tutorialCell6Enter}
                                 onMouseLeave={this.tutorialCell6Leave}
                                 className="tutorial-cell">
@@ -2007,12 +2040,12 @@ export default class Dashboard extends Component {
                                                 Watch
                                             </button> */}
                                         </div>
-                                        <h5 style={{color: this.state.tutorialCell6MainTextColor, fontWeight: this.state.tutorialCell6Hovered ? "bold" : ""}}>Learn how to create AI avatars with fully customized speech for UGC content.</h5>
+                                        <h5 style={{color: this.state.tutorialCell6MainTextColor}}>Learn how to create AI avatars with fully customized speech for UGC content.</h5>
                                     </div>
                                 </div>
 
                                 <div
-                                style={{border: `1px solid ${this.state.tutorialCell7BorderColor}`}}
+                                style={{border: `1px solid ${this.state.tutorialCell7BorderColor}`, borderBottom: `5px solid ${this.state.tutorialCell7BorderColor}`}}
                                 onMouseEnter={this.tutorialCell7Enter}
                                 onMouseLeave={this.tutorialCell7Leave}
                                 className="tutorial-cell">
@@ -2036,12 +2069,12 @@ export default class Dashboard extends Component {
                                                 Watch
                                             </button> */}
                                         </div>
-                                        <h5 style={{color: this.state.tutorialCell7MainTextColor, fontWeight: this.state.tutorialCell7Hovered ? "bold" : ""}}>Learn how to add any type of AI voiceover from our vast library to your videos.</h5>
+                                        <h5 style={{color: this.state.tutorialCell7MainTextColor}}>Learn how to add any type of AI voiceover from our vast library to your videos.</h5>
                                     </div>
                                 </div>
 
                                 <div
-                                style={{border: `1px solid ${this.state.tutorialCell8BorderColor}`}}
+                                style={{border: `1px solid ${this.state.tutorialCell8BorderColor}`, borderBottom: `5px solid ${this.state.tutorialCell8BorderColor}`}}
                                 onMouseEnter={this.tutorialCell8Enter}
                                 onMouseLeave={this.tutorialCell8Leave}
                                 className="tutorial-cell">
@@ -2065,7 +2098,7 @@ export default class Dashboard extends Component {
                                                 Watch
                                             </button> */}
                                         </div>
-                                        <h5 style={{color: this.state.tutorialCell8MainTextColor, fontWeight: this.state.tutorialCell8Hovered ? "bold" : ""}}>Learn how to add any YouTube video directly into your content via Crayo.</h5>
+                                        <h5 style={{color: this.state.tutorialCell8MainTextColor}}>Learn how to add any YouTube video directly into your content via Crayo.</h5>
                                     </div>
                                 </div>
 
@@ -2088,25 +2121,25 @@ export default class Dashboard extends Component {
                                     <div 
                                     onMouseEnter={this.popularApp1Enter}
                                     onMouseLeave={this.popularApp1Leave}
-                                    style={{marginRight: "2.8%", border: `1px solid ${this.state.popularApp1Hovered ? "#2890b9" : "#ccc"}`, borderBottom: `5px solid ${this.state.popularApp1Hovered ? "#2890b9" : "#ccc"}`}} className="popular-apps-cell">
-                                        <div style={{background: "white"}} className="popular-apps-cell-img-container">
+                                    style={{marginRight: "2.8%", border: `1px solid ${this.state.popularApp1Hovered ? "#2890b9" : "#8a8a8a"}`, borderBottom: `5px solid ${this.state.popularApp1Hovered ? "#2890b9" : "#8a8a8a"}`}} className="popular-apps-cell">
+                                        <div style={{background: "white", borderBottom: this.state.popularApp1Hovered ? `1px solid #2890b9` : `1px solid #8a8a8a`}} className="popular-apps-cell-img-container">
                                             <img src="/assets/split-screen-pic3.gif"/>
                                         </div>
                                         <div className="popular-apps-cell-text-container">
-                                            <h5>Splitscreen Video</h5>
+                                            <h5 style={{color: this.state.popularApp1Hovered ? "#2890b9" : "#000"}}>Splitscreen Video</h5>
                                             <p>Create splitscreen content w/ our gameplay library.</p>
                                         </div>
                                     </div>
                                     <div 
                                     onMouseEnter={this.popularApp2Enter}
                                     onMouseLeave={this.popularApp2Leave}
-                                    style={{border: `1px solid ${this.state.popularApp2Hovered ? "#2890b9" : "#ccc"}`, borderBottom: `5px solid ${this.state.popularApp2Hovered ? "#2890b9" : "#ccc"}`}}
+                                    style={{border: `1px solid ${this.state.popularApp2Hovered ? "#2890b9" : "#8a8a8a"}`, borderBottom: `5px solid ${this.state.popularApp2Hovered ? "#2890b9" : "#8a8a8a"}`}}
                                     className="popular-apps-cell">
-                                        <div style={{background: "white"}} className="popular-apps-cell-img-container">
+                                        <div style={{background: "white", borderBottom: this.state.popularApp2Hovered ? `1px solid #2890b9` : `1px solid #8a8a8a`}} className="popular-apps-cell-img-container">
                                             <img src="/assets/fake-text-pic.gif"/>
                                         </div>
                                         <div className="popular-apps-cell-text-container">
-                                            <h5>Fake Texts Video</h5>
+                                            <h5 style={{color: this.state.popularApp2Hovered ? "#2890b9" : "#000"}}>Fake Texts Video</h5>
                                             <p>Create fake text conversation videos for Instagram, Tiktok, and Shorts.</p>
                                         </div>
                                     </div>
@@ -2116,12 +2149,12 @@ export default class Dashboard extends Component {
                                     <div 
                                     onMouseEnter={this.popularApp3Enter}
                                     onMouseLeave={this.popularApp3Leave}
-                                    style={{marginRight: "2.8%", border: `1px solid ${this.state.popularApp3Hovered ? "#2890b9" : "#ccc"}`, borderBottom: `5px solid ${this.state.popularApp3Hovered ? "#2890b9" : "#ccc"}`}} className="popular-apps-cell">
-                                        <div style={{background: "white"}} className="popular-apps-cell-img-container">
+                                    style={{marginRight: "2.8%", border: `1px solid ${this.state.popularApp3Hovered ? "#2890b9" : "#8a8a8a"}`, borderBottom: `5px solid ${this.state.popularApp3Hovered ? "#2890b9" : "#8a8a8a"}`}} className="popular-apps-cell">
+                                        <div style={{background: "white", borderBottom: this.state.popularApp3Hovered ? `1px solid #2890b9` : `1px solid #8a8a8a`}} className="popular-apps-cell-img-container">
                                             <img src="/assets/ai-avatar-pic.gif"/>
                                         </div>
                                         <div className="popular-apps-cell-text-container">
-                                            <h5>AI Avatars</h5>
+                                            <h5 style={{color: this.state.popularApp3Hovered ? "#2890b9" : "#000"}}>AI Avatars</h5>
                                             <p>Create AI avatars to say anything for UGC content.</p>
                                         </div>
                                     </div>
@@ -2130,11 +2163,11 @@ export default class Dashboard extends Component {
                                     onMouseLeave={this.popularApp4Leave}
                                     style={{border: `1px solid ${this.state.popularApp4Hovered ? "#2890b9" : "#ccc"}`, borderBottom: `5px solid ${this.state.popularApp4Hovered ? "#2890b9" : "#ccc"}`}}
                                     className="popular-apps-cell">
-                                        <div style={{background: "white"}} className="popular-apps-cell-img-container">
+                                        <div style={{background: "white", borderBottom: this.state.popularApp4Hovered ? `1px solid #2890b9` : `1px solid #8a8a8a`}} className="popular-apps-cell-img-container">
                                             <img src="/assets/voice-over-pic.gif"/>
                                         </div>
                                         <div className="popular-apps-cell-text-container">
-                                            <h5>Voiceover Story</h5>
+                                            <h5 style={{color: this.state.popularApp4Hovered ? "#2890b9" : "#000"}}>Voiceover Story</h5>
                                             <p>Create wholesome, scary, or any type of story using AI voices.</p>
                                         </div>
                                     </div>
@@ -2144,24 +2177,24 @@ export default class Dashboard extends Component {
                                     <div 
                                     onMouseEnter={this.popularApp5Enter}
                                     onMouseLeave={this.popularApp5Leave}
-                                    style={{marginRight: "2.8%", border: `1px solid ${this.state.popularApp5Hovered ? "#2890b9" : "#ccc"}`, borderBottom: `5px solid ${this.state.popularApp5Hovered ? "#2890b9" : "#ccc"}`}} className="popular-apps-cell">
-                                        <div style={{background: "white"}} className="popular-apps-cell-img-container">
+                                    style={{marginRight: "2.8%", border: `1px solid ${this.state.popularApp5Hovered ? "#2890b9" : "#8a8a8a"}`, borderBottom: `5px solid ${this.state.popularApp5Hovered ? "#2890b9" : "#8a8a8a"}`}} className="popular-apps-cell">
+                                        <div style={{background: "white", borderBottom: this.state.popularApp5Hovered ? `1px solid #2890b9` : `1px solid #8a8a8a`}} className="popular-apps-cell-img-container">
                                             <img src="/assets/download-pic2.gif"/>
                                         </div>
                                         <div className="popular-apps-cell-text-container">
-                                            <h5>Download YouTube Videos</h5>
+                                            <h5 style={{color: this.state.popularApp5Hovered ? "#2890b9" : "#000"}}>Download YouTube Videos</h5>
                                             <p>Get YouTube videos in MP4 format directly in Crayo.</p>
                                         </div>
                                     </div>
                                     <div 
                                     onMouseEnter={this.popularApp6Enter}
                                     onMouseLeave={this.popularApp6Leave}
-                                    style={{border: `1px solid ${this.state.popularApp6Hovered ? "#2890b9" : "#ccc"}`, borderBottom: `5px solid ${this.state.popularApp6Hovered ? "#2890b9" : "#ccc"}`}} className="popular-apps-cell">
-                                        <div style={{background: "white"}} className="popular-apps-cell-img-container">
+                                    style={{border: `1px solid ${this.state.popularApp6Hovered ? "#2890b9" : "#8a8a8a"}`, borderBottom: `5px solid ${this.state.popularApp6Hovered ? "#2890b9" : "#8a8a8a"}`}} className="popular-apps-cell">
+                                        <div style={{background: "white", borderBottom: this.state.popularApp6Hovered ? `1px solid #2890b9` : `1px solid #8a8a8a`}} className="popular-apps-cell-img-container">
                                             <img src="/assets/more-apps-pic2.gif"/>
                                         </div>
                                         <div className="popular-apps-cell-text-container">
-                                            <h5>All Apps</h5>
+                                            <h5 style={{color: this.state.popularApp6Hovered ? "#2890b9" : "#000"}}>All Apps</h5>
                                             <p>See our full list of apps.</p>
                                         </div>
                                     </div>
@@ -2221,20 +2254,67 @@ export default class Dashboard extends Component {
                                         <div className="creator-slider-container">
                                             <div style={{marginLeft: "0%"}} className="creator-profile-col">
                                                 <div className="creator-profile-cell">
-
+                                                    <div className="creator-profile-cell-bg">
+                                                        <img src="/assets/creator-1.png"/>
+                                                        <h5>Gracey K.</h5>
+                                                        <p>121k followers</p>
+                                                    </div>
                                                 </div>
+                                                <div style={{marginTop: "5%"}} className="creator-profile-cell">
+                                                    <div className="creator-profile-cell-bg">
+                                                        <img src="/assets/creator-2.png"/>
+                                                        <h5>Brisky</h5>
+                                                        <p>13k followers</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div className="creator-profile-col">
                                                 <div className="creator-profile-cell">
-
+                                                    <div className="creator-profile-cell-bg">
+                                                        <img src="/assets/creator-3.png"/>
+                                                        <h5>Ava RuGzz</h5>
+                                                        <p>200k followers</p>
+                                                    </div>
+                                                </div>
+                                                <div style={{marginTop: "5%"}} className="creator-profile-cell">
+                                                    <div className="creator-profile-cell-bg">
+                                                        <img src="/assets/creator-4.png"/>
+                                                        <h5>Spence</h5>
+                                                        <p>1m followers</p>
+                                                    </div>
                                                 </div>
                                             </div>
                                             <div className="creator-profile-col">
-
+                                                <div className="creator-profile-cell">
+                                                    <div className="creator-profile-cell-bg">
+                                                        <img src="/assets/creator-5.png"/>
+                                                        <h5>Jahoozeyy</h5>
+                                                        <p>328k followers</p>
+                                                    </div>
+                                                </div>
+                                                <div style={{marginTop: "5%"}} className="creator-profile-cell">
+                                                    <div className="creator-profile-cell-bg">
+                                                        <img src="/assets/creator-6.png"/>
+                                                        <h5>Barl008</h5>
+                                                        <p>65k followers</p>
+                                                    </div>
+                                                </div>
                                             </div>
                                             <div className="creator-profile-col">
-
-                                            </div>
-                                            <div className="creator-profile-col">
-
+                                                <div className="creator-profile-cell">
+                                                    <div className="creator-profile-cell-bg">
+                                                        <img src="/assets/creator-1.png"/>
+                                                        <h5>Gracey K.</h5>
+                                                        <p>121k followers</p>
+                                                    </div>
+                                                </div>
+                                                <div style={{marginTop: "5%"}} className="creator-profile-cell">
+                                                    <div className="creator-profile-cell-bg">
+                                                        <img src="/assets/creator-1.png"/>
+                                                        <h5>Gracey K.</h5>
+                                                        <p>121k followers</p>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                         <div className="creator-slider-container">
