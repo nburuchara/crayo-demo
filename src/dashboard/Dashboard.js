@@ -1010,13 +1010,61 @@ const Styles = styled.div `
     color: #2890b9;
 }
 
-    // # CREATORS CAROUSEL CONTAINER
+    // # EXAMPLES CREATORS CAROUSEL CONTAINER
+
+.slider-container:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.slider-left-btn {
+    float: left;
+    width: 6%;
+    text-align: right;
+}
+
+.slider-mid-container {
+    float: left;
+    width: 88%;
+    text-align: center;
+}
+
+.slider-right-btn {
+    float: left;
+    width: 6%;
+    text-align: left;
+}
 
 .creator-slider-container {
-    border: 1px solid black;
-    width: 85% !important;
+    // border: 1px solid black;
+    width: 99% !important;
     height: 25vh;
 }
+
+    // # CAROUSEL BUTTONS
+
+.slider-left-btn button {
+    font-family: dm sans;
+    font-weight: bold;
+    margin-top: 10vh;
+    border-radius: 50%;
+    border: 2px solid transparent;
+    background-color: #2890b9;
+    color: white;
+}
+
+.slider-right-btn button {
+    font-family: dm sans;
+    font-weight: bold;
+    margin-top: 10vh;
+    border-radius: 50%;
+    border: 2px solid transparent;
+    background-color: #2890b9;
+    color: white;
+}
+
+
 
 
 `
@@ -1155,6 +1203,9 @@ export default class Dashboard extends Component {
 
             //* - TRIE NODE (for search functionality) - *//
         this.trie = new Trie(); // Initialize the trie
+
+            //* - - REFERENCE FOR CAROUSEL BUTTONS - - *//
+        this.sliderRef = React.createRef();
 
     }
 
@@ -1534,6 +1585,18 @@ export default class Dashboard extends Component {
          })
     }
 
+        //! - - SECTION 2 FUNCTIONS - - !//
+
+        //* - - WINDOW 2 - - *//
+
+    next = () => {
+        this.sliderRef.current.slickNext();
+      };
+    
+    previous = () => {
+        this.sliderRef.current.slickPrev();
+      };
+
 
         //* - - DESKTOP SCREENS - - *//
 
@@ -1544,38 +1607,24 @@ export default class Dashboard extends Component {
         const searchInput = this.state.searchedData.trim().toLowerCase();
 
         //* - - CRAYO CONTETNT EXAMPLES CAROUSEL SETUP - - *// 
+
         function SampleNextArrow(props) {
             const { className, style, onClick } = props;
             return (
-                <div>
-                <button
-                style={{
-                    float: "right",
-                    display: "block",
-                    marginRight: "0px", 
-                    background: "red",
-                }}
-                onClick={onClick}
-                />
-                <span style={{marginTop: "35%"}}></span>
-                </div>
+              <div
+                
+              />
             );
-        }
-        
-        function SamplePrevArrow(props) {
+          }
+          
+          function SamplePrevArrow(props) {
             const { className, style, onClick } = props;
             return (
-                <button
-                style={{
-                    float: "left",
-                    display: "block",
-                    background: "green",
-                    marginTop: "5%" 
-                }}
-                onClick={onClick}
-                />
+              <div
+                
+              />
             );
-        }
+          }
 
         const settings = {
             dots: true,
@@ -1583,8 +1632,8 @@ export default class Dashboard extends Component {
             speed: 500,
             slidesToShow: 1,
             slidesToScroll: 1,
-            nextArrow: <SampleNextArrow/>,
-            prevArrow: <SamplePrevArrow/>
+            nextArrow: <SampleNextArrow/>, 
+            prevArrow: <SamplePrevArrow/>,
         };
 
         return (
@@ -2091,26 +2140,38 @@ export default class Dashboard extends Component {
                             </div>
 
                             <div className="slider-container">
-                                <Slider {...settings}>
-                                    <div className="creator-slider-container">
-                                        <h3>1</h3>
-                                    </div>
-                                    <div className="creator-slider-container">
-                                        <h3>2</h3>
-                                    </div>
-                                    <div className="creator-slider-container">
-                                        <h3>3</h3>
-                                    </div>
-                                    <div className="creator-slider-container">
-                                        <h3>4</h3>
-                                    </div>
-                                    <div className="creator-slider-container">
-                                        <h3>5</h3>
-                                    </div>
-                                    <div className="creator-slider-container">
-                                        <h3>6</h3>
-                                    </div>
-                                </Slider>
+                                <div className="slider-left-btn">
+                                    <button className="button" onClick={this.previous}>
+                                        &lt;
+                                    </button>
+                                </div>
+                                <div className="slider-mid-container">
+                                    <Slider ref={this.sliderRef} {...settings}>
+                                        <div className="creator-slider-container">
+                                            <h3>1</h3>
+                                        </div>
+                                        <div className="creator-slider-container">
+                                            <h3>2</h3>
+                                        </div>
+                                        <div className="creator-slider-container">
+                                            <h3>3</h3>
+                                        </div>
+                                        <div className="creator-slider-container">
+                                            <h3>4</h3>
+                                        </div>
+                                        <div className="creator-slider-container">
+                                            <h3>5</h3>
+                                        </div>
+                                        <div className="creator-slider-container">
+                                            <h3>6</h3>
+                                        </div>
+                                    </Slider>
+                                </div>
+                                <div className="slider-right-btn">
+                                    <button className="button" onClick={this.next}>
+                                       &gt;
+                                    </button>
+                                </div>
                             </div>
 
                         </div>
