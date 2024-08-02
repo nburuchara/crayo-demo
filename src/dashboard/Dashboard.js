@@ -1100,6 +1100,7 @@ const Styles = styled.div `
     border-radius: 9px;
     padding-bottom: 1%;
     border-bottom: 5px solid #8a8a8a;
+    cursor: pointer;
 }
 
 .creator-profile-cell-bg img {
@@ -1702,6 +1703,18 @@ export default class Dashboard extends Component {
         console.log("total slides: ", totalSlides)
     };
 
+    creatorCardEnter = (creatorID) => {
+        this.setState({
+            [`creator${creatorID}Hovered`] : true
+        })
+    }
+
+    creatorCardLeave = (creatorID) => {
+        this.setState({
+            [`creator${creatorID}Hovered`] : false
+        })
+    }
+
 
         //* - - DESKTOP SCREENS - - *//
 
@@ -2254,15 +2267,22 @@ export default class Dashboard extends Component {
                                         <div className="creator-slider-container">
                                             <div style={{marginLeft: "0%"}} className="creator-profile-col">
                                                 <div className="creator-profile-cell">
-                                                    <div className="creator-profile-cell-bg">
-                                                        <img src="/assets/creator-1.png"/>
+                                                    <div 
+                                                    onMouseEnter={() => this.creatorCardEnter(1)}
+                                                    onMouseLeave={() => this.creatorCardLeave(1)}
+                                                    style={{border: `1px solid ${this.state.creator1Hovered ? "#2890b9" : "#8a8a8a"}`, borderBottom: `5px solid ${this.state.creator1Hovered ? "#2890b9" : "#8a8a8a"}`}} className="creator-profile-cell-bg">
+                                                        <img style={{border: this.state.creator1Hovered ? `1px solid #2890b9` : `1px solid #8a8a8a`}} src="/assets/creator-1.png"/>
                                                         <h5>Gracey K.</h5>
                                                         <p>121k followers</p>
                                                     </div>
                                                 </div>
                                                 <div style={{marginTop: "5%"}} className="creator-profile-cell">
-                                                    <div className="creator-profile-cell-bg">
-                                                        <img src="/assets/creator-2.png"/>
+                                                    <div 
+                                                    onMouseEnter={() => this.creatorCardEnter(5)}
+                                                    onMouseLeave={() => this.creatorCardLeave(5)}
+                                                    style={{border: `1px solid ${this.state.creator5Hovered ? "#2890b9" : "#8a8a8a"}`, borderBottom: `5px solid ${this.state.creator5Hovered ? "#2890b9" : "#8a8a8a"}`}}
+                                                    className="creator-profile-cell-bg">
+                                                        <img style={{border: this.state.creator5Hovered ? `1px solid #2890b9` : `1px solid #8a8a8a`}} src="/assets/creator-2.png"/>
                                                         <h5>Brisky</h5>
                                                         <p>13k followers</p>
                                                     </div>
@@ -2270,15 +2290,23 @@ export default class Dashboard extends Component {
                                             </div>
                                             <div className="creator-profile-col">
                                                 <div className="creator-profile-cell">
-                                                    <div className="creator-profile-cell-bg">
-                                                        <img src="/assets/creator-3.png"/>
+                                                    <div 
+                                                    onMouseEnter={() => this.creatorCardEnter(2)}
+                                                    onMouseLeave={() => this.creatorCardLeave(2)}
+                                                    style={{border: `1px solid ${this.state.creator2Hovered ? "#2890b9" : "#8a8a8a"}`, borderBottom: `5px solid ${this.state.creator2Hovered ? "#2890b9" : "#8a8a8a"}`}}
+                                                    className="creator-profile-cell-bg">
+                                                        <img style={{border: this.state.creator2Hovered ? `1px solid #2890b9` : `1px solid #8a8a8a`}} src="/assets/creator-3.png"/>
                                                         <h5>Ava RuGzz</h5>
                                                         <p>200k followers</p>
                                                     </div>
                                                 </div>
                                                 <div style={{marginTop: "5%"}} className="creator-profile-cell">
-                                                    <div className="creator-profile-cell-bg">
-                                                        <img src="/assets/creator-4.png"/>
+                                                    <div 
+                                                    onMouseEnter={() => this.creatorCardEnter(6)}
+                                                    onMouseLeave={() => this.creatorCardLeave(6)}
+                                                    style={{border: `1px solid ${this.state.creator6Hovered ? "#2890b9" : "#8a8a8a"}`, borderBottom: `5px solid ${this.state.creator6Hovered ? "#2890b9" : "#8a8a8a"}`}}
+                                                    className="creator-profile-cell-bg">
+                                                        <img style={{border: this.state.creator6Hovered ? `1px solid #2890b9` : `1px solid #8a8a8a`}} src="/assets/creator-4.png"/>
                                                         <h5>Spence</h5>
                                                         <p>1m followers</p>
                                                     </div>
@@ -2286,15 +2314,23 @@ export default class Dashboard extends Component {
                                             </div>
                                             <div className="creator-profile-col">
                                                 <div className="creator-profile-cell">
-                                                    <div className="creator-profile-cell-bg">
-                                                        <img src="/assets/creator-5.png"/>
+                                                    <div 
+                                                    onMouseEnter={() => this.creatorCardEnter(3)}
+                                                    onMouseLeave={() => this.creatorCardLeave(3)}
+                                                    style={{border: `1px solid ${this.state.creator3Hovered ? "#2890b9" : "#8a8a8a"}`, borderBottom: `5px solid ${this.state.creator3Hovered ? "#2890b9" : "#8a8a8a"}`}}
+                                                    className="creator-profile-cell-bg">
+                                                        <img style={{border: this.state.creator3Hovered ? `1px solid #2890b9` : `1px solid #8a8a8a`}} src="/assets/creator-5.png"/>
                                                         <h5>Jahoozeyy</h5>
                                                         <p>328k followers</p>
                                                     </div>
                                                 </div>
                                                 <div style={{marginTop: "5%"}} className="creator-profile-cell">
-                                                    <div className="creator-profile-cell-bg">
-                                                        <img src="/assets/creator-6.png"/>
+                                                    <div
+                                                    onMouseEnter={() => this.creatorCardEnter(7)}
+                                                    onMouseLeave={() => this.creatorCardLeave(7)}
+                                                    style={{border: `1px solid ${this.state.creator7Hovered ? "#2890b9" : "#8a8a8a"}`, borderBottom: `5px solid ${this.state.creator7Hovered ? "#2890b9" : "#8a8a8a"}`}} 
+                                                    className="creator-profile-cell-bg">
+                                                        <img style={{border: this.state.creator7Hovered ? `1px solid #2890b9` : `1px solid #8a8a8a`}} src="/assets/creator-6.png"/>
                                                         <h5>Barl008</h5>
                                                         <p>65k followers</p>
                                                     </div>
@@ -2302,39 +2338,129 @@ export default class Dashboard extends Component {
                                             </div>
                                             <div className="creator-profile-col">
                                                 <div className="creator-profile-cell">
-                                                    <div className="creator-profile-cell-bg">
-                                                        <img src="/assets/creator-7.png"/>
+                                                    <div 
+                                                    onMouseEnter={() => this.creatorCardEnter(4)}
+                                                    onMouseLeave={() => this.creatorCardLeave(4)}
+                                                    style={{border: `1px solid ${this.state.creator4Hovered ? "#2890b9" : "#8a8a8a"}`, borderBottom: `5px solid ${this.state.creator4Hovered ? "#2890b9" : "#8a8a8a"}`}}
+                                                    className="creator-profile-cell-bg">
+                                                        <img style={{border: this.state.creator4Hovered ? `1px solid #2890b9` : `1px solid #8a8a8a`}} src="/assets/creator-7.png"/>
                                                         <h5>MartaMAKES</h5>
                                                         <p>2.2m followers</p>
                                                     </div>
                                                 </div>
                                                 <div style={{marginTop: "5%"}} className="creator-profile-cell">
-                                                    <div className="creator-profile-cell-bg">
-                                                        <img src="/assets/creator-1.png"/>
-                                                        <h5>Gracey K.</h5>
-                                                        <p>121k followers</p>
+                                                    <div 
+                                                    onMouseEnter={() => this.creatorCardEnter(8)}
+                                                    onMouseLeave={() => this.creatorCardLeave(8)}
+                                                    style={{border: `1px solid ${this.state.creator8Hovered ? "#2890b9" : "#8a8a8a"}`, borderBottom: `5px solid ${this.state.creator8Hovered ? "#2890b9" : "#8a8a8a"}`}}
+                                                    className="creator-profile-cell-bg">
+                                                        <img style={{border: this.state.creator8Hovered ? `1px solid #2890b9` : `1px solid #8a8a8a`}} src="/assets/creator-8.png"/>
+                                                        <h5>Laby Khame</h5>
+                                                        <p>802k followers</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div className="creator-slider-container">
+                                            <div style={{marginLeft: "0%"}} className="creator-profile-col">
+                                                <div className="creator-profile-cell">
+                                                    <div 
+                                                    onMouseEnter={() => this.creatorCardEnter(1)}
+                                                    onMouseLeave={() => this.creatorCardLeave(1)}
+                                                    style={{border: `1px solid ${this.state.creator1Hovered ? "#2890b9" : "#8a8a8a"}`, borderBottom: `5px solid ${this.state.creator1Hovered ? "#2890b9" : "#8a8a8a"}`}} className="creator-profile-cell-bg">
+                                                        <img style={{border: this.state.creator1Hovered ? `1px solid #2890b9` : `1px solid #8a8a8a`}} src="/assets/creator-9.png"/>
+                                                        <h5>SeeWell</h5>
+                                                        <p>12k followers</p>
+                                                    </div>
+                                                </div>
+                                                <div style={{marginTop: "5%"}} className="creator-profile-cell">
+                                                    <div 
+                                                    onMouseEnter={() => this.creatorCardEnter(5)}
+                                                    onMouseLeave={() => this.creatorCardLeave(5)}
+                                                    style={{border: `1px solid ${this.state.creator5Hovered ? "#2890b9" : "#8a8a8a"}`, borderBottom: `5px solid ${this.state.creator5Hovered ? "#2890b9" : "#8a8a8a"}`}}
+                                                    className="creator-profile-cell-bg">
+                                                        <img style={{border: this.state.creator5Hovered ? `1px solid #2890b9` : `1px solid #8a8a8a`}} src="/assets/creator-10.png"/>
+                                                        <h5>Kizzy Kicks</h5>
+                                                        <p>28k followers</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div className="creator-profile-col">
+                                                <div className="creator-profile-cell">
+                                                    <div 
+                                                    onMouseEnter={() => this.creatorCardEnter(2)}
+                                                    onMouseLeave={() => this.creatorCardLeave(2)}
+                                                    style={{border: `1px solid ${this.state.creator2Hovered ? "#2890b9" : "#8a8a8a"}`, borderBottom: `5px solid ${this.state.creator2Hovered ? "#2890b9" : "#8a8a8a"}`}}
+                                                    className="creator-profile-cell-bg">
+                                                        <img style={{border: this.state.creator2Hovered ? `1px solid #2890b9` : `1px solid #8a8a8a`}} src="/assets/creator-11.png"/>
+                                                        <h5>Beth's Bakery</h5>
+                                                        <p>330k followers</p>
+                                                    </div>
+                                                </div>
+                                                <div style={{marginTop: "5%"}} className="creator-profile-cell">
+                                                    <div 
+                                                    onMouseEnter={() => this.creatorCardEnter(6)}
+                                                    onMouseLeave={() => this.creatorCardLeave(6)}
+                                                    style={{border: `1px solid ${this.state.creator6Hovered ? "#2890b9" : "#8a8a8a"}`, borderBottom: `5px solid ${this.state.creator6Hovered ? "#2890b9" : "#8a8a8a"}`}}
+                                                    className="creator-profile-cell-bg">
+                                                        <img style={{border: this.state.creator6Hovered ? `1px solid #2890b9` : `1px solid #8a8a8a`}} src="/assets/creator-12.png"/>
+                                                        <h5>Tech Gamer</h5>
+                                                        <p>1.6k followers</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div className="creator-profile-col">
+                                                <div className="creator-profile-cell">
+                                                    <div 
+                                                    onMouseEnter={() => this.creatorCardEnter(3)}
+                                                    onMouseLeave={() => this.creatorCardLeave(3)}
+                                                    style={{border: `1px solid ${this.state.creator3Hovered ? "#2890b9" : "#8a8a8a"}`, borderBottom: `5px solid ${this.state.creator3Hovered ? "#2890b9" : "#8a8a8a"}`}}
+                                                    className="creator-profile-cell-bg">
+                                                        <img style={{border: this.state.creator3Hovered ? `1px solid #2890b9` : `1px solid #8a8a8a`}} src="/assets/creator-13.png"/>
+                                                        <h5>Krypto Beats</h5>
+                                                        <p>600k followers</p>
+                                                    </div>
+                                                </div>
+                                                <div style={{marginTop: "5%"}} className="creator-profile-cell">
+                                                    <div
+                                                    onMouseEnter={() => this.creatorCardEnter(7)}
+                                                    onMouseLeave={() => this.creatorCardLeave(7)}
+                                                    style={{border: `1px solid ${this.state.creator7Hovered ? "#2890b9" : "#8a8a8a"}`, borderBottom: `5px solid ${this.state.creator7Hovered ? "#2890b9" : "#8a8a8a"}`}} 
+                                                    className="creator-profile-cell-bg">
+                                                        <img style={{border: this.state.creator7Hovered ? `1px solid #2890b9` : `1px solid #8a8a8a`}} src="/assets/creator-6.png"/>
+                                                        <h5>Barl008</h5>
+                                                        <p>65k followers</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div className="creator-profile-col">
+                                                <div className="creator-profile-cell">
+                                                    <div 
+                                                    onMouseEnter={() => this.creatorCardEnter(4)}
+                                                    onMouseLeave={() => this.creatorCardLeave(4)}
+                                                    style={{border: `1px solid ${this.state.creator4Hovered ? "#2890b9" : "#8a8a8a"}`, borderBottom: `5px solid ${this.state.creator4Hovered ? "#2890b9" : "#8a8a8a"}`}}
+                                                    className="creator-profile-cell-bg">
+                                                        <img style={{border: this.state.creator4Hovered ? `1px solid #2890b9` : `1px solid #8a8a8a`}} src="/assets/creator-7.png"/>
+                                                        <h5>MartaMAKES</h5>
+                                                        <p>2.2m followers</p>
+                                                    </div>
+                                                </div>
+                                                <div style={{marginTop: "5%"}} className="creator-profile-cell">
+                                                    <div 
+                                                    onMouseEnter={() => this.creatorCardEnter(8)}
+                                                    onMouseLeave={() => this.creatorCardLeave(8)}
+                                                    style={{border: `1px solid ${this.state.creator8Hovered ? "#2890b9" : "#8a8a8a"}`, borderBottom: `5px solid ${this.state.creator8Hovered ? "#2890b9" : "#8a8a8a"}`}}
+                                                    className="creator-profile-cell-bg">
+                                                        <img style={{border: this.state.creator8Hovered ? `1px solid #2890b9` : `1px solid #8a8a8a`}} src="/assets/creator-8.png"/>
+                                                        <h5>Laby Khame</h5>
+                                                        <p>802k followers</p>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
                                         <div className="creator-slider-container">
-                                            <div style={{marginLeft: "0%"}} className="creator-profile-col">
-                                                <div className="">
-
-                                                </div>
-                                            </div>
-                                            <div className="creator-profile-col">
-
-                                            </div>
-                                            <div className="creator-profile-col">
-
-                                            </div>
-                                            <div className="creator-profile-col">
-
-                                            </div>
-                                        </div>
-                                        <div className="creator-slider-container">
-                                            <h3>3</h3>
+                                            
                                         </div>
                                         {/* <div className="creator-slider-container">
                                             <h3>4</h3>
