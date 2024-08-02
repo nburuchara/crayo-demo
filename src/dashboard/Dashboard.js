@@ -971,6 +971,8 @@ const Styles = styled.div `
 
     // - - WINDOW 2 (SECTION 2 - EXAMPLES) - - //
 
+    // # EXAMPLES HEADER
+
 .examples-header:after {
     content: "";
     display: table;
@@ -1006,6 +1008,14 @@ const Styles = styled.div `
     font-family: dm sans;
     font-weight: bold;
     color: #2890b9;
+}
+
+    // # CREATORS CAROUSEL CONTAINER
+
+.creator-slider-container {
+    border: 1px solid black;
+    width: 85% !important;
+    height: 25vh;
 }
 
 
@@ -1533,6 +1543,46 @@ export default class Dashboard extends Component {
         const { isSearchLoading, groupedOptions, resultsFound, hoveredResultId} = this.state;
         const searchInput = this.state.searchedData.trim().toLowerCase();
 
+        //* - - CRAYO CONTETNT EXAMPLES CAROUSEL SETUP - - *// 
+        function SampleNextArrow(props) {
+            const { className, style, onClick } = props;
+            return (
+                <button
+                className={className}
+                style={{marginRight: "0px", background: "red" }}
+                onClick={onClick}
+                />
+            );
+        }
+        
+        function SamplePrevArrow(props) {
+            const { className, style, onClick } = props;
+            return (
+                <button
+                // className={className}
+                style={{
+                    float: "left",
+                    // marginLeft: "3%",
+                    display: "block",
+                    background: "green",
+                    bottom: "0",
+                    marginTop: "5%" 
+                }}
+                onClick={onClick}
+                />
+            );
+        }
+
+        const settings = {
+            dots: true,
+            infinite: false,
+            speed: 500,
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            nextArrow: <SampleNextArrow/>,
+            prevArrow: <SamplePrevArrow/>
+        };
+
         return (
             <div className="full-page">
                 <div className="left-pane">
@@ -2035,6 +2085,30 @@ export default class Dashboard extends Component {
 
                                 </div>
                             </div>
+
+                            <div className="slider-container">
+                                <Slider {...settings}>
+                                    <div className="creator-slider-container">
+                                        <h3>1</h3>
+                                    </div>
+                                    <div className="creator-slider-container">
+                                        <h3>2</h3>
+                                    </div>
+                                    <div className="creator-slider-container">
+                                        <h3>3</h3>
+                                    </div>
+                                    <div className="creator-slider-container">
+                                        <h3>4</h3>
+                                    </div>
+                                    <div className="creator-slider-container">
+                                        <h3>5</h3>
+                                    </div>
+                                    <div className="creator-slider-container">
+                                        <h3>6</h3>
+                                    </div>
+                                </Slider>
+                            </div>
+
                         </div>
                     </div>
 
