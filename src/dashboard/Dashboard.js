@@ -1047,7 +1047,7 @@ const Styles = styled.div `
 .slider-left-btn button {
     font-family: dm sans;
     font-weight: bold;
-    margin-top: 10vh;
+    margin-top: 9vh;
     border-radius: 50%;
     border: 2px solid transparent;
     background-color: #2890b9;
@@ -1057,7 +1057,7 @@ const Styles = styled.div `
 .slider-right-btn button {
     font-family: dm sans;
     font-weight: bold;
-    margin-top: 10vh;
+    margin-top: 9vh;
     border-radius: 50%;
     border: 2px solid transparent;
     background-color: #2890b9;
@@ -1120,6 +1120,8 @@ export default class Dashboard extends Component {
         super()
         this.state = {
 
+                //! - - TOP PANE (RIGHT PANE) - - !//
+
             //* - - SEARCH BAR VAR(s) - - *//
             searchedData: "",
             searchBarBorderColor: "#dedede",
@@ -1139,6 +1141,9 @@ export default class Dashboard extends Component {
             userNameBgColor: "#c2175b",
             userNameTxtColor: "white",
 
+                //! - - SECTION 1 (RIGHT PANE) - - !//
+
+            //* - - 'START CREATING' BUTTON - - *//
             startCreatingBtnWidth: "auto",
             startCreatingBtnFontSize: "100%",
             startCreatingIconWidth: "0%",
@@ -1192,12 +1197,19 @@ export default class Dashboard extends Component {
             tutorialCell8TimerColor: "#5e626a",
             tutorialCell8MainTextColor: "#000",
 
+            //* - - POPULAR APPS VAR(S) - - *//
             popularApp1Hovered: false,
             popularApp2Hovered: false,
             popularApp3Hovered: false,
             popularApp4Hovered: false,
             popularApp5Hovered: false,
             popularApp6Hovered: false,
+
+                //! - - SECTION 1 (RIGHT PANE) - - !//
+
+            //* - - CONTENT EXAMPLES VAR(S - - *//
+            showContentExamplesPrevBtn: true,
+            showContentExamplesNextBtn: true
 
         }
 
@@ -1591,10 +1603,12 @@ export default class Dashboard extends Component {
 
     next = () => {
         this.sliderRef.current.slickNext();
+        console.log(this.sliderRef.current)
       };
     
     previous = () => {
         this.sliderRef.current.slickPrev();
+        console.log(this.sliderRef.current)
       };
 
 
@@ -2141,9 +2155,11 @@ export default class Dashboard extends Component {
 
                             <div className="slider-container">
                                 <div className="slider-left-btn">
-                                    <button className="button" onClick={this.previous}>
-                                        &lt;
-                                    </button>
+                                    {this.state.showContentExamplesPrevBtn && 
+                                        <button className="button" onClick={this.previous}>
+                                            &lt;
+                                        </button>
+                                    }
                                 </div>
                                 <div className="slider-mid-container">
                                     <Slider ref={this.sliderRef} {...settings}>
@@ -2168,9 +2184,11 @@ export default class Dashboard extends Component {
                                     </Slider>
                                 </div>
                                 <div className="slider-right-btn">
-                                    <button className="button" onClick={this.next}>
-                                       &gt;
-                                    </button>
+                                    {this.state.showContentExamplesNextBtn &&  
+                                        <button className="button" onClick={this.next}>
+                                            &gt;
+                                        </button>
+                                    }
                                 </div>
                             </div>
 
