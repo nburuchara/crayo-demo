@@ -2243,7 +2243,7 @@ export default class Dashboard extends Component {
                             <div className="examples-header">
                                 <div className="examples-header-left">
                                     <h2>Crayo Content in the wild</h2>
-                                    <p>See how creators are using Crayo</p>
+                                    <p>See how solo creators, brands & institutions are using Crayo.</p>
                                 </div>
                                 <div className="examples-header-right">
 
@@ -2428,9 +2428,9 @@ export default class Dashboard extends Component {
                                                     onMouseLeave={() => this.creatorCardLeave(7)}
                                                     style={{border: `1px solid ${this.state.creator7Hovered ? "#2890b9" : "#8a8a8a"}`, borderBottom: `5px solid ${this.state.creator7Hovered ? "#2890b9" : "#8a8a8a"}`}} 
                                                     className="creator-profile-cell-bg">
-                                                        <img style={{border: this.state.creator7Hovered ? `1px solid #2890b9` : `1px solid #8a8a8a`}} src="/assets/creator-6.png"/>
-                                                        <h5>Barl008</h5>
-                                                        <p>65k followers</p>
+                                                        <img style={{border: this.state.creator7Hovered ? `1px solid #2890b9` : `1px solid #8a8a8a`}} src="/assets/creator-14.png"/>
+                                                        <h5>K's Jewelry</h5>
+                                                        <p>88k followers</p>
                                                     </div>
                                                 </div>
                                             </div>
@@ -2441,9 +2441,9 @@ export default class Dashboard extends Component {
                                                     onMouseLeave={() => this.creatorCardLeave(4)}
                                                     style={{border: `1px solid ${this.state.creator4Hovered ? "#2890b9" : "#8a8a8a"}`, borderBottom: `5px solid ${this.state.creator4Hovered ? "#2890b9" : "#8a8a8a"}`}}
                                                     className="creator-profile-cell-bg">
-                                                        <img style={{border: this.state.creator4Hovered ? `1px solid #2890b9` : `1px solid #8a8a8a`}} src="/assets/creator-7.png"/>
-                                                        <h5>MartaMAKES</h5>
-                                                        <p>2.2m followers</p>
+                                                        <img style={{border: this.state.creator4Hovered ? `1px solid #2890b9` : `1px solid #8a8a8a`}} src="/assets/creator-15.png"/>
+                                                        <h5>Gula Café</h5>
+                                                        <p>255 followers</p>
                                                     </div>
                                                 </div>
                                                 <div style={{marginTop: "5%"}} className="creator-profile-cell">
@@ -2452,9 +2452,9 @@ export default class Dashboard extends Component {
                                                     onMouseLeave={() => this.creatorCardLeave(8)}
                                                     style={{border: `1px solid ${this.state.creator8Hovered ? "#2890b9" : "#8a8a8a"}`, borderBottom: `5px solid ${this.state.creator8Hovered ? "#2890b9" : "#8a8a8a"}`}}
                                                     className="creator-profile-cell-bg">
-                                                        <img style={{border: this.state.creator8Hovered ? `1px solid #2890b9` : `1px solid #8a8a8a`}} src="/assets/creator-8.png"/>
-                                                        <h5>Laby Khame</h5>
-                                                        <p>802k followers</p>
+                                                        <img style={{border: this.state.creator8Hovered ? `1px solid #2890b9` : `1px solid #8a8a8a`}} src="/assets/creator-16.png"/>
+                                                        <h5>ur fav cleanerz</h5>
+                                                        <p>9k followers</p>
                                                     </div>
                                                 </div>
                                             </div>
