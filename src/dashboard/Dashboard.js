@@ -1037,9 +1037,26 @@ const Styles = styled.div `
 }
 
 .creator-slider-container {
-    // border: 1px solid black;
+    border: 1px solid black;
     width: 99% !important;
     height: 25vh;
+}
+
+.creator-slider-row-container:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+    // # CAROUSEL INNER CONTAINER
+
+.creator-profile {
+    float: left;
+    width: 23%;
+    text-align: center;
+    border: 1px solid black;
+    height: 99%;
+    margin-left: 2.1%;
 }
 
     // # CAROUSEL BUTTONS
@@ -1063,7 +1080,6 @@ const Styles = styled.div `
     background-color: #2890b9;
     color: white;
 }
-
 
 
 
@@ -1208,8 +1224,14 @@ export default class Dashboard extends Component {
                 //! - - SECTION 1 (RIGHT PANE) - - !//
 
             //* - - CONTENT EXAMPLES VAR(S - - *//
-            showContentExamplesPrevBtn: true,
-            showContentExamplesNextBtn: true
+            currentSlide: 0,
+            totalSlides: 3,
+            carouselPrevBtnBgColor: "transparent",
+            carouselPrevBtnTxtColor: "transparent",
+            carouselPrevBtnClicker: "default",
+            carouselNextBtnBgColor: "#2890b9",
+            carouselPrevBtnTxtColor: "white",
+            carouselNextBtnClicker: "pointer",
 
         }
 
@@ -1603,13 +1625,41 @@ export default class Dashboard extends Component {
 
     next = () => {
         this.sliderRef.current.slickNext();
-        console.log(this.sliderRef.current)
-      };
+    };
     
     previous = () => {
         this.sliderRef.current.slickPrev();
-        console.log(this.sliderRef.current)
-      };
+    };
+
+    handleAfterChange = (current) => {
+        const { totalSlides } = this.state;
+
+        this.setState({ currentSlide: current });
+        if (current === 1) {
+            this.setState({
+                carouselPrevBtnBgColor: "#2890b9",
+                carouselPrevBtnTxtColor: "white",
+                carouselPrevBtnClicker: "pointer",
+                carouselNextBtnBgColor: "#2890b9",
+                carouselNextBtnTxtColor: "white",
+                carouselNextBtnClicker: "pointer",
+            })
+        } else if (current === 0) {
+            this.setState({
+                carouselPrevBtnBgColor: "transparent",
+                carouselPrevBtnTxtColor: "transparent",
+                carouselPrevBtnClicker: "default",
+            })
+        } else if (current === totalSlides - 1) {
+            this.setState({
+                carouselNextBtnBgColor: "transparent",
+                carouselNextBtnTxtColor: "transparent",
+                carouselNextBtnClicker: "default",
+            })
+        }
+
+        console.log("total slides: ", totalSlides)
+    };
 
 
         //* - - DESKTOP SCREENS - - *//
@@ -1624,21 +1674,13 @@ export default class Dashboard extends Component {
 
         function SampleNextArrow(props) {
             const { className, style, onClick } = props;
-            return (
-              <div
-                
-              />
-            );
-          }
+            return ( <div/> );
+        }
           
-          function SamplePrevArrow(props) {
+        function SamplePrevArrow(props) {
             const { className, style, onClick } = props;
-            return (
-              <div
-                
-              />
-            );
-          }
+            return ( <div/> );
+        }
 
         const settings = {
             dots: true,
@@ -1648,6 +1690,7 @@ export default class Dashboard extends Component {
             slidesToScroll: 1,
             nextArrow: <SampleNextArrow/>, 
             prevArrow: <SamplePrevArrow/>,
+            afterChange: this.handleAfterChange
         };
 
         return (
@@ -2155,16 +2198,31 @@ export default class Dashboard extends Component {
 
                             <div className="slider-container">
                                 <div className="slider-left-btn">
-                                    {this.state.showContentExamplesPrevBtn && 
-                                        <button className="button" onClick={this.previous}>
-                                            &lt;
-                                        </button>
-                                    }
+                                    <button 
+                                    style={{
+                                        backgroundColor: this.state.carouselPrevBtnBgColor,
+                                        color: this.state.carouselPrevBtnTxtColor,
+                                        cursor: this.state.carouselPrevBtnClicker,
+                                    }}
+                                    className="button" onClick={this.previous}>
+                                        &lt;
+                                    </button>
                                 </div>
                                 <div className="slider-mid-container">
                                     <Slider ref={this.sliderRef} {...settings}>
                                         <div className="creator-slider-container">
-                                            <h3>1</h3>
+                                            <div style={{marginLeft: "0%"}} className="creator-profile">
+
+                                            </div>
+                                            <div className="creator-profile">
+
+                                            </div>
+                                            <div className="creator-profile">
+
+                                            </div>
+                                            <div className="creator-profile">
+
+                                            </div>
                                         </div>
                                         <div className="creator-slider-container">
                                             <h3>2</h3>
@@ -2172,7 +2230,7 @@ export default class Dashboard extends Component {
                                         <div className="creator-slider-container">
                                             <h3>3</h3>
                                         </div>
-                                        <div className="creator-slider-container">
+                                        {/* <div className="creator-slider-container">
                                             <h3>4</h3>
                                         </div>
                                         <div className="creator-slider-container">
@@ -2180,15 +2238,19 @@ export default class Dashboard extends Component {
                                         </div>
                                         <div className="creator-slider-container">
                                             <h3>6</h3>
-                                        </div>
+                                        </div> */}
                                     </Slider>
                                 </div>
                                 <div className="slider-right-btn">
-                                    {this.state.showContentExamplesNextBtn &&  
-                                        <button className="button" onClick={this.next}>
-                                            &gt;
-                                        </button>
-                                    }
+                                    <button 
+                                    style={{
+                                        backgroundColor: this.state.carouselNextBtnBgColor,
+                                        color: this.state.carouselNextBtnTxtColor,
+                                        cursor: this.state.carouselNextBtnClicker,
+                                    }}
+                                    className="button" onClick={this.next}>
+                                        &gt;
+                                    </button>
                                 </div>
                             </div>
 
