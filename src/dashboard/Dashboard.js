@@ -1547,11 +1547,18 @@ export default class Dashboard extends Component {
         function SampleNextArrow(props) {
             const { className, style, onClick } = props;
             return (
+                <div>
                 <button
-                className={className}
-                style={{marginRight: "0px", background: "red" }}
+                style={{
+                    float: "right",
+                    display: "block",
+                    marginRight: "0px", 
+                    background: "red",
+                }}
                 onClick={onClick}
                 />
+                <span style={{marginTop: "35%"}}></span>
+                </div>
             );
         }
         
@@ -1559,13 +1566,10 @@ export default class Dashboard extends Component {
             const { className, style, onClick } = props;
             return (
                 <button
-                // className={className}
                 style={{
                     float: "left",
-                    // marginLeft: "3%",
                     display: "block",
                     background: "green",
-                    bottom: "0",
                     marginTop: "5%" 
                 }}
                 onClick={onClick}
