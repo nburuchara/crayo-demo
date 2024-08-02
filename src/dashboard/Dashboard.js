@@ -1106,7 +1106,7 @@ const Styles = styled.div `
     text-align: center;
     width: 50%;
     margin: auto;
-    border: 1px solid #ccc;
+    border: 1px solid #8a8a8a;
     border-radius: 50%;
 }
 
@@ -2303,9 +2303,9 @@ export default class Dashboard extends Component {
                                             <div className="creator-profile-col">
                                                 <div className="creator-profile-cell">
                                                     <div className="creator-profile-cell-bg">
-                                                        <img src="/assets/creator-1.png"/>
-                                                        <h5>Gracey K.</h5>
-                                                        <p>121k followers</p>
+                                                        <img src="/assets/creator-7.png"/>
+                                                        <h5>MartaMAKES</h5>
+                                                        <p>2.2m followers</p>
                                                     </div>
                                                 </div>
                                                 <div style={{marginTop: "5%"}} className="creator-profile-cell">
