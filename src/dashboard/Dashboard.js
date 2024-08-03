@@ -27,25 +27,64 @@ const Styles = styled.div `
     display: table;
 }
 
-    // - - LEFT / RIGHT PANES - - //
+    //! - - Left pane - - !//
+
+    // - - LEFT PANE CONTAINER - - //
 
 .left-pane {
     height: 100%;
     float: left;
-    width: 17.5%;
+    width: 5%;
     text-align: center;
     background-color: #f1f3f8;
     border-right: 1px solid #ccc;
 }
 
+    // # LEFT PANE HEADER
+
+.left-pane-header {
+    margin-top: 9%;
+}
+
+.left-pane-header:after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.left-pane-header-left {
+    float: left;
+    width: 78%;
+    text-align: left;
+    // border: 1px solid black;
+}
+
+.left-pane-header-right {
+    float: left;
+    width: 20%;
+    text-align: right;
+    border: 1px solid black;
+}
+
+    // # LEFT PANE HEADER LOGO IMAGE
+
+.left-pane-header-left img {
+    width: 45%;
+    margin-left: 3%;
+}
+
+    //! - - Right pane - - !//
+
+    // - - RIGHT PANE CONTAINER - - //
+
 .right-pane {
     height: 100%;
     float: left;
-    width: 78%;
+    width: 90.5%;
     text-align: center;
     padding-left: 2%;
     padding-right: 2%;
-    background-color: #FBFBFF;
+    background-color: #EEEEEF;
 }
 
     // - - HEADER (RIGHT PANE) - - //? SEARCH BAR & OPTIONS
@@ -564,7 +603,7 @@ const Styles = styled.div `
     margin-left: 5%;
     font-weight: bold;
     font-family: dm sans;
-    color: black;
+    color: #2980b9;
 }
 
     // - TUTORIAL CONTAINER - //
@@ -677,7 +716,6 @@ const Styles = styled.div `
     margin-left: 5%;
     margin-right: 5%;
     font-family: dm sans;
-    color: #5e626a;
     font-weight: normal;
 }
 
@@ -870,6 +908,7 @@ const Styles = styled.div `
     border: 1px solid #9a9a9a;
     height: 100%;
     border-radius: 10px;
+    background-color: white;
     // box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.06), 0 6px 20px 0 rgba(0, 0, 0, 0.08);
 }
 
@@ -881,6 +920,7 @@ const Styles = styled.div `
     margin-left: 1.65%;
     height: 100%;
     border-radius: 10px;
+    background-color: white;
     // box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.06), 0 6px 20px 0 rgba(0, 0, 0, 0.06);
 }
 
@@ -1178,6 +1218,15 @@ export default class Dashboard extends Component {
         super()
         this.state = {
 
+                //! - - LEFT PANE - - !//
+
+            //* - - LEFT PANE VAR(S) - - *//
+            leftPaneMinimized: false,
+            showExpandedLeftPane: true,
+
+            //* - - RIGHT PANE VAR(S) - - *//
+            rightPaneExpanded: false,
+
                 //! - - TOP PANE (RIGHT PANE) - - !//
 
             //* - - SEARCH BAR VAR(s) - - *//
@@ -1211,49 +1260,49 @@ export default class Dashboard extends Component {
             tutorialCell1BorderColor: "#8a8a8a",
             tutorialCell1ImgBgColor: "white",
             tutorialCell1TimerColor: "#5e626a",
-            tutorialCell1MainTextColor: "#000",
+            tutorialCell1MainTextColor: "",
 
             tutorialCell2Hovered: false,
             tutorialCell2BorderColor: "#8a8a8a",
             tutorialCell2ImgBgColor: "white",
             tutorialCell2TimerColor: "#5e626a",
-            tutorialCell2MainTextColor: "#000",
+            tutorialCell2MainTextColor: "",
 
             tutorialCell3Hovered: false,
             tutorialCell3BorderColor: "#8a8a8a",
             tutorialCell3ImgBgColor: "white",
             tutorialCell3TimerColor: "#5e626a",
-            tutorialCell3MainTextColor: "#000",
+            tutorialCell3MainTextColor: "",
 
             tutorialCell4Hovered: false,
             tutorialCell4BorderColor: "#8a8a8a",
             tutorialCell4ImgBgColor: "white",
             tutorialCell4TimerColor: "#5e626a",
-            tutorialCell4MainTextColor: "#000",
+            tutorialCell4MainTextColor: "",
 
             tutorialCell5Hovered: false,
             tutorialCell5BorderColor: "#8a8a8a",
             tutorialCell5ImgBgColor: "white",
             tutorialCell5TimerColor: "#5e626a",
-            tutorialCell5MainTextColor: "#000",
+            tutorialCell5MainTextColor: "",
 
             tutorialCell6Hovered: false,
             tutorialCell6BorderColor: "#8a8a8a",
             tutorialCell6ImgBgColor: "white",
             tutorialCell6TimerColor: "#5e626a",
-            tutorialCell6MainTextColor: "#000",
+            tutorialCell6MainTextColor: "",
 
             tutorialCell7Hovered: false,
             tutorialCell7BorderColor: "#8a8a8a",
             tutorialCell7ImgBgColor: "white",
             tutorialCell7TimerColor: "#5e626a",
-            tutorialCell7MainTextColor: "#000",
+            tutorialCell7MainTextColor: "",
 
             tutorialCell8Hovered: false,
             tutorialCell8BorderColor: "#8a8a8a",
             tutorialCell8ImgBgColor: "white",
             tutorialCell8TimerColor: "#5e626a",
-            tutorialCell8MainTextColor: "#000",
+            tutorialCell8MainTextColor: "",
 
             //* - - POPULAR APPS VAR(S) - - *//
             popularApp1Hovered: false,
@@ -1433,7 +1482,7 @@ export default class Dashboard extends Component {
         this.setState({
             tutorialCell1Hovered: true,
             tutorialCell1BorderColor: "#2980B9",
-            tutorialCell1MainTextColor: "#000",
+            tutorialCell1MainTextColor: "",
             tutorialCell1TimerColor: "#2980B9",
             tutorialCell1ImgBgColor: "#2980B9"
         })
@@ -1442,7 +1491,7 @@ export default class Dashboard extends Component {
         this.setState({
             tutorialCell1Hovered: false,
             tutorialCell1BorderColor: "#8a8a8a",
-            // tutorialCell1MainTextColor: "#5e626a",
+            tutorialCell1MainTextColor: "",
             tutorialCell1TimerColor: "#5e626a",
             tutorialCell1ImgBgColor: "white"
         })
@@ -1453,7 +1502,7 @@ export default class Dashboard extends Component {
         this.setState({
             tutorialCell2Hovered: true,
             tutorialCell2BorderColor: "#2980B9",
-            tutorialCell2MainTextColor: "#000",
+            tutorialCell2MainTextColor: "",
             tutorialCell2TimerColor: "#2980B9",
             tutorialCell2ImgBgColor: "#2980B9"
         })
@@ -1462,7 +1511,7 @@ export default class Dashboard extends Component {
         this.setState({
             tutorialCell2Hovered: false,
             tutorialCell2BorderColor: "#8a8a8a",
-            // tutorialCell2MainTextColor: "#5e626a",
+            tutorialCell2MainTextColor: "",
             tutorialCell2TimerColor: "#5e626a",
             tutorialCell2ImgBgColor: "white"
         })
@@ -1473,7 +1522,7 @@ export default class Dashboard extends Component {
         this.setState({
             tutorialCell3Hovered: true,
             tutorialCell3BorderColor: "#2980B9",
-            tutorialCell3MainTextColor: "#000",
+            tutorialCell3MainTextColor: "",
             tutorialCell3TimerColor: "#2980B9",
             tutorialCell3ImgBgColor: "#2980B9"
         })
@@ -1482,7 +1531,7 @@ export default class Dashboard extends Component {
         this.setState({
             tutorialCell3Hovered: false,
             tutorialCell3BorderColor: "#8a8a8a",
-            // tutorialCell3MainTextColor: "#5e626a",
+            tutorialCell3MainTextColor: "",
             tutorialCell3TimerColor: "#5e626a",
             tutorialCell3ImgBgColor: "white"
         })
@@ -1493,7 +1542,7 @@ export default class Dashboard extends Component {
         this.setState({
             tutorialCell4Hovered: true,
             tutorialCell4BorderColor: "#2980B9",
-            tutorialCell4MainTextColor: "#000",
+            tutorialCell4MainTextColor: "",
             tutorialCell4TimerColor: "#2980B9",
             tutorialCell4ImgBgColor: "#2980B9"
         })
@@ -1502,7 +1551,7 @@ export default class Dashboard extends Component {
         this.setState({
             tutorialCell4Hovered: false,
             tutorialCell4BorderColor: "#8a8a8a",
-            // tutorialCell4MainTextColor: "#5e626a",
+            tutorialCell4MainTextColor: "",
             tutorialCell4TimerColor: "#5e626a",
             tutorialCell4ImgBgColor: "white"
         })
@@ -1513,7 +1562,7 @@ export default class Dashboard extends Component {
         this.setState({
             tutorialCell5Hovered: true,
             tutorialCell5BorderColor: "#2980B9",
-            tutorialCell5MainTextColor: "#000",
+            tutorialCell5MainTextColor: "",
             tutorialCell5TimerColor: "#2980B9",
             tutorialCell5ImgBgColor: "#2980B9"
         })
@@ -1522,7 +1571,7 @@ export default class Dashboard extends Component {
         this.setState({
             tutorialCell5Hovered: false,
             tutorialCell5BorderColor: "#8a8a8a",
-            // tutorialCell5MainTextColor: "#5e626a",
+            tutorialCell5MainTextColor: "",
             tutorialCell5TimerColor: "#5e626a",
             tutorialCell5ImgBgColor: "white"
         })
@@ -1533,7 +1582,7 @@ export default class Dashboard extends Component {
         this.setState({
             tutorialCell6Hovered: true,
             tutorialCell6BorderColor: "#2980B9",
-            tutorialCell6MainTextColor: "#000",
+            tutorialCell6MainTextColor: "",
             tutorialCell6TimerColor: "#2980B9",
             tutorialCell6ImgBgColor: "#2980B9"
         })
@@ -1542,7 +1591,7 @@ export default class Dashboard extends Component {
         this.setState({
             tutorialCell6Hovered: false,
             tutorialCell6BorderColor: "#8a8a8a",
-            // tutorialCell6MainTextColor: "#5e626a",
+            tutorialCell6MainTextColor: "",
             tutorialCell6TimerColor: "#5e626a",
             tutorialCell6ImgBgColor: "white"
         })
@@ -1553,7 +1602,7 @@ export default class Dashboard extends Component {
         this.setState({
             tutorialCell7Hovered: true,
             tutorialCell7BorderColor: "#2980B9",
-            tutorialCell7MainTextColor: "#000",
+            tutorialCell7MainTextColor: "",
             tutorialCell7TimerColor: "#2980B9",
             tutorialCell7ImgBgColor: "#2980B9"
         })
@@ -1562,7 +1611,7 @@ export default class Dashboard extends Component {
         this.setState({
             tutorialCell7Hovered: false,
             tutorialCell7BorderColor: "#8a8a8a",
-            // tutorialCell7MainTextColor: "#5e626a",
+            tutorialCell7MainTextColor: "",
             tutorialCell7TimerColor: "#5e626a",
             tutorialCell7ImgBgColor: "white"
         })
@@ -1573,7 +1622,7 @@ export default class Dashboard extends Component {
         this.setState({
             tutorialCell8Hovered: true,
             tutorialCell8BorderColor: "#2980B9",
-            tutorialCell8MainTextColor: "#000",
+            tutorialCell8MainTextColor: "",
             tutorialCell8TimerColor: "#2980B9",
             tutorialCell8ImgBgColor: "#2980B9"
         })
@@ -1582,7 +1631,7 @@ export default class Dashboard extends Component {
         this.setState({
             tutorialCell8Hovered: false,
             tutorialCell8BorderColor: "#8a8a8a",
-            // tutorialCell8MainTextColor: "#5e626a",
+            tutorialCell8MainTextColor: "",
             tutorialCell8TimerColor: "#5e626a",
             tutorialCell8ImgBgColor: "white"
         })
@@ -1749,10 +1798,26 @@ export default class Dashboard extends Component {
 
         return (
             <div className="full-page">
-                <div className="left-pane">
-                    <p>test</p>
+                <div style={{width: this.state.leftPaneMinimized ? "5%" : "17.5%"}} className="left-pane">
+                    <CSSTransition
+                    in={this.state.showExpandedLeftPane}
+                    timeout={{enter: 500, exit: 0}}
+                    classNames="dialog-slide-left"
+                    unmountOnExit
+                    >
+                        <div className="left-pane-container">
+                            <div className="left-pane-header">
+                                <div className="left-pane-header-left">
+                                    <img src="/assets/crayo-logo-expanded2.png"/>
+                                </div>
+                                <div className="left-pane-header-right">
+                                    <img src="/assets/shrink-navbar-icon.png"/>
+                                </div>
+                            </div>
+                        </div>
+                    </CSSTransition>
                 </div>
-                <div className="right-pane">
+                <div style={{width: this.state.rightPaneExpanded ? "90.5%" : "78%"}} className="right-pane">
 
                     {/* - - TOP PANE - -  */}
 
@@ -1838,7 +1903,7 @@ export default class Dashboard extends Component {
                     {/* - - SECTION 1 - -  */}
 
                     <div className="welcome-header">
-                        <h3>Welcome back Norman,</h3>
+                        <h3 style={{marginTop: this.state.leftPaneMinimized ? "0.5%" : ""}}>Welcome back Norman,</h3>
                     </div>
                     <div className="right-pane-section-1">
                         <div className="rp-sec1-left-parent">
@@ -1873,7 +1938,7 @@ export default class Dashboard extends Component {
                             <div className="tutorial-header">
                                 <div className="tutorial-header-left">
                                     <h2>Video Guides</h2>
-                                    <p style={{color: "#2980B9"}}>Watch our video guides to learn how you can get the most out of Crayo.</p>
+                                    <p>Watch our video guides to learn how you can get the most out of Crayo.</p>
                                 </div>
                                 <div className="tutorial-header-right">
                                     <img src="/assets/desktop-pic.png"/>
@@ -2139,7 +2204,7 @@ export default class Dashboard extends Component {
                                             <img src="/assets/split-screen-pic3.gif"/>
                                         </div>
                                         <div className="popular-apps-cell-text-container">
-                                            <h5 style={{color: this.state.popularApp1Hovered ? "#2890b9" : "#000"}}>Splitscreen Video</h5>
+                                            <h5 style={{color: this.state.popularApp1Hovered ? "#2890b9" : ""}}>Splitscreen Video</h5>
                                             <p>Create splitscreen content w/ our gameplay library.</p>
                                         </div>
                                     </div>
@@ -2152,7 +2217,7 @@ export default class Dashboard extends Component {
                                             <img src="/assets/fake-text-pic.gif"/>
                                         </div>
                                         <div className="popular-apps-cell-text-container">
-                                            <h5 style={{color: this.state.popularApp2Hovered ? "#2890b9" : "#000"}}>Fake Texts Video</h5>
+                                            <h5 style={{color: this.state.popularApp2Hovered ? "#2890b9" : ""}}>Fake Texts Video</h5>
                                             <p>Create fake text conversation videos for Instagram, Tiktok, and Shorts.</p>
                                         </div>
                                     </div>
@@ -2167,7 +2232,7 @@ export default class Dashboard extends Component {
                                             <img src="/assets/ai-avatar-pic.gif"/>
                                         </div>
                                         <div className="popular-apps-cell-text-container">
-                                            <h5 style={{color: this.state.popularApp3Hovered ? "#2890b9" : "#000"}}>AI Avatars</h5>
+                                            <h5 style={{color: this.state.popularApp3Hovered ? "#2890b9" : ""}}>AI Avatars</h5>
                                             <p>Create AI avatars to say anything for UGC content.</p>
                                         </div>
                                     </div>
@@ -2180,7 +2245,7 @@ export default class Dashboard extends Component {
                                             <img src="/assets/voice-over-pic.gif"/>
                                         </div>
                                         <div className="popular-apps-cell-text-container">
-                                            <h5 style={{color: this.state.popularApp4Hovered ? "#2890b9" : "#000"}}>Voiceover Story</h5>
+                                            <h5 style={{color: this.state.popularApp4Hovered ? "#2890b9" : ""}}>Voiceover Story</h5>
                                             <p>Create wholesome, scary, or any type of story using AI voices.</p>
                                         </div>
                                     </div>
@@ -2195,7 +2260,7 @@ export default class Dashboard extends Component {
                                             <img src="/assets/download-pic2.gif"/>
                                         </div>
                                         <div className="popular-apps-cell-text-container">
-                                            <h5 style={{color: this.state.popularApp5Hovered ? "#2890b9" : "#000"}}>Download YouTube Videos</h5>
+                                            <h5 style={{color: this.state.popularApp5Hovered ? "#2890b9" : ""}}>Download YouTube Videos</h5>
                                             <p>Get YouTube videos in MP4 format directly in Crayo.</p>
                                         </div>
                                     </div>
@@ -2207,7 +2272,7 @@ export default class Dashboard extends Component {
                                             <img src="/assets/more-apps-pic2.gif"/>
                                         </div>
                                         <div className="popular-apps-cell-text-container">
-                                            <h5 style={{color: this.state.popularApp6Hovered ? "#2890b9" : "#000"}}>All Apps</h5>
+                                            <h5 style={{color: this.state.popularApp6Hovered ? "#2890b9" : ""}}>All Apps</h5>
                                             <p>See our full list of apps.</p>
                                         </div>
                                     </div>
