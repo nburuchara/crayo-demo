@@ -91,6 +91,7 @@ const Styles = styled.div `
     width: 35%;
     margin-top: 38%;
     transform: scaleX(-1);
+    cursor: pointer;
 }
 
     //! - - Right pane - - !//
@@ -1377,11 +1378,18 @@ export default class Dashboard extends Component {
                 showExpandedLeftPane: false,
             }, () => {
                 setTimeout(() => {
-                    this.setState({ showShrankLeftPane: true })
+                    this.setState({ showShrankLeftPane: true, collapseNavbarHovered: false })
                 }, 500)
             })
         } else {
-
+            this.setState({
+                leftPaneMinimized: false,
+                showShrankLeftPane: false
+            }, () => {
+                setTimeout(() => {
+                    this.setState({ showExpandedLeftPane: true, collapseNavbarHovered: false })
+                }, 500)
+            })
         }
         
     }
@@ -1855,7 +1863,7 @@ export default class Dashboard extends Component {
                 <div style={{width: this.state.leftPaneMinimized ? "5%" : "17.5%"}} className="left-pane">
                     <CSSTransition
                     in={this.state.showExpandedLeftPane}
-                    timeout={{enter: 500, exit: 0}}
+                    timeout={{enter: 1000, exit: 0}}
                     classNames="dialog-slide-left"
                     unmountOnExit
                     >
@@ -1872,6 +1880,7 @@ export default class Dashboard extends Component {
                                     src={this.state.collapseNavbarHovered ? "/assets/shrink-navbar-icon-color.png" : "/assets/shrink-navbar-icon.png"}/>
                                 </div>
                             </div>
+                            <div style={{border: "0.5px solid #707A9F", marginTop: "8%", marginLeft: "5%", marginRight: "5%"}}></div>
                         </div>
                     </CSSTransition>
                     <CSSTransition
@@ -1885,6 +1894,7 @@ export default class Dashboard extends Component {
                                 <img
                                 onMouseEnter={this.collapseNavbarEnter}
                                 onMouseLeave={this.collapseNavbarLeave}
+                                onClick={this.collapseNavbarClicked}
                                 src={this.state.collapseNavbarHovered ? "/assets/shrink-navbar-icon-color.png" : "/assets/shrink-navbar-icon.png"}/>
                             </div>
                         </div>
