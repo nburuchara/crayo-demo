@@ -85,6 +85,72 @@ const Styles = styled.div `
     cursor: pointer;
 }
 
+
+    // - - NAVBAR OPTIONS CONTAINER - - //
+
+.navbar-options-container {
+    border: 1px solid black;
+    margin-top: 15%;
+    height: 60vh;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+    // # NAVBAR OPTION CELL
+
+.navbar-option-cell {
+    border: 1px solid blue;
+}
+
+.navbar-option-cell:after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.navbar-option-icon {
+    float: left;
+    width: 20%;
+    text-align: center;
+}
+
+.navbar-option-text { 
+    float: left;
+    width: 60%;
+    text-align: left;
+}
+
+.navbar-option-dropdown {
+    float: left;
+    width: 20%;
+    text-align: right;
+}
+
+    // # NAVBAR OPTION CELL ICON
+
+.navbar-option-icon img {
+    width: 40%;
+    margin-top: 1em;
+    // margin-bottom: 1em;
+}
+
+    // # NAVBAR OPTION CELL ICON
+
+.navbar-option-text p {
+    font-family: dm sans;
+    font-weight: bold;
+    font-size: 97%;
+    color: #707A9f;
+} 
+
+    // # NAVBAR OPTION CELL DROPDOWN ICON
+
+.navbar-option-dropdown img {
+    margin-right: 0.3em;
+    width: 55%;
+    margin-top: 0.9em;
+}
+
     //! - - (Navbar - SHRANK) - - //
 
 .shrank-left-pane-header img {
@@ -1881,6 +1947,30 @@ export default class Dashboard extends Component {
                                 </div>
                             </div>
                             <div style={{border: "0.5px solid #707A9F", marginTop: "8%", marginLeft: "5%", marginRight: "5%"}}></div>
+                            <div className="navbar-options-container">
+                                <div className="navbar-option-cell">
+                                    <div className="navbar-option-icon">
+                                        <img src="/assets/dashboard-option-icon.png"/>
+                                    </div>
+                                    <div className="navbar-option-text">
+                                        <p>Dashboard</p>
+                                    </div>
+                                    <div className="navbar-option-dropdown">
+                                        <img src="/assets/dashboard-down-arrow.png"/>
+                                    </div>
+                                </div>
+                                <div className="navbar-option-cell">
+                                    <div className="navbar-option-icon">
+                                        <img src="/assets/dashboard-option-icon.png"/>
+                                    </div>
+                                    <div className="navbar-option-text">
+                                        <p>Create</p>
+                                    </div>
+                                    <div className="navbar-option-dropdown">
+                                        <img src="/assets/dashboard-down-arrow.png"/>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </CSSTransition>
                     <CSSTransition
@@ -2012,7 +2102,7 @@ export default class Dashboard extends Component {
                                 </div>
                                 <div className="window1-bottom-right"> 
                                     <div className="window1-pic">
-                                        <img className="levitate" style={{width: "67%", float: "right", marginTop: "9%"}} src="/assets/iphone-pic.png"/>
+                                        <img className="levitate" style={{width: this.state.leftPaneMinimized ? "60%" : "67%", float: "right", marginTop: this.state.leftPaneMinimized ? "6.5%" : "9%"}} src="/assets/iphone-pic.png"/>
                                     </div>
                                 </div>
                             </div>
