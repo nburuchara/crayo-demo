@@ -41,6 +41,8 @@ const Styles = styled.div `
     transition: width 0.5s ease-out;
 }
 
+    //! - - (Navbar - EXPANDED) - - //
+
     // # LEFT PANE HEADER
 
 .left-pane-header {
@@ -81,6 +83,14 @@ const Styles = styled.div `
     margin-right: 8%;
     margin-top: 3.5%;
     cursor: pointer;
+}
+
+    //! - - (Navbar - SHRANK) - - //
+
+.shrank-left-pane-header img {
+    width: 35%;
+    margin-top: 38%;
+    transform: scaleX(-1);
 }
 
     //! - - Right pane - - !//
@@ -1349,6 +1359,7 @@ export default class Dashboard extends Component {
 
             //* - - - - - PROGRAM FUNCTIONS - - - - - *//
 
+
         //! - - NAVBAR FUNCTIONS - - !//
 
     collapseNavbarEnter = () => {
@@ -1360,11 +1371,19 @@ export default class Dashboard extends Component {
     }
 
     collapseNavbarClicked = () => {
-        this.setState({
-            leftPaneMinimized: true,
-            showExpandedLeftPane: false,
-            showShrankLeftPane: true
-        })
+        if (this.state.leftPaneMinimized === false) {
+            this.setState({
+                leftPaneMinimized: true,
+                showExpandedLeftPane: false,
+            }, () => {
+                setTimeout(() => {
+                    this.setState({ showShrankLeftPane: true })
+                }, 500)
+            })
+        } else {
+
+        }
+        
     }
         
 
@@ -1481,6 +1500,7 @@ export default class Dashboard extends Component {
         }
     }
 
+
         //! - - TOP RIGHT PANE FUNCTIONS - - !//
 
     exportPointsEnter = () => {
@@ -1505,6 +1525,7 @@ export default class Dashboard extends Component {
     startCreatingLeave = () => {
         this.setState({ startCreatingArrow: false, startCreatingIconWidth: "0px", startCreatingBtnWidth: "auto", })
     }
+
 
         //! - - SECTION 1 FUNCTIONS - - !//
         
@@ -1742,6 +1763,7 @@ export default class Dashboard extends Component {
          })
     }
 
+
         //! - - SECTION 2 FUNCTIONS - - !//
 
         //* - - WINDOW 2 - - *//
@@ -1854,12 +1876,17 @@ export default class Dashboard extends Component {
                     </CSSTransition>
                     <CSSTransition
                     in={this.state.showShrankLeftPane}
-                    timeout={{enter: 500, exit: 0}}
+                    timeout={{enter: 1000, exit: 0}}
                     classNames="dialog-slide-left"
                     unmountOnExit
                     >
-                        <div>
-
+                        <div className="shrank-left-pane-container">
+                            <div className="shrank-left-pane-header">
+                                <img
+                                onMouseEnter={this.collapseNavbarEnter}
+                                onMouseLeave={this.collapseNavbarLeave}
+                                src={this.state.collapseNavbarHovered ? "/assets/shrink-navbar-icon-color.png" : "/assets/shrink-navbar-icon.png"}/>
+                            </div>
                         </div>
                     </CSSTransition>
                 </div>
