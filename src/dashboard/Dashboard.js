@@ -38,6 +38,7 @@ const Styles = styled.div `
     text-align: center;
     background-color: #f1f3f8;
     border-right: 1px solid #ccc;
+    transition: width 0.5s ease-out;
 }
 
     // # LEFT PANE HEADER
@@ -79,6 +80,7 @@ const Styles = styled.div `
     width: 40%;
     margin-right: 8%;
     margin-top: 3.5%;
+    cursor: pointer;
 }
 
     //! - - Right pane - - !//
@@ -93,6 +95,7 @@ const Styles = styled.div `
     padding-left: 2%;
     padding-right: 2%;
     background-color: #EEEEEF;
+    transition: width 0.5s ease-out;;
 }
 
     // - - HEADER (RIGHT PANE) - - //? SEARCH BAR & OPTIONS
@@ -1228,9 +1231,11 @@ export default class Dashboard extends Component {
 
                 //! - - LEFT PANE - - !//
 
-            //* - - LEFT PANE VAR(S) - - *//
+            //* - - LEFT PANE CONTAINER VAR(S) - - *//
             leftPaneMinimized: false,
             showExpandedLeftPane: true,
+            showShrankLeftPane: false,
+            collapseNavbarHovered: false,
 
             //* - - RIGHT PANE VAR(S) - - *//
             rightPaneExpanded: false,
@@ -1343,6 +1348,25 @@ export default class Dashboard extends Component {
     }
 
             //* - - - - - PROGRAM FUNCTIONS - - - - - *//
+
+        //! - - NAVBAR FUNCTIONS - - !//
+
+    collapseNavbarEnter = () => {
+        this.setState({ collapseNavbarHovered: true })
+    }
+
+    collapseNavbarLeave = () => {
+        this.setState({ collapseNavbarHovered: false })
+    }
+
+    collapseNavbarClicked = () => {
+        this.setState({
+            leftPaneMinimized: true,
+            showExpandedLeftPane: false,
+            showShrankLeftPane: true
+        })
+    }
+        
 
         //! - - SEARCH FUNCTIONS - - !//
 
@@ -1819,13 +1843,27 @@ export default class Dashboard extends Component {
                                     <img src="/assets/crayo-logo-expanded2.png"/>
                                 </div>
                                 <div className="left-pane-header-right">
-                                    <img src="/assets/shrink-navbar-icon.png"/>
+                                    <img 
+                                    onMouseEnter={this.collapseNavbarEnter}
+                                    onMouseLeave={this.collapseNavbarLeave}
+                                    onClick={this.collapseNavbarClicked}
+                                    src={this.state.collapseNavbarHovered ? "/assets/shrink-navbar-icon-color.png" : "/assets/shrink-navbar-icon.png"}/>
                                 </div>
                             </div>
                         </div>
                     </CSSTransition>
+                    <CSSTransition
+                    in={this.state.showShrankLeftPane}
+                    timeout={{enter: 500, exit: 0}}
+                    classNames="dialog-slide-left"
+                    unmountOnExit
+                    >
+                        <div>
+
+                        </div>
+                    </CSSTransition>
                 </div>
-                <div style={{width: this.state.rightPaneExpanded ? "90.5%" : "78%"}} className="right-pane">
+                <div style={{width: this.state.leftPaneMinimized ? "90.5%" : "78%"}} className="right-pane">
 
                     {/* - - TOP PANE - -  */}
 
@@ -1920,7 +1958,7 @@ export default class Dashboard extends Component {
                             <div className="window1-bottom-section">
                                 <div className="window1-bottom-left">
                                     <button 
-                                    style={{width: this.state.startCreatingBtnWidth, fontSize: this.state.startCreatingBtnFontSize}}
+                                    style={{width: this.state.startCreatingBtnWidth, fontSize: this.state.startCreatingBtnFontSize, marginTop: this.state.leftPaneMinimized ? "39%" : ""}}
                                     onMouseEnter={this.startCreatingEnter}
                                     onMouseLeave={this.startCreatingLeave}
                                     className="wash-button">
