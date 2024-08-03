@@ -89,17 +89,19 @@ const Styles = styled.div `
     // - - NAVBAR OPTIONS CONTAINER - - //
 
 .navbar-options-container {
-    border: 1px solid black;
+    // border: 1px solid black;
     margin-top: 15%;
     height: 60vh;
     margin-left: 5%;
     margin-right: 5%;
 }
 
-    // # NAVBAR OPTION CELL
+    // - NAVBAR OPTION CELL - //
 
 .navbar-option-cell {
-    border: 1px solid blue;
+    // border: 1px solid #707a9f;
+    border-radius: 9px;
+    cursor: pointer;
 }
 
 .navbar-option-cell:after {
@@ -129,8 +131,8 @@ const Styles = styled.div `
     // # NAVBAR OPTION CELL ICON
 
 .navbar-option-icon img {
-    width: 40%;
-    margin-top: 1em;
+    width: 35%;
+    margin-top: 0.9em;
     // margin-bottom: 1em;
 }
 
@@ -139,7 +141,7 @@ const Styles = styled.div `
 .navbar-option-text p {
     font-family: dm sans;
     font-weight: bold;
-    font-size: 97%;
+    font-size: 90%;
     color: #707A9f;
 } 
 
@@ -147,9 +149,31 @@ const Styles = styled.div `
 
 .navbar-option-dropdown img {
     margin-right: 0.3em;
-    width: 55%;
-    margin-top: 0.9em;
+    width: 40%;
+    margin-top: 1em;
 }
+
+.navbar-option-dropdown-unrotated {
+    transition: transform 0.3s ease;
+}
+
+.navbar-option-dropdown-rotated {
+    transform: rotate(180deg);
+}
+
+    // - NAVBAR OPTIONS SUBOPTIONS - //
+
+.dashboard-option-subs:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.dashboard-option-sub-connector {
+    
+}
+
+
 
     //! - - (Navbar - SHRANK) - - //
 
@@ -217,9 +241,6 @@ const Styles = styled.div `
     border: 1px solid #2980b9;
 }
 
-// .right-pane-header-left input::placeholder {
-    
-// }
 
     // - - SEARCH RESULTS - - //
 
@@ -1314,8 +1335,11 @@ export default class Dashboard extends Component {
             showShrankLeftPane: false,
             collapseNavbarHovered: false,
 
-            //* - - RIGHT PANE VAR(S) - - *//
-            rightPaneExpanded: false,
+            //* - - DASHBOARD OPTIONS VAR(S) - - *//
+            dashboardOptionHovered: false,
+            dashboardOptionClicked: false,
+            dashboardOptionBorderColor: "transparent",
+            createOptionHovered: false,
 
                 //! - - TOP PANE (RIGHT PANE) - - !//
 
@@ -1458,6 +1482,21 @@ export default class Dashboard extends Component {
             })
         }
         
+    }
+
+    dashboardOptionEnter = () => {
+        this.setState({ dashboardOptionHovered: true })
+    }
+
+    dashboardOptionLeave = () => {
+        this.setState({ dashboardOptionHovered: false })
+    }
+
+    dashboardNavOptionClicked = () => {
+        this.setState({
+            dashboardOptionClicked: true,
+            dashboardOptionBorderColor: "#2890b9"
+        })
     }
         
 
@@ -1948,17 +1987,31 @@ export default class Dashboard extends Component {
                             </div>
                             <div style={{border: "0.5px solid #707A9F", marginTop: "8%", marginLeft: "5%", marginRight: "5%"}}></div>
                             <div className="navbar-options-container">
-                                <div className="navbar-option-cell">
+                                <div 
+                                onMouseEnter={this.dashboardOptionEnter}
+                                onMouseLeave={this.dashboardOptionLeave}
+                                onClick={this.dashboardNavOptionClicked}
+                                style={{border: `1px solid ${this.state.dashboardOptionHovered ? this.state.dashboardOptionClicked ? "#2890b9" : "#707a9f" : this.state.dashboardOptionClicked ? "#2890b9" : "transparent"}`, backgroundColor: this.state.dashboardOptionHovered ? "" : ""}} className="navbar-option-cell">
                                     <div className="navbar-option-icon">
-                                        <img src="/assets/dashboard-option-icon.png"/>
+                                        <img src={this.state.dashboardOptionHovered || this.state.dashboardOptionClicked ? "/assets/dashboard-option-icon-color.png" : "/assets/dashboard-option-icon.png"}/>
                                     </div>
                                     <div className="navbar-option-text">
-                                        <p>Dashboard</p>
+                                        <p style={{color: this.state.dashboardOptionHovered || this.state.dashboardOptionClicked ? "#2890b9" : "#707a9f"}}>Dashboard</p>
                                     </div>
                                     <div className="navbar-option-dropdown">
-                                        <img src="/assets/dashboard-down-arrow.png"/>
+                                        <img className={this.state.dashboardOptionClicked ? "navbar-option-dropdown-unrotated navbar-option-dropdown-rotated" : "navbar-option-dropdown-unrotated"} src={this.state.dashboardOptionClicked ? "/assets/dashboard-down-arrow-color.png" : "/assets/dashboard-down-arrow.png"}/>
                                     </div>
                                 </div>
+                                <CSSTransition
+                                in={this.state.showDashboardSuboptions}
+                                timeout={{enter: 1000, exit: 0}}
+                                classNames="dialog-slide-left"
+                                unmountOnExit
+                                >
+                                    <div className="dashboard-option-subs">
+
+                                    </div>
+                                </CSSTransition>
                                 <div className="navbar-option-cell">
                                     <div className="navbar-option-icon">
                                         <img src="/assets/dashboard-option-icon.png"/>
@@ -2480,7 +2533,7 @@ export default class Dashboard extends Component {
                         <div className="rp-sec2-right-parent">
                             <div className="examples-header">
                                 <div className="examples-header-left">
-                                    <h2>Content Samples</h2>
+                                    <h2>Crayo Content Samples</h2>
                                     <p>See how solo creators and brands are using Crayo.</p>
                                 </div>
                                 <div className="examples-header-right">
