@@ -63,14 +63,22 @@ const Styles = styled.div `
     float: left;
     width: 20%;
     text-align: right;
-    border: 1px solid black;
+    // border: 1px solid black;
 }
 
     // # LEFT PANE HEADER LOGO IMAGE
 
 .left-pane-header-left img {
     width: 45%;
-    margin-left: 3%;
+    margin-left: 5%;
+}
+
+    // # LEFT PANE HEADER SIDEBAR COLLAPSE IMAGE
+
+.left-pane-header-right img {
+    width: 40%;
+    margin-right: 8%;
+    margin-top: 3.5%;
 }
 
     //! - - Right pane - - !//
