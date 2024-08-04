@@ -1636,6 +1636,7 @@ export default class Dashboard extends Component {
                 createSub1Clicked: false,
                 createSub2Clicked: false,
                 createSub3Clicked: false,
+                createSub4Clicked: false,
                 showCreateSub1Loading: false,
                 showCreateSub1Loaded: false,
                 showCreateSub2Loading: false,
@@ -1688,6 +1689,7 @@ export default class Dashboard extends Component {
                 createSub1Clicked: false,
                 createSub2Clicked: false,
                 createSub3Clicked: false,
+                createSub4Clicked: false,
                 showCreateSub1Loading: false,
                 showCreateSub1Loaded: false,
                 showCreateSub2Loading: false,
@@ -1740,6 +1742,7 @@ export default class Dashboard extends Component {
                 createSub1Clicked: false,
                 createSub2Clicked: false,
                 createSub3Clicked: false,
+                createSub4Clicked: false,
                 showCreateSub1Loading: false,
                 showCreateSub1Loaded: false,
                 showCreateSub2Loading: false,
@@ -1911,7 +1914,7 @@ export default class Dashboard extends Component {
                 createSub1Clicked: false, 
                 createSub2Clicked: false,
                 createSub3Clicked: true,
-                createSub3Clicked: false,
+                createSub4Clicked: false,
                 showCreateSub1Loading: false,
                 showCreateSub1Loaded: false,
                 showCreateSub2Loading: false,
@@ -1948,7 +1951,7 @@ export default class Dashboard extends Component {
                 }, 2000)
             })
         } else {
-            this.setState({ createSub4Clicked: false, showCreateSub4Loaded: false, createSubActive: "" })
+            this.setState({ createSub3Clicked: false, showCreateSub3Loaded: false, createSubActive: "" })
         }
     }
 
@@ -1974,7 +1977,7 @@ export default class Dashboard extends Component {
                 showCreateSub3Loading: false,
                 showCreateSub3Loaded: false,
                 showCreateSub4Loading: true,
-                createSubActive: "My Assets",
+                createSubActive: "Blur Video",
 
                 //* - CLOSING NON-CREATE OPTIONS - *//
                 dashboardSubActive: "",
@@ -2607,8 +2610,8 @@ export default class Dashboard extends Component {
                                         <img src={this.state.createOptionHovered || this.state.createOptionClicked ? "/assets/create-option-icon-color2.png" : "/assets/create-option-icon.png"}/>
                                     </div>
                                     <div className="navbar-option-text">
-                                        <p style={{color: this.state.createOptionHovered || this.state.createOptionClicked ? "#1c4c75" : "", fontWeight: this.state.createOptionClicked ? "bold" : "", marginBottom: (!this.state.createOptionClicked && (this.state.createSub1Clicked || this.state.createSub2Clicked || this.state.createSub3Clicked)) ? "0px" : ""}}>Create</p>
-                                        {(!this.state.createOptionClicked && (this.state.createSub1Clicked || this.state.createSub2Clicked || this.state.createSub3Clicked)) && 
+                                        <p style={{color: this.state.createOptionHovered || this.state.createOptionClicked ? "#1c4c75" : "", fontWeight: this.state.createOptionClicked ? "bold" : "", marginBottom: (!this.state.createOptionClicked && (this.state.createSub1Clicked || this.state.createSub2Clicked || this.state.createSub3Clicked || this.state.createSub4Clicked)) ? "0px" : ""}}>Create</p>
+                                        {(!this.state.createOptionClicked && (this.state.createSub1Clicked || this.state.createSub2Clicked || this.state.createSub3Clicked || this.state.createSub4Clicked)) && 
                                             <div className="active-sub-option">
                                                 <p><span style={{color: "#41A75B"}}>ACTIVE: </span>{this.state.createSubActive}</p>
                                             </div>
