@@ -6,6 +6,8 @@ import { CSSTransition } from 'react-transition-group';
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import ClipLoader from "react-spinners/ClipLoader";
+import BounceLoader from "react-spinners/BounceLoader";
 
 //? - - FILES - - //
 import SearchTerms from './dash-helper-files/Search-Terms'
@@ -74,7 +76,7 @@ const Styles = styled.div `
 .left-pane-header-left img {
     margin-top: 2%;
     width: 35%;
-    margin-left: 5%;
+    margin-left: 6%;
 }
 
     // # LEFT PANE HEADER SIDEBAR COLLAPSE IMAGE
@@ -82,7 +84,7 @@ const Styles = styled.div `
 .left-pane-header-right img {
     width: 40%;
     margin-right: 8%;
-    margin-top: 3.5%;
+    margin-top: 3.75%;
     cursor: pointer;
 }
 
@@ -253,6 +255,8 @@ const Styles = styled.div `
     display: table;
     clear: both;
 }
+
+
 
     //! - - (Navbar - SHRANK) - - //
 
@@ -1532,6 +1536,14 @@ export default class Dashboard extends Component {
 
         //! - - NAVBAR FUNCTIONS - - !//
 
+    mainLogoEnter = () => {
+        this.setState({ crayoLogoHovered: true })
+    }
+
+    mainLogoLeave = () => {
+        this.setState({ crayoLogoHovered: false })
+    }
+
     collapseNavbarEnter = () => {
         this.setState({ collapseNavbarHovered: true })
     }
@@ -1594,7 +1606,17 @@ export default class Dashboard extends Component {
 
     dashboardSub1OptionClicked = () => {
         if (this.state.dashboardSub1Clicked !== true) {
-            this.setState({ dashboardSub1Clicked: true, dashboardSub2Clicked: false })
+            this.setState({ 
+                dashboardSub1Clicked: true, 
+                dashboardSub2Clicked: false,
+                showDashboardSub1Loading: true
+            }, () => {
+                setTimeout(() => {
+                    this.setState({
+                        showDashboardSub1Loading: false
+                    })
+                }, 2000)
+            })
         } else {
             this.setState({ dashboardSub1Clicked: false })
         }
@@ -2101,7 +2123,10 @@ export default class Dashboard extends Component {
                         <div className="left-pane-container">
                             <div className="left-pane-header">
                                 <div className="left-pane-header-left">
-                                    <img src="/assets/crayo-logo-expanded2.png"/>
+                                    <img 
+                                    onMouseEnter={this.mainLogoEnter}
+                                    onMouseLeave={this.mainLogoLeave}
+                                    src={this.state.crayoLogoHovered ? "/assets/crayo-logo-expanded2-color.png" : "/assets/crayo-logo-expanded2.png"}/>
                                 </div>
                                 <div className="left-pane-header-right">
                                     <img 
@@ -2144,22 +2169,55 @@ export default class Dashboard extends Component {
                                             onMouseEnter={this.dashboardSub1Enter}
                                             onMouseLeave={this.dashboardSub1Leave}
                                             onClick={this.dashboardSub1OptionClicked}
-                                            style={{border: `1px solid ${this.state.dashboardSub1Hovered ? this.state.dashboardSub1Clicked ? "#1c4c75" : "#707a9f" : this.state.dashboardSub1Clicked ? "#1c4c75" : "transparent"}`, color: this.state.dashboardSub1Clicked ? "#1c4c75" : "#6a6a6a", backgroundColor: this.state.dashboardSub1Clicked ? "#E0F4FC" : "transparent"}}>
-                                            
+                                            style={{border: `1px solid ${this.state.dashboardSub1Hovered ? this.state.dashboardSub1Clicked ? "#1c4c75" : "#707a9f" : this.state.dashboardSub1Clicked ? "#1c4c75" : "transparent"}`, color: this.state.dashboardSub1Clicked ? "#1c4c75" : "#6a6a6a", backgroundColor: this.state.dashboardSub1Clicked ? "#E0F4FC" : "transparent", display: "flex", justifyContent: "space-between"}}>
                                                 <p style={{fontWeight: this.state.dashboardSub1Clicked ? "bold" : ""}}>Main Editor</p>
+                                                {this.state.showDashboardSub1Loading && 
+                                                    <span style={{marginLeft: "40.5%", marginTop: "3.5%"}}>
+                                                        <ClipLoader
+                                                        color="#1c4c75"
+                                                        loading={true}
+                                                        size={6}
+                                                        aria-label="Loading Spinner"
+                                                        data-testid="loader"
+                                                        />
+                                                    </span>
+                                                }
                                             </div>
                                             <div 
                                             onMouseEnter={this.dashboardSub2Enter}
                                             onMouseLeave={this.dashboardSub2Leave}
                                             onClick={this.dashboardSub2OptionClicked}
-                                            style={{border: `1px solid ${this.state.dashboardSub2Hovered ? this.state.dashboardSub2Clicked ? "#1c4c75" : "#707a9f" : this.state.dashboardSub2Clicked ? "#1c4c75" : "transparent"}`, color: this.state.dashboardSub2Clicked ? "#1c4c75" : "#6a6a6a", backgroundColor: this.state.dashboardSub2Clicked ? "#E0F4FC" : "transparent"}}>
+                                            style={{border: `1px solid ${this.state.dashboardSub2Hovered ? this.state.dashboardSub2Clicked ? "#1c4c75" : "#707a9f" : this.state.dashboardSub2Clicked ? "#1c4c75" : "transparent"}`, color: this.state.dashboardSub2Clicked ? "#1c4c75" : "#6a6a6a", backgroundColor: this.state.dashboardSub2Clicked ? "#E0F4FC" : "transparent", display: "flex", justifyContent: "space-between"}}>
                                                 <p style={{fontWeight: this.state.dashboardSub2Clicked ? "bold" : ""}}>My Projects</p>
+                                                {this.state.showDashboardSub2Loading && 
+                                                    <span style={{marginLeft: "40.5%", marginTop: "3.5%"}}>
+                                                        <ClipLoader
+                                                        color="#1c4c75"
+                                                        loading={true}
+                                                        size={6}
+                                                        aria-label="Loading Spinner"
+                                                        data-testid="loader"
+                                                        />
+                                                    </span>
+                                                }
                                             </div>
                                             <div 
                                             onMouseEnter={this.dashboardSub3Enter}
                                             onMouseLeave={this.dashboardSub3Leave}
-                                            style={{border: `1px solid ${this.state.dashboardSub3Hovered ? "#707a9f" : "transparent"}`}}>
+                                            onClick={this.dashboardSub3OptionClicked}
+                                            style={{border: `1px solid ${this.state.dashboardSub3Hovered ? this.state.dashboardSub3Clicked ? "#1c4c75" : "#707a9f" : this.state.dashboardSub3Clicked ? "#1c4c75" : "transparent"}`, color: this.state.dashboardSub3Clicked ? "#1c4c75" : "#6a6a6a", backgroundColor: this.state.dashboardSub3Clicked ? "#E0F4FC" : "transparent", display: "flex", justifyContent: "space-between"}}>
                                                 <p>My Assets</p>
+                                                {this.state.showDashboardSub3Loading && 
+                                                    <span style={{marginLeft: "40.5%", marginTop: "3.5%"}}>
+                                                        <ClipLoader
+                                                        color="#1c4c75"
+                                                        loading={true}
+                                                        size={6}
+                                                        aria-label="Loading Spinner"
+                                                        data-testid="loader"
+                                                        />
+                                                    </span>
+                                                }
                                             </div>
                                         </div>
                                     </div>
