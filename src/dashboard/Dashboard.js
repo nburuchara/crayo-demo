@@ -1588,7 +1588,7 @@ export default class Dashboard extends Component {
         
     }
 
-        //* - - DASHBOARD OPTION - - *//
+    //* - - DASHBOARD OPTION - - *//
 
     dashboardOptionEnter = () => {
         this.setState({ dashboardOptionHovered: true })
@@ -1642,6 +1642,8 @@ export default class Dashboard extends Component {
                 showCreateSub2Loaded: false,
                 showCreateSub3Loading: false,
                 showCreateSub3Loaded: false,
+                showCreateSub4Loading: false,
+                showCreateSub4Loaded: false,
 
             }, () => {
                 setTimeout(() => {
@@ -1692,6 +1694,8 @@ export default class Dashboard extends Component {
                 showCreateSub2Loaded: false,
                 showCreateSub3Loading: false,
                 showCreateSub3Loaded: false,
+                showCreateSub4Loading: false,
+                showCreateSub4Loaded: false,
 
             }, () => {
                 setTimeout(() => {
@@ -1742,6 +1746,8 @@ export default class Dashboard extends Component {
                 showCreateSub2Loaded: false,
                 showCreateSub3Loading: false,
                 showCreateSub3Loaded: false,
+                showCreateSub4Loading: false,
+                showCreateSub4Loaded: false,
 
             }, () => {
                 setTimeout(() => {
@@ -1797,9 +1803,11 @@ export default class Dashboard extends Component {
                 createSub3Clicked: false,
                 showCreateSub1Loading: true,
                 showCreateSub2Loading: false,
-                showCreateSub3Loading: false,
                 showCreateSub2Loaded: false,
+                showCreateSub3Loading: false,
                 showCreateSub3Loaded: false,
+                showCreateSub4Loading: false,
+                showCreateSub4Loaded: false,
                 createSubActive: "Split Video",
                 
                 //* - CLOSING NON-CREATE OPTIONS - *//
@@ -1820,9 +1828,11 @@ export default class Dashboard extends Component {
                         showCreateSub1Loading: false,
                         showCreateSub1Loaded: true,
                         showCreateSub2Loading: false,
-                        showCreateSub3Loading: false,
                         showCreateSub2Loaded: false,
+                        showCreateSub3Loading: false,
                         showCreateSub3Loaded: false,
+                        showCreateSub4Loading: false,
+                        showCreateSub4Loaded: false,
                     })
                 }, 2000)
             })
@@ -1850,6 +1860,8 @@ export default class Dashboard extends Component {
                 showCreateSub2Loading: true,
                 showCreateSub3Loading: false,
                 showCreateSub3Loaded: false,
+                showCreateSub4Loading: false,
+                showCreateSub4Loaded: false,
                 createSubActive: "Story Video",
                 
                 //* - CLOSING NON-CREATE OPTIONS - *//
@@ -1873,6 +1885,8 @@ export default class Dashboard extends Component {
                         showCreateSub1Loaded: false,
                         showCreateSub3Loading: false,
                         showCreateSub3Loaded: false,
+                        showCreateSub4Loading: false,
+                        showCreateSub4Loaded: false,
                     })
                 }, 2000)
             })
@@ -1899,6 +1913,8 @@ export default class Dashboard extends Component {
                 showCreateSub1Loaded: false,
                 showCreateSub2Loading: false,
                 showCreateSub2Loaded: false,
+                showCreateSub4Loading: false,
+                showCreateSub4Loaded: false,
                 showCreateSub3Loading: true,
                 createSubActive: "My Assets",
 
@@ -1923,11 +1939,67 @@ export default class Dashboard extends Component {
                         showCreateSub1Loaded: false,
                         showCreateSub2Loading: false,
                         showCreateSub2Loaded: false,
+                        showCreateSub4Loading: false,
+                        showCreateSub4Loaded: false,
                     })
                 }, 2000)
             })
         } else {
-            this.setState({ createSub3Clicked: false, showCreateSub3Loaded: false, createSubActive: "" })
+            this.setState({ createSub4Clicked: false, showCreateSub4Loaded: false, createSubActive: "" })
+        }
+    }
+
+    createSub4Enter = () => {
+        this.setState({ createSub4Hovered: true })
+    }
+
+    createSub4Leave = () => {
+        this.setState({ createSub4Hovered: false })
+    }
+
+    createSub4OptionClicked = () => {
+        if (this.state.createSub4Clicked !== true) {
+            this.setState({ 
+                createSub1Clicked: false, 
+                createSub2Clicked: false,
+                createSub3Clicked: true,
+                showCreateSub1Loading: false,
+                showCreateSub1Loaded: false,
+                showCreateSub2Loading: false,
+                showCreateSub2Loaded: false,
+                showCreateSub3Loading: false,
+                showCreateSub3Loaded: false,
+                showCreateSub4Loading: true,
+                createSubActive: "My Assets",
+
+                //* - CLOSING NON-CREATE OPTIONS - *//
+                dashboardSubActive: "",
+                dashboardSub1Clicked: false,
+                dashboardSub2Clicked: false,
+                dashboardSub3Clicked: false,
+                showDashboardSub1Loading: false,
+                showDashboardSub1Loaded: false,
+                showDashboardSub2Loading: false,
+                showDashboardSub2Loaded: false,
+                showDashboardSub3Loading: false,
+                showDashboardSub3Loaded: false,
+                
+            }, () => {
+                setTimeout(() => {
+                    this.setState({
+                        showCreateSub4Loading: false,
+                        showCreateSub4Loaded: true,
+                        showCreateSub3Loading: false,
+                        showCreateSub3Loaded: false,
+                        showCreateSub1Loading: false,
+                        showCreateSub1Loaded: false,
+                        showCreateSub2Loading: false,
+                        showCreateSub2Loaded: false,
+                    })
+                }, 2000)
+            })
+        } else {
+            this.setState({ createSub4Clicked: false, showCreateSub4Loaded: false, createSubActive: "" })
         }
     }
 
@@ -2613,6 +2685,27 @@ export default class Dashboard extends Component {
                                                     </span>
                                                 }
                                                 {this.state.showCreateSub3Loaded && 
+                                                    <img style={{height: "7%", width: "7%", marginRight: "4%", marginTop: "6%"}} src="/assets/dashboard-sub-option-open.png"/>
+                                                }
+                                            </div>
+                                            <div 
+                                            onMouseEnter={this.createSub4Enter}
+                                            onMouseLeave={this.createSub4Leave}
+                                            onClick={this.createSub4OptionClicked}
+                                            style={{border: `1px solid ${this.state.createSub4Hovered ? this.state.createSub4Clicked ? "#1c4c75" : "#707a9f" : this.state.createSub4Clicked ? "#1c4c75" : "transparent"}`, color: this.state.createSub4Clicked ? "#1c4c75" : "#6a6a6a", backgroundColor: this.state.createSub4Clicked ? "#E0F4FC" : "transparent", display: "flex", justifyContent: "space-between"}}>
+                                                <p style={{fontWeight: this.state.createSub4Clicked ? "bold" : ""}}>Blur Video</p>
+                                                {this.state.showCreateSub4Loading && 
+                                                    <span style={{marginRight: "5%", marginTop: "4.5%"}}>
+                                                        <ClipLoader
+                                                        color="#1c4c75"
+                                                        loading={true}
+                                                        size={6}
+                                                        aria-label="Loading Spinner"
+                                                        data-testid="loader"
+                                                        />
+                                                    </span>
+                                                }
+                                                {this.state.showCreateSub4Loaded && 
                                                     <img style={{height: "7%", width: "7%", marginRight: "4%", marginTop: "6%"}} src="/assets/dashboard-sub-option-open.png"/>
                                                 }
                                             </div>
