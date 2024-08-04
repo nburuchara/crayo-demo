@@ -1629,7 +1629,20 @@ export default class Dashboard extends Component {
                 showDashboardSub3Loading: false,
                 showDashboardSub2Loaded: false,
                 showDashboardSub3Loaded: false,
-                dashboardSubActive: "Main Editor"
+                dashboardSubActive: "Main Editor",
+                
+                //* - CLOSING NON-DASHBOARD OPTIONS - *//
+                createSubActive: "",
+                createSub1Clicked: false,
+                createSub2Clicked: false,
+                createSub3Clicked: false,
+                showCreateSub1Loading: false,
+                showCreateSub1Loaded: false,
+                showCreateSub2Loading: false,
+                showCreateSub2Loaded: false,
+                showCreateSub3Loading: false,
+                showCreateSub3Loaded: false,
+
             }, () => {
                 setTimeout(() => {
                     this.setState({
@@ -1643,7 +1656,7 @@ export default class Dashboard extends Component {
                 }, 2000)
             })
         } else {
-            this.setState({ dashboardSub1Clicked: false, showDashboardSub1Loaded: false })
+            this.setState({ dashboardSub1Clicked: false, showDashboardSub1Loaded: false, dashboardSubActive: "" })
         }
     }
 
@@ -1666,7 +1679,20 @@ export default class Dashboard extends Component {
                 showDashboardSub2Loading: true,
                 showDashboardSub3Loading: false,
                 showDashboardSub3Loaded: false,
-                dashboardSubActive: "My Projects"
+                dashboardSubActive: "My Projects",
+                
+                //* - CLOSING NON-DASHBOARD OPTIONS - *//
+                createSubActive: "",
+                createSub1Clicked: false,
+                createSub2Clicked: false,
+                createSub3Clicked: false,
+                showCreateSub1Loading: false,
+                showCreateSub1Loaded: false,
+                showCreateSub2Loading: false,
+                showCreateSub2Loaded: false,
+                showCreateSub3Loading: false,
+                showCreateSub3Loaded: false,
+
             }, () => {
                 setTimeout(() => {
                     this.setState({
@@ -1680,7 +1706,7 @@ export default class Dashboard extends Component {
                 }, 2000)
             })
         } else {
-            this.setState({ dashboardSub2Clicked: false, showDashboardSub2Loaded: false })
+            this.setState({ dashboardSub2Clicked: false, showDashboardSub2Loaded: false, dashboardSubActive: "" })
         }
     }
 
@@ -1703,7 +1729,20 @@ export default class Dashboard extends Component {
                 showDashboardSub2Loading: false,
                 showDashboardSub2Loaded: false,
                 showDashboardSub3Loading: true,
-                dashboardSubActive: "My Assets"
+                dashboardSubActive: "My Assets",
+                
+                //* - CLOSING NON-DASHBOARD OPTIONS - *//
+                createSubActive: "",
+                createSub1Clicked: false,
+                createSub2Clicked: false,
+                createSub3Clicked: false,
+                showCreateSub1Loading: false,
+                showCreateSub1Loaded: false,
+                showCreateSub2Loading: false,
+                showCreateSub2Loaded: false,
+                showCreateSub3Loading: false,
+                showCreateSub3Loaded: false,
+
             }, () => {
                 setTimeout(() => {
                     this.setState({
@@ -1717,10 +1756,11 @@ export default class Dashboard extends Component {
                 }, 2000)
             })
         } else {
-            this.setState({ dashboardSub3Clicked: false, showDashboardSub3Loaded: false })
+            this.setState({ dashboardSub3Clicked: false, showDashboardSub3Loaded: false, dashboardSubActive: "" })
         }
     }
 
+        //* - - CREATE OPTION - - *//
 
     createOptionEnter = () => {
         this.setState({ createOptionHovered: true })
@@ -1751,7 +1791,6 @@ export default class Dashboard extends Component {
 
     createSub1OptionClicked = () => {
         if (this.state.createSub1Clicked !== true) {
-            clearTimeout()
             this.setState({ 
                 createSub1Clicked: true, 
                 createSub2Clicked: false,
@@ -1761,7 +1800,20 @@ export default class Dashboard extends Component {
                 showCreateSub3Loading: false,
                 showCreateSub2Loaded: false,
                 showCreateSub3Loaded: false,
-                createSubActive: "Split Video"
+                createSubActive: "Split Video",
+                
+                //* - CLOSING NON-CREATE OPTIONS - *//
+                dashboardSubActive: "",
+                dashboardSub1Clicked: false,
+                dashboardSub2Clicked: false,
+                dashboardSub3Clicked: false,
+                showDashboardSub1Loading: false,
+                showDashboardSub1Loaded: false,
+                showDashboardSub2Loading: false,
+                showDashboardSub2Loaded: false,
+                showDashboardSub3Loading: false,
+                showDashboardSub3Loaded: false,
+
             }, () => {
                 setTimeout(() => {
                     this.setState({
@@ -1775,7 +1827,7 @@ export default class Dashboard extends Component {
                 }, 2000)
             })
         } else {
-            this.setState({ createSub1Clicked: false, showCreateSub1Loaded: false })
+            this.setState({ createSub1Clicked: false, showCreateSub1Loaded: false, createSubActive: "" })
         }
     }
 
@@ -1798,7 +1850,20 @@ export default class Dashboard extends Component {
                 showCreateSub2Loading: true,
                 showCreateSub3Loading: false,
                 showCreateSub3Loaded: false,
-                createSubActive: "Story Video"
+                createSubActive: "Story Video",
+                
+                //* - CLOSING NON-CREATE OPTIONS - *//
+                dashboardSubActive: "",
+                dashboardSub1Clicked: false,
+                dashboardSub2Clicked: false,
+                dashboardSub3Clicked: false,
+                showDashboardSub1Loading: false,
+                showDashboardSub1Loaded: false,
+                showDashboardSub2Loading: false,
+                showDashboardSub2Loaded: false,
+                showDashboardSub3Loading: false,
+                showDashboardSub3Loaded: false,
+
             }, () => {
                 setTimeout(() => {
                     this.setState({
@@ -1812,7 +1877,7 @@ export default class Dashboard extends Component {
                 }, 2000)
             })
         } else {
-            this.setState({ createSub2Clicked: false, showCreateSub2Loaded: false })
+            this.setState({ createSub2Clicked: false, showCreateSub2Loaded: false, createSubActive: "" })
         }
     }
 
@@ -1835,7 +1900,20 @@ export default class Dashboard extends Component {
                 showCreateSub2Loading: false,
                 showCreateSub2Loaded: false,
                 showCreateSub3Loading: true,
-                createSubActive: "My Assets"
+                createSubActive: "My Assets",
+
+                //* - CLOSING NON-CREATE OPTIONS - *//
+                dashboardSubActive: "",
+                dashboardSub1Clicked: false,
+                dashboardSub2Clicked: false,
+                dashboardSub3Clicked: false,
+                showDashboardSub1Loading: false,
+                showDashboardSub1Loaded: false,
+                showDashboardSub2Loading: false,
+                showDashboardSub2Loaded: false,
+                showDashboardSub3Loading: false,
+                showDashboardSub3Loaded: false,
+                
             }, () => {
                 setTimeout(() => {
                     this.setState({
@@ -1849,7 +1927,7 @@ export default class Dashboard extends Component {
                 }, 2000)
             })
         } else {
-            this.setState({ createSub3Clicked: false, showCreateSub3Loaded: false })
+            this.setState({ createSub3Clicked: false, showCreateSub3Loaded: false, createSubActive: "" })
         }
     }
 
@@ -2442,6 +2520,7 @@ export default class Dashboard extends Component {
                                         </div>
                                     </div>
                                 </CSSTransition>
+
                                 <div 
                                 onMouseEnter={this.createOptionEnter}
                                 onMouseLeave={this.createOptionLeave}
@@ -2453,9 +2532,14 @@ export default class Dashboard extends Component {
                                     </div>
                                     <div className="navbar-option-text">
                                         <p style={{color: this.state.createOptionHovered || this.state.createOptionClicked ? "#1c4c75" : "", fontWeight: this.state.createOptionClicked ? "bold" : "", marginBottom: (!this.state.createOptionClicked && (this.state.createSub1Clicked || this.state.createSub2Clicked || this.state.createSub3Clicked)) ? "0px" : ""}}>Create</p>
+                                        {(!this.state.createOptionClicked && (this.state.createSub1Clicked || this.state.createSub2Clicked || this.state.createSub3Clicked)) && 
+                                            <div className="active-sub-option">
+                                                <p><span style={{color: "#41A75B"}}>ACTIVE: </span>{this.state.createSubActive}</p>
+                                            </div>
+                                        }
                                     </div>
                                     <div className="navbar-option-dropdown">
-                                        <img className={this.state.createOptionClicked ? "navbar-option-dropdown-unrotated navbar-option-dropdown-rotated" : "navbar-option-dropdown-unrotated"} src={this.state.dashboardOptionClicked ? "/assets/dashboard-down-arrow-color2.png" : "/assets/dashboard-down-arrow.png"}/>
+                                        <img className={this.state.createOptionClicked ? "navbar-option-dropdown-unrotated navbar-option-dropdown-rotated" : "navbar-option-dropdown-unrotated"} src={this.state.createOptionClicked ? "/assets/dashboard-down-arrow-color2.png" : "/assets/dashboard-down-arrow.png"}/>
                                     </div>
                                 </div>
                                 <CSSTransition
@@ -2516,7 +2600,7 @@ export default class Dashboard extends Component {
                                             onMouseLeave={this.createSub3Leave}
                                             onClick={this.createSub3OptionClicked}
                                             style={{border: `1px solid ${this.state.createSub3Hovered ? this.state.createSub3Clicked ? "#1c4c75" : "#707a9f" : this.state.createSub3Clicked ? "#1c4c75" : "transparent"}`, color: this.state.createSub3Clicked ? "#1c4c75" : "#6a6a6a", backgroundColor: this.state.createSub3Clicked ? "#E0F4FC" : "transparent", display: "flex", justifyContent: "space-between"}}>
-                                                <p style={{fontWeight: this.state.createSub3Clicked ? "bold" : ""}}>My Assets</p>
+                                                <p style={{fontWeight: this.state.createSub3Clicked ? "bold" : ""}}>Texts Video</p>
                                                 {this.state.showCreateSub3Loading && 
                                                     <span style={{marginRight: "5%", marginTop: "4.5%"}}>
                                                         <ClipLoader
