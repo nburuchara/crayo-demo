@@ -152,6 +152,16 @@ const Styles = styled.div `
     // color: #707A9f;
 } 
 
+    // # ACTIVE SUB OPTION
+
+.active-sub-option p {
+    margin-top: 1% !important;
+    margin-bottom: 5% !important;
+    font-size: 65% !important;
+    font-weight: bold;
+    color: #1c4c75;
+}
+
     // # NAVBAR OPTION CELL DROPDOWN ICON
 
 .navbar-option-dropdown img {
@@ -831,7 +841,7 @@ const Styles = styled.div `
     // # TUTORIAL CONTAINER
 
 .tutorial-container {
-    height: 15.5em;
+    height: 15em;
     overflow: auto;
     // border: 1px solid black;
 }
@@ -1421,9 +1431,12 @@ export default class Dashboard extends Component {
             //* - - DASHBOARD OPTIONS VAR(S) - - *//
             dashboardOptionHovered: false,
             dashboardOptionClicked: false,
-            dashboardOptionBorderColor: "transparent",
-            createOptionHovered: false,
+            dashboardSubActive: "",
 
+            createOptionHovered: false,
+            createOptionClicked: false,
+            createSubActive: "",
+    
                 //! - - TOP PANE (RIGHT PANE) - - !//
 
             //* - - SEARCH BAR VAR(s) - - *//
@@ -1589,7 +1602,7 @@ export default class Dashboard extends Component {
         if (this.state.dashboardOptionClicked === false) {
             this.setState({
                 dashboardOptionClicked: true,
-                showDashboardSuboptions: true
+                showDashboardSuboptions: true,
             })
         } else {
             this.setState({ dashboardOptionClicked: false, showDashboardSuboptions: false })
@@ -1606,19 +1619,31 @@ export default class Dashboard extends Component {
 
     dashboardSub1OptionClicked = () => {
         if (this.state.dashboardSub1Clicked !== true) {
+            clearTimeout()
             this.setState({ 
                 dashboardSub1Clicked: true, 
                 dashboardSub2Clicked: false,
-                showDashboardSub1Loading: true
+                dashboardSub3Clicked: false,
+                showDashboardSub1Loading: true,
+                showDashboardSub2Loading: false,
+                showDashboardSub3Loading: false,
+                showDashboardSub2Loaded: false,
+                showDashboardSub3Loaded: false,
+                dashboardSubActive: "Main Editor"
             }, () => {
                 setTimeout(() => {
                     this.setState({
-                        showDashboardSub1Loading: false
+                        showDashboardSub1Loading: false,
+                        showDashboardSub1Loaded: true,
+                        showDashboardSub2Loading: false,
+                        showDashboardSub3Loading: false,
+                        showDashboardSub2Loaded: false,
+                        showDashboardSub3Loaded: false,
                     })
                 }, 2000)
             })
         } else {
-            this.setState({ dashboardSub1Clicked: false })
+            this.setState({ dashboardSub1Clicked: false, showDashboardSub1Loaded: false })
         }
     }
 
@@ -1631,7 +1656,32 @@ export default class Dashboard extends Component {
     }
 
     dashboardSub2OptionClicked = () => {
-        this.setState({ dashboardSub2Clicked: true, dashboardSub1Clicked: false})
+        if (this.state.dashboardSub2Clicked !== true) {
+            this.setState({ 
+                dashboardSub1Clicked: false, 
+                dashboardSub2Clicked: true,
+                dashboardSub3Clicked: false,
+                showDashboardSub1Loading: false,
+                showDashboardSub1Loaded: false,
+                showDashboardSub2Loading: true,
+                showDashboardSub3Loading: false,
+                showDashboardSub3Loaded: false,
+                dashboardSubActive: "My Projects"
+            }, () => {
+                setTimeout(() => {
+                    this.setState({
+                        showDashboardSub2Loading: false,
+                        showDashboardSub2Loaded: true,
+                        showDashboardSub1Loading: false,
+                        showDashboardSub1Loaded: false,
+                        showDashboardSub3Loading: false,
+                        showDashboardSub3Loaded: false,
+                    })
+                }, 2000)
+            })
+        } else {
+            this.setState({ dashboardSub2Clicked: false, showDashboardSub2Loaded: false })
+        }
     }
 
     dashboardSub3Enter = () => {
@@ -1643,7 +1693,164 @@ export default class Dashboard extends Component {
     }
 
     dashboardSub3OptionClicked = () => {
-        
+        if (this.state.dashboardSub3Clicked !== true) {
+            this.setState({ 
+                dashboardSub1Clicked: false, 
+                dashboardSub2Clicked: false,
+                dashboardSub3Clicked: true,
+                showDashboardSub1Loading: false,
+                showDashboardSub1Loaded: false,
+                showDashboardSub2Loading: false,
+                showDashboardSub2Loaded: false,
+                showDashboardSub3Loading: true,
+                dashboardSubActive: "My Assets"
+            }, () => {
+                setTimeout(() => {
+                    this.setState({
+                        showDashboardSub3Loading: false,
+                        showDashboardSub3Loaded: true,
+                        showDashboardSub1Loading: false,
+                        showDashboardSub1Loaded: false,
+                        showDashboardSub2Loading: false,
+                        showDashboardSub2Loaded: false,
+                    })
+                }, 2000)
+            })
+        } else {
+            this.setState({ dashboardSub3Clicked: false, showDashboardSub3Loaded: false })
+        }
+    }
+
+
+    createOptionEnter = () => {
+        this.setState({ createOptionHovered: true })
+    }
+
+    createOptionLeave = () => {
+        this.setState({ createOptionHovered: false })
+    }
+
+    createNavOptionClicked = () => {
+        if (this.state.createOptionClicked === false) {
+            this.setState({
+                createOptionClicked: true,
+                showCreateSuboptions: true,
+            })
+        } else {
+            this.setState({ createOptionClicked: false, showCreateSuboptions: false })
+        }
+    }
+
+    createSub1Enter = () => {
+        this.setState({ createSub1Hovered: true })
+    }
+
+    createSub1Leave = () => {
+        this.setState({ createSub1Hovered: false })
+    }
+
+    createSub1OptionClicked = () => {
+        if (this.state.createSub1Clicked !== true) {
+            clearTimeout()
+            this.setState({ 
+                createSub1Clicked: true, 
+                createSub2Clicked: false,
+                createSub3Clicked: false,
+                showCreateSub1Loading: true,
+                showCreateSub2Loading: false,
+                showCreateSub3Loading: false,
+                showCreateSub2Loaded: false,
+                showCreateSub3Loaded: false,
+                createSubActive: "Split Video"
+            }, () => {
+                setTimeout(() => {
+                    this.setState({
+                        showCreateSub1Loading: false,
+                        showCreateSub1Loaded: true,
+                        showCreateSub2Loading: false,
+                        showCreateSub3Loading: false,
+                        showCreateSub2Loaded: false,
+                        showCreateSub3Loaded: false,
+                    })
+                }, 2000)
+            })
+        } else {
+            this.setState({ createSub1Clicked: false, showCreateSub1Loaded: false })
+        }
+    }
+
+    createSub2Enter = () => {
+        this.setState({ createSub2Hovered: true })
+    }
+
+    createSub2Leave = () => {
+        this.setState({ createSub2Hovered: false })
+    }
+
+    createSub2OptionClicked = () => {
+        if (this.state.createSub2Clicked !== true) {
+            this.setState({ 
+                createSub1Clicked: false, 
+                createSub2Clicked: true,
+                createSub3Clicked: false,
+                showCreateSub1Loading: false,
+                showCreateSub1Loaded: false,
+                showCreateSub2Loading: true,
+                showCreateSub3Loading: false,
+                showCreateSub3Loaded: false,
+                createSubActive: "Story Video"
+            }, () => {
+                setTimeout(() => {
+                    this.setState({
+                        showCreateSub2Loading: false,
+                        showCreateSub2Loaded: true,
+                        showCreateSub1Loading: false,
+                        showCreateSub1Loaded: false,
+                        showCreateSub3Loading: false,
+                        showCreateSub3Loaded: false,
+                    })
+                }, 2000)
+            })
+        } else {
+            this.setState({ createSub2Clicked: false, showCreateSub2Loaded: false })
+        }
+    }
+
+    createSub3Enter = () => {
+        this.setState({ createSub3Hovered: true })
+    }
+
+    createSub3Leave = () => {
+        this.setState({ createSub3Hovered: false })
+    }
+
+    createSub3OptionClicked = () => {
+        if (this.state.createSub3Clicked !== true) {
+            this.setState({ 
+                createSub1Clicked: false, 
+                createSub2Clicked: false,
+                createSub3Clicked: true,
+                showCreateSub1Loading: false,
+                showCreateSub1Loaded: false,
+                showCreateSub2Loading: false,
+                showCreateSub2Loaded: false,
+                showCreateSub3Loading: true,
+                createSubActive: "My Assets"
+            }, () => {
+                setTimeout(() => {
+                    this.setState({
+                        showCreateSub3Loading: false,
+                        showCreateSub3Loaded: true,
+                        showCreateSub1Loading: false,
+                        showCreateSub1Loaded: false,
+                        showCreateSub2Loading: false,
+                        showCreateSub2Loaded: false,
+                    })
+                }, 2000)
+            })
+        } else {
+            this.setState({ createSub3Clicked: false, showCreateSub3Loaded: false })
+        }
     }
 
 
@@ -2142,12 +2349,17 @@ export default class Dashboard extends Component {
                                 onMouseEnter={this.dashboardOptionEnter}
                                 onMouseLeave={this.dashboardOptionLeave}
                                 onClick={this.dashboardNavOptionClicked}
-                                style={{border: `1px solid ${this.state.dashboardOptionHovered ? this.state.dashboardOptionClicked ? "#1c4c75" : "#707a9f" : this.state.dashboardOptionClicked ? "#1c4c75" : "transparent"}`, backgroundColor: this.state.dashboardOptionClicked ? "#E0F4FC" : ""}} className="navbar-option-cell">
+                                style={{border: `1px solid ${this.state.dashboardOptionHovered ? this.state.dashboardOptionClicked || this.state.dashboardSubActive !== "" ? "#1c4c75" : "#707a9f" : this.state.dashboardOptionClicked || this.state.dashboardSubActive !== "" ? "#1c4c75" : "transparent"}`, backgroundColor: this.state.dashboardOptionClicked ? "#E0F4FC" : ""}} className="navbar-option-cell">
                                     <div className="navbar-option-icon">
                                         <img src={this.state.dashboardOptionHovered || this.state.dashboardOptionClicked ? "/assets/dashboard-option-icon-color2.png" : "/assets/dashboard-option-icon.png"}/>
                                     </div>
                                     <div className="navbar-option-text">
-                                        <p style={{color: this.state.dashboardOptionHovered || this.state.dashboardOptionClicked ? "#1c4c75" : "", fontWeight: this.state.dashboardOptionClicked ? "bold" : ""}}>Dashboard</p>
+                                        <p style={{color: this.state.dashboardOptionHovered || this.state.dashboardOptionClicked ? "#1c4c75" : "", fontWeight: this.state.dashboardOptionClicked ? "bold" : "", marginBottom: (!this.state.dashboardOptionClicked && (this.state.dashboardSub1Clicked || this.state.dashboardSub2Clicked || this.state.dashboardSub3Clicked)) ? "0px" : ""}}>Dashboard</p>
+                                        {(!this.state.dashboardOptionClicked && (this.state.dashboardSub1Clicked || this.state.dashboardSub2Clicked || this.state.dashboardSub3Clicked)) && 
+                                            <div className="active-sub-option">
+                                                <p><span style={{color: "#41A75B"}}>ACTIVE: </span>{this.state.dashboardSubActive}</p>
+                                            </div>
+                                        }
                                     </div>
                                     <div className="navbar-option-dropdown">
                                         <img className={this.state.dashboardOptionClicked ? "navbar-option-dropdown-unrotated navbar-option-dropdown-rotated" : "navbar-option-dropdown-unrotated"} src={this.state.dashboardOptionClicked ? "/assets/dashboard-down-arrow-color2.png" : "/assets/dashboard-down-arrow.png"}/>
@@ -2165,14 +2377,13 @@ export default class Dashboard extends Component {
                                         </div>
                                         <div className="dashboard-option-sub-text">
                                             <div 
-                                            className="dashboard-sub-option-cell"
                                             onMouseEnter={this.dashboardSub1Enter}
                                             onMouseLeave={this.dashboardSub1Leave}
                                             onClick={this.dashboardSub1OptionClicked}
                                             style={{border: `1px solid ${this.state.dashboardSub1Hovered ? this.state.dashboardSub1Clicked ? "#1c4c75" : "#707a9f" : this.state.dashboardSub1Clicked ? "#1c4c75" : "transparent"}`, color: this.state.dashboardSub1Clicked ? "#1c4c75" : "#6a6a6a", backgroundColor: this.state.dashboardSub1Clicked ? "#E0F4FC" : "transparent", display: "flex", justifyContent: "space-between"}}>
                                                 <p style={{fontWeight: this.state.dashboardSub1Clicked ? "bold" : ""}}>Main Editor</p>
                                                 {this.state.showDashboardSub1Loading && 
-                                                    <span style={{marginLeft: "40.5%", marginTop: "3.5%"}}>
+                                                    <span style={{marginRight: "5%", marginTop: "4.5%"}}>
                                                         <ClipLoader
                                                         color="#1c4c75"
                                                         loading={true}
@@ -2181,6 +2392,9 @@ export default class Dashboard extends Component {
                                                         data-testid="loader"
                                                         />
                                                     </span>
+                                                }
+                                                {this.state.showDashboardSub1Loaded && 
+                                                    <img style={{height: "7%", width: "7%", marginRight: "4%", marginTop: "6%"}} src="/assets/dashboard-sub-option-open.png"/>
                                                 }
                                             </div>
                                             <div 
@@ -2190,7 +2404,7 @@ export default class Dashboard extends Component {
                                             style={{border: `1px solid ${this.state.dashboardSub2Hovered ? this.state.dashboardSub2Clicked ? "#1c4c75" : "#707a9f" : this.state.dashboardSub2Clicked ? "#1c4c75" : "transparent"}`, color: this.state.dashboardSub2Clicked ? "#1c4c75" : "#6a6a6a", backgroundColor: this.state.dashboardSub2Clicked ? "#E0F4FC" : "transparent", display: "flex", justifyContent: "space-between"}}>
                                                 <p style={{fontWeight: this.state.dashboardSub2Clicked ? "bold" : ""}}>My Projects</p>
                                                 {this.state.showDashboardSub2Loading && 
-                                                    <span style={{marginLeft: "40.5%", marginTop: "3.5%"}}>
+                                                    <span style={{marginRight: "5%", marginTop: "4.5%"}}>
                                                         <ClipLoader
                                                         color="#1c4c75"
                                                         loading={true}
@@ -2199,6 +2413,9 @@ export default class Dashboard extends Component {
                                                         data-testid="loader"
                                                         />
                                                     </span>
+                                                }
+                                                {this.state.showDashboardSub2Loaded && 
+                                                    <img style={{height: "7%", width: "7%", marginRight: "4%", marginTop: "6%"}} src="/assets/dashboard-sub-option-open.png"/>
                                                 }
                                             </div>
                                             <div 
@@ -2206,9 +2423,9 @@ export default class Dashboard extends Component {
                                             onMouseLeave={this.dashboardSub3Leave}
                                             onClick={this.dashboardSub3OptionClicked}
                                             style={{border: `1px solid ${this.state.dashboardSub3Hovered ? this.state.dashboardSub3Clicked ? "#1c4c75" : "#707a9f" : this.state.dashboardSub3Clicked ? "#1c4c75" : "transparent"}`, color: this.state.dashboardSub3Clicked ? "#1c4c75" : "#6a6a6a", backgroundColor: this.state.dashboardSub3Clicked ? "#E0F4FC" : "transparent", display: "flex", justifyContent: "space-between"}}>
-                                                <p>My Assets</p>
+                                                <p style={{fontWeight: this.state.dashboardSub3Clicked ? "bold" : ""}}>My Assets</p>
                                                 {this.state.showDashboardSub3Loading && 
-                                                    <span style={{marginLeft: "40.5%", marginTop: "3.5%"}}>
+                                                    <span style={{marginRight: "5%", marginTop: "4.5%"}}>
                                                         <ClipLoader
                                                         color="#1c4c75"
                                                         loading={true}
@@ -2218,21 +2435,106 @@ export default class Dashboard extends Component {
                                                         />
                                                     </span>
                                                 }
+                                                {this.state.showDashboardSub3Loaded && 
+                                                    <img style={{height: "7%", width: "7%", marginRight: "4%", marginTop: "6%"}} src="/assets/dashboard-sub-option-open.png"/>
+                                                }
                                             </div>
                                         </div>
                                     </div>
                                 </CSSTransition>
-                                <div className="navbar-option-cell">
+                                <div 
+                                onMouseEnter={this.createOptionEnter}
+                                onMouseLeave={this.createOptionLeave}
+                                onClick={this.createNavOptionClicked}
+                                style={{border: `1px solid ${this.state.createOptionHovered ? this.state.createOptionClicked || this.state.createSubActive !== "" ? "#1c4c75" : "#707a9f" : this.state.createOptionClicked || this.state.createSubActive !== "" ? "#1c4c75" : "transparent"}`, backgroundColor: this.state.createOptionClicked ? "#E0F4FC" : "", marginTop: "3%"}}
+                                className="navbar-option-cell">
                                     <div className="navbar-option-icon">
-                                        <img src="/assets/dashboard-option-icon.png"/>
+                                        <img src={this.state.createOptionHovered || this.state.createOptionClicked ? "/assets/create-option-icon-color2.png" : "/assets/create-option-icon.png"}/>
                                     </div>
                                     <div className="navbar-option-text">
-                                        <p>Create</p>
+                                        <p style={{color: this.state.createOptionHovered || this.state.createOptionClicked ? "#1c4c75" : "", fontWeight: this.state.createOptionClicked ? "bold" : "", marginBottom: (!this.state.createOptionClicked && (this.state.createSub1Clicked || this.state.createSub2Clicked || this.state.createSub3Clicked)) ? "0px" : ""}}>Create</p>
                                     </div>
                                     <div className="navbar-option-dropdown">
-                                        <img src="/assets/dashboard-down-arrow.png"/>
+                                        <img className={this.state.createOptionClicked ? "navbar-option-dropdown-unrotated navbar-option-dropdown-rotated" : "navbar-option-dropdown-unrotated"} src={this.state.dashboardOptionClicked ? "/assets/dashboard-down-arrow-color2.png" : "/assets/dashboard-down-arrow.png"}/>
                                     </div>
                                 </div>
+                                <CSSTransition
+                                in={this.state.showCreateSuboptions}
+                                timeout={{enter: 500, exit: 500}}
+                                classNames="dialog-slide-down"
+                                unmountOnExit
+                                >
+                                    <div className="dashboard-option-subs">
+                                        <div className="dashboard-option-sub-connector">
+                                            <div className="dashboard-option-sub-connector-line"><span style={{color: "transparent", cursor: "default"}}>|</span></div>
+                                        </div>
+                                        <div className="dashboard-option-sub-text">
+                                            <div 
+                                            onMouseEnter={this.createSub1Enter}
+                                            onMouseLeave={this.createSub1Leave}
+                                            onClick={this.createSub1OptionClicked}
+                                            style={{border: `1px solid ${this.state.createSub1Hovered ? this.state.createSub1Clicked ? "#1c4c75" : "#707a9f" : this.state.createSub1Clicked ? "#1c4c75" : "transparent"}`, color: this.state.createSub1Clicked ? "#1c4c75" : "#6a6a6a", backgroundColor: this.state.createSub1Clicked ? "#E0F4FC" : "transparent", display: "flex", justifyContent: "space-between"}}>
+                                                <p style={{fontWeight: this.state.createSub1Clicked ? "bold" : ""}}>Split Video</p>
+                                                {this.state.showCreateSub1Loading && 
+                                                    <span style={{marginRight: "5%", marginTop: "4.5%"}}>
+                                                        <ClipLoader
+                                                        color="#1c4c75"
+                                                        loading={true}
+                                                        size={6}
+                                                        aria-label="Loading Spinner"
+                                                        data-testid="loader"
+                                                        />
+                                                    </span>
+                                                }
+                                                {this.state.showCreateSub1Loaded && 
+                                                    <img style={{height: "7%", width: "7%", marginRight: "4%", marginTop: "6%"}} src="/assets/dashboard-sub-option-open.png"/>
+                                                }
+                                            </div>
+                                            <div 
+                                            onMouseEnter={this.createSub2Enter}
+                                            onMouseLeave={this.createSub2Leave}
+                                            onClick={this.createSub2OptionClicked}
+                                            style={{border: `1px solid ${this.state.createSub2Hovered ? this.state.createSub2Clicked ? "#1c4c75" : "#707a9f" : this.state.createSub2Clicked ? "#1c4c75" : "transparent"}`, color: this.state.createSub2Clicked ? "#1c4c75" : "#6a6a6a", backgroundColor: this.state.createSub2Clicked ? "#E0F4FC" : "transparent", display: "flex", justifyContent: "space-between"}}>
+                                                <p style={{fontWeight: this.state.createSub2Clicked ? "bold" : ""}}>Story Video</p>
+                                                {this.state.showCreateSub2Loading && 
+                                                    <span style={{marginRight: "5%", marginTop: "4.5%"}}>
+                                                        <ClipLoader
+                                                        color="#1c4c75"
+                                                        loading={true}
+                                                        size={6}
+                                                        aria-label="Loading Spinner"
+                                                        data-testid="loader"
+                                                        />
+                                                    </span>
+                                                }
+                                                {this.state.showCreateSub2Loaded && 
+                                                    <img style={{height: "7%", width: "7%", marginRight: "4%", marginTop: "6%"}} src="/assets/dashboard-sub-option-open.png"/>
+                                                }
+                                            </div>
+                                            <div 
+                                            onMouseEnter={this.createSub3Enter}
+                                            onMouseLeave={this.createSub3Leave}
+                                            onClick={this.createSub3OptionClicked}
+                                            style={{border: `1px solid ${this.state.createSub3Hovered ? this.state.createSub3Clicked ? "#1c4c75" : "#707a9f" : this.state.createSub3Clicked ? "#1c4c75" : "transparent"}`, color: this.state.createSub3Clicked ? "#1c4c75" : "#6a6a6a", backgroundColor: this.state.createSub3Clicked ? "#E0F4FC" : "transparent", display: "flex", justifyContent: "space-between"}}>
+                                                <p style={{fontWeight: this.state.createSub3Clicked ? "bold" : ""}}>My Assets</p>
+                                                {this.state.showCreateSub3Loading && 
+                                                    <span style={{marginRight: "5%", marginTop: "4.5%"}}>
+                                                        <ClipLoader
+                                                        color="#1c4c75"
+                                                        loading={true}
+                                                        size={6}
+                                                        aria-label="Loading Spinner"
+                                                        data-testid="loader"
+                                                        />
+                                                    </span>
+                                                }
+                                                {this.state.showCreateSub3Loaded && 
+                                                    <img style={{height: "7%", width: "7%", marginRight: "4%", marginTop: "6%"}} src="/assets/dashboard-sub-option-open.png"/>
+                                                }
+                                            </div>
+                                        </div>
+                                    </div>
+                                </CSSTransition>
                             </div>
                         </div>
                     </CSSTransition>
