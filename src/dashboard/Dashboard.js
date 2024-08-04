@@ -104,6 +104,10 @@ const Styles = styled.div `
     cursor: pointer;
 }
 
+.navbar-option-cell:hover {
+    background-color: #E0F4FC;
+}
+
 .navbar-option-cell:after {
     content: "";
     clear: both;
@@ -131,16 +135,16 @@ const Styles = styled.div `
     // # NAVBAR OPTION CELL ICON
 
 .navbar-option-icon img {
-    width: 35%;
+    width: 38%;
     margin-top: 0.9em;
     // margin-bottom: 1em;
 }
 
-    // # NAVBAR OPTION CELL ICON
+    // # NAVBAR OPTION CELL TEXT
 
 .navbar-option-text p {
     font-family: dm sans;
-    font-weight: bold;
+    // font-weight: bold;
     font-size: 90%;
     color: #707A9f;
 } 
@@ -163,6 +167,10 @@ const Styles = styled.div `
 
     // - NAVBAR OPTIONS SUBOPTIONS - //
 
+.dashboard-option-subs {
+    border: 1px solid black;
+}
+
 .dashboard-option-subs:after {
     content: "";
     display: table;
@@ -170,10 +178,54 @@ const Styles = styled.div `
 }
 
 .dashboard-option-sub-connector {
-    
+    float: left;
+    width: 20%;
+    text-align: center;
 }
 
+.dashboard-option-sub-text {
+    float: left;
+    width: 80%;
+    text-align: left;
+}
 
+.dialog-slide-down-enter {
+    transform: translateY(-30%);
+    opacity: 0;
+}
+
+.dialog-slide-down-enter-active {
+    transform: translateY(0);
+    opacity: 1;
+    transition: transform 500ms, opacity 500ms;
+}
+
+    // # NAVBAR OPTIONS CONNECTOR
+
+.dashboard-option-sub-connector div {
+    padding-bottom: 190%;
+}
+
+.dashboard-option-sub-connector-line {
+    background-color: #2890b9;
+    width: 8%;
+    margin-left: 46%;
+    margin-top: 33%;
+}
+
+    // # NAVBAR OPTIONS TEXT/CONTAINER
+
+.dashboard-option-sub-text div {
+    border: 1px solid black;
+}
+
+.dashboard-option-sub-text p {
+    font-family: dm sans;
+    font-size: 85%;
+    margin-left: 5%;
+    margin-top: 7.5%;
+    margin-bottom: 7.5%;
+}
 
     //! - - (Navbar - SHRANK) - - //
 
@@ -1495,7 +1547,8 @@ export default class Dashboard extends Component {
     dashboardNavOptionClicked = () => {
         this.setState({
             dashboardOptionClicked: true,
-            dashboardOptionBorderColor: "#2890b9"
+            dashboardOptionBorderColor: "#2890b9",
+            showDashboardSuboptions: true
         })
     }
         
@@ -1991,7 +2044,7 @@ export default class Dashboard extends Component {
                                 onMouseEnter={this.dashboardOptionEnter}
                                 onMouseLeave={this.dashboardOptionLeave}
                                 onClick={this.dashboardNavOptionClicked}
-                                style={{border: `1px solid ${this.state.dashboardOptionHovered ? this.state.dashboardOptionClicked ? "#2890b9" : "#707a9f" : this.state.dashboardOptionClicked ? "#2890b9" : "transparent"}`, backgroundColor: this.state.dashboardOptionHovered ? "" : ""}} className="navbar-option-cell">
+                                style={{border: `1px solid ${this.state.dashboardOptionHovered ? this.state.dashboardOptionClicked ? "#2890b9" : "#707a9f" : this.state.dashboardOptionClicked ? "#2890b9" : "transparent"}`, backgroundColor: this.state.dashboardOptionClicked ? "#E0F4FC" : ""}} className="navbar-option-cell">
                                     <div className="navbar-option-icon">
                                         <img src={this.state.dashboardOptionHovered || this.state.dashboardOptionClicked ? "/assets/dashboard-option-icon-color.png" : "/assets/dashboard-option-icon.png"}/>
                                     </div>
@@ -2005,11 +2058,24 @@ export default class Dashboard extends Component {
                                 <CSSTransition
                                 in={this.state.showDashboardSuboptions}
                                 timeout={{enter: 1000, exit: 0}}
-                                classNames="dialog-slide-left"
+                                classNames="dialog-slide-down"
                                 unmountOnExit
                                 >
                                     <div className="dashboard-option-subs">
-
+                                        <div className="dashboard-option-sub-connector">
+                                            <div className="dashboard-option-sub-connector-line"><span style={{color: "#2890b9"}}>i</span></div>
+                                        </div>
+                                        <div className="dashboard-option-sub-text">
+                                            <div>
+                                                <p>Main Editor</p>
+                                            </div>
+                                            <div>
+                                                <p>My Projects</p>
+                                            </div>
+                                            <div>
+                                                <p>My Projects</p>
+                                            </div>
+                                        </div>
                                     </div>
                                 </CSSTransition>
                                 <div className="navbar-option-cell">
@@ -2114,12 +2180,12 @@ export default class Dashboard extends Component {
                                         </div>
                                     </div>
                                 </div>
-                                <div className="top-pane-btn-2">
+                                <div style={{paddingTop: this.state.leftPaneMinimized ? "2.35%" : "", paddingBottom: this.state.leftPaneMinimized ? "3.35%" : ""}} className="top-pane-btn-2">
                                     <div>
                                         <label>Upgrade</label>
                                     </div>
                                 </div>
-                                <div style={{backgroundColor: this.state.userNameBgColor, color: this.state.userNameTxtColor, border: `1px solid ${this.state.userNameBgColor}`}} className="top-pane-btn-3">
+                                <div style={{backgroundColor: this.state.userNameBgColor, color: this.state.userNameTxtColor, border: `1px solid ${this.state.userNameBgColor}`, paddingTop: this.state.leftPaneMinimized ? "2.35%" : "", paddingBottom: this.state.leftPaneMinimized ? "3.35%" : ""}} className="top-pane-btn-3">
                                     <h1>N</h1>
                                 </div>
                             </div>
