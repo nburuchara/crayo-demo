@@ -168,7 +168,7 @@ const Styles = styled.div `
     // - NAVBAR OPTIONS SUBOPTIONS - //
 
 .dashboard-option-subs {
-    border: 1px solid black;
+    // border: 1px solid black;
 }
 
 .dashboard-option-subs:after {
@@ -187,6 +187,7 @@ const Styles = styled.div `
     float: left;
     width: 80%;
     text-align: left;
+    margin-top: 6%;
 }
 
 .dialog-slide-down-enter {
@@ -203,28 +204,28 @@ const Styles = styled.div `
     // # NAVBAR OPTIONS CONNECTOR
 
 .dashboard-option-sub-connector div {
-    padding-bottom: 190%;
+    padding-bottom: 180%;
 }
 
 .dashboard-option-sub-connector-line {
     background-color: #2890b9;
-    width: 8%;
+    width: 6.5%;
     margin-left: 46%;
-    margin-top: 33%;
+    margin-top: 38.5%;
 }
 
     // # NAVBAR OPTIONS TEXT/CONTAINER
 
 .dashboard-option-sub-text div {
-    border: 1px solid black;
+    border: 1px solid transparent;
 }
 
 .dashboard-option-sub-text p {
     font-family: dm sans;
     font-size: 85%;
     margin-left: 5%;
-    margin-top: 7.5%;
-    margin-bottom: 7.5%;
+    margin-top: 5%;
+    margin-bottom: 5%;
 }
 
     //! - - (Navbar - SHRANK) - - //
@@ -2063,7 +2064,7 @@ export default class Dashboard extends Component {
                                 >
                                     <div className="dashboard-option-subs">
                                         <div className="dashboard-option-sub-connector">
-                                            <div className="dashboard-option-sub-connector-line"><span style={{color: "#2890b9"}}>i</span></div>
+                                            <div className="dashboard-option-sub-connector-line"><span style={{color: "#2890b9"}}>|</span></div>
                                         </div>
                                         <div className="dashboard-option-sub-text">
                                             <div>
