@@ -2628,8 +2628,7 @@ export default class Dashboard extends Component {
                                 unmountOnExit
                                 >
                                     <div className="dashboard-option-subs">
-                                        <div className="dashboard-option-sub-connector">
-                                            <div className="dashboard-option-sub-connector-line"><span style={{color: "transparent", cursor: "default"}}>|</span></div>
+                                        <div  className="dashboard-option-sub-connector">
                                         </div>
                                         <div className="dashboard-option-sub-text">
                                             <div 
