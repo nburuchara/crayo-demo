@@ -72,7 +72,8 @@ const Styles = styled.div `
     // # LEFT PANE HEADER LOGO IMAGE
 
 .left-pane-header-left img {
-    width: 45%;
+    margin-top: 2%;
+    width: 35%;
     margin-left: 5%;
 }
 
@@ -136,7 +137,7 @@ const Styles = styled.div `
 
 .navbar-option-icon img {
     width: 38%;
-    margin-top: 0.9em;
+    margin-top: 1em;
     // margin-bottom: 1em;
 }
 
@@ -145,8 +146,8 @@ const Styles = styled.div `
 .navbar-option-text p {
     font-family: dm sans;
     // font-weight: bold;
-    font-size: 90%;
-    color: #707A9f;
+    font-size: 93.5%;
+    // color: #707A9f;
 } 
 
     // # NAVBAR OPTION CELL DROPDOWN ICON
@@ -191,13 +192,24 @@ const Styles = styled.div `
 }
 
 .dialog-slide-down-enter {
-    transform: translateY(-10%);
+    transform: translateY(-15%);
     opacity: 0;
 }
 
 .dialog-slide-down-enter-active {
     transform: translateY(0);
     opacity: 1;
+    transition: transform 500ms, opacity 500ms;
+}
+
+.dialog-slide-down-exit {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.dialog-slide-down-exit-active {
+    transform: translateY(-10%);
+    opacity: 0;
     transition: transform 500ms, opacity 500ms;
 }
 
@@ -208,7 +220,7 @@ const Styles = styled.div `
 }
 
 .dashboard-option-sub-connector-line {
-    background-color: #2890b9;
+    background-color: #ccc;
     width: 6.5%;
     margin-left: 48%;
     margin-top: 38.5%;
@@ -224,7 +236,6 @@ const Styles = styled.div `
     margin-bottom: 0.5%;
 }
 
-
 .dashboard-option-sub-text div:hover {
     background-color: #E0F4FC;
 }
@@ -235,6 +246,12 @@ const Styles = styled.div `
     margin-left: 5%;
     margin-top: 5%;
     margin-bottom: 5%;
+}
+
+.dashboard-sub-option-cell:after {
+    content: "";
+    display: table;
+    clear: both;
 }
 
     //! - - (Navbar - SHRANK) - - //
@@ -1557,11 +1574,14 @@ export default class Dashboard extends Component {
     }
 
     dashboardNavOptionClicked = () => {
-        this.setState({
-            dashboardOptionClicked: true,
-            dashboardOptionBorderColor: "#2890b9",
-            showDashboardSuboptions: true
-        })
+        if (this.state.dashboardOptionClicked === false) {
+            this.setState({
+                dashboardOptionClicked: true,
+                showDashboardSuboptions: true
+            })
+        } else {
+            this.setState({ dashboardOptionClicked: false, showDashboardSuboptions: false })
+        }
     }
 
     dashboardSub1Enter = () => {
@@ -1573,7 +1593,11 @@ export default class Dashboard extends Component {
     }
 
     dashboardSub1OptionClicked = () => {
-        this.setState({ dahsboardSub1Clicked: true })
+        if (this.state.dashboardSub1Clicked !== true) {
+            this.setState({ dashboardSub1Clicked: true, dashboardSub2Clicked: false })
+        } else {
+            this.setState({ dashboardSub1Clicked: false })
+        }
     }
 
     dashboardSub2Enter = () => {
@@ -1585,7 +1609,7 @@ export default class Dashboard extends Component {
     }
 
     dashboardSub2OptionClicked = () => {
-        
+        this.setState({ dashboardSub2Clicked: true, dashboardSub1Clicked: false})
     }
 
     dashboardSub3Enter = () => {
@@ -2093,20 +2117,20 @@ export default class Dashboard extends Component {
                                 onMouseEnter={this.dashboardOptionEnter}
                                 onMouseLeave={this.dashboardOptionLeave}
                                 onClick={this.dashboardNavOptionClicked}
-                                style={{border: `1px solid ${this.state.dashboardOptionHovered ? this.state.dashboardOptionClicked ? "#2890b9" : "#707a9f" : this.state.dashboardOptionClicked ? "#2890b9" : "transparent"}`, backgroundColor: this.state.dashboardOptionClicked ? "#E0F4FC" : ""}} className="navbar-option-cell">
+                                style={{border: `1px solid ${this.state.dashboardOptionHovered ? this.state.dashboardOptionClicked ? "#1c4c75" : "#707a9f" : this.state.dashboardOptionClicked ? "#1c4c75" : "transparent"}`, backgroundColor: this.state.dashboardOptionClicked ? "#E0F4FC" : ""}} className="navbar-option-cell">
                                     <div className="navbar-option-icon">
-                                        <img src={this.state.dashboardOptionHovered || this.state.dashboardOptionClicked ? "/assets/dashboard-option-icon-color.png" : "/assets/dashboard-option-icon.png"}/>
+                                        <img src={this.state.dashboardOptionHovered || this.state.dashboardOptionClicked ? "/assets/dashboard-option-icon-color2.png" : "/assets/dashboard-option-icon.png"}/>
                                     </div>
                                     <div className="navbar-option-text">
-                                        <p style={{color: this.state.dashboardOptionHovered || this.state.dashboardOptionClicked ? "#2890b9" : "#707a9f", fontWeight: this.state.dashboardOptionClicked ? "bold" : ""}}>Dashboard</p>
+                                        <p style={{color: this.state.dashboardOptionHovered || this.state.dashboardOptionClicked ? "#1c4c75" : "", fontWeight: this.state.dashboardOptionClicked ? "bold" : ""}}>Dashboard</p>
                                     </div>
                                     <div className="navbar-option-dropdown">
-                                        <img className={this.state.dashboardOptionClicked ? "navbar-option-dropdown-unrotated navbar-option-dropdown-rotated" : "navbar-option-dropdown-unrotated"} src={this.state.dashboardOptionClicked ? "/assets/dashboard-down-arrow-color.png" : "/assets/dashboard-down-arrow.png"}/>
+                                        <img className={this.state.dashboardOptionClicked ? "navbar-option-dropdown-unrotated navbar-option-dropdown-rotated" : "navbar-option-dropdown-unrotated"} src={this.state.dashboardOptionClicked ? "/assets/dashboard-down-arrow-color2.png" : "/assets/dashboard-down-arrow.png"}/>
                                     </div>
                                 </div>
                                 <CSSTransition
                                 in={this.state.showDashboardSuboptions}
-                                timeout={{enter: 1000, exit: 0}}
+                                timeout={{enter: 500, exit: 500}}
                                 classNames="dialog-slide-down"
                                 unmountOnExit
                                 >
@@ -2116,17 +2140,20 @@ export default class Dashboard extends Component {
                                         </div>
                                         <div className="dashboard-option-sub-text">
                                             <div 
+                                            className="dashboard-sub-option-cell"
                                             onMouseEnter={this.dashboardSub1Enter}
                                             onMouseLeave={this.dashboardSub1Leave}
                                             onClick={this.dashboardSub1OptionClicked}
-                                            style={{border: `1px solid ${this.state.dashboardSub1Hovered ? this.state.dahsboardSub1Clicked ? "#2890b9" : "#707a9f" : this.state.dahsboardSub1Clicked ? "#2890b9" : "transparent"}`, color: this.state.dahsboardSub1Clicked ? "" : "", fontWeight: this.state.dahsboardSub1Clicked ? "bold" : "", backgroundColor: this.state.dahsboardSub1Clicked ? "#E0F4FC" : "transpare"}}>
-                                                <p>Main Editor</p>
+                                            style={{border: `1px solid ${this.state.dashboardSub1Hovered ? this.state.dashboardSub1Clicked ? "#1c4c75" : "#707a9f" : this.state.dashboardSub1Clicked ? "#1c4c75" : "transparent"}`, color: this.state.dashboardSub1Clicked ? "#1c4c75" : "#6a6a6a", backgroundColor: this.state.dashboardSub1Clicked ? "#E0F4FC" : "transparent"}}>
+                                            
+                                                <p style={{fontWeight: this.state.dashboardSub1Clicked ? "bold" : ""}}>Main Editor</p>
                                             </div>
                                             <div 
                                             onMouseEnter={this.dashboardSub2Enter}
                                             onMouseLeave={this.dashboardSub2Leave}
-                                            style={{border: `1px solid ${this.state.dashboardSub2Hovered ? "#707a9f" : "transparent"}`}}>
-                                                <p>My Projects</p>
+                                            onClick={this.dashboardSub2OptionClicked}
+                                            style={{border: `1px solid ${this.state.dashboardSub2Hovered ? this.state.dashboardSub2Clicked ? "#1c4c75" : "#707a9f" : this.state.dashboardSub2Clicked ? "#1c4c75" : "transparent"}`, color: this.state.dashboardSub2Clicked ? "#1c4c75" : "#6a6a6a", backgroundColor: this.state.dashboardSub2Clicked ? "#E0F4FC" : "transparent"}}>
+                                                <p style={{fontWeight: this.state.dashboardSub2Clicked ? "bold" : ""}}>My Projects</p>
                                             </div>
                                             <div 
                                             onMouseEnter={this.dashboardSub3Enter}
