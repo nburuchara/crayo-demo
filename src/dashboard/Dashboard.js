@@ -191,7 +191,7 @@ const Styles = styled.div `
 }
 
 .dialog-slide-down-enter {
-    transform: translateY(-30%);
+    transform: translateY(-10%);
     opacity: 0;
 }
 
@@ -204,13 +204,13 @@ const Styles = styled.div `
     // # NAVBAR OPTIONS CONNECTOR
 
 .dashboard-option-sub-connector div {
-    padding-bottom: 180%;
+    padding-bottom: 185%;
 }
 
 .dashboard-option-sub-connector-line {
     background-color: #2890b9;
     width: 6.5%;
-    margin-left: 46%;
+    margin-left: 48%;
     margin-top: 38.5%;
 }
 
@@ -218,6 +218,15 @@ const Styles = styled.div `
 
 .dashboard-option-sub-text div {
     border: 1px solid transparent;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 0.5%;
+    margin-bottom: 0.5%;
+}
+
+
+.dashboard-option-sub-text div:hover {
+    background-color: #E0F4FC;
 }
 
 .dashboard-option-sub-text p {
@@ -1537,6 +1546,8 @@ export default class Dashboard extends Component {
         
     }
 
+        //* - - DASHBOARD OPTION - - *//
+
     dashboardOptionEnter = () => {
         this.setState({ dashboardOptionHovered: true })
     }
@@ -1552,7 +1563,44 @@ export default class Dashboard extends Component {
             showDashboardSuboptions: true
         })
     }
+
+    dashboardSub1Enter = () => {
+        this.setState({ dashboardSub1Hovered: true })
+    }
+
+    dashboardSub1Leave = () => {
+        this.setState({ dashboardSub1Hovered: false })
+    }
+
+    dashboardSub1OptionClicked = () => {
+        this.setState({ dahsboardSub1Clicked: true })
+    }
+
+    dashboardSub2Enter = () => {
+        this.setState({ dashboardSub2Hovered: true })
+    }
+
+    dashboardSub2Leave = () => {
+        this.setState({ dashboardSub2Hovered: false })
+    }
+
+    dashboardSub2OptionClicked = () => {
         
+    }
+
+    dashboardSub3Enter = () => {
+        this.setState({ dashboardSub3Hovered: true })
+    }
+
+    dashboardSub3Leave = () => {
+        this.setState({ dashboardSub3Hovered: false })
+    }
+
+    dashboardSub3OptionClicked = () => {
+        
+    }
+
+
 
         //! - - SEARCH FUNCTIONS - - !//
 
@@ -2050,7 +2098,7 @@ export default class Dashboard extends Component {
                                         <img src={this.state.dashboardOptionHovered || this.state.dashboardOptionClicked ? "/assets/dashboard-option-icon-color.png" : "/assets/dashboard-option-icon.png"}/>
                                     </div>
                                     <div className="navbar-option-text">
-                                        <p style={{color: this.state.dashboardOptionHovered || this.state.dashboardOptionClicked ? "#2890b9" : "#707a9f"}}>Dashboard</p>
+                                        <p style={{color: this.state.dashboardOptionHovered || this.state.dashboardOptionClicked ? "#2890b9" : "#707a9f", fontWeight: this.state.dashboardOptionClicked ? "bold" : ""}}>Dashboard</p>
                                     </div>
                                     <div className="navbar-option-dropdown">
                                         <img className={this.state.dashboardOptionClicked ? "navbar-option-dropdown-unrotated navbar-option-dropdown-rotated" : "navbar-option-dropdown-unrotated"} src={this.state.dashboardOptionClicked ? "/assets/dashboard-down-arrow-color.png" : "/assets/dashboard-down-arrow.png"}/>
@@ -2064,17 +2112,27 @@ export default class Dashboard extends Component {
                                 >
                                     <div className="dashboard-option-subs">
                                         <div className="dashboard-option-sub-connector">
-                                            <div className="dashboard-option-sub-connector-line"><span style={{color: "#2890b9"}}>|</span></div>
+                                            <div className="dashboard-option-sub-connector-line"><span style={{color: "transparent", cursor: "default"}}>|</span></div>
                                         </div>
                                         <div className="dashboard-option-sub-text">
-                                            <div>
+                                            <div 
+                                            onMouseEnter={this.dashboardSub1Enter}
+                                            onMouseLeave={this.dashboardSub1Leave}
+                                            onClick={this.dashboardSub1OptionClicked}
+                                            style={{border: `1px solid ${this.state.dashboardSub1Hovered ? this.state.dahsboardSub1Clicked ? "#2890b9" : "#707a9f" : this.state.dahsboardSub1Clicked ? "#2890b9" : "transparent"}`, color: this.state.dahsboardSub1Clicked ? "" : "", fontWeight: this.state.dahsboardSub1Clicked ? "bold" : "", backgroundColor: this.state.dahsboardSub1Clicked ? "#E0F4FC" : "transpare"}}>
                                                 <p>Main Editor</p>
                                             </div>
-                                            <div>
+                                            <div 
+                                            onMouseEnter={this.dashboardSub2Enter}
+                                            onMouseLeave={this.dashboardSub2Leave}
+                                            style={{border: `1px solid ${this.state.dashboardSub2Hovered ? "#707a9f" : "transparent"}`}}>
                                                 <p>My Projects</p>
                                             </div>
-                                            <div>
-                                                <p>My Projects</p>
+                                            <div 
+                                            onMouseEnter={this.dashboardSub3Enter}
+                                            onMouseLeave={this.dashboardSub3Leave}
+                                            style={{border: `1px solid ${this.state.dashboardSub3Hovered ? "#707a9f" : "transparent"}`}}>
+                                                <p>My Assets</p>
                                             </div>
                                         </div>
                                     </div>
