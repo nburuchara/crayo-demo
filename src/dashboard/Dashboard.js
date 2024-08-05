@@ -93,7 +93,7 @@ const Styles = styled.div `
 
 .navbar-options-container {
     position: relative;
-    border: 1px solid black;
+    // border: 1px solid black;
     margin-top: 15%;
     height: 85vh;
     margin-left: 5%;
@@ -271,7 +271,7 @@ const Styles = styled.div `
     //! - - Left pane footer - - !//
 
 .left-pane-footer {
-    position: relative;
+    position: absolute;
     bottom: 0;
     left: 0;
 }
@@ -3835,7 +3835,7 @@ export default class Dashboard extends Component {
                                 </CSSTransition>
 
                                 <div className="left-pane-footer">
-                                    <button>hey</button>
+                                    
                                 </div>
 
                             </div>
