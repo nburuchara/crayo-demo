@@ -92,7 +92,8 @@ const Styles = styled.div `
     // - - NAVBAR OPTIONS CONTAINER - - //
 
 .navbar-options-container {
-    // border: 1px solid black;
+    position: relative;
+    border: 1px solid black;
     margin-top: 15%;
     height: 85vh;
     margin-left: 5%;
@@ -267,7 +268,13 @@ const Styles = styled.div `
     clear: both;
 }
 
+    //! - - Left pane footer - - !//
 
+.left-pane-footer {
+    position: relative;
+    bottom: 0;
+    left: 0;
+}
 
     //! - - (Navbar - SHRANK) - - //
 
@@ -3826,6 +3833,10 @@ export default class Dashboard extends Component {
                                         </div>
                                     </div>
                                 </CSSTransition>
+
+                                <div className="left-pane-footer">
+                                    <button>hey</button>
+                                </div>
 
                             </div>
                         </div>
