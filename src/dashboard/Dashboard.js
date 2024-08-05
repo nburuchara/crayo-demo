@@ -694,6 +694,12 @@ const Styles = styled.div `
 }
 
 .continue-session-items {
+    // border: 1px solid black;
+    height: 15em;
+    overflow: auto;
+}
+
+.continue-session-item {
     border: 1px solid #8a8a8a;
     margin-top: 4%;
     margin-left: 4%;
@@ -704,20 +710,20 @@ const Styles = styled.div `
     border-bottom: 5px solid #8a8a8a;
  }
 
-.continue-session-items:after {
+.continue-session-item:after {
     content: "";
     display: table;
     clear: both;
 }
 
-.continue-session-items-left {
+.continue-session-item-left {
     float: left;
     width: 30%;
     text-align: left;
     // border-right: 1px solid black;
 }
 
-.continue-session-items-right {
+.continue-session-item-right {
     float: left;
     width: 70%;
     text-align: left;
@@ -725,7 +731,7 @@ const Styles = styled.div `
 
     // # CONTINUE SESSION ITEM IMAGE
 
-.continue-session-items-left img {
+.continue-session-item-left img {
     width: 75% !important;
     border: 1px solid #8a8a8a;
     border-radius: 5px;
@@ -735,7 +741,7 @@ const Styles = styled.div `
 
     // # CONTINUE SESSION HEADER TEXT
 
-.continue-session-items-right h5 { 
+.continue-session-item-right h5 { 
     font-family: dm sans;
     margin-top: 2%;
     margin-bottom: 2%;
@@ -1660,7 +1666,12 @@ export default class Dashboard extends Component {
             version1ButtonClicked: false,
             version2ButtonClicked: false,
 
-                //! - - SECTION 1 (RIGHT PANE) - - !//
+                //! - - SECTION 1 (V2 - RIGHT PANE) - - !//
+            latestProject1Hovered: false,
+            latestProject2Hovered: false,
+            latestProject3Hovered: false,
+
+                //! - - SECTION 1 (V1 - RIGHT PANE) - - !//
 
             //* - - VERSIONS (RIGHT PANE) - - *//
             showVersion1Sec1Window1: false,
@@ -3697,6 +3708,32 @@ export default class Dashboard extends Component {
 
 
         //! - - SECTION 1 FUNCTIONS - - !//
+
+        //* - - WINDOW 1 - - *//
+
+    latestProject1Enter = () => {
+        this.setState({ latestProject1Hovered: true })
+    }
+
+    latestProject1Leave = () => {
+        this.setState({ latestProject1Hovered: false })
+    }
+
+    latestProject2Enter = () => {
+        this.setState({ latestProject2Hovered: true })
+    }
+
+    latestProject2Leave = () => {
+        this.setState({ latestProject2Hovered: false })
+    }
+
+    latestProject3Enter = () => {
+        this.setState({ latestProject3Hovered: true })
+    }
+
+    latestProject3Leave = () => {
+        this.setState({ latestProject3Hovered: false })
+    }
         
         //* - - WINDOW 2 - - *//
 
@@ -4737,11 +4774,35 @@ export default class Dashboard extends Component {
                                     </div> 
                                     <div style={{borderBottom: "1px solid #8a8a8a", marginLeft: "4%", marginRight: "4%", marginTop: "3.5%"}}></div>
                                     <div className="continue-session-items">
-                                        <div className="continue-session-items-left">
-                                            <img src="/assets/continue-session-video-still.png"/>
+                                        <div 
+                                        onMouseEnter={this.latestProject1Enter}
+                                        onMouseLeave={this.latestProject1Leave}
+                                        className="continue-session-item">
+                                            <div className="continue-session-item-left">
+                                                <img src={this.state.latestProject1Hovered ? "/assets/continue-session-video3-animated.gif" : "/assets/continue-session-video3-still.png"}/>
+                                            </div>
+                                            <div className="continue-session-item-right">
+                                                <h5>Tester Project 1</h5>
+                                            </div>
                                         </div>
-                                        <div className="continue-session-items-right">
-                                            <h5>Tester Project 1</h5>
+                                        <div 
+                                        onMouseEnter={this.latestProject2Enter}
+                                        onMouseLeave={this.latestProject2Leave}
+                                        className="continue-session-item">
+                                            <div className="continue-session-item-left">
+                                                <img ssrc={this.state.latestProject2Hovered ? "/assets/continue-session-video2-animated.gif" : "/assets/continue-session-video2-still.png"}/>
+                                            </div>
+                                            <div className="continue-session-item-right">
+                                                <h5>Tester Project 2</h5>
+                                            </div>
+                                        </div>
+                                        <div className="continue-session-item">
+                                            <div className="continue-session-item-left">
+                                                <img src="/assets/continue-session-video3-animated.gif"/>
+                                            </div>
+                                            <div className="continue-session-item-right">
+                                                <h5>Tester Project 3</h5>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
