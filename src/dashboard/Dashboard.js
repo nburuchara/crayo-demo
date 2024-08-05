@@ -3104,7 +3104,7 @@ export default class Dashboard extends Component {
                 showMoreSub3Loading: false,
                 showMoreSub2Loaded: false,
                 showMoreSub3Loaded: false,
-                moreSubActive: "Main Editor",
+                moreSubActive: "",
                 
                 //* - CLOSING NON-DASHBOARD OPTIONS - *//
                 createSubActive: "",
@@ -3183,7 +3183,7 @@ export default class Dashboard extends Component {
                 showMoreSub2Loading: true,
                 showMoreSub3Loading: false,
                 showMoreSub3Loaded: false,
-                moreSubActive: "My Projects",
+                moreSubActive: "",
                 
                 //* - CLOSING NON-DASHBOARD OPTIONS - *//
                 createSubActive: "",
