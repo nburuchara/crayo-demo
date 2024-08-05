@@ -786,7 +786,7 @@ const Styles = styled.div `
 .session-item-details-left button {
     all: unset !important;
     margin-top: 0px !important;
-    background-color: #2890b9 !important;
+    background-color: #8a8a8a !important;
     font-size: 50% !important;
     font-family: dm sans !important;
     color: white !important;
