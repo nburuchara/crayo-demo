@@ -2494,24 +2494,24 @@ export default class Dashboard extends Component {
         toolsSub5OptionClicked = () => {
             if (this.state.toolsSub5Clicked !== true) {
                 this.setState({ 
-                    createSub1Clicked: false, 
-                    createSub2Clicked: false,
-                    createSub3Clicked: false,
-                    createSub4Clicked: false,
-                    createSub6Clicked: false,
-                    createSub5Clicked: true,
-                    showCreateSub1Loading: false,
-                    showCreateSub1Loaded: false,
-                    showCreateSub2Loading: false,
-                    showCreateSub2Loaded: false,
-                    showCreateSub3Loading: false,
-                    showCreateSub3Loaded: false,
-                    showCreateSub4Loading: false,
-                    showCreateSub4Loaded: false,
-                    showCreateSub6Loading: false,
-                    showCreateSub6Loaded: false,
-                    showCreateSub5Loading: true,
-                    createSubActive: "ChatGPT Video",
+                    toolsSub1Clicked: false, 
+                    toolsSub2Clicked: false,
+                    toolsSub3Clicked: false,
+                    toolsSub4Clicked: false,
+                    toolsSub6Clicked: false,
+                    toolsSub5Clicked: true,
+                    showToolsSub1Loading: false,
+                    showToolsSub1Loaded: false,
+                    showToolsSub2Loading: false,
+                    showToolsSub2Loaded: false,
+                    showToolsSub3Loading: false,
+                    showToolsSub3Loaded: false,
+                    showToolsSub4Loading: false,
+                    showToolsSub4Loaded: false,
+                    showToolsSub6Loading: false,
+                    showToolsSub6Loaded: false,
+                    showToolsSub5Loading: true,
+                    toolsSubActive: "YT Downloader",
     
                     //* - CLOSING NON-CREATE OPTIONS - *//
                     dashboardSubActive: "",
@@ -2528,55 +2528,55 @@ export default class Dashboard extends Component {
                 }, () => {
                     setTimeout(() => {
                         this.setState({
-                            showCreateSub5Loading: false,
-                            showCreateSub5Loaded: true,
-                            showCreateSub6Loading: false,
-                            showCreateSub6Loaded: false,
-                            showCreateSub4Loading: false,
-                            showCreateSub4Loaded: false,
-                            showCreateSub3Loading: false,
-                            showCreateSub3Loaded: false,
-                            showCreateSub1Loading: false,
-                            showCreateSub1Loaded: false,
-                            showCreateSub2Loading: false,
-                            showCreateSub2Loaded: false,
+                            showToolsSub5Loading: false,
+                            showToolsSub5Loaded: true,
+                            showToolsSub6Loading: false,
+                            showToolsSub6Loaded: false,
+                            showToolsSub4Loading: false,
+                            showToolsSub4Loaded: false,
+                            showToolsSub3Loading: false,
+                            showToolsSub3Loaded: false,
+                            showToolsSub1Loading: false,
+                            showToolsSub1Loaded: false,
+                            showToolsSub2Loading: false,
+                            showToolsSub2Loaded: false,
                         })
                     }, 2000)
                 })
             } else {
-                this.setState({ createSub5Clicked: false, showCreateSub5Loaded: false, createSubActive: "" })
+                this.setState({ toolsSub5Clicked: false, showToolsSub5Loaded: false, toolSubActive: "" })
             }
         }
     
         toolsSub6Enter = () => {
-            this.setState({ createSub6Hovered: true })
+            this.setState({ toolsSub6Hovered: true })
         }
     
         toolsSub6Leave = () => {
-            this.setState({ createSub6Hovered: false })
+            this.setState({ toolsSub6Hovered: false })
         }
     
         toolsSub6OptionClicked = () => {
-            if (this.state.createSub6Clicked !== true) {
+            if (this.state.toolsSub6Clicked !== true) {
                 this.setState({ 
-                    createSub1Clicked: false, 
-                    createSub2Clicked: false,
-                    createSub3Clicked: false,
-                    createSub4Clicked: false,
-                    createSub5Clicked: false,
-                    createSub6Clicked: true,
-                    showCreateSub1Loading: false,
-                    showCreateSub1Loaded: false,
-                    showCreateSub2Loading: false,
-                    showCreateSub2Loaded: false,
-                    showCreateSub3Loading: false,
-                    showCreateSub3Loaded: false,
-                    showCreateSub4Loading: false,
-                    showCreateSub4Loaded: false,
-                    showCreateSub5Loading: false,
-                    showCreateSub5Loaded: false,
-                    showCreateSub6Loading: true,
-                    createSubActive: "Voiceover Video",
+                    toolsSub1Clicked: false, 
+                    toolsSub2Clicked: false,
+                    toolsSub3Clicked: false,
+                    toolsSub4Clicked: false,
+                    toolsSub5Clicked: false,
+                    toolsSub6Clicked: true,
+                    showToolsSub1Loading: false,
+                    showToolsSub1Loaded: false,
+                    showToolsSub2Loading: false,
+                    showToolsSub2Loaded: false,
+                    showToolsSub3Loading: false,
+                    showToolsSub3Loaded: false,
+                    showToolsSub4Loading: false,
+                    showToolsSub4Loaded: false,
+                    showToolsSub5Loading: false,
+                    showToolsSub5Loaded: false,
+                    showToolsSub6Loading: true,
+                    toolsSubActive: "Voiceover Video",
     
                     //* - CLOSING NON-CREATE OPTIONS - *//
                     dashboardSubActive: "",
@@ -2593,23 +2593,23 @@ export default class Dashboard extends Component {
                 }, () => {
                     setTimeout(() => {
                         this.setState({
-                            showCreateSub6Loading: false,
-                            showCreateSub6Loaded: true,
-                            showCreateSub5Loading: false,
-                            showCreateSub5Loaded: false,
-                            showCreateSub4Loading: false,
-                            showCreateSub4Loaded: false,
-                            showCreateSub3Loading: false,
-                            showCreateSub3Loaded: false,
-                            showCreateSub1Loading: false,
-                            showCreateSub1Loaded: false,
-                            showCreateSub2Loading: false,
-                            showCreateSub2Loaded: false,
+                            showToolsSub6Loading: false,
+                            showToolsSub6Loaded: true,
+                            showToolsSub5Loading: false,
+                            showToolsSub5Loaded: false,
+                            showToolsSub4Loading: false,
+                            showToolsSub4Loaded: false,
+                            showToolsSub3Loading: false,
+                            showToolsSub3Loaded: false,
+                            showToolsSub1Loading: false,
+                            showToolsSub1Loaded: false,
+                            showToolsSub2Loading: false,
+                            showToolsSub2Loaded: false,
                         })
                     }, 2000)
                 })
             } else {
-                this.setState({ createSub6Clicked: false, showCreateSub6Loaded: false, createSubActive: "" })
+                this.setState({ toolsSub6Clicked: false, showToolsSub6Loaded: false, toolsSubActive: "" })
             }
         }
 
