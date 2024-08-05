@@ -693,43 +693,53 @@ const Styles = styled.div `
     background: white !important;
 }
 
-.continue-session-header:after {
+.continue-session-items {
+    border: 1px solid #8a8a8a;
+    margin-top: 4%;
+    margin-left: 4%;
+    margin-right: 4%;
+    padding: 2%;
+    padding-left: 1.5%;
+    border-radius: 9px;
+    border-bottom: 5px solid #8a8a8a;
+ }
+
+.continue-session-items:after {
     content: "";
     display: table;
     clear: both;
 }
 
-.continue-session-header-left {
+.continue-session-items-left {
     float: left;
-    width: 80%;
-    text-align: center;
+    width: 30%;
+    text-align: left;
+    // border-right: 1px solid black;
 }
 
-.continue-session-header-right {
+.continue-session-items-right {
     float: left;
-    width: 20%;
-    text-align: center;
+    width: 70%;
+    text-align: left;
+}
+
+    // # CONTINUE SESSION ITEM IMAGE
+
+.continue-session-items-left img {
+    width: 75% !important;
+    border: 1px solid #8a8a8a;
+    border-radius: 5px;
+    margin-right: 3%;
+    margin-top: 5%;
 }
 
     // # CONTINUE SESSION HEADER TEXT
 
-.continue-session-header-left h1 {
-    margin-top: 3.5% !important;
-    padding-left: 3% !important;
-    color: black !important;
-    font-size: 150% !important;
-}
-
-.continue-session-header-left p {
-    color: black !important;
-    margin-left: 3.5% !important;
-}
-
-    // # CONTINUE SESSION HEADER IMAGE
-
-.continue-session-header-right img { 
-    width: 80% !important;
-    
+.continue-session-items-right h5 { 
+    font-family: dm sans;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    color: #2890b9;
 }
 
 
@@ -1184,7 +1194,7 @@ const Styles = styled.div `
 
     // - POPULAR APPS - //
 .popular-apps-container {
-    height: 15.53em;
+    height: 15.1em;
     overflow: auto;
 }
 
@@ -4719,12 +4729,21 @@ export default class Dashboard extends Component {
                                     <div className="tutorial-header">
                                         <div className="tutorial-header-left">
                                             <h2>Continue Creating</h2>
-                                            <p>Finish creating your latest masterpiece.</p>
+                                            <p>Finish creating your latest content masterpiece.</p>
                                         </div>
                                         <div className="tutorial-header-right">
                                             <img style={{paddingTop: "3%"}} src="/assets/continue-session-pic.png"/>
                                         </div>
                                     </div> 
+                                    <div style={{borderBottom: "1px solid #8a8a8a", marginLeft: "4%", marginRight: "4%", marginTop: "3.5%"}}></div>
+                                    <div className="continue-session-items">
+                                        <div className="continue-session-items-left">
+                                            <img src="/assets/continue-session-video-still.png"/>
+                                        </div>
+                                        <div className="continue-session-items-right">
+                                            <h5>Tester Project 1</h5>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         }
@@ -4760,12 +4779,6 @@ export default class Dashboard extends Component {
                                                     <p style={{color: this.state.tutorialCell1TimerColor}}>3 min 26 sec</p>
                                                 </div>
                                             </div>
-                                            {/* <button 
-                                            onMouseEnter={this.tutorialBtn1Enter}
-                                            onMouseLeave={this.tutorialBtn1Leave}
-                                            style={{border: `1px solid ${this.state.tutorialCell1BorderColor}`}}>
-                                                Watch
-                                            </button> */}
                                         </div>
                                         <h5 style={{color: this.state.tutorialCell1MainTextColor}}>Learn how to create AI-generated video for your stories.</h5>
                                     </div>
