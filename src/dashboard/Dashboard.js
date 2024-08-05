@@ -4039,7 +4039,7 @@ export default class Dashboard extends Component {
                                 onMouseEnter={this.moreOptionEnter}
                                 onMouseLeave={this.moreOptionLeave}
                                 onClick={this.moreNavOptionClicked}
-                                style={{border: `1px solid ${this.state.moreOptionHovered ? this.state.moreOptionClicked || this.state.moreSubActive !== "" ? "#1c4c75" : "#707a9f" : this.state.moreOptionClicked || this.state.moreSubActive !== "" ? "#1c4c75" : "transparent"}`, backgroundColor: this.state.moreOptionClicked ? "#E0F4FC" : ""}} className="navbar-option-cell">
+                                style={{border: `1px solid ${this.state.moreOptionHovered ? this.state.moreOptionClicked || this.state.moreSubActive !== "" ? "#1c4c75" : "#707a9f" : this.state.moreOptionClicked || this.state.moreSubActive !== "" ? "#1c4c75" : "transparent"}`, backgroundColor: this.state.moreOptionClicked ? "#E0F4FC" : "", marginTop: "3%"}} className="navbar-option-cell">
                                     <div className="navbar-option-icon">
                                         <img src={this.state.moreOptionHovered || this.state.moreOptionClicked ? "/assets/more-option-icon-color.png" : "/assets/more-option-icon.png"}/>
                                     </div>
@@ -4072,17 +4072,7 @@ export default class Dashboard extends Component {
                                             onClick={this.moreSub1OptionClicked}
                                             style={{border: `1px solid ${this.state.moreSub1Hovered ? this.state.moreSub1Clicked ? "#1c4c75" : "#707a9f" : this.state.moreSub1Clicked ? "#1c4c75" : "transparent"}`, color: this.state.moreSub1Clicked ? "#1c4c75" : "#6a6a6a", backgroundColor: this.state.moreSub1Clicked ? "#E0F4FC" : "transparent", display: "flex", justifyContent: "space-between"}}>
                                                 <p style={{fontWeight: this.state.moreSub1Clicked ? "bold" : ""}}>Main Editor</p>
-                                                {this.state.showMoreSub1Loading && 
-                                                    <span style={{marginRight: "5%", marginTop: "4.5%"}}>
-                                                        <ClipLoader
-                                                        color="#1c4c75"
-                                                        loading={true}
-                                                        size={6}
-                                                        aria-label="Loading Spinner"
-                                                        data-testid="loader"
-                                                        />
-                                                    </span>
-                                                }
+                                                
                                                 {true && 
                                                     <img style={{height: "7%", width: "7%", marginRight: "4%", marginTop: "6%"}} src="/assets/dashboard-sub-option-link.png"/>
                                                 }
@@ -4093,17 +4083,7 @@ export default class Dashboard extends Component {
                                             onClick={this.moreSub2OptionClicked}
                                             style={{border: `1px solid ${this.state.moreSub2Hovered ? this.state.moreSub2Clicked ? "#1c4c75" : "#707a9f" : this.state.moreSub2Clicked ? "#1c4c75" : "transparent"}`, color: this.state.moreSub2Clicked ? "#1c4c75" : "#6a6a6a", backgroundColor: this.state.moreSub2Clicked ? "#E0F4FC" : "transparent", display: "flex", justifyContent: "space-between"}}>
                                                 <p style={{fontWeight: this.state.moreSub2Clicked ? "bold" : ""}}>Join the Discord</p>
-                                                {this.state.showMoreSub2Loading && 
-                                                    <span style={{marginRight: "5%", marginTop: "4.5%"}}>
-                                                        <ClipLoader
-                                                        color="#1c4c75"
-                                                        loading={true}
-                                                        size={6}
-                                                        aria-label="Loading Spinner"
-                                                        data-testid="loader"
-                                                        />
-                                                    </span>
-                                                }
+                                               
                                                 {true && 
                                                     <img style={{height: "7%", width: "7%", marginRight: "4%", marginTop: "6%"}} src="/assets/dashboard-sub-option-link.png"/>
                                                 }
