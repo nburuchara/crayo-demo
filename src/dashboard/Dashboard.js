@@ -94,9 +94,10 @@ const Styles = styled.div `
 .navbar-options-container {
     // border: 1px solid black;
     margin-top: 15%;
-    height: 60vh;
+    height: 85vh;
     margin-left: 5%;
     margin-right: 5%;
+    overflow: scroll;
 }
 
     // - NAVBAR OPTION CELL - //
@@ -3686,7 +3687,7 @@ export default class Dashboard extends Component {
                                     </div>
                                 </div>
                                 <CSSTransition
-                                in={this.state.showCreateSuboptions}
+                                in={this.state.showToolsSuboptions}
                                 timeout={{enter: 500, exit: 500}}
                                 classNames="dialog-slide-down"
                                 unmountOnExit
