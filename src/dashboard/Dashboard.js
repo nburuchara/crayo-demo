@@ -679,7 +679,6 @@ const Styles = styled.div `
     border-radius: 6px;
     border: 1px solid white;
     font-family: dm sans;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.1);
     cursor: pointer;
 }
 
@@ -4676,7 +4675,7 @@ export default class Dashboard extends Component {
                         </div>
                         <div className="welcome-header-right">
                             <button
-                            style={{marginTop: this.state.leftPaneMinimized ? "4.5%" : "12.5%", backgroundColor: this.state.versionButtonHovered || this.state.version1ButtonClicked ? "#2890b9" : "white", fontWeight: this.state.versionButtonHovered || this.state.version1ButtonClicked ? "bold" : "", color: this.state.versionButtonHovered || this.state.version1ButtonClicked ? this.state.versionButtonText === "OFF" || this.state.version1ButtonClicked ? "white" : "" : this.state.versionButtonText === "OFF" ? "black" : "", border: `1px solid ${this.state.versionButtonText === "OFF" ? "white" : "#2890b9"}`}}
+                            style={{marginTop: this.state.leftPaneMinimized ? "4.5%" : "14.5%", backgroundColor: this.state.versionButtonHovered || this.state.version1ButtonClicked ? "#2890b9" : "white", fontWeight: this.state.versionButtonHovered || this.state.version1ButtonClicked ? "bold" : "", color: this.state.versionButtonHovered || this.state.version1ButtonClicked ? this.state.versionButtonText === "OFF" || this.state.version1ButtonClicked ? "white" : "" : this.state.versionButtonText === "OFF" ? "black" : "", border: `1px solid ${this.state.versionButtonText === "OFF" ? "#707A9F" : "#2890b9"}`}}
                             onMouseEnter={this.versionButtonEnter}
                             onMouseLeave={this.versionButtonLeave}
                             onClick={this.versionButtonOptionClicked}
