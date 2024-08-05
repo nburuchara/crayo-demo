@@ -93,7 +93,7 @@ const Styles = styled.div `
 
 .navbar-options-container {
     position: relative;
-    // border: 1px solid black;
+    border: 1px solid black;
     margin-top: 15%;
     height: 85vh;
     margin-left: 5%;
@@ -271,9 +271,25 @@ const Styles = styled.div `
     //! - - Left pane footer - - !//
 
 .left-pane-footer {
-    position: absolute;
-    bottom: 0;
-    left: 0;
+    border: 1px solid black;
+}
+
+.left-pane-footer-left {
+    float: left;
+    width: 10%;
+    text-align: center;
+}
+
+.left-pane-footer-right {
+    float: left;
+    width: 90%;
+    text-align: center;
+}
+
+.left-pane-footer:after {
+    content: "";
+    clear: both;
+    display: table;
 }
 
     //! - - (Navbar - SHRANK) - - //
@@ -401,6 +417,7 @@ const Styles = styled.div `
   background-color: #eef7fd;
   color: #1c4c75;
 }
+
 
     //! - - Top pane options - - !//
 
@@ -1448,6 +1465,10 @@ export default class Dashboard extends Component {
             toolsOptionHovered: false,
             toolsOptionClicked: false,
             toolsSubActive: "",
+
+            moreOptionHovered: false,
+            moreOptionClicked: false,
+            moreSubActive: "",
     
                 //! - - TOP PANE (RIGHT PANE) - - !//
 
@@ -2921,6 +2942,186 @@ export default class Dashboard extends Component {
         }
     }
 
+        //* - - MORE OPTIONS - - *//
+
+    moreOptionEnter = () => {
+        this.setState({ dashboardOptionHovered: true })
+    }
+
+    moreOptionLeave = () => {
+        this.setState({ dashboardOptionHovered: false })
+    }
+
+    moreNavOptionClicked = () => {
+        if (this.state.dashboardOptionClicked === false) {
+            this.setState({
+                dashboardOptionClicked: true,
+                showDashboardSuboptions: true,
+            })
+        } else {
+            this.setState({ dashboardOptionClicked: false, showDashboardSuboptions: false })
+        }
+    }
+
+    moreSub1Enter = () => {
+        this.setState({ moreSub1Hovered: true })
+    }
+
+    moreSub1Leave = () => {
+        this.setState({ moreSub1Hovered: false })
+    }
+
+    moreSub1OptionClicked = () => {
+        if (this.state.moreSub1Clicked !== true) {
+            clearTimeout()
+            this.setState({ 
+                moreSub1Clicked: true, 
+                moreSub2Clicked: false,
+                moreSub3Clicked: false,
+                showMoreSub1Loading: true,
+                showMoreSub2Loading: false,
+                showMoreSub3Loading: false,
+                showMoreSub2Loaded: false,
+                showMoreSub3Loaded: false,
+                moreSubActive: "Main Editor",
+                
+                //* - CLOSING NON-DASHBOARD OPTIONS - *//
+                createSubActive: "",
+                createSub1Clicked: false,
+                createSub2Clicked: false,
+                createSub3Clicked: false,
+                createSub4Clicked: false,
+                createSub5Clicked: false,
+                createSub6Clicked: false,
+                showCreateSub1Loading: false,
+                showCreateSub1Loaded: false,
+                showCreateSub2Loading: false,
+                showCreateSub2Loaded: false,
+                showCreateSub3Loading: false,
+                showCreateSub3Loaded: false,
+                showCreateSub4Loading: false,
+                showCreateSub4Loaded: false,
+                showCreateSub5Loading: false,
+                showCreateSub5Loaded: false,
+                showCreateSub6Loading: false,
+                showCreateSub6Loaded: false,
+
+                toolsSubActive: "",
+                toolsSub1Clicked: false,
+                toolsSub2Clicked: false,
+                toolsSub3Clicked: false,
+                toolsSub4Clicked: false,
+                toolsSub5Clicked: false,
+                toolsSub6Clicked: false,
+                showToolsSub1Loading: false,
+                showToolsSub1Loaded: false,
+                showToolsSub2Loading: false,
+                showToolsSub2Loaded: false,
+                showToolsSub3Loading: false,
+                showToolsSub3Loaded: false,
+                showToolsSub4Loading: false,
+                showToolsSub4Loaded: false,
+                showToolsSub5Loading: false,
+                showToolsSub5Loaded: false,
+                showToolsSub6Loading: false,
+                showToolsSub6Loaded: false,
+
+            }, () => {
+                setTimeout(() => {
+                    this.setState({
+                        showMoreSub1Loading: false,
+                        showMoreSub1Loaded: true,
+                        showMoreSub2Loading: false,
+                        showMoreSub3Loading: false,
+                        showMoreSub2Loaded: false,
+                        showMoreSub3Loaded: false,
+                    })
+                }, 2000)
+            })
+        } else {
+            this.setState({ moreSub1Clicked: false, showMoreSub1Loaded: false, moreSubActive: "" })
+        }
+    }
+
+    moreSub2Enter = () => {
+        this.setState({ moreSub2Hovered: true })
+    }
+
+    moreSub2Leave = () => {
+        this.setState({ moreSub2Hovered: false })
+    }
+
+    moreSub2OptionClicked = () => {
+        if (this.state.moreSub2Clicked !== true) {
+            this.setState({ 
+                moreSub1Clicked: false, 
+                moreSub2Clicked: true,
+                moreSub3Clicked: false,
+                showMoreSub1Loading: false,
+                showMoreSub1Loaded: false,
+                showMoreSub2Loading: true,
+                showMoreSub3Loading: false,
+                showMoreSub3Loaded: false,
+                moreSubActive: "My Projects",
+                
+                //* - CLOSING NON-DASHBOARD OPTIONS - *//
+                createSubActive: "",
+                createSub1Clicked: false,
+                createSub2Clicked: false,
+                createSub3Clicked: false,
+                createSub4Clicked: false,
+                createSub5Clicked: false,
+                createSub6Clicked: false,
+                showCreateSub1Loading: false,
+                showCreateSub1Loaded: false,
+                showCreateSub2Loading: false,
+                showCreateSub2Loaded: false,
+                showCreateSub3Loading: false,
+                showCreateSub3Loaded: false,
+                showCreateSub4Loading: false,
+                showCreateSub4Loaded: false,
+                showCreateSub5Loading: false,
+                showCreateSub5Loaded: false,
+                showCreateSub6Loading: false,
+                showCreateSub6Loaded: false,
+
+                toolsSubActive: "",
+                toolsSub1Clicked: false,
+                toolsSub2Clicked: false,
+                toolsSub3Clicked: false,
+                toolsSub4Clicked: false,
+                toolsSub5Clicked: false,
+                toolsSub6Clicked: false,
+                showToolsSub1Loading: false,
+                showToolsSub1Loaded: false,
+                showToolsSub2Loading: false,
+                showToolsSub2Loaded: false,
+                showToolsSub3Loading: false,
+                showToolsSub3Loaded: false,
+                showToolsSub4Loading: false,
+                showToolsSub4Loaded: false,
+                showToolsSub5Loading: false,
+                showToolsSub5Loaded: false,
+                showToolsSub6Loading: false,
+                showToolsSub6Loaded: false,
+
+            }, () => {
+                setTimeout(() => {
+                    this.setState({
+                        showMoreSub2Loading: false,
+                        showMoreSub2Loaded: true,
+                        showMoreSub1Loading: false,
+                        showMoreSub1Loaded: false,
+                        showMoreSub3Loading: false,
+                        showMoreSub3Loaded: false,
+                    })
+                }, 2000)
+            })
+        } else {
+            this.setState({ moreSub2Clicked: false, showMoreSub2Loaded: false, moreSubActive: "" })
+        }
+    }
+
         //! - - SEARCH FUNCTIONS - - !//
 
     groupBy = (array, key) => {
@@ -3834,8 +4035,90 @@ export default class Dashboard extends Component {
                                     </div>
                                 </CSSTransition>
 
+                                <div 
+                                onMouseEnter={this.moreOptionEnter}
+                                onMouseLeave={this.moreOptionLeave}
+                                onClick={this.moreNavOptionClicked}
+                                style={{border: `1px solid ${this.state.moreOptionHovered ? this.state.moreOptionClicked || this.state.moreSubActive !== "" ? "#1c4c75" : "#707a9f" : this.state.moreOptionClicked || this.state.moreSubActive !== "" ? "#1c4c75" : "transparent"}`, backgroundColor: this.state.moreOptionClicked ? "#E0F4FC" : ""}} className="navbar-option-cell">
+                                    <div className="navbar-option-icon">
+                                        <img src={this.state.moreOptionHovered || this.state.moreOptionClicked ? "/assets/dashboard-option-icon-color2.png" : "/assets/dashboard-option-icon.png"}/>
+                                    </div>
+                                    <div className="navbar-option-text">
+                                        <p style={{color: this.state.moreOptionHovered || this.state.moreOptionClicked ? "#1c4c75" : "", fontWeight: this.state.moreOptionClicked ? "bold" : "", marginBottom: (!this.state.moreOptionClicked && (this.state.moreSub1Clicked || this.state.moreSub2Clicked)) ? "0px" : ""}}>Dashboard</p>
+                                        {(!this.state.moreOptionClicked && (this.state.moreSub1Clicked || this.state.moreSub2Clicked)) && 
+                                            <div className="active-sub-option">
+                                                <p><span style={{color: "#41A75B"}}>ACTIVE: </span>{this.state.moreSubActive}</p>
+                                            </div>
+                                        }
+                                    </div>
+                                    <div className="navbar-option-dropdown">
+                                        <img className={this.state.moreOptionClicked ? "navbar-option-dropdown-unrotated navbar-option-dropdown-rotated" : "navbar-option-dropdown-unrotated"} src={this.state.moreOptionClicked ? "/assets/dashboard-down-arrow-color2.png" : "/assets/dashboard-down-arrow.png"}/>
+                                    </div>
+                                </div>
+                                <CSSTransition
+                                in={this.state.showMoreSuboptions}
+                                timeout={{enter: 500, exit: 500}}
+                                classNames="dialog-slide-down"
+                                unmountOnExit
+                                >
+                                    <div className="dashboard-option-subs">
+                                        <div className="dashboard-option-sub-connector">
+                                            <div className="dashboard-option-sub-connector-line"><span style={{color: "transparent", cursor: "default"}}>|</span></div>
+                                        </div>
+                                        <div className="dashboard-option-sub-text">
+                                            <div 
+                                            onMouseEnter={this.moreSub1Enter}
+                                            onMouseLeave={this.moreSub1Leave}
+                                            onClick={this.moreSub1OptionClicked}
+                                            style={{border: `1px solid ${this.state.moreSub1Hovered ? this.state.moreSub1Clicked ? "#1c4c75" : "#707a9f" : this.state.moreSub1Clicked ? "#1c4c75" : "transparent"}`, color: this.state.moreSub1Clicked ? "#1c4c75" : "#6a6a6a", backgroundColor: this.state.moreSub1Clicked ? "#E0F4FC" : "transparent", display: "flex", justifyContent: "space-between"}}>
+                                                <p style={{fontWeight: this.state.moreSub1Clicked ? "bold" : ""}}>Main Editor</p>
+                                                {this.state.showMoreSub1Loading && 
+                                                    <span style={{marginRight: "5%", marginTop: "4.5%"}}>
+                                                        <ClipLoader
+                                                        color="#1c4c75"
+                                                        loading={true}
+                                                        size={6}
+                                                        aria-label="Loading Spinner"
+                                                        data-testid="loader"
+                                                        />
+                                                    </span>
+                                                }
+                                                {this.state.showMoreSub1Loaded && 
+                                                    <img style={{height: "7%", width: "7%", marginRight: "4%", marginTop: "6%"}} src="/assets/dashboard-sub-option-open.png"/>
+                                                }
+                                            </div>
+                                            <div 
+                                            onMouseEnter={this.moreSub2Enter}
+                                            onMouseLeave={this.moreSub2Leave}
+                                            onClick={this.moreSub2OptionClicked}
+                                            style={{border: `1px solid ${this.state.moreSub2Hovered ? this.state.moreSub2Clicked ? "#1c4c75" : "#707a9f" : this.state.moreSub2Clicked ? "#1c4c75" : "transparent"}`, color: this.state.moreSub2Clicked ? "#1c4c75" : "#6a6a6a", backgroundColor: this.state.moreSub2Clicked ? "#E0F4FC" : "transparent", display: "flex", justifyContent: "space-between"}}>
+                                                <p style={{fontWeight: this.state.moreSub2Clicked ? "bold" : ""}}>Join the Discord</p>
+                                                {this.state.showMoreSub2Loading && 
+                                                    <span style={{marginRight: "5%", marginTop: "4.5%"}}>
+                                                        <ClipLoader
+                                                        color="#1c4c75"
+                                                        loading={true}
+                                                        size={6}
+                                                        aria-label="Loading Spinner"
+                                                        data-testid="loader"
+                                                        />
+                                                    </span>
+                                                }
+                                                {this.state.showMoreSub2Loaded && 
+                                                    <img style={{height: "7%", width: "7%", marginRight: "4%", marginTop: "6%"}} src="/assets/dashboard-sub-option-open.png"/>
+                                                }
+                                            </div>
+                                        </div>
+                                    </div>
+                                </CSSTransition>
+
                                 <div className="left-pane-footer">
-                                    
+                                    <div className="left-pane-footer-left">
+                                        
+                                    </div>
+                                    <div className="left-pane-footer-right">
+
+                                    </div>
                                 </div>
 
                             </div>
