@@ -1637,6 +1637,7 @@ export default class Dashboard extends Component {
                 createSub2Clicked: false,
                 createSub3Clicked: false,
                 createSub4Clicked: false,
+                createSub5Clicked: false,
                 showCreateSub1Loading: false,
                 showCreateSub1Loaded: false,
                 showCreateSub2Loading: false,
@@ -1645,6 +1646,8 @@ export default class Dashboard extends Component {
                 showCreateSub3Loaded: false,
                 showCreateSub4Loading: false,
                 showCreateSub4Loaded: false,
+                showCreateSub5Loading: false,
+                showCreateSub5Loaded: false,
 
             }, () => {
                 setTimeout(() => {
@@ -1690,6 +1693,7 @@ export default class Dashboard extends Component {
                 createSub2Clicked: false,
                 createSub3Clicked: false,
                 createSub4Clicked: false,
+                createSub5Clicked: false,
                 showCreateSub1Loading: false,
                 showCreateSub1Loaded: false,
                 showCreateSub2Loading: false,
@@ -1698,6 +1702,8 @@ export default class Dashboard extends Component {
                 showCreateSub3Loaded: false,
                 showCreateSub4Loading: false,
                 showCreateSub4Loaded: false,
+                showCreateSub5Loading: false,
+                showCreateSub5Loaded: false,
 
             }, () => {
                 setTimeout(() => {
@@ -1743,6 +1749,7 @@ export default class Dashboard extends Component {
                 createSub2Clicked: false,
                 createSub3Clicked: false,
                 createSub4Clicked: false,
+                createSub5Clicked: false,
                 showCreateSub1Loading: false,
                 showCreateSub1Loaded: false,
                 showCreateSub2Loading: false,
@@ -1751,6 +1758,8 @@ export default class Dashboard extends Component {
                 showCreateSub3Loaded: false,
                 showCreateSub4Loading: false,
                 showCreateSub4Loaded: false,
+                showCreateSub5Loading: false,
+                showCreateSub5Loaded: false,
 
             }, () => {
                 setTimeout(() => {
@@ -1805,6 +1814,7 @@ export default class Dashboard extends Component {
                 createSub2Clicked: false,
                 createSub3Clicked: false,
                 createSub4Clicked: false,
+                createSub5Clicked: false,
                 showCreateSub1Loading: true,
                 showCreateSub2Loading: false,
                 showCreateSub2Loaded: false,
@@ -1812,6 +1822,8 @@ export default class Dashboard extends Component {
                 showCreateSub3Loaded: false,
                 showCreateSub4Loading: false,
                 showCreateSub4Loaded: false,
+                showCreateSub5Loading: false,
+                showCreateSub5Loaded: false,
                 createSubActive: "Split Video",
                 
                 //* - CLOSING NON-CREATE OPTIONS - *//
@@ -1837,6 +1849,8 @@ export default class Dashboard extends Component {
                         showCreateSub3Loaded: false,
                         showCreateSub4Loading: false,
                         showCreateSub4Loaded: false,
+                        showCreateSub5Loading: false,
+                        showCreateSub5Loaded: false,
                     })
                 }, 2000)
             })
@@ -1860,6 +1874,7 @@ export default class Dashboard extends Component {
                 createSub2Clicked: true,
                 createSub3Clicked: false,
                 createSub4Clicked: false,
+                createSub5Clicked: false,
                 showCreateSub1Loading: false,
                 showCreateSub1Loaded: false,
                 showCreateSub2Loading: true,
@@ -1867,6 +1882,8 @@ export default class Dashboard extends Component {
                 showCreateSub3Loaded: false,
                 showCreateSub4Loading: false,
                 showCreateSub4Loaded: false,
+                showCreateSub5Loading: false,
+                showCreateSub5Loaded: false,
                 createSubActive: "Story Video",
                 
                 //* - CLOSING NON-CREATE OPTIONS - *//
@@ -1892,6 +1909,8 @@ export default class Dashboard extends Component {
                         showCreateSub3Loaded: false,
                         showCreateSub4Loading: false,
                         showCreateSub4Loaded: false,
+                        showCreateSub5Loading: false,
+                        showCreateSub5Loaded: false,
                     })
                 }, 2000)
             })
@@ -1915,12 +1934,15 @@ export default class Dashboard extends Component {
                 createSub2Clicked: false,
                 createSub3Clicked: true,
                 createSub4Clicked: false,
+                createSub5Clicked: false,
                 showCreateSub1Loading: false,
                 showCreateSub1Loaded: false,
                 showCreateSub2Loading: false,
                 showCreateSub2Loaded: false,
                 showCreateSub4Loading: false,
                 showCreateSub4Loaded: false,
+                showCreateSub5Loading: false,
+                showCreateSub5Loaded: false,
                 showCreateSub3Loading: true,
                 createSubActive: "My Assets",
 
@@ -1947,6 +1969,8 @@ export default class Dashboard extends Component {
                         showCreateSub2Loaded: false,
                         showCreateSub4Loading: false,
                         showCreateSub4Loaded: false,
+                        showCreateSub5Loading: false,
+                        showCreateSub5Loaded: false,
                     })
                 }, 2000)
             })
@@ -1969,6 +1993,7 @@ export default class Dashboard extends Component {
                 createSub1Clicked: false, 
                 createSub2Clicked: false,
                 createSub3Clicked: false,
+                createSub5Clicked: false,
                 createSub4Clicked: true,
                 showCreateSub1Loading: false,
                 showCreateSub1Loaded: false,
@@ -1976,6 +2001,8 @@ export default class Dashboard extends Component {
                 showCreateSub2Loaded: false,
                 showCreateSub3Loading: false,
                 showCreateSub3Loaded: false,
+                showCreateSub5Loading: false,
+                showCreateSub5Loaded: false,
                 showCreateSub4Loading: true,
                 createSubActive: "Blur Video",
 
@@ -1996,6 +2023,8 @@ export default class Dashboard extends Component {
                     this.setState({
                         showCreateSub4Loading: false,
                         showCreateSub4Loaded: true,
+                        showCreateSub5Loading: false,
+                        showCreateSub5Loaded: false,
                         showCreateSub3Loading: false,
                         showCreateSub3Loaded: false,
                         showCreateSub1Loading: false,
@@ -2007,6 +2036,66 @@ export default class Dashboard extends Component {
             })
         } else {
             this.setState({ createSub4Clicked: false, showCreateSub4Loaded: false, createSubActive: "" })
+        }
+    }
+
+    createSub5Enter = () => {
+        this.setState({ createSub5Hovered: true })
+    }
+
+    createSub5Leave = () => {
+        this.setState({ createSub5Hovered: false })
+    }
+
+    createSub5OptionClicked = () => {
+        if (this.state.createSub5Clicked !== true) {
+            this.setState({ 
+                createSub1Clicked: false, 
+                createSub2Clicked: false,
+                createSub3Clicked: false,
+                createSub4Clicked: false,
+                createSub5Clicked: true,
+                showCreateSub1Loading: false,
+                showCreateSub1Loaded: false,
+                showCreateSub2Loading: false,
+                showCreateSub2Loaded: false,
+                showCreateSub3Loading: false,
+                showCreateSub3Loaded: false,
+                showCreateSub4Loading: false,
+                showCreateSub4Loaded: false,
+                showCreateSub5Loading: true,
+                createSubActive: "ChatGPT Video",
+
+                //* - CLOSING NON-CREATE OPTIONS - *//
+                dashboardSubActive: "",
+                dashboardSub1Clicked: false,
+                dashboardSub2Clicked: false,
+                dashboardSub3Clicked: false,
+                showDashboardSub1Loading: false,
+                showDashboardSub1Loaded: false,
+                showDashboardSub2Loading: false,
+                showDashboardSub2Loaded: false,
+                showDashboardSub3Loading: false,
+                showDashboardSub3Loaded: false,
+                
+            }, () => {
+                setTimeout(() => {
+                    this.setState({
+                        showCreateSub5Loading: false,
+                        showCreateSub5Loaded: true,
+                        showCreateSub4Loading: false,
+                        showCreateSub4Loaded: false,
+                        showCreateSub3Loading: false,
+                        showCreateSub3Loaded: false,
+                        showCreateSub1Loading: false,
+                        showCreateSub1Loaded: false,
+                        showCreateSub2Loading: false,
+                        showCreateSub2Loaded: false,
+                    })
+                }, 2000)
+            })
+        } else {
+            this.setState({ createSub5Clicked: false, showCreateSub5Loaded: false, createSubActive: "" })
         }
     }
 
@@ -2610,8 +2699,8 @@ export default class Dashboard extends Component {
                                         <img src={this.state.createOptionHovered || this.state.createOptionClicked ? "/assets/create-option-icon-color2.png" : "/assets/create-option-icon.png"}/>
                                     </div>
                                     <div className="navbar-option-text">
-                                        <p style={{color: this.state.createOptionHovered || this.state.createOptionClicked ? "#1c4c75" : "", fontWeight: this.state.createOptionClicked ? "bold" : "", marginBottom: (!this.state.createOptionClicked && (this.state.createSub1Clicked || this.state.createSub2Clicked || this.state.createSub3Clicked || this.state.createSub4Clicked)) ? "0px" : ""}}>Create</p>
-                                        {(!this.state.createOptionClicked && (this.state.createSub1Clicked || this.state.createSub2Clicked || this.state.createSub3Clicked || this.state.createSub4Clicked)) && 
+                                        <p style={{color: this.state.createOptionHovered || this.state.createOptionClicked ? "#1c4c75" : "", fontWeight: this.state.createOptionClicked ? "bold" : "", marginBottom: (!this.state.createOptionClicked && (this.state.createSub1Clicked || this.state.createSub2Clicked || this.state.createSub3Clicked || this.state.createSub4Clicked || this.state.createSub5Clicked || this.state.createSub6Clicked)) ? "0px" : ""}}>Create</p>
+                                        {(!this.state.createOptionClicked && (this.state.createSub1Clicked || this.state.createSub2Clicked || this.state.createSub3Clicked || this.state.createSub4Clicked || this.state.createSub5Clicked || this.state.createSub6Clicked)) && 
                                             <div className="active-sub-option">
                                                 <p><span style={{color: "#41A75B"}}>ACTIVE: </span>{this.state.createSubActive}</p>
                                             </div>
@@ -2713,6 +2802,48 @@ export default class Dashboard extends Component {
                                                     </span>
                                                 }
                                                 {this.state.showCreateSub4Loaded && 
+                                                    <img style={{height: "7%", width: "7%", marginRight: "4%", marginTop: "6%"}} src="/assets/dashboard-sub-option-open.png"/>
+                                                }
+                                            </div>
+                                            <div 
+                                            onMouseEnter={this.createSub5Enter}
+                                            onMouseLeave={this.createSub5Leave}
+                                            onClick={this.createSub5OptionClicked}
+                                            style={{border: `1px solid ${this.state.createSub5Hovered ? this.state.createSub5Clicked ? "#1c4c75" : "#707a9f" : this.state.createSub5Clicked ? "#1c4c75" : "transparent"}`, color: this.state.createSub5Clicked ? "#1c4c75" : "#6a6a6a", backgroundColor: this.state.createSub5Clicked ? "#E0F4FC" : "transparent", display: "flex", justifyContent: "space-between"}}>
+                                                <p style={{fontWeight: this.state.createSub5Clicked ? "bold" : ""}}>ChatGPT Video</p>
+                                                {this.state.showCreateSub5Loading && 
+                                                    <span style={{marginRight: "5%", marginTop: "4.5%"}}>
+                                                        <ClipLoader
+                                                        color="#1c4c75"
+                                                        loading={true}
+                                                        size={6}
+                                                        aria-label="Loading Spinner"
+                                                        data-testid="loader"
+                                                        />
+                                                    </span>
+                                                }
+                                                {this.state.showCreateSub5Loaded && 
+                                                    <img style={{height: "7%", width: "7%", marginRight: "4%", marginTop: "6%"}} src="/assets/dashboard-sub-option-open.png"/>
+                                                }
+                                            </div>
+                                            <div 
+                                            onMouseEnter={this.createSub6Enter}
+                                            onMouseLeave={this.createSub6Leave}
+                                            onClick={this.createSub6OptionClicked}
+                                            style={{border: `1px solid ${this.state.createSub6Hovered ? this.state.createSub6Clicked ? "#1c4c75" : "#707a9f" : this.state.createSub6Clicked ? "#1c4c75" : "transparent"}`, color: this.state.createSub6Clicked ? "#1c4c75" : "#6a6a6a", backgroundColor: this.state.createSub6Clicked ? "#E0F4FC" : "transparent", display: "flex", justifyContent: "space-between"}}>
+                                                <p style={{fontWeight: this.state.createSub6Clicked ? "bold" : ""}}>Voiceover Video</p>
+                                                {this.state.showCreateSub6Loading && 
+                                                    <span style={{marginRight: "5%", marginTop: "4.5%"}}>
+                                                        <ClipLoader
+                                                        color="#1c4c75"
+                                                        loading={true}
+                                                        size={6}
+                                                        aria-label="Loading Spinner"
+                                                        data-testid="loader"
+                                                        />
+                                                    </span>
+                                                }
+                                                {this.state.showCreateSub6Loaded && 
                                                     <img style={{height: "7%", width: "7%", marginRight: "4%", marginTop: "6%"}} src="/assets/dashboard-sub-option-open.png"/>
                                                 }
                                             </div>
@@ -3575,6 +3706,7 @@ export default class Dashboard extends Component {
             </div>
         )
     }
+
     desktop4Render = () => {
 
     }
