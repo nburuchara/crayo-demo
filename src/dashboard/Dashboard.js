@@ -3286,7 +3286,41 @@ export default class Dashboard extends Component {
         //* - - SHRANK DASHBOARD OPTION - - *//
 
     shrankDashboardEnter = () => {
-        
+        this.setState({ shrankDashboardOptionHovered: true })
+    }
+
+    shrankDashboardLeave = () => {
+        this.setState({ shrankDashboardOptionHovered: false })
+    }
+
+         //* - - SHRANK CREATE OPTION - - *//
+
+    shrankCreateEnter = () => {
+        this.setState({ shrankCreateOptionHovered: true })
+    }
+
+    shrankCreateLeave = () => {
+        this.setState({ shrankCreateOptionHovered: false })
+    }
+
+         //* - - SHRANK TOOLS OPTION - - *//
+
+    shrankToolsEnter = () => {
+        this.setState({ shrankToolsOptionHovered: true })
+    }
+
+    shrankToolsLeave = () => {
+        this.setState({ shrankToolsOptionHovered: false })
+    }
+
+         //* - - SHRANK MORE OPTION - - *//
+
+    shrankMoreEnter = () => {
+        this.setState({ shrankMoreOptionHovered: true })
+    }
+
+    shrankMoreLeave = () => {
+        this.setState({ shrankMoreOptionHovered: false })
     }
 
         //! - - SEARCH FUNCTIONS - - !//
@@ -4286,36 +4320,38 @@ export default class Dashboard extends Component {
                                 src={this.state.collapseNavbarHovered ? "/assets/shrink-navbar-icon-color.png" : "/assets/shrink-navbar-icon.png"}/>
                             </div>
                             <div className="shrank-navbar-options">
-                                <div className="shrank-navbar-option">
+                                <div 
+                                onMouseEnter={this.shrankDashboardEnter}
+                                onMouseLeave={this.shrankDashboardLeave}
+                                onClick={this.shrankDashboardOptionClicked}
+                                style={{border: `1px solid ${this.state.shrankDashboardOptionHovered ? this.state.dashboardOptionClicked ? "#1c4c75" : "#707a9f" : this.state.dashboardOptionClicked ? "#1c4c75" : "transparent"}`}}
+                                className="shrank-navbar-option">
                                     <img
-                                    onMouseEnter={this.collapseNavbarEnter}
-                                    onMouseLeave={this.collapseNavbarLeave}
-                                    onClick={this.collapseNavbarClicked}
-                                    src={this.state.collapseNavbarHovered ? "/assets/dashboard-option-icon-color2.png" : "/assets/dashboard-option-icon.png"}/>
-                                    <p>Dashboard</p>
+                                    src={this.state.shrankDashboardOptionHovered ? "/assets/dashboard-option-icon-color2.png" : "/assets/dashboard-option-icon.png"}/>
+                                    <p style={{fontWeight: "bold"}}>Dashboard</p>
                                 </div>
                                 <div style={{marginTop: "20%"}} className="shrank-navbar-option">
                                     <img
-                                    onMouseEnter={this.collapseNavbarEnter}
-                                    onMouseLeave={this.collapseNavbarLeave}
-                                    onClick={this.collapseNavbarClicked}
-                                    src={this.state.collapseNavbarHovered ? "/assets/create-option-icon-color2.png" : "/assets/create-option-icon.png"}/>
+                                    onMouseEnter={this.shrankCreateEnter}
+                                    onMouseLeave={this.shrankCreateLeave}
+                                    onClick={this.shrankCreateOptionClicked}
+                                    src={this.state.shrankCreateOptionHovered ? "/assets/create-option-icon-color2.png" : "/assets/create-option-icon.png"}/>
                                     <p>Create</p>
                                 </div>
                                 <div style={{marginTop: "20%"}} className="shrank-navbar-option">
                                     <img
-                                    onMouseEnter={this.collapseNavbarEnter}
-                                    onMouseLeave={this.collapseNavbarLeave}
-                                    onClick={this.collapseNavbarClicked}
-                                    src={this.state.collapseNavbarHovered ? "/assets/tools-option-icon-color2.png" : "/assets/tools-option-icon.png"}/>
+                                    onMouseEnter={this.shrankToolsEnter}
+                                    onMouseLeave={this.shrankToolsLeave}
+                                    onClick={this.shrankToolsOptionClicked}
+                                    src={this.state.shrankToolsOptionHovered ? "/assets/tools-option-icon-color2.png" : "/assets/tools-option-icon.png"}/>
                                     <p>Tools</p>
                                 </div>
                                 <div style={{marginTop: "20%"}} className="shrank-navbar-option">
                                     <img
-                                    onMouseEnter={this.collapseNavbarEnter}
-                                    onMouseLeave={this.collapseNavbarLeave}
-                                    onClick={this.collapseNavbarClicked}
-                                    src={this.state.collapseNavbarHovered ? "/assets/more-option-icon-color.png" : "/assets/more-option-icon.png"}/>
+                                    onMouseEnter={this.shrankMoreEnter}
+                                    onMouseLeave={this.shrankMoreLeave}
+                                    onClick={this.shrankMoreOptionClicked}
+                                    src={this.state.shrankMoreOptionHovered ? "/assets/more-option-icon-color.png" : "/assets/more-option-icon.png"}/>
                                     <p>More</p>
                                 </div>
                             </div>
