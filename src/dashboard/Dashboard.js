@@ -4860,7 +4860,7 @@ export default class Dashboard extends Component {
                                                         <p><span style={{color: "#2890b9"}}>Last edited:</span> 18:02pm 08/05/24</p>
                                                     </div>
                                                 </div>
-                                                <label style={{textAlign: "left"}}>Testing the cgpt vid feature. Generated neon moving grid floor...</label>
+                                                <label style={{textAlign: "left"}}>Testing the cgpt vid feature. Generated moving neon grid floor...</label>
                                             </div>
                                         </div>
                                         <div 
