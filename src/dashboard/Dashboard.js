@@ -343,6 +343,7 @@ const Styles = styled.div `
     padding-right: 2%;
     background-color: #EEEEEF;
     transition: width 0.5s ease-out;;
+    overflow: auto;
 }
 
     // - - HEADER (RIGHT PANE) - - //? SEARCH BAR & OPTIONS
@@ -642,10 +643,44 @@ const Styles = styled.div `
 
     //! - - Welcome back header - - //
 
-.welcome-header h3 {
+.welcome-header:after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.welcome-header-left {
+    float: left;
+    width: 90%;
+    text-align: left;
+} 
+
+.welcome-header-right {
+    float: left;
+    width: 10%;
+    text-align: right;
+}
+
+    // # WELCOME HEADER TEXT
+
+.welcome-header-left h3 {
     margin-bottom: 1%;
     text-align: left;
     font-family: dm sans;
+}
+
+// # WELCOME HEADER BUTTON
+
+.welcome-header-right button {
+    margin-top: 15%;
+    padding: 3%;
+    padding-left: 8%;
+    padding-right: 8%;
+    border-radius: 6px;
+    border: 1px solid white;
+    font-family: dm sans;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.1);
+    cursor: pointer;
 }
 
 
@@ -1532,6 +1567,13 @@ export default class Dashboard extends Component {
             //* - - USER NAME BTN VAR(s) - - *//
             userNameBgColor: "#c2175b",
             userNameTxtColor: "white",
+
+                //! - - VERSION BUTTON - - !//
+
+            //* - - VERSION BUTTON - - *//
+            versionButtonText: "Version 2",
+            versionButtonHovered: false,
+            versionButtonClicked: false,
 
                 //! - - SECTION 1 (RIGHT PANE) - - !//
 
@@ -3292,7 +3334,9 @@ export default class Dashboard extends Component {
     }
 
     shrankDashboardLeave = () => {
-        this.setState({ shrankDashboardOptionHovered: false })
+        if (!this.state.dashboardOptionClicked) {
+            this.setState({ shrankDashboardOptionHovered: false })
+        }
     }
 
     shrankDashboardOptionClicked = () => {
@@ -3319,7 +3363,9 @@ export default class Dashboard extends Component {
     }
 
     shrankCreateLeave = () => {
-        this.setState({ shrankCreateOptionHovered: false })
+        if (!this.state.createOptionClicked) {
+            this.setState({ shrankCreateOptionHovered: false })
+        }
     }
 
     shrankCreateOptionClicked = () => {
@@ -3346,7 +3392,9 @@ export default class Dashboard extends Component {
     }
 
     shrankToolsLeave = () => {
-        this.setState({ shrankToolsOptionHovered: false })
+        if (!this.state.toolsOptionClicked) {
+            this.setState({ shrankToolsOptionHovered: false })
+        }
     }
 
     shrankToolsOptionClicked = () => {
@@ -3373,7 +3421,9 @@ export default class Dashboard extends Component {
     }
 
     shrankMoreLeave = () => {
-        this.setState({ shrankMoreOptionHovered: false })
+        if (!this.state.moreOptionClicked) {
+            this.setState({ shrankMoreOptionHovered: false })
+        }
     }
 
     shrankMoreOptionClicked = () => {
@@ -3504,6 +3554,20 @@ export default class Dashboard extends Component {
             // No match found or search input is empty or loading
             return option.name;
         }
+    }
+
+        //! - - PAGE VERSION BUTTON - - !//
+
+    versionButtonEnter = () => {
+        this.setState({ versionButtonHovered: true })
+    }
+
+    versionButtonLeave = () => {
+        this.setState({ versionButtonHovered: false })
+    }
+
+    versionButtonClicked = () => {
+
     }
 
 
@@ -4517,7 +4581,16 @@ export default class Dashboard extends Component {
                     {/* - - SECTION 1 - -  */}
 
                     <div className="welcome-header">
-                        <h3 style={{marginTop: this.state.leftPaneMinimized ? "0.5%" : ""}}>Welcome back Norman,</h3>
+                        <div className="welcome-header-left">
+                            <h3 style={{marginTop: this.state.leftPaneMinimized ? "0.5%" : ""}}>Welcome back Norman,</h3>
+                        </div>
+                        <div className="welcome-header-right">
+                            <button
+                            style={{backgroundColor: this.state.versionButtonHovered ? "#2890b9" : "white", fontWeight: this.state.versionButtonHovered ? "bold" : "", color: this.state.versionButtonHovered ? this.state.versionButtonText === "Version 2" ? "white" : "" : this.state.versionButtonText === "Version 2" ? "" : ""}}
+                            onMouseEnter={this.versionButtonEnter}
+                            onMouseLeave={this.versionButtonLeave}
+                            >Version 2</button>
+                        </div>     
                     </div>
                     <div className="right-pane-section-1">
                         <div className="rp-sec1-left-parent">
