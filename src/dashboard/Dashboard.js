@@ -3296,13 +3296,20 @@ export default class Dashboard extends Component {
     }
 
     shrankDashboardOptionClicked = () => {
-        this.collapseNavbarClicked()
-        setTimeout(() => {
+        if (!this.state.dashboardOptionClicked) { 
+            this.collapseNavbarClicked()
+            setTimeout(() => {
+                this.setState({
+                    shrankDashboardOptionHovered: true
+                })
+                this.dashboardNavOptionClicked()
+            }, 1000)
+        } else {
             this.setState({
-                shrankDashboardOptionHovered: true
+                shrankDashboardOptionHovered: false
             })
-            this.dashboardNavOptionClicked()
-        }, 500)
+            this.setState({ dashboardOptionClicked: false, showDashboardSuboptions: false })
+        }
     }
 
          //* - - SHRANK CREATE OPTION - - *//
@@ -3315,6 +3322,23 @@ export default class Dashboard extends Component {
         this.setState({ shrankCreateOptionHovered: false })
     }
 
+    shrankCreateOptionClicked = () => {
+        if (!this.state.createOptionClicked) { 
+            this.collapseNavbarClicked()
+            setTimeout(() => {
+                this.setState({
+                    shrankCreateOptionHovered: true
+                })
+                this.createNavOptionClicked()
+            }, 1000)
+        } else {
+            this.setState({
+                shrankCreateOptionHovered: false
+            })
+            this.setState({ createOptionClicked: false, showCreateSuboptions: false })
+        }
+    }
+
          //* - - SHRANK TOOLS OPTION - - *//
 
     shrankToolsEnter = () => {
@@ -3325,6 +3349,23 @@ export default class Dashboard extends Component {
         this.setState({ shrankToolsOptionHovered: false })
     }
 
+    shrankToolsOptionClicked = () => {
+        if (!this.state.toolsOptionClicked) { 
+            this.collapseNavbarClicked()
+            setTimeout(() => {
+                this.setState({
+                    shrankToolsOptionHovered: true
+                })
+                this.toolsNavOptionClicked()
+            }, 1000)
+        } else {
+            this.setState({
+                shrankToolsOptionHovered: false
+            })
+            this.setState({ toolsOptionClicked: false, showToolsSuboptions: false })
+        }
+    }
+
          //* - - SHRANK MORE OPTION - - *//
 
     shrankMoreEnter = () => {
@@ -3333,6 +3374,23 @@ export default class Dashboard extends Component {
 
     shrankMoreLeave = () => {
         this.setState({ shrankMoreOptionHovered: false })
+    }
+
+    shrankMoreOptionClicked = () => {
+        if (!this.state.moreOptionClicked) { 
+            this.collapseNavbarClicked()
+            setTimeout(() => {
+                this.setState({
+                    shrankMoreOptionHovered: true
+                })
+                this.moreNavOptionClicked()
+            }, 1000)
+        } else {
+            this.setState({
+                shrankMoreOptionHovered: false
+            })
+            this.setState({ moreOptionClicked: false, showMoreSuboptions: false })
+        }
     }
 
         //! - - SEARCH FUNCTIONS - - !//
@@ -4342,27 +4400,30 @@ export default class Dashboard extends Component {
                                     src={this.state.shrankDashboardOptionHovered || this.state.dashboardOptionClicked ? "/assets/dashboard-option-icon-color2.png" : "/assets/dashboard-option-icon.png"}/>
                                     <p style={{fontWeight: "bold", color: this.state.shrankDashboardOptionHovered || this.state.dashboardOptionClicked ? "#1c4c75" : "#707a9f"}}>Dashboard</p>
                                 </div>
-                                <div style={{marginTop: "20%"}} className="shrank-navbar-option">
+                                <div 
+                                onMouseEnter={this.shrankCreateEnter}
+                                onMouseLeave={this.shrankCreateLeave}
+                                onClick={this.shrankCreateOptionClicked}
+                                style={{marginTop: "20%", border: `1px solid ${this.state.shrankCreateOptionHovered ? this.state.createOptionClicked  ? "#1c4c75" : "#707a9f" : this.state.createOptionClicked ? "#1c4c75" : "transparent"}`, backgroundColor: this.state.shrankCreateOptionHovered || this.state.createOptionClicked ? "#E0F4FC" : "transparent"}} className="shrank-navbar-option">
                                     <img
-                                    onMouseEnter={this.shrankCreateEnter}
-                                    onMouseLeave={this.shrankCreateLeave}
-                                    onClick={this.shrankCreateOptionClicked}
                                     src={this.state.shrankCreateOptionHovered ? "/assets/create-option-icon-color2.png" : "/assets/create-option-icon.png"}/>
                                     <p>Create</p>
                                 </div>
-                                <div style={{marginTop: "20%"}} className="shrank-navbar-option">
+                                <div 
+                                onMouseEnter={this.shrankToolsEnter}
+                                onMouseLeave={this.shrankToolsLeave}
+                                onClick={this.shrankToolsOptionClicked}
+                                style={{marginTop: "20%", border: `1px solid ${this.state.shrankToolsOptionHovered ? this.state.toolsOptionClicked  ? "#1c4c75" : "#707a9f" : this.state.toolsOptionClicked ? "#1c4c75" : "transparent"}`, backgroundColor: this.state.shrankToolsOptionHovered || this.state.toolsOptionClicked ? "#E0F4FC" : "transparent"}} className="shrank-navbar-option">
                                     <img
-                                    onMouseEnter={this.shrankToolsEnter}
-                                    onMouseLeave={this.shrankToolsLeave}
-                                    onClick={this.shrankToolsOptionClicked}
                                     src={this.state.shrankToolsOptionHovered ? "/assets/tools-option-icon-color2.png" : "/assets/tools-option-icon.png"}/>
                                     <p>Tools</p>
                                 </div>
-                                <div style={{marginTop: "20%"}} className="shrank-navbar-option">
+                                <div 
+                                onMouseEnter={this.shrankMoreEnter}
+                                onMouseLeave={this.shrankMoreLeave}
+                                onClick={this.shrankMoreOptionClicked}
+                                style={{marginTop: "20%", border: `1px solid ${this.state.shrankMoreOptionHovered ? this.state.moreOptionClicked  ? "#1c4c75" : "#707a9f" : this.state.moreOptionClicked ? "#1c4c75" : "transparent"}`, backgroundColor: this.state.shrankMoreOptionHovered || this.state.moreOptionClicked ? "#E0F4FC" : "transparent"}} className="shrank-navbar-option">
                                     <img
-                                    onMouseEnter={this.shrankMoreEnter}
-                                    onMouseLeave={this.shrankMoreLeave}
-                                    onClick={this.shrankMoreOptionClicked}
                                     src={this.state.shrankMoreOptionHovered ? "/assets/more-option-icon-color.png" : "/assets/more-option-icon.png"}/>
                                     <p>More</p>
                                 </div>
