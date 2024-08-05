@@ -683,6 +683,56 @@ const Styles = styled.div `
     cursor: pointer;
 }
 
+    //! - - Continue Session [Section 1 (right pane)] - - !//
+
+    // # CONTINUE SESSION (WINDOW 1)
+
+.continue-window-1 {
+    height: 100%;
+    width: 100%;
+    border-radius: 8px;
+    background: white !important;
+}
+
+.continue-session-header:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.continue-session-header-left {
+    float: left;
+    width: 80%;
+    text-align: center;
+}
+
+.continue-session-header-right {
+    float: left;
+    width: 20%;
+    text-align: center;
+}
+
+    // # CONTINUE SESSION HEADER TEXT
+
+.continue-session-header-left h1 {
+    margin-top: 3.5% !important;
+    padding-left: 3% !important;
+    color: black !important;
+    font-size: 150% !important;
+}
+
+.continue-session-header-left p {
+    color: black !important;
+    margin-left: 3.5% !important;
+}
+
+    // # CONTINUE SESSION HEADER IMAGE
+
+.continue-session-header-right img { 
+    width: 80% !important;
+    
+}
+
 
     //! - - Section 1 (right pane) - - //
 
@@ -909,15 +959,40 @@ const Styles = styled.div `
 
 .tutorial-header-left {
     float: left;
-    width: 70%;
+    width: 75%;
     text-align: center;
 }
 
 .tutorial-header-right {
     float: left;
-    width: 30%;
+    width: 25%;
     text-align: center;
     // border-left: 1px solid black;
+}
+
+
+    // # TUTORIAL HEADER TEXT
+
+.tutorial-header-left h2 {
+    text-align: left;
+    padding-left: 5%;
+    padding-right: 5%;
+    color: black;
+    font-family: dm sans;
+    font-weight: 900;
+    margin-top: 5%;
+    margin-bottom: 1%;
+}
+
+.tutorial-header-left p {
+    margin-top: 0px;
+    // margin-bottom: 0px;
+    font-size: 80%;
+    text-align: left;
+    margin-left: 5%;
+    font-weight: bold;
+    font-family: dm sans;
+    color: #2980b9;
 }
 
     // # TUTORIAL HEADER IMG
@@ -1030,7 +1105,7 @@ const Styles = styled.div `
 
 .tutorial-cell-timer-right {
     float: left;
-    width: 60%;
+    width: 70%;
     text-align: left;
     // border-right: 1px solid black;
 }
@@ -1727,7 +1802,7 @@ export default class Dashboard extends Component {
                 showDashboardSuboptions: true,
             })
         } else {
-            this.setState({ dashboardOptionClicked: false, showDashboardSuboptions: false })
+            this.setState({ dashboardOptionClicked: false, showDashboardSuboptions: false, shrankDashboardOptionHovered: false })
         }
     }
 
@@ -2010,7 +2085,7 @@ export default class Dashboard extends Component {
                 showCreateSuboptions: true,
             })
         } else {
-            this.setState({ createOptionClicked: false, showCreateSuboptions: false })
+            this.setState({ createOptionClicked: false, showCreateSuboptions: false, shrankCreateOptionHovered: false })
         }
     }
 
@@ -2589,7 +2664,7 @@ export default class Dashboard extends Component {
                 showToolsSuboptions: true,
             })
         } else {
-            this.setState({ toolsOptionClicked: false, showToolsSuboptions: false })
+            this.setState({ toolsOptionClicked: false, showToolsSuboptions: false, shrankToolsOptionHovered: false })
         }
     }
 
@@ -3169,7 +3244,7 @@ export default class Dashboard extends Component {
                 showMoreSuboptions: true,
             })
         } else {
-            this.setState({ moreOptionClicked: false, showMoreSuboptions: false })
+            this.setState({ moreOptionClicked: false, showMoreSuboptions: false, shrankMoreOptionHovered: false })
         }
     }
 
@@ -4601,7 +4676,7 @@ export default class Dashboard extends Component {
                         </div>
                         <div className="welcome-header-right">
                             <button
-                            style={{marginTop: this.state.leftPaneMinimized ? "5%" : "15%", backgroundColor: this.state.versionButtonHovered || this.state.version1ButtonClicked ? "#2890b9" : "white", fontWeight: this.state.versionButtonHovered || this.state.version1ButtonClicked ? "bold" : "", color: this.state.versionButtonHovered || this.state.version1ButtonClicked ? this.state.versionButtonText === "OFF" || this.state.version1ButtonClicked ? "white" : "" : this.state.versionButtonText === "OFF" ? "black" : "", border: `1px solid ${this.state.versionButtonText === "OFF" ? "white" : "#2890b9"}`}}
+                            style={{marginTop: this.state.leftPaneMinimized ? "4.5%" : "12.5%", backgroundColor: this.state.versionButtonHovered || this.state.version1ButtonClicked ? "#2890b9" : "white", fontWeight: this.state.versionButtonHovered || this.state.version1ButtonClicked ? "bold" : "", color: this.state.versionButtonHovered || this.state.version1ButtonClicked ? this.state.versionButtonText === "OFF" || this.state.version1ButtonClicked ? "white" : "" : this.state.versionButtonText === "OFF" ? "black" : "", border: `1px solid ${this.state.versionButtonText === "OFF" ? "white" : "#2890b9"}`}}
                             onMouseEnter={this.versionButtonEnter}
                             onMouseLeave={this.versionButtonLeave}
                             onClick={this.versionButtonOptionClicked}
@@ -4609,7 +4684,6 @@ export default class Dashboard extends Component {
                         </div>     
                     </div>
                     <div className="right-pane-section-1">
-                        
                         {this.state.showVersion1Sec1Window1 && 
                             <div className="rp-sec1-left-parent">
                                 <h1><span style={{color: "#2890b9"}}>Create</span> your first short-form piece of content</h1>
@@ -4641,8 +4715,18 @@ export default class Dashboard extends Component {
                             </div>
                         }
                         {this.state.showVersion2Sec1Window1 && 
-                            <div style={{background: "white"}} className="rp-sec1-left-parent">
-
+                            <div className="rp-sec1-left-parent">
+                                <div className="continue-window-1">
+                                    <div className="tutorial-header">
+                                        <div className="tutorial-header-left">
+                                            <h2>Continue Creating</h2>
+                                            <p>Finish creating your latest masterpiece.</p>
+                                        </div>
+                                        <div className="tutorial-header-right">
+                                            <img style={{paddingTop: "3%"}} src="/assets/continue-session-pic.png"/>
+                                        </div>
+                                    </div> 
+                                </div>
                             </div>
                         }
                         <div className="rp-sec1-mid-parent">
