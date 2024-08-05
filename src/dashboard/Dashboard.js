@@ -3104,7 +3104,7 @@ export default class Dashboard extends Component {
                 showMoreSub3Loading: false,
                 showMoreSub2Loaded: false,
                 showMoreSub3Loaded: false,
-                moreSubActive: "",
+                moreSubActive: "Affiliate Program",
                 
                 //* - CLOSING NON-DASHBOARD OPTIONS - *//
                 createSubActive: "",
@@ -3183,7 +3183,7 @@ export default class Dashboard extends Component {
                 showMoreSub2Loading: true,
                 showMoreSub3Loading: false,
                 showMoreSub3Loaded: false,
-                moreSubActive: "",
+                moreSubActive: "Discord",
                 
                 //* - CLOSING NON-DASHBOARD OPTIONS - *//
                 createSubActive: "",
@@ -4168,7 +4168,7 @@ export default class Dashboard extends Component {
                                         <p style={{color: this.state.moreOptionHovered || this.state.moreOptionClicked ? "#1c4c75" : "", fontWeight: this.state.moreOptionClicked ? "bold" : "", marginBottom: (!this.state.moreOptionClicked && (this.state.moreSub1Clicked || this.state.moreSub2Clicked)) ? "0px" : ""}}>More</p>
                                         {(!this.state.moreOptionClicked && (this.state.moreSub1Clicked || this.state.moreSub2Clicked)) && 
                                             <div className="active-sub-option">
-                                                <p><span style={{color: "#41A75B"}}>ACTIVE: </span>{this.state.moreSubActive}</p>
+                                                <p><span style={{color: "#41A75B"}}>OPENED: </span>{this.state.moreSubActive}</p>
                                             </div>
                                         }
                                     </div>
