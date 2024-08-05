@@ -304,9 +304,10 @@ const Styles = styled.div `
     // - - SHRANK NAVBAR OPTIONS - - //
 
 .shrank-navbar-options {
-    border: 1px solid black;
+    // border: 1px solid black;
     margin-top: 67%;
     padding-bottom: 10%;
+    // padding-top: 5%;
 }
 
 .shrank-navbar-option {
@@ -315,6 +316,7 @@ const Styles = styled.div `
     margin-right: 11%;
     margin-left: 11%;
     border-radius: 8px;
+    cursor: pointer;
 }
 
 .shrank-navbar-option img {
@@ -3293,6 +3295,16 @@ export default class Dashboard extends Component {
         this.setState({ shrankDashboardOptionHovered: false })
     }
 
+    shrankDashboardOptionClicked = () => {
+        this.collapseNavbarClicked()
+        setTimeout(() => {
+            this.setState({
+                shrankDashboardOptionHovered: true
+            })
+            this.dashboardNavOptionClicked()
+        }, 500)
+    }
+
          //* - - SHRANK CREATE OPTION - - *//
 
     shrankCreateEnter = () => {
@@ -4324,11 +4336,11 @@ export default class Dashboard extends Component {
                                 onMouseEnter={this.shrankDashboardEnter}
                                 onMouseLeave={this.shrankDashboardLeave}
                                 onClick={this.shrankDashboardOptionClicked}
-                                style={{border: `1px solid ${this.state.shrankDashboardOptionHovered ? this.state.dashboardOptionClicked ? "#1c4c75" : "#707a9f" : this.state.dashboardOptionClicked ? "#1c4c75" : "transparent"}`}}
+                                style={{border: `1px solid ${this.state.shrankDashboardOptionHovered ? this.state.dashboardOptionClicked  ? "#1c4c75" : "#707a9f" : this.state.dashboardOptionClicked ? "#1c4c75" : "transparent"}`, backgroundColor: this.state.shrankDashboardOptionHovered || this.state.dashboardOptionClicked ? "#E0F4FC" : "transparent"}}
                                 className="shrank-navbar-option">
                                     <img
-                                    src={this.state.shrankDashboardOptionHovered ? "/assets/dashboard-option-icon-color2.png" : "/assets/dashboard-option-icon.png"}/>
-                                    <p style={{fontWeight: "bold"}}>Dashboard</p>
+                                    src={this.state.shrankDashboardOptionHovered || this.state.dashboardOptionClicked ? "/assets/dashboard-option-icon-color2.png" : "/assets/dashboard-option-icon.png"}/>
+                                    <p style={{fontWeight: "bold", color: this.state.shrankDashboardOptionHovered || this.state.dashboardOptionClicked ? "#1c4c75" : "#707a9f"}}>Dashboard</p>
                                 </div>
                                 <div style={{marginTop: "20%"}} className="shrank-navbar-option">
                                     <img
