@@ -1496,6 +1496,19 @@ export default class Dashboard extends Component {
             moreOptionHovered: false,
             moreOptionClicked: false,
             moreSubActive: "",
+
+            //* - - SHRANK DASHBOARD OPTIONS VAR(S) - - *//
+            shrankDashboardOptionHovered: false,
+            shrankDashboardOptionClicked: false,
+
+            shrankCreateOptionHovered: false,
+            shrankCreateOptionClicked: false,
+
+            shrankToolsOptionHovered: false,
+            shrankToolsOptionClicked: false,
+
+            shrankMoreOptionHovered: false,
+            shrankMoreOptionClicked: false,
     
                 //! - - TOP PANE (RIGHT PANE) - - !//
 
@@ -3268,6 +3281,12 @@ export default class Dashboard extends Component {
         } else {
             this.setState({ moreSub2Clicked: false, showMoreSub2Loaded: false, moreSubActive: "" })
         }
+    }
+
+        //* - - SHRANK DASHBOARD OPTION - - *//
+
+    shrankDashboardEnter = () => {
+        
     }
 
         //! - - SEARCH FUNCTIONS - - !//
