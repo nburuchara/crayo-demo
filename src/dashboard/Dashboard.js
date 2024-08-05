@@ -1705,6 +1705,14 @@ export default class Dashboard extends Component {
                 showToolsSub6Loading: false,
                 showToolsSub6Loaded: false,
 
+                moreSubActive: "",
+                moreSub1Clicked: false,
+                moreSub2Clicked: false,
+                showMoreSub1Loading: false,
+                showMoreSub1Loaded: false,
+                showMoreSub2Loading: false,
+                showMoreSub2Loaded: false,
+
             }, () => {
                 setTimeout(() => {
                     this.setState({
@@ -1784,6 +1792,14 @@ export default class Dashboard extends Component {
                 showToolsSub6Loading: false,
                 showToolsSub6Loaded: false,
 
+                moreSubActive: "",
+                moreSub1Clicked: false,
+                moreSub2Clicked: false,
+                showMoreSub1Loading: false,
+                showMoreSub1Loaded: false,
+                showMoreSub2Loading: false,
+                showMoreSub2Loaded: false,
+
             }, () => {
                 setTimeout(() => {
                     this.setState({
@@ -1862,6 +1878,14 @@ export default class Dashboard extends Component {
                 showToolsSub5Loaded: false,
                 showToolsSub6Loading: false,
                 showToolsSub6Loaded: false,
+
+                moreSubActive: "",
+                moreSub1Clicked: false,
+                moreSub2Clicked: false,
+                showMoreSub1Loading: false,
+                showMoreSub1Loaded: false,
+                showMoreSub2Loading: false,
+                showMoreSub2Loaded: false,
 
             }, () => {
                 setTimeout(() => {
@@ -1963,6 +1987,14 @@ export default class Dashboard extends Component {
                 showToolsSub6Loading: false,
                 showToolsSub6Loaded: false,
 
+                moreSubActive: "",
+                moreSub1Clicked: false,
+                moreSub2Clicked: false,
+                showMoreSub1Loading: false,
+                showMoreSub1Loaded: false,
+                showMoreSub2Loading: false,
+                showMoreSub2Loaded: false,
+
             }, () => {
                 setTimeout(() => {
                     this.setState({
@@ -2048,6 +2080,14 @@ export default class Dashboard extends Component {
                 showToolsSub6Loading: false,
                 showToolsSub6Loaded: false,
 
+                moreSubActive: "",
+                moreSub1Clicked: false,
+                moreSub2Clicked: false,
+                showMoreSub1Loading: false,
+                showMoreSub1Loaded: false,
+                showMoreSub2Loading: false,
+                showMoreSub2Loaded: false,
+
             }, () => {
                 setTimeout(() => {
                     this.setState({
@@ -2132,6 +2172,14 @@ export default class Dashboard extends Component {
                 showToolsSub5Loaded: false,
                 showToolsSub6Loading: false,
                 showToolsSub6Loaded: false,
+
+                moreSubActive: "",
+                moreSub1Clicked: false,
+                moreSub2Clicked: false,
+                showMoreSub1Loading: false,
+                showMoreSub1Loaded: false,
+                showMoreSub2Loading: false,
+                showMoreSub2Loaded: false,
                 
             }, () => {
                 setTimeout(() => {
@@ -2217,6 +2265,14 @@ export default class Dashboard extends Component {
                 showToolsSub5Loaded: false,
                 showToolsSub6Loading: false,
                 showToolsSub6Loaded: false,
+
+                moreSubActive: "",
+                moreSub1Clicked: false,
+                moreSub2Clicked: false,
+                showMoreSub1Loading: false,
+                showMoreSub1Loaded: false,
+                showMoreSub2Loading: false,
+                showMoreSub2Loaded: false,
                 
             }, () => {
                 setTimeout(() => {
@@ -2302,6 +2358,14 @@ export default class Dashboard extends Component {
                 showToolsSub5Loaded: false,
                 showToolsSub6Loading: false,
                 showToolsSub6Loaded: false,
+
+                moreSubActive: "",
+                moreSub1Clicked: false,
+                moreSub2Clicked: false,
+                showMoreSub1Loading: false,
+                showMoreSub1Loaded: false,
+                showMoreSub2Loading: false,
+                showMoreSub2Loaded: false,
                 
             }, () => {
                 setTimeout(() => {
@@ -2387,6 +2451,14 @@ export default class Dashboard extends Component {
                 showToolsSub5Loaded: false,
                 showToolsSub6Loading: false,
                 showToolsSub6Loaded: false,
+
+                moreSubActive: "",
+                moreSub1Clicked: false,
+                moreSub2Clicked: false,
+                showMoreSub1Loading: false,
+                showMoreSub1Loaded: false,
+                showMoreSub2Loading: false,
+                showMoreSub2Loaded: false,
                 
             }, () => {
                 setTimeout(() => {
@@ -2494,6 +2566,14 @@ export default class Dashboard extends Component {
                 showCreateSub6Loading: false,
                 showCreateSub6Loaded: false,
 
+                moreSubActive: "",
+                moreSub1Clicked: false,
+                moreSub2Clicked: false,
+                showMoreSub1Loading: false,
+                showMoreSub1Loaded: false,
+                showMoreSub2Loading: false,
+                showMoreSub2Loaded: false,
+
             }, () => {
                 setTimeout(() => {
                     this.setState({
@@ -2579,6 +2659,14 @@ export default class Dashboard extends Component {
                 showCreateSub6Loading: false,
                 showCreateSub6Loaded: false,
 
+                moreSubActive: "",
+                moreSub1Clicked: false,
+                moreSub2Clicked: false,
+                showMoreSub1Loading: false,
+                showMoreSub1Loaded: false,
+                showMoreSub2Loading: false,
+                showMoreSub2Loaded: false,
+
             }, () => {
                 setTimeout(() => {
                     this.setState({
@@ -2663,6 +2751,14 @@ export default class Dashboard extends Component {
                 showCreateSub5Loaded: false,
                 showCreateSub6Loading: false,
                 showCreateSub6Loaded: false,
+
+                moreSubActive: "",
+                moreSub1Clicked: false,
+                moreSub2Clicked: false,
+                showMoreSub1Loading: false,
+                showMoreSub1Loaded: false,
+                showMoreSub2Loading: false,
+                showMoreSub2Loaded: false,
                 
             }, () => {
                 setTimeout(() => {
@@ -2748,6 +2844,14 @@ export default class Dashboard extends Component {
                 showCreateSub5Loaded: false,
                 showCreateSub6Loading: false,
                 showCreateSub6Loaded: false,
+
+                moreSubActive: "",
+                moreSub1Clicked: false,
+                moreSub2Clicked: false,
+                showMoreSub1Loading: false,
+                showMoreSub1Loaded: false,
+                showMoreSub2Loading: false,
+                showMoreSub2Loaded: false,
                 
             }, () => {
                 setTimeout(() => {
@@ -2833,6 +2937,14 @@ export default class Dashboard extends Component {
                 showCreateSub5Loaded: false,
                 showCreateSub6Loading: false,
                 showCreateSub6Loaded: false,
+
+                moreSubActive: "",
+                moreSub1Clicked: false,
+                moreSub2Clicked: false,
+                showMoreSub1Loading: false,
+                showMoreSub1Loaded: false,
+                showMoreSub2Loading: false,
+                showMoreSub2Loaded: false,
                 
             }, () => {
                 setTimeout(() => {
@@ -2918,6 +3030,15 @@ export default class Dashboard extends Component {
                 showCreateSub5Loaded: false,
                 showCreateSub6Loading: false,
                 showCreateSub6Loaded: false,
+
+                moreSubActive: "",
+                moreSub1Clicked: false,
+                moreSub2Clicked: false,
+                showMoreSub1Loading: false,
+                showMoreSub1Loaded: false,
+                showMoreSub2Loading: false,
+                showMoreSub2Loaded: false,
+               
                 
             }, () => {
                 setTimeout(() => {
@@ -2942,7 +3063,7 @@ export default class Dashboard extends Component {
         }
     }
 
-        //* - - MORE OPTIONS - - *//
+        //* - - MORE OPTION - - *//
 
     moreOptionEnter = () => {
         this.setState({ moreOptionHovered: true })
