@@ -1571,12 +1571,16 @@ export default class Dashboard extends Component {
                 //! - - VERSION BUTTON - - !//
 
             //* - - VERSION BUTTON - - *//
-            versionButtonText: "Version 2",
+            versionButtonText: "OFF",
             versionButtonHovered: false,
             version1ButtonClicked: false,
             version2ButtonClicked: false,
 
                 //! - - SECTION 1 (RIGHT PANE) - - !//
+
+            //* - - VERSIONS (RIGHT PANE) - - *//
+            showVersion1Sec1Window1: false,
+            showVersion2Sec1Window1: true,
 
             //* - - 'START CREATING' BUTTON - - *//
             startCreatingBtnWidth: "auto",
@@ -3568,8 +3572,16 @@ export default class Dashboard extends Component {
     }
 
     versionButtonOptionClicked = () => {
-        if (this.state.versionButtonText === "Version 2") {
-            
+        if (this.state.versionButtonText === "OFF") {
+            this.setState({
+                version1ButtonClicked: true,
+                versionButtonText: "ON"
+            })
+        } else {
+            this.setState({
+                version1ButtonClicked: false,
+                versionButtonText: "OFF"
+            })
         }
     }
 
@@ -4589,42 +4601,50 @@ export default class Dashboard extends Component {
                         </div>
                         <div className="welcome-header-right">
                             <button
-                            style={{marginTop: this.state.leftPaneMinimized ? "5%" : "15%", backgroundColor: this.state.versionButtonHovered ? "#2890b9" : "white", fontWeight: this.state.versionButtonHovered ? "bold" : "", color: this.state.versionButtonHovered ? this.state.versionButtonText === "Version 2" ? "white" : "" : this.state.versionButtonText === "Version 2" ? "black" : "", border: `1px solid ${this.state.versionButtonText === "Version 2" ? "white" : "#2890b9"}`}}
+                            style={{marginTop: this.state.leftPaneMinimized ? "5%" : "15%", backgroundColor: this.state.versionButtonHovered || this.state.version1ButtonClicked ? "#2890b9" : "white", fontWeight: this.state.versionButtonHovered || this.state.version1ButtonClicked ? "bold" : "", color: this.state.versionButtonHovered || this.state.version1ButtonClicked ? this.state.versionButtonText === "OFF" || this.state.version1ButtonClicked ? "white" : "" : this.state.versionButtonText === "OFF" ? "black" : "", border: `1px solid ${this.state.versionButtonText === "OFF" ? "white" : "#2890b9"}`}}
                             onMouseEnter={this.versionButtonEnter}
                             onMouseLeave={this.versionButtonLeave}
                             onClick={this.versionButtonOptionClicked}
-                            >{this.state.versionButtonText}</button>
+                            >Version 2: {this.state.versionButtonText}</button>
                         </div>     
                     </div>
                     <div className="right-pane-section-1">
-                        <div className="rp-sec1-left-parent">
-                            <h1><span style={{color: "#2890b9"}}>Create</span> your first short-form piece of content</h1>
-                            <p>Generate short-form content using AI.</p>
-                            <div className="window1-bottom-section">
-                                <div className="window1-bottom-left">
-                                    <button 
-                                    style={{width: this.state.startCreatingBtnWidth, fontSize: this.state.startCreatingBtnFontSize, marginTop: this.state.leftPaneMinimized ? "39%" : ""}}
-                                    onMouseEnter={this.startCreatingEnter}
-                                    onMouseLeave={this.startCreatingLeave}
-                                    className="wash-button">
-                                        Start Creating
-                                        <CSSTransition
-                                        in={this.state.startCreatingArrow}
-                                        timeout={{enter: 500, exit: 0}}
-                                        classNames="dialog-slide-left"
-                                        unmountOnExit
-                                        >
-                                            <img style={{width: this.state.startCreatingIconWidth}} src="/assets/start-creating-arrow.png"/>
-                                        </CSSTransition>
-                                    </button>  
-                                </div>
-                                <div className="window1-bottom-right"> 
-                                    <div className="window1-pic">
-                                        <img className="levitate" style={{width: this.state.leftPaneMinimized ? "60%" : "67%", float: "right", marginTop: this.state.leftPaneMinimized ? "6.5%" : "9%"}} src="/assets/iphone-pic.png"/>
+                        
+                        {this.state.showVersion1Sec1Window1 && 
+                            <div className="rp-sec1-left-parent">
+                                <h1><span style={{color: "#2890b9"}}>Create</span> your first short-form piece of content</h1>
+                                <p>Generate short-form content using AI.</p>
+                                <div className="window1-bottom-section">
+                                    <div className="window1-bottom-left">
+                                        <button 
+                                        style={{width: this.state.startCreatingBtnWidth, fontSize: this.state.startCreatingBtnFontSize, marginTop: this.state.leftPaneMinimized ? "39%" : ""}}
+                                        onMouseEnter={this.startCreatingEnter}
+                                        onMouseLeave={this.startCreatingLeave}
+                                        className="wash-button">
+                                            Start Creating
+                                            <CSSTransition
+                                            in={this.state.startCreatingArrow}
+                                            timeout={{enter: 500, exit: 0}}
+                                            classNames="dialog-slide-left"
+                                            unmountOnExit
+                                            >
+                                                <img style={{width: this.state.startCreatingIconWidth}} src="/assets/start-creating-arrow.png"/>
+                                            </CSSTransition>
+                                        </button>  
+                                    </div>
+                                    <div className="window1-bottom-right"> 
+                                        <div className="window1-pic">
+                                            <img className="levitate" style={{width: this.state.leftPaneMinimized ? "60%" : "67%", float: "right", marginTop: this.state.leftPaneMinimized ? "6.5%" : "9%"}} src="/assets/iphone-pic.png"/>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        }
+                        {this.state.showVersion2Sec1Window1 && 
+                            <div style={{background: "white"}} className="rp-sec1-left-parent">
+
+                            </div>
+                        }
                         <div className="rp-sec1-mid-parent">
                             <div className="tutorial-header">
                                 <div className="tutorial-header-left">
