@@ -708,6 +708,7 @@ const Styles = styled.div `
     padding-left: 1.5%;
     border-radius: 9px;
     border-bottom: 5px solid #8a8a8a;
+    cursor: pointer;
  }
 
 .continue-session-item:after {
@@ -4777,31 +4778,37 @@ export default class Dashboard extends Component {
                                         <div 
                                         onMouseEnter={this.latestProject1Enter}
                                         onMouseLeave={this.latestProject1Leave}
+                                        style={{border: this.state.latestProject1Hovered ? "1.5px solid #2890b9" : "1px solid #8a8a8a", borderBottom: this.state.latestProject1Hovered ? "5px solid #2890b9" : "5px solid #8a8a8a"}}
                                         className="continue-session-item">
                                             <div className="continue-session-item-left">
                                                 <img src={this.state.latestProject1Hovered ? "/assets/continue-session-video3-animated.gif" : "/assets/continue-session-video3-still.png"}/>
                                             </div>
                                             <div className="continue-session-item-right">
-                                                <h5>Tester Project 1</h5>
+                                                <h5>ChatGPT Video Tester</h5>
                                             </div>
                                         </div>
                                         <div 
                                         onMouseEnter={this.latestProject2Enter}
                                         onMouseLeave={this.latestProject2Leave}
+                                        style={{border: this.state.latestProject2Hovered ? "1.5px solid #2890b9" : "1px solid #8a8a8a", borderBottom: this.state.latestProject2Hovered ? "5px solid #2890b9" : "5px solid #8a8a8a"}}
                                         className="continue-session-item">
                                             <div className="continue-session-item-left">
-                                                <img ssrc={this.state.latestProject2Hovered ? "/assets/continue-session-video2-animated.gif" : "/assets/continue-session-video2-still.png"}/>
+                                                <img src={this.state.latestProject2Hovered ? "/assets/continue-session-video2-animated.gif" : "/assets/continue-session-video2-still.png"}/>
                                             </div>
                                             <div className="continue-session-item-right">
-                                                <h5>Tester Project 2</h5>
+                                                <h5>Split Video Test</h5>
                                             </div>
                                         </div>
-                                        <div className="continue-session-item">
+                                        <div 
+                                        onMouseEnter={this.latestProject3Enter}
+                                        onMouseLeave={this.latestProject3Leave}
+                                        style={{border: this.state.latestProject3Hovered ? "1.5px solid #2890b9" : "1px solid #8a8a8a", borderBottom: this.state.latestProject3Hovered ? "5px solid #2890b9" : "5px solid #8a8a8a"}}
+                                        className="continue-session-item">
                                             <div className="continue-session-item-left">
-                                                <img src="/assets/continue-session-video3-animated.gif"/>
+                                                <img src={this.state.latestProject3Hovered ? "/assets/continue-session-video-animated.gif" : "/assets/continue-session-video-still.png"}/>
                                             </div>
                                             <div className="continue-session-item-right">
-                                                <h5>Tester Project 3</h5>
+                                                <h5>Day in the life draft</h5>
                                             </div>
                                         </div>
                                     </div>
