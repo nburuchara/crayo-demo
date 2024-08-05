@@ -786,7 +786,7 @@ const Styles = styled.div `
 .session-item-details-left button {
     all: unset !important;
     margin-top: 0px !important;
-    background-color: #8a8a8a !important;
+    background-color: #2890b9 !important;
     font-size: 50% !important;
     font-family: dm sans !important;
     color: white !important;
@@ -810,10 +810,11 @@ const Styles = styled.div `
 // # CONTINUE SESSION CONTENT DESCRIPTION
 
 .continue-session-item-right label {
-    font-size: 70%;
-    margin-top: 5%;
+    font-size: 80%;
+    margin-top: 0px;
     font-family: dm sans;
-    line-height: 1;
+    line-height: 0.005;
+
 }
 
     //! - - Section 1 (right pane) - - //
@@ -4859,7 +4860,7 @@ export default class Dashboard extends Component {
                                                         <p><span style={{color: "#2890b9"}}>Last edited:</span> 18:02pm 08/05/24</p>
                                                     </div>
                                                 </div>
-                                                <label style={{textAlign: "left", fontSize: ""}}>Testing the cgpt vid feature. Generated neon moving grid floor.</label>
+                                                <label style={{textAlign: "left"}}>Testing the cgpt vid feature. Generated neon moving grid floor...</label>
                                             </div>
                                         </div>
                                         <div 
