@@ -4071,7 +4071,7 @@ export default class Dashboard extends Component {
                                             onMouseLeave={this.moreSub1Leave}
                                             onClick={this.moreSub1OptionClicked}
                                             style={{border: `1px solid ${this.state.moreSub1Hovered ? this.state.moreSub1Clicked ? "#1c4c75" : "#707a9f" : this.state.moreSub1Clicked ? "#1c4c75" : "transparent"}`, color: this.state.moreSub1Clicked ? "#1c4c75" : "#6a6a6a", backgroundColor: this.state.moreSub1Clicked ? "#E0F4FC" : "transparent", display: "flex", justifyContent: "space-between"}}>
-                                                <p style={{fontWeight: this.state.moreSub1Clicked ? "bold" : ""}}>Main Editor</p>
+                                                <p style={{fontWeight: this.state.moreSub1Clicked ? "bold" : ""}}>Our Affiliate Program</p>
                                                 
                                                 {true && 
                                                     <img style={{height: "7%", width: "7%", marginRight: "4%", marginTop: "6%"}} src="/assets/dashboard-sub-option-link.png"/>
