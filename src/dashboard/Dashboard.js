@@ -1436,6 +1436,10 @@ export default class Dashboard extends Component {
             createOptionHovered: false,
             createOptionClicked: false,
             createSubActive: "",
+
+            toolsOptionHovered: false,
+            toolsOptionClicked: false,
+            toolsSubActive: "",
     
                 //! - - TOP PANE (RIGHT PANE) - - !//
 
@@ -2198,7 +2202,416 @@ export default class Dashboard extends Component {
         }
     }
 
+        //* - - TOOLS OPTION - - *//
 
+        toolsOptionEnter = () => {
+            this.setState({ toolsOptionHovered: true })
+        }
+    
+        toolsOptionLeave = () => {
+            this.setState({ toolsOptionHovered: false })
+        }
+    
+        toolsNavOptionClicked = () => {
+            if (this.state.toolsOptionClicked === false) {
+                this.setState({
+                    toolsOptionClicked: true,
+                    showToolsSuboptions: true,
+                })
+            } else {
+                this.setState({ toolsOptionClicked: false, showToolsSuboptions: false })
+            }
+        }
+    
+        toolsSub1Enter = () => {
+            this.setState({ toolsSub1Hovered: true })
+        }
+    
+        toolsSub1Leave = () => {
+            this.setState({ toolsSub1Hovered: false })
+        }
+    
+        toolsSub1OptionClicked = () => {
+            if (this.state.toolsSub1Clicked !== true) {
+                this.setState({ 
+                    toolsSub1Clicked: true, 
+                    toolsSub2Clicked: false,
+                    toolsSub3Clicked: false,
+                    toolsSub4Clicked: false,
+                    toolsSub5Clicked: false,
+                    toolsSub6Clicked: false,
+                    showToolsSub1Loading: true,
+                    showToolsSub2Loading: false,
+                    showToolsSub2Loaded: false,
+                    showToolsSub3Loading: false,
+                    showToolsSub3Loaded: false,
+                    showToolsSub4Loading: false,
+                    showToolsSub4Loaded: false,
+                    showToolsSub5Loading: false,
+                    showToolsSub5Loaded: false,
+                    showToolsSub6Loading: false,
+                    showToolsSub6Loaded: false,
+                    toolsSubActive: "AI Images",
+                    
+                    //* - CLOSING NON-CREATE OPTIONS - *//
+                    dashboardSubActive: "",
+                    dashboardSub1Clicked: false,
+                    dashboardSub2Clicked: false,
+                    dashboardSub3Clicked: false,
+                    showDashboardSub1Loading: false,
+                    showDashboardSub1Loaded: false,
+                    showDashboardSub2Loading: false,
+                    showDashboardSub2Loaded: false,
+                    showDashboardSub3Loading: false,
+                    showDashboardSub3Loaded: false,
+    
+                }, () => {
+                    setTimeout(() => {
+                        this.setState({
+                            showToolsSub1Loading: false,
+                            showToolsSub1Loaded: true,
+                            showToolsSub2Loading: false,
+                            showToolsSub2Loaded: false,
+                            showToolsSub3Loading: false,
+                            showToolsSub3Loaded: false,
+                            showToolsSub4Loading: false,
+                            showToolsSub4Loaded: false,
+                            showToolsSub5Loading: false,
+                            showToolsSub5Loaded: false,
+                            showToolsSub6Loading: false,
+                            showToolsSub6Loaded: false,
+                        })
+                    }, 2000)
+                })
+            } else {
+                this.setState({ toolsSub1Clicked: false, showToolsSub1Loaded: false, toolsSubActive: "" })
+            }
+        }
+    
+        toolsSub2Enter = () => {
+            this.setState({ createSub2Hovered: true })
+        }
+    
+        toolsSub2Leave = () => {
+            this.setState({ createSub2Hovered: false })
+        }
+    
+        toolsSub2OptionClicked = () => {
+            if (this.state.createSub2Clicked !== true) {
+                this.setState({ 
+                    createSub1Clicked: false, 
+                    createSub2Clicked: true,
+                    createSub3Clicked: false,
+                    createSub4Clicked: false,
+                    createSub5Clicked: false,
+                    createSub6Clicked: false,
+                    showCreateSub1Loading: false,
+                    showCreateSub1Loaded: false,
+                    showCreateSub2Loading: true,
+                    showCreateSub3Loading: false,
+                    showCreateSub3Loaded: false,
+                    showCreateSub4Loading: false,
+                    showCreateSub4Loaded: false,
+                    showCreateSub5Loading: false,
+                    showCreateSub5Loaded: false,
+                    showCreateSub6Loading: false,
+                    showCreateSub6Loaded: false,
+                    createSubActive: "Story Video",
+                    
+                    //* - CLOSING NON-CREATE OPTIONS - *//
+                    dashboardSubActive: "",
+                    dashboardSub1Clicked: false,
+                    dashboardSub2Clicked: false,
+                    dashboardSub3Clicked: false,
+                    showDashboardSub1Loading: false,
+                    showDashboardSub1Loaded: false,
+                    showDashboardSub2Loading: false,
+                    showDashboardSub2Loaded: false,
+                    showDashboardSub3Loading: false,
+                    showDashboardSub3Loaded: false,
+    
+                }, () => {
+                    setTimeout(() => {
+                        this.setState({
+                            showCreateSub2Loading: false,
+                            showCreateSub2Loaded: true,
+                            showCreateSub1Loading: false,
+                            showCreateSub1Loaded: false,
+                            showCreateSub3Loading: false,
+                            showCreateSub3Loaded: false,
+                            showCreateSub4Loading: false,
+                            showCreateSub4Loaded: false,
+                            showCreateSub5Loading: false,
+                            showCreateSub5Loaded: false,
+                            showCreateSub6Loading: false,
+                            showCreateSub6Loaded: false,
+                        })
+                    }, 2000)
+                })
+            } else {
+                this.setState({ createSub2Clicked: false, showCreateSub2Loaded: false, createSubActive: "" })
+            }
+        }
+    
+        toolsSub3Enter = () => {
+            this.setState({ createSub3Hovered: true })
+        }
+    
+        toolsSub3Leave = () => {
+            this.setState({ createSub3Hovered: false })
+        }
+    
+        toolsSub3OptionClicked = () => {
+            if (this.state.createSub3Clicked !== true) {
+                this.setState({ 
+                    createSub1Clicked: false, 
+                    createSub2Clicked: false,
+                    createSub3Clicked: true,
+                    createSub4Clicked: false,
+                    createSub5Clicked: false,
+                    createSub6Clicked: false,
+                    showCreateSub1Loading: false,
+                    showCreateSub1Loaded: false,
+                    showCreateSub2Loading: false,
+                    showCreateSub2Loaded: false,
+                    showCreateSub4Loading: false,
+                    showCreateSub4Loaded: false,
+                    showCreateSub5Loading: false,
+                    showCreateSub5Loaded: false,
+                    showCreateSub6Loading: false,
+                    showCreateSub6Loaded: false,
+                    showCreateSub3Loading: true,
+                    createSubActive: "My Assets",
+    
+                    //* - CLOSING NON-CREATE OPTIONS - *//
+                    dashboardSubActive: "",
+                    dashboardSub1Clicked: false,
+                    dashboardSub2Clicked: false,
+                    dashboardSub3Clicked: false,
+                    showDashboardSub1Loading: false,
+                    showDashboardSub1Loaded: false,
+                    showDashboardSub2Loading: false,
+                    showDashboardSub2Loaded: false,
+                    showDashboardSub3Loading: false,
+                    showDashboardSub3Loaded: false,
+                    
+                }, () => {
+                    setTimeout(() => {
+                        this.setState({
+                            showCreateSub3Loading: false,
+                            showCreateSub3Loaded: true,
+                            showCreateSub1Loading: false,
+                            showCreateSub1Loaded: false,
+                            showCreateSub2Loading: false,
+                            showCreateSub2Loaded: false,
+                            showCreateSub4Loading: false,
+                            showCreateSub4Loaded: false,
+                            showCreateSub5Loading: false,
+                            showCreateSub5Loaded: false,
+                            showCreateSub6Loading: false,
+                            showCreateSub6Loaded: false,
+                        })
+                    }, 2000)
+                })
+            } else {
+                this.setState({ createSub3Clicked: false, showCreateSub3Loaded: false, createSubActive: "" })
+            }
+        }
+    
+        toolsSub4Enter = () => {
+            this.setState({ createSub4Hovered: true })
+        }
+    
+        toolsSub4Leave = () => {
+            this.setState({ createSub4Hovered: false })
+        }
+    
+        toolsSub4OptionClicked = () => {
+            if (this.state.createSub4Clicked !== true) {
+                this.setState({ 
+                    createSub1Clicked: false, 
+                    createSub2Clicked: false,
+                    createSub3Clicked: false,
+                    createSub5Clicked: false,
+                    createSub6Clicked: false,
+                    createSub4Clicked: true,
+                    showCreateSub1Loading: false,
+                    showCreateSub1Loaded: false,
+                    showCreateSub2Loading: false,
+                    showCreateSub2Loaded: false,
+                    showCreateSub3Loading: false,
+                    showCreateSub3Loaded: false,
+                    showCreateSub5Loading: false,
+                    showCreateSub5Loaded: false,
+                    showCreateSub6Loading: false,
+                    showCreateSub6Loaded: false,
+                    showCreateSub4Loading: true,
+                    createSubActive: "Blur Video",
+    
+                    //* - CLOSING NON-CREATE OPTIONS - *//
+                    dashboardSubActive: "",
+                    dashboardSub1Clicked: false,
+                    dashboardSub2Clicked: false,
+                    dashboardSub3Clicked: false,
+                    showDashboardSub1Loading: false,
+                    showDashboardSub1Loaded: false,
+                    showDashboardSub2Loading: false,
+                    showDashboardSub2Loaded: false,
+                    showDashboardSub3Loading: false,
+                    showDashboardSub3Loaded: false,
+                    
+                }, () => {
+                    setTimeout(() => {
+                        this.setState({
+                            showCreateSub4Loading: false,
+                            showCreateSub4Loaded: true,
+                            showCreateSub6Loading: false,
+                            showCreateSub6Loaded: false,
+                            showCreateSub5Loading: false,
+                            showCreateSub5Loaded: false,
+                            showCreateSub3Loading: false,
+                            showCreateSub3Loaded: false,
+                            showCreateSub1Loading: false,
+                            showCreateSub1Loaded: false,
+                            showCreateSub2Loading: false,
+                            showCreateSub2Loaded: false,
+                        })
+                    }, 2000)
+                })
+            } else {
+                this.setState({ createSub4Clicked: false, showCreateSub4Loaded: false, createSubActive: "" })
+            }
+        }
+    
+        toolsSub5Enter = () => {
+            this.setState({ createSub5Hovered: true })
+        }
+    
+        toolsSub5Leave = () => {
+            this.setState({ createSub5Hovered: false })
+        }
+    
+        toolsSub5OptionClicked = () => {
+            if (this.state.createSub5Clicked !== true) {
+                this.setState({ 
+                    createSub1Clicked: false, 
+                    createSub2Clicked: false,
+                    createSub3Clicked: false,
+                    createSub4Clicked: false,
+                    createSub6Clicked: false,
+                    createSub5Clicked: true,
+                    showCreateSub1Loading: false,
+                    showCreateSub1Loaded: false,
+                    showCreateSub2Loading: false,
+                    showCreateSub2Loaded: false,
+                    showCreateSub3Loading: false,
+                    showCreateSub3Loaded: false,
+                    showCreateSub4Loading: false,
+                    showCreateSub4Loaded: false,
+                    showCreateSub6Loading: false,
+                    showCreateSub6Loaded: false,
+                    showCreateSub5Loading: true,
+                    createSubActive: "ChatGPT Video",
+    
+                    //* - CLOSING NON-CREATE OPTIONS - *//
+                    dashboardSubActive: "",
+                    dashboardSub1Clicked: false,
+                    dashboardSub2Clicked: false,
+                    dashboardSub3Clicked: false,
+                    showDashboardSub1Loading: false,
+                    showDashboardSub1Loaded: false,
+                    showDashboardSub2Loading: false,
+                    showDashboardSub2Loaded: false,
+                    showDashboardSub3Loading: false,
+                    showDashboardSub3Loaded: false,
+                    
+                }, () => {
+                    setTimeout(() => {
+                        this.setState({
+                            showCreateSub5Loading: false,
+                            showCreateSub5Loaded: true,
+                            showCreateSub6Loading: false,
+                            showCreateSub6Loaded: false,
+                            showCreateSub4Loading: false,
+                            showCreateSub4Loaded: false,
+                            showCreateSub3Loading: false,
+                            showCreateSub3Loaded: false,
+                            showCreateSub1Loading: false,
+                            showCreateSub1Loaded: false,
+                            showCreateSub2Loading: false,
+                            showCreateSub2Loaded: false,
+                        })
+                    }, 2000)
+                })
+            } else {
+                this.setState({ createSub5Clicked: false, showCreateSub5Loaded: false, createSubActive: "" })
+            }
+        }
+    
+        toolsSub6Enter = () => {
+            this.setState({ createSub6Hovered: true })
+        }
+    
+        toolsSub6Leave = () => {
+            this.setState({ createSub6Hovered: false })
+        }
+    
+        toolsSub6OptionClicked = () => {
+            if (this.state.createSub6Clicked !== true) {
+                this.setState({ 
+                    createSub1Clicked: false, 
+                    createSub2Clicked: false,
+                    createSub3Clicked: false,
+                    createSub4Clicked: false,
+                    createSub5Clicked: false,
+                    createSub6Clicked: true,
+                    showCreateSub1Loading: false,
+                    showCreateSub1Loaded: false,
+                    showCreateSub2Loading: false,
+                    showCreateSub2Loaded: false,
+                    showCreateSub3Loading: false,
+                    showCreateSub3Loaded: false,
+                    showCreateSub4Loading: false,
+                    showCreateSub4Loaded: false,
+                    showCreateSub5Loading: false,
+                    showCreateSub5Loaded: false,
+                    showCreateSub6Loading: true,
+                    createSubActive: "Voiceover Video",
+    
+                    //* - CLOSING NON-CREATE OPTIONS - *//
+                    dashboardSubActive: "",
+                    dashboardSub1Clicked: false,
+                    dashboardSub2Clicked: false,
+                    dashboardSub3Clicked: false,
+                    showDashboardSub1Loading: false,
+                    showDashboardSub1Loaded: false,
+                    showDashboardSub2Loading: false,
+                    showDashboardSub2Loaded: false,
+                    showDashboardSub3Loading: false,
+                    showDashboardSub3Loaded: false,
+                    
+                }, () => {
+                    setTimeout(() => {
+                        this.setState({
+                            showCreateSub6Loading: false,
+                            showCreateSub6Loaded: true,
+                            showCreateSub5Loading: false,
+                            showCreateSub5Loaded: false,
+                            showCreateSub4Loading: false,
+                            showCreateSub4Loaded: false,
+                            showCreateSub3Loading: false,
+                            showCreateSub3Loaded: false,
+                            showCreateSub1Loading: false,
+                            showCreateSub1Loaded: false,
+                            showCreateSub2Loading: false,
+                            showCreateSub2Loaded: false,
+                        })
+                    }, 2000)
+                })
+            } else {
+                this.setState({ createSub6Clicked: false, showCreateSub6Loaded: false, createSubActive: "" })
+            }
+        }
 
         //! - - SEARCH FUNCTIONS - - !//
 
@@ -2690,6 +3103,7 @@ export default class Dashboard extends Component {
                             </div>
                             <div style={{border: "0.5px solid #707A9F", marginTop: "8%", marginLeft: "5%", marginRight: "5%"}}></div>
                             <div className="navbar-options-container">
+                                
                                 <div 
                                 onMouseEnter={this.dashboardOptionEnter}
                                 onMouseLeave={this.dashboardOptionLeave}
@@ -2949,6 +3363,169 @@ export default class Dashboard extends Component {
                                         </div>
                                     </div>
                                 </CSSTransition>
+
+                                <div 
+                                onMouseEnter={this.toolsOptionEnter}
+                                onMouseLeave={this.toolsOptionLeave}
+                                onClick={this.toolsNavOptionClicked}
+                                style={{border: `1px solid ${this.state.toolsOptionHovered ? this.state.toolsOptionClicked || this.state.toolsSubActive !== "" ? "#1c4c75" : "#707a9f" : this.state.toolsOptionClicked || this.state.toolsSubActive !== "" ? "#1c4c75" : "transparent"}`, backgroundColor: this.state.toolsOptionClicked ? "#E0F4FC" : "", marginTop: "3%"}}
+                                className="navbar-option-cell">
+                                    <div className="navbar-option-icon">
+                                        <img src={this.state.toolsOptionHovered || this.state.toolsOptionClicked ? "/assets/tools-option-icon-color2.png" : "/assets/tools-option-icon.png"}/>
+                                    </div>
+                                    <div className="navbar-option-text">
+                                        <p style={{color: this.state.toolsOptionHovered || this.state.toolsOptionClicked ? "#1c4c75" : "", fontWeight: this.state.toolsOptionClicked ? "bold" : "", marginBottom: (!this.state.toolsOptionClicked && (this.state.toolsSub1Clicked || this.state.toolsSub2Clicked || this.state.toolsSub3Clicked || this.state.toolsSub4Clicked || this.state.toolsSub5Clicked || this.state.toolsSub6Clicked)) ? "0px" : ""}}>Tools</p>
+                                        {(!this.state.toolsOptionClicked && (this.state.toolsSub1Clicked || this.state.toolsSub2Clicked || this.state.toolsSub3Clicked || this.state.toolsSub4Clicked || this.state.toolsSub5Clicked || this.state.toolsSub6Clicked)) && 
+                                            <div className="active-sub-option">
+                                                <p><span style={{color: "#41A75B"}}>ACTIVE: </span>{this.state.toolsSubActive}</p>
+                                            </div>
+                                        }
+                                    </div>
+                                    <div className="navbar-option-dropdown">
+                                        <img className={this.state.toolsOptionClicked ? "navbar-option-dropdown-unrotated navbar-option-dropdown-rotated" : "navbar-option-dropdown-unrotated"} src={this.state.toolsOptionClicked ? "/assets/dashboard-down-arrow-color2.png" : "/assets/dashboard-down-arrow.png"}/>
+                                    </div>
+                                </div>
+                                <CSSTransition
+                                in={this.state.showCreateSuboptions}
+                                timeout={{enter: 500, exit: 500}}
+                                classNames="dialog-slide-down"
+                                unmountOnExit
+                                >
+                                    <div className="dashboard-option-subs">
+                                        <div  className="dashboard-option-sub-connector">
+                                            <div style={{paddingBottom: "440%"}} className="dashboard-option-sub-connector-line"><span style={{color: "transparent", cursor: "default"}}>|</span></div>
+                                        </div>
+                                        <div className="dashboard-option-sub-text">
+                                            <div 
+                                            onMouseEnter={this.toolsSub1Enter}
+                                            onMouseLeave={this.toolsSub1Leave}
+                                            onClick={this.toolsSub1OptionClicked}
+                                            style={{border: `1px solid ${this.state.toolsSub1Hovered ? this.state.toolsSub1Clicked ? "#1c4c75" : "#707a9f" : this.state.toolsSub1Clicked ? "#1c4c75" : "transparent"}`, color: this.state.toolsSub1Clicked ? "#1c4c75" : "#6a6a6a", backgroundColor: this.state.toolsSub1Clicked ? "#E0F4FC" : "transparent", display: "flex", justifyContent: "space-between"}}>
+                                                <p style={{fontWeight: this.state.toolsSub1Clicked ? "bold" : ""}}>AI Images</p>
+                                                {this.state.showToolsSub1Loading && 
+                                                    <span style={{marginRight: "5%", marginTop: "4.5%"}}>
+                                                        <ClipLoader
+                                                        color="#1c4c75"
+                                                        loading={true}
+                                                        size={6}
+                                                        aria-label="Loading Spinner"
+                                                        data-testid="loader"
+                                                        />
+                                                    </span>
+                                                }
+                                                {this.state.showToolsSub1Loaded && 
+                                                    <img style={{height: "7%", width: "7%", marginRight: "4%", marginTop: "6%"}} src="/assets/dashboard-sub-option-open.png"/>
+                                                }
+                                            </div>
+                                            <div 
+                                            onMouseEnter={this.toolsSub2Enter}
+                                            onMouseLeave={this.toolsSub2Leave}
+                                            onClick={this.toolsSub2OptionClicked}
+                                            style={{border: `1px solid ${this.state.toolsSub2Hovered ? this.state.toolsSub2Clicked ? "#1c4c75" : "#707a9f" : this.state.toolsSub2Clicked ? "#1c4c75" : "transparent"}`, color: this.state.toolsSub2Clicked ? "#1c4c75" : "#6a6a6a", backgroundColor: this.state.toolsSub2Clicked ? "#E0F4FC" : "transparent", display: "flex", justifyContent: "space-between"}}>
+                                                <p style={{fontWeight: this.state.toolsSub2Clicked ? "bold" : ""}}>AI Voiceover</p>
+                                                {this.state.showToolsSub2Loading && 
+                                                    <span style={{marginRight: "5%", marginTop: "4.5%"}}>
+                                                        <ClipLoader
+                                                        color="#1c4c75"
+                                                        loading={true}
+                                                        size={6}
+                                                        aria-label="Loading Spinner"
+                                                        data-testid="loader"
+                                                        />
+                                                    </span>
+                                                }
+                                                {this.state.showToolsSub2Loaded && 
+                                                    <img style={{height: "7%", width: "7%", marginRight: "4%", marginTop: "6%"}} src="/assets/dashboard-sub-option-open.png"/>
+                                                }
+                                            </div>
+                                            <div 
+                                            onMouseEnter={this.toolsSub3Enter}
+                                            onMouseLeave={this.toolsSub3Leave}
+                                            onClick={this.toolsSub3OptionClicked}
+                                            style={{border: `1px solid ${this.state.toolsSub3Hovered ? this.state.toolsSub3Clicked ? "#1c4c75" : "#707a9f" : this.state.toolsSub3Clicked ? "#1c4c75" : "transparent"}`, color: this.state.toolsSub3Clicked ? "#1c4c75" : "#6a6a6a", backgroundColor: this.state.toolsSub3Clicked ? "#E0F4FC" : "transparent", display: "flex", justifyContent: "space-between"}}>
+                                                <p style={{fontWeight: this.state.toolsSub3Clicked ? "bold" : ""}}>AI Avatars</p>
+                                                {this.state.showToolsSub3Loading && 
+                                                    <span style={{marginRight: "5%", marginTop: "4.5%"}}>
+                                                        <ClipLoader
+                                                        color="#1c4c75"
+                                                        loading={true}
+                                                        size={6}
+                                                        aria-label="Loading Spinner"
+                                                        data-testid="loader"
+                                                        />
+                                                    </span>
+                                                }
+                                                {this.state.showToolsSub3Loaded && 
+                                                    <img style={{height: "7%", width: "7%", marginRight: "4%", marginTop: "6%"}} src="/assets/dashboard-sub-option-open.png"/>
+                                                }
+                                            </div>
+                                            <div 
+                                            onMouseEnter={this.toolsSub4Enter}
+                                            onMouseLeave={this.toolsSub4Leave}
+                                            onClick={this.toolsSub4OptionClicked}
+                                            style={{border: `1px solid ${this.state.toolsSub4Hovered ? this.state.toolsSub4Clicked ? "#1c4c75" : "#707a9f" : this.state.toolsSub4Clicked ? "#1c4c75" : "transparent"}`, color: this.state.toolsSub4Clicked ? "#1c4c75" : "#6a6a6a", backgroundColor: this.state.toolsSub4Clicked ? "#E0F4FC" : "transparent", display: "flex", justifyContent: "space-between"}}>
+                                                <p style={{fontWeight: this.state.toolsSub4Clicked ? "bold" : ""}}>AI Brainstorm</p>
+                                                {this.state.showToolsSub4Loading && 
+                                                    <span style={{marginRight: "5%", marginTop: "4.5%"}}>
+                                                        <ClipLoader
+                                                        color="#1c4c75"
+                                                        loading={true}
+                                                        size={6}
+                                                        aria-label="Loading Spinner"
+                                                        data-testid="loader"
+                                                        />
+                                                    </span>
+                                                }
+                                                {this.state.showToolsSub4Loaded && 
+                                                    <img style={{height: "7%", width: "7%", marginRight: "4%", marginTop: "6%"}} src="/assets/dashboard-sub-option-open.png"/>
+                                                }
+                                            </div>
+                                            <div 
+                                            onMouseEnter={this.toolsSub5Enter}
+                                            onMouseLeave={this.toolsSub5Leave}
+                                            onClick={this.toolsSub5OptionClicked}
+                                            style={{border: `1px solid ${this.state.toolsSub5Hovered ? this.state.toolsSub5Clicked ? "#1c4c75" : "#707a9f" : this.state.toolsSub5Clicked ? "#1c4c75" : "transparent"}`, color: this.state.toolsSub5Clicked ? "#1c4c75" : "#6a6a6a", backgroundColor: this.state.toolsSub5Clicked ? "#E0F4FC" : "transparent", display: "flex", justifyContent: "space-between"}}>
+                                                <p style={{fontWeight: this.state.toolsSub5Clicked ? "bold" : ""}}>YT Downloader</p>
+                                                {this.state.showToolsSub5Loading && 
+                                                    <span style={{marginRight: "5%", marginTop: "4.5%"}}>
+                                                        <ClipLoader
+                                                        color="#1c4c75"
+                                                        loading={true}
+                                                        size={6}
+                                                        aria-label="Loading Spinner"
+                                                        data-testid="loader"
+                                                        />
+                                                    </span>
+                                                }
+                                                {this.state.showToolsSub5Loaded && 
+                                                    <img style={{height: "7%", width: "7%", marginRight: "4%", marginTop: "6%"}} src="/assets/dashboard-sub-option-open.png"/>
+                                                }
+                                            </div>
+                                            <div 
+                                            onMouseEnter={this.toolsSub6Enter}
+                                            onMouseLeave={this.toolsSub6Leave}
+                                            onClick={this.toolsSub6OptionClicked}
+                                            style={{border: `1px solid ${this.state.toolsSub6Hovered ? this.state.toolsSub6Clicked ? "#1c4c75" : "#707a9f" : this.state.toolsSub6Clicked ? "#1c4c75" : "transparent"}`, color: this.state.toolsSub6Clicked ? "#1c4c75" : "#6a6a6a", backgroundColor: this.state.toolsSub6Clicked ? "#E0F4FC" : "transparent", display: "flex", justifyContent: "space-between"}}>
+                                                <p style={{fontWeight: this.state.toolsSub6Clicked ? "bold" : ""}}>TikTok Downloader</p>
+                                                {this.state.showToolsSub6Loading && 
+                                                    <span style={{marginRight: "5%", marginTop: "4.5%"}}>
+                                                        <ClipLoader
+                                                        color="#1c4c75"
+                                                        loading={true}
+                                                        size={6}
+                                                        aria-label="Loading Spinner"
+                                                        data-testid="loader"
+                                                        />
+                                                    </span>
+                                                }
+                                                {this.state.showToolsSub6Loaded && 
+                                                    <img style={{height: "7%", width: "7%", marginRight: "4%", marginTop: "6%"}} src="/assets/dashboard-sub-option-open.png"/>
+                                                }
+                                            </div>
+                                        </div>
+                                    </div>
+                                </CSSTransition>
+
                             </div>
                         </div>
                     </CSSTransition>
