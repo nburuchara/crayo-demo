@@ -2289,34 +2289,34 @@ export default class Dashboard extends Component {
         }
     
         toolsSub2Enter = () => {
-            this.setState({ createSub2Hovered: true })
+            this.setState({ toolsSub2Hovered: true })
         }
     
         toolsSub2Leave = () => {
-            this.setState({ createSub2Hovered: false })
+            this.setState({ toolsSub2Hovered: false })
         }
     
         toolsSub2OptionClicked = () => {
-            if (this.state.createSub2Clicked !== true) {
+            if (this.state.toolsSub2Clicked !== true) {
                 this.setState({ 
-                    createSub1Clicked: false, 
-                    createSub2Clicked: true,
-                    createSub3Clicked: false,
-                    createSub4Clicked: false,
-                    createSub5Clicked: false,
-                    createSub6Clicked: false,
-                    showCreateSub1Loading: false,
-                    showCreateSub1Loaded: false,
-                    showCreateSub2Loading: true,
-                    showCreateSub3Loading: false,
-                    showCreateSub3Loaded: false,
-                    showCreateSub4Loading: false,
-                    showCreateSub4Loaded: false,
-                    showCreateSub5Loading: false,
-                    showCreateSub5Loaded: false,
-                    showCreateSub6Loading: false,
-                    showCreateSub6Loaded: false,
-                    createSubActive: "Story Video",
+                    toolsSub1Clicked: false, 
+                    toolsSub2Clicked: true,
+                    toolsSub3Clicked: false,
+                    toolsSub4Clicked: false,
+                    toolsSub5Clicked: false,
+                    toolsSub6Clicked: false,
+                    showToolsSub1Loading: false,
+                    showToolsSub1Loaded: false,
+                    showToolsSub2Loading: true,
+                    showToolsSub3Loading: false,
+                    showToolsSub3Loaded: false,
+                    showToolsSub4Loading: false,
+                    showToolsSub4Loaded: false,
+                    showToolsSub5Loading: false,
+                    showToolsSub5Loaded: false,
+                    showToolsSub6Loading: false,
+                    showToolsSub6Loaded: false,
+                    toolsSubActive: "AI Voiceover",
                     
                     //* - CLOSING NON-CREATE OPTIONS - *//
                     dashboardSubActive: "",
@@ -2333,55 +2333,55 @@ export default class Dashboard extends Component {
                 }, () => {
                     setTimeout(() => {
                         this.setState({
-                            showCreateSub2Loading: false,
-                            showCreateSub2Loaded: true,
-                            showCreateSub1Loading: false,
-                            showCreateSub1Loaded: false,
-                            showCreateSub3Loading: false,
-                            showCreateSub3Loaded: false,
-                            showCreateSub4Loading: false,
-                            showCreateSub4Loaded: false,
-                            showCreateSub5Loading: false,
-                            showCreateSub5Loaded: false,
-                            showCreateSub6Loading: false,
-                            showCreateSub6Loaded: false,
+                            showToolsSub2Loading: false,
+                            showToolsSub2Loaded: true,
+                            showToolsSub1Loading: false,
+                            showToolsSub1Loaded: false,
+                            showToolsSub3Loading: false,
+                            showToolsSub3Loaded: false,
+                            showToolsSub4Loading: false,
+                            showToolsSub4Loaded: false,
+                            showToolsSub5Loading: false,
+                            showToolsSub5Loaded: false,
+                            showToolsSub6Loading: false,
+                            showToolsSub6Loaded: false,
                         })
                     }, 2000)
                 })
             } else {
-                this.setState({ createSub2Clicked: false, showCreateSub2Loaded: false, createSubActive: "" })
+                this.setState({ toolsSub2Clicked: false, showToolsSub2Loaded: false, toolsSubActive: "" })
             }
         }
     
         toolsSub3Enter = () => {
-            this.setState({ createSub3Hovered: true })
+            this.setState({ toolsSub3Hovered: true })
         }
     
         toolsSub3Leave = () => {
-            this.setState({ createSub3Hovered: false })
+            this.setState({ toolsSub3Hovered: false })
         }
     
         toolsSub3OptionClicked = () => {
-            if (this.state.createSub3Clicked !== true) {
+            if (this.state.toolsSub3Clicked !== true) {
                 this.setState({ 
-                    createSub1Clicked: false, 
-                    createSub2Clicked: false,
-                    createSub3Clicked: true,
-                    createSub4Clicked: false,
-                    createSub5Clicked: false,
-                    createSub6Clicked: false,
-                    showCreateSub1Loading: false,
-                    showCreateSub1Loaded: false,
-                    showCreateSub2Loading: false,
-                    showCreateSub2Loaded: false,
-                    showCreateSub4Loading: false,
-                    showCreateSub4Loaded: false,
-                    showCreateSub5Loading: false,
-                    showCreateSub5Loaded: false,
-                    showCreateSub6Loading: false,
-                    showCreateSub6Loaded: false,
-                    showCreateSub3Loading: true,
-                    createSubActive: "My Assets",
+                    toolsSub1Clicked: false, 
+                    toolsSub2Clicked: false,
+                    toolsSub3Clicked: true,
+                    toolsSub4Clicked: false,
+                    toolsSub5Clicked: false,
+                    toolsSub6Clicked: false,
+                    showToolsSub1Loading: false,
+                    showToolsSub1Loaded: false,
+                    showToolsSub2Loading: false,
+                    showToolsSub2Loaded: false,
+                    showToolsSub4Loading: false,
+                    showToolsSub4Loaded: false,
+                    showToolsSub5Loading: false,
+                    showToolsSub5Loaded: false,
+                    showToolsSub6Loading: false,
+                    showToolsSub6Loaded: false,
+                    showToolsSub3Loading: true,
+                    toolsSubActive: "AI Avatars",
     
                     //* - CLOSING NON-CREATE OPTIONS - *//
                     dashboardSubActive: "",
@@ -2398,55 +2398,55 @@ export default class Dashboard extends Component {
                 }, () => {
                     setTimeout(() => {
                         this.setState({
-                            showCreateSub3Loading: false,
-                            showCreateSub3Loaded: true,
-                            showCreateSub1Loading: false,
-                            showCreateSub1Loaded: false,
-                            showCreateSub2Loading: false,
-                            showCreateSub2Loaded: false,
-                            showCreateSub4Loading: false,
-                            showCreateSub4Loaded: false,
-                            showCreateSub5Loading: false,
-                            showCreateSub5Loaded: false,
-                            showCreateSub6Loading: false,
-                            showCreateSub6Loaded: false,
+                            showToolsSub3Loading: false,
+                            showToolsSub3Loaded: true,
+                            showToolsSub1Loading: false,
+                            showToolsSub1Loaded: false,
+                            showToolsSub2Loading: false,
+                            showToolsSub2Loaded: false,
+                            showToolsSub4Loading: false,
+                            showToolsSub4Loaded: false,
+                            showToolsSub5Loading: false,
+                            showToolsSub5Loaded: false,
+                            showToolsSub6Loading: false,
+                            showToolsSub6Loaded: false,
                         })
                     }, 2000)
                 })
             } else {
-                this.setState({ createSub3Clicked: false, showCreateSub3Loaded: false, createSubActive: "" })
+                this.setState({ toolsSub3Clicked: false, showToolsSub3Loaded: false, toolsSubActive: "" })
             }
         }
     
         toolsSub4Enter = () => {
-            this.setState({ createSub4Hovered: true })
+            this.setState({ toolsSub4Hovered: true })
         }
     
         toolsSub4Leave = () => {
-            this.setState({ createSub4Hovered: false })
+            this.setState({ toolsSub4Hovered: false })
         }
     
         toolsSub4OptionClicked = () => {
-            if (this.state.createSub4Clicked !== true) {
+            if (this.state.toolsSub4Clicked !== true) {
                 this.setState({ 
-                    createSub1Clicked: false, 
-                    createSub2Clicked: false,
-                    createSub3Clicked: false,
-                    createSub5Clicked: false,
-                    createSub6Clicked: false,
-                    createSub4Clicked: true,
-                    showCreateSub1Loading: false,
-                    showCreateSub1Loaded: false,
-                    showCreateSub2Loading: false,
-                    showCreateSub2Loaded: false,
-                    showCreateSub3Loading: false,
-                    showCreateSub3Loaded: false,
-                    showCreateSub5Loading: false,
-                    showCreateSub5Loaded: false,
-                    showCreateSub6Loading: false,
-                    showCreateSub6Loaded: false,
-                    showCreateSub4Loading: true,
-                    createSubActive: "Blur Video",
+                    toolsSub1Clicked: false, 
+                    toolsSub2Clicked: false,
+                    toolsSub3Clicked: false,
+                    toolsSub5Clicked: false,
+                    toolsSub6Clicked: false,
+                    toolsSub4Clicked: true,
+                    showToolsSub1Loading: false,
+                    showToolsSub1Loaded: false,
+                    showToolsSub2Loading: false,
+                    showToolsSub2Loaded: false,
+                    showToolsSub3Loading: false,
+                    showToolsSub3Loaded: false,
+                    showToolsSub5Loading: false,
+                    showToolsSub5Loaded: false,
+                    showToolsSub6Loading: false,
+                    showToolsSub6Loaded: false,
+                    showToolsSub4Loading: true,
+                    toolsSubActive: "AI Brainstorm",
     
                     //* - CLOSING NON-CREATE OPTIONS - *//
                     dashboardSubActive: "",
@@ -2463,36 +2463,36 @@ export default class Dashboard extends Component {
                 }, () => {
                     setTimeout(() => {
                         this.setState({
-                            showCreateSub4Loading: false,
-                            showCreateSub4Loaded: true,
-                            showCreateSub6Loading: false,
-                            showCreateSub6Loaded: false,
-                            showCreateSub5Loading: false,
-                            showCreateSub5Loaded: false,
-                            showCreateSub3Loading: false,
-                            showCreateSub3Loaded: false,
-                            showCreateSub1Loading: false,
-                            showCreateSub1Loaded: false,
-                            showCreateSub2Loading: false,
-                            showCreateSub2Loaded: false,
+                            showToolsSub4Loading: false,
+                            showToolsSub4Loaded: true,
+                            showToolsSub6Loading: false,
+                            showToolsSub6Loaded: false,
+                            showToolsSub5Loading: false,
+                            showToolsSub5Loaded: false,
+                            showToolsSub3Loading: false,
+                            showToolsSub3Loaded: false,
+                            showToolsSub1Loading: false,
+                            showToolsSub1Loaded: false,
+                            showToolsSub2Loading: false,
+                            showToolsSub2Loaded: false,
                         })
                     }, 2000)
                 })
             } else {
-                this.setState({ createSub4Clicked: false, showCreateSub4Loaded: false, createSubActive: "" })
+                this.setState({ toolsSub4Clicked: false, showToolsSub4Loaded: false, toolsSubActive: "" })
             }
         }
     
         toolsSub5Enter = () => {
-            this.setState({ createSub5Hovered: true })
+            this.setState({ toolsSub5Hovered: true })
         }
     
         toolsSub5Leave = () => {
-            this.setState({ createSub5Hovered: false })
+            this.setState({ toolsSub5Hovered: false })
         }
     
         toolsSub5OptionClicked = () => {
-            if (this.state.createSub5Clicked !== true) {
+            if (this.state.toolsSub5Clicked !== true) {
                 this.setState({ 
                     createSub1Clicked: false, 
                     createSub2Clicked: false,
