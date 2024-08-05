@@ -745,10 +745,76 @@ const Styles = styled.div `
 .continue-session-item-right h5 { 
     font-family: dm sans;
     margin-top: 2%;
-    margin-bottom: 2%;
-    color: #2890b9;
+    margin-bottom: 0px;
+    // color: #8a8a8a;
+    font-size: 90%;
 }
 
+
+    // # CONTINUE SESSION DETAILS
+
+.session-item-details {
+    // border: 1px solid black;
+    // margin-top: 3%;
+    // height: 2vh;
+}
+ 
+.session-item-details:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.session-item-details-left {
+    float: left;
+    width: 35%;
+    text-align: left;
+    // border-right: 1px solid black;
+    height: 100%;
+}
+
+.session-item-details-right {
+    float: left;
+    width: 65%;
+    text-align: right;
+    // border-right: 1px solid black;
+}
+
+
+    // # CONTINUE SESSION DETAILS CONTENT TYPE
+
+.session-item-details-left button {
+    all: unset !important;
+    margin-top: 0px !important;
+    background-color: #8a8a8a !important;
+    font-size: 50% !important;
+    font-family: dm sans !important;
+    color: white !important;
+    padding: 3% !important;
+    padding-left: 5% !important;
+    padding-right: 5% !important;
+    font-weight: bold !important;
+    border-radius: 5px !important;
+}
+
+
+    // # CONTINUE SESSION DETAILS LAST UPDATED
+
+.session-item-details-right p { 
+    text-align: right !important;
+    color: black !important;
+    font-size: 60% !important;
+    margin-top: 5.8% !important;
+}
+
+// # CONTINUE SESSION CONTENT DESCRIPTION
+
+.continue-session-item-right label {
+    font-size: 70%;
+    margin-top: 5%;
+    font-family: dm sans;
+    line-height: 1;
+}
 
     //! - - Section 1 (right pane) - - //
 
@@ -4778,37 +4844,46 @@ export default class Dashboard extends Component {
                                         <div 
                                         onMouseEnter={this.latestProject1Enter}
                                         onMouseLeave={this.latestProject1Leave}
-                                        style={{border: this.state.latestProject1Hovered ? "1.5px solid #2890b9" : "1px solid #8a8a8a", borderBottom: this.state.latestProject1Hovered ? "5px solid #2890b9" : "5px solid #8a8a8a"}}
+                                        style={{border: this.state.latestProject1Hovered ? "1.2px solid #2890b9" : "1px solid #8a8a8a", borderBottom: this.state.latestProject1Hovered ? "5px solid #2890b9" : "5px solid #8a8a8a"}}
                                         className="continue-session-item">
                                             <div className="continue-session-item-left">
                                                 <img src={this.state.latestProject1Hovered ? "/assets/continue-session-video3-animated.gif" : "/assets/continue-session-video3-still.png"}/>
                                             </div>
                                             <div className="continue-session-item-right">
                                                 <h5>ChatGPT Video Tester</h5>
+                                                <div className="session-item-details">
+                                                    <div className="session-item-details-left">
+                                                        <button>ChatGPT Video</button>
+                                                    </div>
+                                                    <div className="session-item-details-right">
+                                                        <p><span style={{color: "#2890b9"}}>Last edited:</span> 18:02pm 08/05/24</p>
+                                                    </div>
+                                                </div>
+                                                <label style={{textAlign: "left", fontSize: ""}}>Testing the cgpt vid feature. Generated neon moving grid floor.</label>
                                             </div>
                                         </div>
                                         <div 
                                         onMouseEnter={this.latestProject2Enter}
                                         onMouseLeave={this.latestProject2Leave}
-                                        style={{border: this.state.latestProject2Hovered ? "1.5px solid #2890b9" : "1px solid #8a8a8a", borderBottom: this.state.latestProject2Hovered ? "5px solid #2890b9" : "5px solid #8a8a8a"}}
+                                        style={{border: this.state.latestProject2Hovered ? "1.2px solid #2890b9" : "1px solid #8a8a8a", borderBottom: this.state.latestProject2Hovered ? "5px solid #2890b9" : "5px solid #8a8a8a"}}
                                         className="continue-session-item">
                                             <div className="continue-session-item-left">
                                                 <img src={this.state.latestProject2Hovered ? "/assets/continue-session-video2-animated.gif" : "/assets/continue-session-video2-still.png"}/>
                                             </div>
                                             <div className="continue-session-item-right">
-                                                <h5>Split Video Test</h5>
+                                                <h5>tiktok for Jenny</h5>
                                             </div>
                                         </div>
                                         <div 
                                         onMouseEnter={this.latestProject3Enter}
                                         onMouseLeave={this.latestProject3Leave}
-                                        style={{border: this.state.latestProject3Hovered ? "1.5px solid #2890b9" : "1px solid #8a8a8a", borderBottom: this.state.latestProject3Hovered ? "5px solid #2890b9" : "5px solid #8a8a8a"}}
+                                        style={{border: this.state.latestProject3Hovered ? "1.2px solid #2890b9" : "1px solid #8a8a8a", borderBottom: this.state.latestProject3Hovered ? "5px solid #2890b9" : "5px solid #8a8a8a"}}
                                         className="continue-session-item">
                                             <div className="continue-session-item-left">
                                                 <img src={this.state.latestProject3Hovered ? "/assets/continue-session-video-animated.gif" : "/assets/continue-session-video-still.png"}/>
                                             </div>
                                             <div className="continue-session-item-right">
-                                                <h5>Day in the life draft</h5>
+                                                <h5>day in the life draft</h5>
                                             </div>
                                         </div>
                                     </div>
