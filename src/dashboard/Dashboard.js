@@ -4406,8 +4406,8 @@ export default class Dashboard extends Component {
                                 onClick={this.shrankCreateOptionClicked}
                                 style={{marginTop: "20%", border: `1px solid ${this.state.shrankCreateOptionHovered ? this.state.createOptionClicked  ? "#1c4c75" : "#707a9f" : this.state.createOptionClicked ? "#1c4c75" : "transparent"}`, backgroundColor: this.state.shrankCreateOptionHovered || this.state.createOptionClicked ? "#E0F4FC" : "transparent"}} className="shrank-navbar-option">
                                     <img
-                                    src={this.state.shrankCreateOptionHovered ? "/assets/create-option-icon-color2.png" : "/assets/create-option-icon.png"}/>
-                                    <p>Create</p>
+                                    src={this.state.shrankCreateOptionHovered || this.state.createOptionClicked ? "/assets/create-option-icon-color2.png" : "/assets/create-option-icon.png"}/>
+                                    <p style={{fontWeight: "bold", color: this.state.shrankCreateOptionHovered || this.state.createOptionClicked ? "#1c4c75" : "#707a9f"}}>Create</p>
                                 </div>
                                 <div 
                                 onMouseEnter={this.shrankToolsEnter}
@@ -4415,8 +4415,8 @@ export default class Dashboard extends Component {
                                 onClick={this.shrankToolsOptionClicked}
                                 style={{marginTop: "20%", border: `1px solid ${this.state.shrankToolsOptionHovered ? this.state.toolsOptionClicked  ? "#1c4c75" : "#707a9f" : this.state.toolsOptionClicked ? "#1c4c75" : "transparent"}`, backgroundColor: this.state.shrankToolsOptionHovered || this.state.toolsOptionClicked ? "#E0F4FC" : "transparent"}} className="shrank-navbar-option">
                                     <img
-                                    src={this.state.shrankToolsOptionHovered ? "/assets/tools-option-icon-color2.png" : "/assets/tools-option-icon.png"}/>
-                                    <p>Tools</p>
+                                    src={this.state.shrankToolsOptionHovered || this.state.toolsOptionClicked ? "/assets/tools-option-icon-color2.png" : "/assets/tools-option-icon.png"}/>
+                                    <p style={{fontWeight: "bold", color: this.state.shrankToolsOptionHovered || this.state.toolsOptionClicked ? "#1c4c75" : "#707a9f"}}>Tools</p>
                                 </div>
                                 <div 
                                 onMouseEnter={this.shrankMoreEnter}
@@ -4424,8 +4424,8 @@ export default class Dashboard extends Component {
                                 onClick={this.shrankMoreOptionClicked}
                                 style={{marginTop: "20%", border: `1px solid ${this.state.shrankMoreOptionHovered ? this.state.moreOptionClicked  ? "#1c4c75" : "#707a9f" : this.state.moreOptionClicked ? "#1c4c75" : "transparent"}`, backgroundColor: this.state.shrankMoreOptionHovered || this.state.moreOptionClicked ? "#E0F4FC" : "transparent"}} className="shrank-navbar-option">
                                     <img
-                                    src={this.state.shrankMoreOptionHovered ? "/assets/more-option-icon-color.png" : "/assets/more-option-icon.png"}/>
-                                    <p>More</p>
+                                    src={this.state.shrankMoreOptionHovered || this.state.moreOptionClicked ? "/assets/more-option-icon-color.png" : "/assets/more-option-icon.png"}/>
+                                    <p style={{fontWeight: "bold", color: this.state.shrankMoreOptionHovered || this.state.moreOptionClicked ? "#1c4c75" : "#707a9f"}}>More</p>
                                 </div>
                             </div>
                         </div>
