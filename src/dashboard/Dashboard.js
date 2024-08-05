@@ -1638,6 +1638,7 @@ export default class Dashboard extends Component {
                 createSub3Clicked: false,
                 createSub4Clicked: false,
                 createSub5Clicked: false,
+                createSub6Clicked: false,
                 showCreateSub1Loading: false,
                 showCreateSub1Loaded: false,
                 showCreateSub2Loading: false,
@@ -1648,6 +1649,8 @@ export default class Dashboard extends Component {
                 showCreateSub4Loaded: false,
                 showCreateSub5Loading: false,
                 showCreateSub5Loaded: false,
+                showCreateSub6Loading: false,
+                showCreateSub6Loaded: false,
 
             }, () => {
                 setTimeout(() => {
@@ -1694,6 +1697,7 @@ export default class Dashboard extends Component {
                 createSub3Clicked: false,
                 createSub4Clicked: false,
                 createSub5Clicked: false,
+                createSub6Clicked: false,
                 showCreateSub1Loading: false,
                 showCreateSub1Loaded: false,
                 showCreateSub2Loading: false,
@@ -1704,6 +1708,8 @@ export default class Dashboard extends Component {
                 showCreateSub4Loaded: false,
                 showCreateSub5Loading: false,
                 showCreateSub5Loaded: false,
+                showCreateSub6Loading: false,
+                showCreateSub6Loaded: false,
 
             }, () => {
                 setTimeout(() => {
@@ -1750,6 +1756,7 @@ export default class Dashboard extends Component {
                 createSub3Clicked: false,
                 createSub4Clicked: false,
                 createSub5Clicked: false,
+                createSub6Clicked: false,
                 showCreateSub1Loading: false,
                 showCreateSub1Loaded: false,
                 showCreateSub2Loading: false,
@@ -1760,6 +1767,8 @@ export default class Dashboard extends Component {
                 showCreateSub4Loaded: false,
                 showCreateSub5Loading: false,
                 showCreateSub5Loaded: false,
+                showCreateSub6Loading: false,
+                showCreateSub6Loaded: false,
 
             }, () => {
                 setTimeout(() => {
@@ -1815,6 +1824,7 @@ export default class Dashboard extends Component {
                 createSub3Clicked: false,
                 createSub4Clicked: false,
                 createSub5Clicked: false,
+                createSub6Clicked: false,
                 showCreateSub1Loading: true,
                 showCreateSub2Loading: false,
                 showCreateSub2Loaded: false,
@@ -1824,6 +1834,8 @@ export default class Dashboard extends Component {
                 showCreateSub4Loaded: false,
                 showCreateSub5Loading: false,
                 showCreateSub5Loaded: false,
+                showCreateSub6Loading: false,
+                showCreateSub6Loaded: false,
                 createSubActive: "Split Video",
                 
                 //* - CLOSING NON-CREATE OPTIONS - *//
@@ -1851,6 +1863,8 @@ export default class Dashboard extends Component {
                         showCreateSub4Loaded: false,
                         showCreateSub5Loading: false,
                         showCreateSub5Loaded: false,
+                        showCreateSub6Loading: false,
+                        showCreateSub6Loaded: false,
                     })
                 }, 2000)
             })
@@ -1875,6 +1889,7 @@ export default class Dashboard extends Component {
                 createSub3Clicked: false,
                 createSub4Clicked: false,
                 createSub5Clicked: false,
+                createSub6Clicked: false,
                 showCreateSub1Loading: false,
                 showCreateSub1Loaded: false,
                 showCreateSub2Loading: true,
@@ -1884,6 +1899,8 @@ export default class Dashboard extends Component {
                 showCreateSub4Loaded: false,
                 showCreateSub5Loading: false,
                 showCreateSub5Loaded: false,
+                showCreateSub6Loading: false,
+                showCreateSub6Loaded: false,
                 createSubActive: "Story Video",
                 
                 //* - CLOSING NON-CREATE OPTIONS - *//
@@ -1911,6 +1928,8 @@ export default class Dashboard extends Component {
                         showCreateSub4Loaded: false,
                         showCreateSub5Loading: false,
                         showCreateSub5Loaded: false,
+                        showCreateSub6Loading: false,
+                        showCreateSub6Loaded: false,
                     })
                 }, 2000)
             })
@@ -1935,6 +1954,7 @@ export default class Dashboard extends Component {
                 createSub3Clicked: true,
                 createSub4Clicked: false,
                 createSub5Clicked: false,
+                createSub6Clicked: false,
                 showCreateSub1Loading: false,
                 showCreateSub1Loaded: false,
                 showCreateSub2Loading: false,
@@ -1943,6 +1963,8 @@ export default class Dashboard extends Component {
                 showCreateSub4Loaded: false,
                 showCreateSub5Loading: false,
                 showCreateSub5Loaded: false,
+                showCreateSub6Loading: false,
+                showCreateSub6Loaded: false,
                 showCreateSub3Loading: true,
                 createSubActive: "My Assets",
 
@@ -1971,6 +1993,8 @@ export default class Dashboard extends Component {
                         showCreateSub4Loaded: false,
                         showCreateSub5Loading: false,
                         showCreateSub5Loaded: false,
+                        showCreateSub6Loading: false,
+                        showCreateSub6Loaded: false,
                     })
                 }, 2000)
             })
@@ -1994,6 +2018,7 @@ export default class Dashboard extends Component {
                 createSub2Clicked: false,
                 createSub3Clicked: false,
                 createSub5Clicked: false,
+                createSub6Clicked: false,
                 createSub4Clicked: true,
                 showCreateSub1Loading: false,
                 showCreateSub1Loaded: false,
@@ -2003,6 +2028,8 @@ export default class Dashboard extends Component {
                 showCreateSub3Loaded: false,
                 showCreateSub5Loading: false,
                 showCreateSub5Loaded: false,
+                showCreateSub6Loading: false,
+                showCreateSub6Loaded: false,
                 showCreateSub4Loading: true,
                 createSubActive: "Blur Video",
 
@@ -2023,6 +2050,8 @@ export default class Dashboard extends Component {
                     this.setState({
                         showCreateSub4Loading: false,
                         showCreateSub4Loaded: true,
+                        showCreateSub6Loading: false,
+                        showCreateSub6Loaded: false,
                         showCreateSub5Loading: false,
                         showCreateSub5Loaded: false,
                         showCreateSub3Loading: false,
@@ -2054,6 +2083,7 @@ export default class Dashboard extends Component {
                 createSub2Clicked: false,
                 createSub3Clicked: false,
                 createSub4Clicked: false,
+                createSub6Clicked: false,
                 createSub5Clicked: true,
                 showCreateSub1Loading: false,
                 showCreateSub1Loaded: false,
@@ -2063,6 +2093,8 @@ export default class Dashboard extends Component {
                 showCreateSub3Loaded: false,
                 showCreateSub4Loading: false,
                 showCreateSub4Loaded: false,
+                showCreateSub6Loading: false,
+                showCreateSub6Loaded: false,
                 showCreateSub5Loading: true,
                 createSubActive: "ChatGPT Video",
 
@@ -2083,6 +2115,8 @@ export default class Dashboard extends Component {
                     this.setState({
                         showCreateSub5Loading: false,
                         showCreateSub5Loaded: true,
+                        showCreateSub6Loading: false,
+                        showCreateSub6Loaded: false,
                         showCreateSub4Loading: false,
                         showCreateSub4Loaded: false,
                         showCreateSub3Loading: false,
@@ -2096,6 +2130,71 @@ export default class Dashboard extends Component {
             })
         } else {
             this.setState({ createSub5Clicked: false, showCreateSub5Loaded: false, createSubActive: "" })
+        }
+    }
+
+    createSub6Enter = () => {
+        this.setState({ createSub6Hovered: true })
+    }
+
+    createSub6Leave = () => {
+        this.setState({ createSub6Hovered: false })
+    }
+
+    createSub6OptionClicked = () => {
+        if (this.state.createSub6Clicked !== true) {
+            this.setState({ 
+                createSub1Clicked: false, 
+                createSub2Clicked: false,
+                createSub3Clicked: false,
+                createSub4Clicked: false,
+                createSub5Clicked: false,
+                createSub6Clicked: true,
+                showCreateSub1Loading: false,
+                showCreateSub1Loaded: false,
+                showCreateSub2Loading: false,
+                showCreateSub2Loaded: false,
+                showCreateSub3Loading: false,
+                showCreateSub3Loaded: false,
+                showCreateSub4Loading: false,
+                showCreateSub4Loaded: false,
+                showCreateSub5Loading: false,
+                showCreateSub5Loaded: false,
+                showCreateSub6Loading: true,
+                createSubActive: "Voiceover Video",
+
+                //* - CLOSING NON-CREATE OPTIONS - *//
+                dashboardSubActive: "",
+                dashboardSub1Clicked: false,
+                dashboardSub2Clicked: false,
+                dashboardSub3Clicked: false,
+                showDashboardSub1Loading: false,
+                showDashboardSub1Loaded: false,
+                showDashboardSub2Loading: false,
+                showDashboardSub2Loaded: false,
+                showDashboardSub3Loading: false,
+                showDashboardSub3Loaded: false,
+                
+            }, () => {
+                setTimeout(() => {
+                    this.setState({
+                        showCreateSub6Loading: false,
+                        showCreateSub6Loaded: true,
+                        showCreateSub5Loading: false,
+                        showCreateSub5Loaded: false,
+                        showCreateSub4Loading: false,
+                        showCreateSub4Loaded: false,
+                        showCreateSub3Loading: false,
+                        showCreateSub3Loaded: false,
+                        showCreateSub1Loading: false,
+                        showCreateSub1Loaded: false,
+                        showCreateSub2Loading: false,
+                        showCreateSub2Loaded: false,
+                    })
+                }, 2000)
+            })
+        } else {
+            this.setState({ createSub6Clicked: false, showCreateSub6Loaded: false, createSubActive: "" })
         }
     }
 
