@@ -93,7 +93,7 @@ const Styles = styled.div `
 
 .navbar-options-container {
     position: relative;
-    border: 1px solid black;
+    // border: 1px solid black;
     margin-top: 15%;
     height: 85vh;
     margin-left: 5%;
@@ -271,7 +271,7 @@ const Styles = styled.div `
     //! - - Left pane footer - - !//
 
 .left-pane-footer {
-    border: 1px solid black;
+    // border: 1px solid black;
 }
 
 .left-pane-footer-left {
@@ -2945,21 +2945,21 @@ export default class Dashboard extends Component {
         //* - - MORE OPTIONS - - *//
 
     moreOptionEnter = () => {
-        this.setState({ dashboardOptionHovered: true })
+        this.setState({ moreOptionHovered: true })
     }
 
     moreOptionLeave = () => {
-        this.setState({ dashboardOptionHovered: false })
+        this.setState({ moreOptionHovered: false })
     }
 
     moreNavOptionClicked = () => {
-        if (this.state.dashboardOptionClicked === false) {
+        if (this.state.moreOptionClicked === false) {
             this.setState({
-                dashboardOptionClicked: true,
-                showDashboardSuboptions: true,
+                moreOptionClicked: true,
+                showMoreSuboptions: true,
             })
         } else {
-            this.setState({ dashboardOptionClicked: false, showDashboardSuboptions: false })
+            this.setState({ moreOptionClicked: false, showMoreSuboptions: false })
         }
     }
 
@@ -4041,10 +4041,10 @@ export default class Dashboard extends Component {
                                 onClick={this.moreNavOptionClicked}
                                 style={{border: `1px solid ${this.state.moreOptionHovered ? this.state.moreOptionClicked || this.state.moreSubActive !== "" ? "#1c4c75" : "#707a9f" : this.state.moreOptionClicked || this.state.moreSubActive !== "" ? "#1c4c75" : "transparent"}`, backgroundColor: this.state.moreOptionClicked ? "#E0F4FC" : ""}} className="navbar-option-cell">
                                     <div className="navbar-option-icon">
-                                        <img src={this.state.moreOptionHovered || this.state.moreOptionClicked ? "/assets/dashboard-option-icon-color2.png" : "/assets/dashboard-option-icon.png"}/>
+                                        <img src={this.state.moreOptionHovered || this.state.moreOptionClicked ? "/assets/more-option-icon-color.png" : "/assets/more-option-icon.png"}/>
                                     </div>
                                     <div className="navbar-option-text">
-                                        <p style={{color: this.state.moreOptionHovered || this.state.moreOptionClicked ? "#1c4c75" : "", fontWeight: this.state.moreOptionClicked ? "bold" : "", marginBottom: (!this.state.moreOptionClicked && (this.state.moreSub1Clicked || this.state.moreSub2Clicked)) ? "0px" : ""}}>Dashboard</p>
+                                        <p style={{color: this.state.moreOptionHovered || this.state.moreOptionClicked ? "#1c4c75" : "", fontWeight: this.state.moreOptionClicked ? "bold" : "", marginBottom: (!this.state.moreOptionClicked && (this.state.moreSub1Clicked || this.state.moreSub2Clicked)) ? "0px" : ""}}>More</p>
                                         {(!this.state.moreOptionClicked && (this.state.moreSub1Clicked || this.state.moreSub2Clicked)) && 
                                             <div className="active-sub-option">
                                                 <p><span style={{color: "#41A75B"}}>ACTIVE: </span>{this.state.moreSubActive}</p>
@@ -4063,7 +4063,7 @@ export default class Dashboard extends Component {
                                 >
                                     <div className="dashboard-option-subs">
                                         <div className="dashboard-option-sub-connector">
-                                            <div className="dashboard-option-sub-connector-line"><span style={{color: "transparent", cursor: "default"}}>|</span></div>
+                                            <div style={{paddingBottom: "110%"}} className="dashboard-option-sub-connector-line"><span style={{color: "transparent", cursor: "default"}}>|</span></div>
                                         </div>
                                         <div className="dashboard-option-sub-text">
                                             <div 
@@ -4083,8 +4083,8 @@ export default class Dashboard extends Component {
                                                         />
                                                     </span>
                                                 }
-                                                {this.state.showMoreSub1Loaded && 
-                                                    <img style={{height: "7%", width: "7%", marginRight: "4%", marginTop: "6%"}} src="/assets/dashboard-sub-option-open.png"/>
+                                                {true && 
+                                                    <img style={{height: "7%", width: "7%", marginRight: "4%", marginTop: "6%"}} src="/assets/dashboard-sub-option-link.png"/>
                                                 }
                                             </div>
                                             <div 
@@ -4104,8 +4104,8 @@ export default class Dashboard extends Component {
                                                         />
                                                     </span>
                                                 }
-                                                {this.state.showMoreSub2Loaded && 
-                                                    <img style={{height: "7%", width: "7%", marginRight: "4%", marginTop: "6%"}} src="/assets/dashboard-sub-option-open.png"/>
+                                                {true && 
+                                                    <img style={{height: "7%", width: "7%", marginRight: "4%", marginTop: "6%"}} src="/assets/dashboard-sub-option-link.png"/>
                                                 }
                                             </div>
                                         </div>
