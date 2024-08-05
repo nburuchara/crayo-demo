@@ -301,6 +301,33 @@ const Styles = styled.div `
     cursor: pointer;
 }
 
+    // - - SHRANK NAVBAR OPTIONS - - //
+
+.shrank-navbar-options {
+    border: 1px solid black;
+    margin-top: 67%;
+    padding-bottom: 10%;
+}
+
+.shrank-navbar-option {
+    border: 1px solid blue;
+    margin-top: 10%;
+    margin-right: 11%;
+    margin-left: 11%;
+    border-radius: 8px;
+}
+
+.shrank-navbar-option img {
+    width: 35%;
+    margin-top: 13%;
+}
+
+.shrank-navbar-option p {
+    margin-top: 3%;
+    font-size: 50%;
+    font-family: dm sans;
+}
+
     //! - - Right pane - - !//
 
     // - - RIGHT PANE CONTAINER - - //
@@ -4238,6 +4265,40 @@ export default class Dashboard extends Component {
                                 onMouseLeave={this.collapseNavbarLeave}
                                 onClick={this.collapseNavbarClicked}
                                 src={this.state.collapseNavbarHovered ? "/assets/shrink-navbar-icon-color.png" : "/assets/shrink-navbar-icon.png"}/>
+                            </div>
+                            <div className="shrank-navbar-options">
+                                <div className="shrank-navbar-option">
+                                    <img
+                                    onMouseEnter={this.collapseNavbarEnter}
+                                    onMouseLeave={this.collapseNavbarLeave}
+                                    onClick={this.collapseNavbarClicked}
+                                    src={this.state.collapseNavbarHovered ? "/assets/dashboard-option-icon-color2.png" : "/assets/dashboard-option-icon.png"}/>
+                                    <p>Dashboard</p>
+                                </div>
+                                <div style={{marginTop: "20%"}} className="shrank-navbar-option">
+                                    <img
+                                    onMouseEnter={this.collapseNavbarEnter}
+                                    onMouseLeave={this.collapseNavbarLeave}
+                                    onClick={this.collapseNavbarClicked}
+                                    src={this.state.collapseNavbarHovered ? "/assets/create-option-icon-color2.png" : "/assets/create-option-icon.png"}/>
+                                    <p>Create</p>
+                                </div>
+                                <div style={{marginTop: "20%"}} className="shrank-navbar-option">
+                                    <img
+                                    onMouseEnter={this.collapseNavbarEnter}
+                                    onMouseLeave={this.collapseNavbarLeave}
+                                    onClick={this.collapseNavbarClicked}
+                                    src={this.state.collapseNavbarHovered ? "/assets/tools-option-icon-color2.png" : "/assets/tools-option-icon.png"}/>
+                                    <p>Tools</p>
+                                </div>
+                                <div style={{marginTop: "20%"}} className="shrank-navbar-option">
+                                    <img
+                                    onMouseEnter={this.collapseNavbarEnter}
+                                    onMouseLeave={this.collapseNavbarLeave}
+                                    onClick={this.collapseNavbarClicked}
+                                    src={this.state.collapseNavbarHovered ? "/assets/more-option-icon-color.png" : "/assets/more-option-icon.png"}/>
+                                    <p>More</p>
+                                </div>
                             </div>
                         </div>
                     </CSSTransition>
