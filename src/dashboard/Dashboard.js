@@ -1573,7 +1573,8 @@ export default class Dashboard extends Component {
             //* - - VERSION BUTTON - - *//
             versionButtonText: "Version 2",
             versionButtonHovered: false,
-            versionButtonClicked: false,
+            version1ButtonClicked: false,
+            version2ButtonClicked: false,
 
                 //! - - SECTION 1 (RIGHT PANE) - - !//
 
@@ -3566,8 +3567,10 @@ export default class Dashboard extends Component {
         this.setState({ versionButtonHovered: false })
     }
 
-    versionButtonClicked = () => {
-
+    versionButtonOptionClicked = () => {
+        if (this.state.versionButtonText === "Version 2") {
+            
+        }
     }
 
 
@@ -4586,10 +4589,11 @@ export default class Dashboard extends Component {
                         </div>
                         <div className="welcome-header-right">
                             <button
-                            style={{backgroundColor: this.state.versionButtonHovered ? "#2890b9" : "white", fontWeight: this.state.versionButtonHovered ? "bold" : "", color: this.state.versionButtonHovered ? this.state.versionButtonText === "Version 2" ? "white" : "" : this.state.versionButtonText === "Version 2" ? "" : ""}}
+                            style={{marginTop: this.state.leftPaneMinimized ? "5%" : "15%", backgroundColor: this.state.versionButtonHovered ? "#2890b9" : "white", fontWeight: this.state.versionButtonHovered ? "bold" : "", color: this.state.versionButtonHovered ? this.state.versionButtonText === "Version 2" ? "white" : "" : this.state.versionButtonText === "Version 2" ? "black" : "", border: `1px solid ${this.state.versionButtonText === "Version 2" ? "white" : "#2890b9"}`}}
                             onMouseEnter={this.versionButtonEnter}
                             onMouseLeave={this.versionButtonLeave}
-                            >Version 2</button>
+                            onClick={this.versionButtonOptionClicked}
+                            >{this.state.versionButtonText}</button>
                         </div>     
                     </div>
                     <div className="right-pane-section-1">
