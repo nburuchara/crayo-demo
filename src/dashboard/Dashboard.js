@@ -269,29 +269,53 @@ const Styles = styled.div `
 }
 
     //! - - Left pane footer - - !//
+    
 
-.left-pane-footer {
+.left-pane-footer-container {
     position: absolute;
     bottom: 0;
-    border: 1px solid black;/
+    // border: 1px solid black;
+    width: 99%;
+}
+
+.left-pane-footer-row {
+    height: 5vh;
+    border-radius: 8px;
+    border: 1px solid #8a8a8a;
+}
+
+.left-pane-footer-row:after {
+    content: "";
+    clear: both;
+    display: table;
 }
 
 .left-pane-footer-left {
     float: left;
-    width: 10%;
+    width: 18%;
     text-align: center;
 }
 
 .left-pane-footer-right {
     float: left;
-    width: 90%;
+    width: 82%;
     text-align: center;
 }
 
-.left-pane-footer:after {
-    content: "";
-    clear: both;
-    display: table;
+    //  - - FIXED NAVBAR USER / SETTINGS - - //
+
+.fixedUserNavbarContainer {
+    width: 100%;
+    border-top-left-radius: 7px;
+    border-bottom-left-radius: 7px;
+    height: 5vh; 
+    background-color: #c2175b;
+}
+
+.fixedUserNavbarContainer h3 {
+    margin-top: 0px;
+    padding-top: 21%;
+    color: white;
 }
 
     //! - - (Navbar - SHRANK) - - //
@@ -5497,12 +5521,16 @@ export default class Dashboard extends Component {
                                 </CSSTransition>
 
                                 
-                                <div className="left-pane-footer">
-                                    <div className="left-pane-footer-left">
-                                        <img/>
-                                    </div>
-                                    <div className="left-pane-footer-right">
-
+                                <div className="left-pane-footer-container">
+                                    <div className="left-pane-footer-row">
+                                        <div className="left-pane-footer-left">
+                                            <div className="fixedUserNavbarContainer">
+                                                <h3>N</h3>
+                                            </div>
+                                        </div>
+                                        <div className="left-pane-footer-right">
+                                            <p>normanburuchara90@gmail.com</p>
+                                        </div>
                                     </div>
                                 </div>
 
