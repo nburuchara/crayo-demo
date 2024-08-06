@@ -271,7 +271,9 @@ const Styles = styled.div `
     //! - - Left pane footer - - !//
 
 .left-pane-footer {
-    // border: 1px solid black;
+    position: absolute;
+    bottom: 0;
+    border: 1px solid black;/
 }
 
 .left-pane-footer-left {
@@ -5476,9 +5478,10 @@ export default class Dashboard extends Component {
                                     </div>
                                 </CSSTransition>
 
+                                
                                 <div className="left-pane-footer">
                                     <div className="left-pane-footer-left">
-                                        
+                                        <img/>
                                     </div>
                                     <div className="left-pane-footer-right">
 
@@ -6121,7 +6124,7 @@ export default class Dashboard extends Component {
                                                     <img 
                                                     onMouseEnter={this.deleteSingleItemEnter}
                                                     onMouseLeave={this.deleteSingleItemLeave}
-                                                    style={{backgroundColor: this.state.deleteSingleItemHovered ? "#ffe1e1" : ""}} src={this.state.deleteSingleItemHovered ? "/assets/delete-single-project-icon-color.png" : "/assets/delete-single-project-icon.png"}/>
+                                                    style={{backgroundColor: this.state.deleteSingleItemHovered ? "#ffe1e1" : ""}} src={this.state.deleteSingleItemHovered ? "/assets/delete-multiple-projects-icon.png" : "/assets/delete-single-project-icon.png"}/>
                                                 </span> 
                                             </div>
                                             <div className="projects-header-middle-right">
