@@ -1576,6 +1576,12 @@ const Styles = styled.div `
     // background-color: black;
 }
 
+.projects-header-middle:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
 .projects-header-right {
     float: right;
     width: 25%;
@@ -1604,12 +1610,33 @@ const Styles = styled.div `
     color: #2890b9;
 }
 
-    // # PROJECTS HEADER CONTAINER BUTTON
+    // # PROJECTS HEADER CONTAINER BUTTON / IMAGE
 
-.projects-header-middle button {
+.projects-header-middle-left {
+    float: left;
+    width: 35%;
+    text-align: right;
+}
+
+.projects-header-middle-right {
+    float: left;
     width: 65%;
-    padding: 2.3%;
-    margin-top: 4%;
+    text-align: right;
+}
+
+.projects-header-middle img {
+    width: 30%;
+    margin-top: 11.5%;
+    padding: 7%;  
+    border-radius: 50%; 
+    margin-right: 3%;
+    cursor: pointer;
+}
+
+.projects-header-middle-right button {
+    width: 92%;
+    padding: 4.2%;
+    margin-top: 5.1%;
     border-radius: 9px;
     background-color: #2890b9;
     border: 2px solid #2890b9;
@@ -1630,7 +1657,7 @@ const Styles = styled.div `
     font-family: dm sans;
     cursor: pointer;
     font-size: 85%;
-    margin-right: 7%;
+    margin-right: 7.5%;
 }
 
     // # PROJECTS PLACEHOLDER CONTAINER
@@ -2013,6 +2040,7 @@ export default class Dashboard extends Component {
             showDeleteProjectsBtn: false,
             showProjectsPlaceholderBtn: true,
             deletingProjectsCount: 0,
+            deleteSingleItemHovered: false,
 
             //* - - PROJECTS PLACEHOLDER / LIST - - *//
             showProjectsPlaceholder: false,
@@ -4277,6 +4305,14 @@ export default class Dashboard extends Component {
 
         //* - - WINDOW 1 - - *//
 
+    deleteSingleItemEnter = () => {
+        this.setState({ deleteSingleItemHovered: true })
+    }
+
+    deleteSingleItemLeave = () => {
+        this.setState({ deleteSingleItemHovered: false })
+    }
+
     selectAllProjectsEnter = () => {
         this.setState({ selectAllProjectsHovered: true })
     }
@@ -5734,30 +5770,42 @@ export default class Dashboard extends Component {
                                     <p style={{marginLeft: "6%"}}>Create a new project.</p>
                                 </div>
                                 <div className="projects-header-middle">
-                                <CSSTransition
-                                in={this.state.showGoToProjectsBtn}
-                                timeout={{enter: 1000, exit: 0}}
-                                classNames="dialog-slide-left"
-                                unmountOnExit
-                                >
-                                    <button>Go to Project</button>
-                                </CSSTransition>
-                                <CSSTransition
-                                in={this.state.showDeleteProjectsBtn}
-                                timeout={{enter: 1000, exit: 0}}
-                                classNames="dialog-slide-left"
-                                unmountOnExit
-                                >
-                                    <button>Delete ({this.state.deletingProjectsCount})</button>
-                                </CSSTransition>
-                                <CSSTransition
-                                in={this.state.showProjectsPlaceholderBtn}
-                                timeout={{enter: 1000, exit: 0}}
-                                classNames="dialog-slide-left"
-                                unmountOnExit
-                                >
-                                    <button style={{backgroundColor: "transparent", border: "1px solid transparent", cursor: "default"}}> </button>
-                                </CSSTransition>
+                                    <CSSTransition
+                                    in={this.state.showGoToProjectsBtn}
+                                    timeout={{enter: 1000, exit: 0}}
+                                    classNames="dialog-slide-left"
+                                    unmountOnExit
+                                    >   
+                                        <div>
+                                            <div className="projects-header-middle-left">
+                                                <span>
+                                                    <img 
+                                                    onMouseEnter={this.deleteSingleItemEnter}
+                                                    onMouseLeave={this.deleteSingleItemLeave}
+                                                    style={{backgroundColor: this.state.deleteSingleItemHovered ? "#ffe1e1" : ""}} src={this.state.deleteSingleItemHovered ? "/assets/delete-single-project-icon-color.png" : "/assets/delete-single-project-icon.png"}/>
+                                                </span> 
+                                            </div>
+                                            <div className="projects-header-middle-right">
+                                                <button>Go to Project</button>
+                                            </div>
+                                        </div>
+                                    </CSSTransition>
+                                    <CSSTransition
+                                    in={this.state.showDeleteProjectsBtn}
+                                    timeout={{enter: 1000, exit: 0}}
+                                    classNames="dialog-slide-left"
+                                    unmountOnExit
+                                    >
+                                        <button>Delete ({this.state.deletingProjectsCount})</button>
+                                    </CSSTransition>
+                                    <CSSTransition
+                                    in={this.state.showProjectsPlaceholderBtn}
+                                    timeout={{enter: 1000, exit: 0}}
+                                    classNames="dialog-slide-left"
+                                    unmountOnExit
+                                    >
+                                        <button style={{backgroundColor: "transparent", border: "1px solid transparent", cursor: "default"}}> </button>
+                                    </CSSTransition>
                                 </div>
                                 <div className="projects-header-right">
                                     <button>+ New Project</button>
