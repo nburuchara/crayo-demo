@@ -806,6 +806,7 @@ const Styles = styled.div `
     color: black !important;
     font-size: 60% !important;
     margin-top: 5.8% !important;
+    margin-top: 2% !important;
 }
 
 // # CONTINUE SESSION CONTENT DESCRIPTION
@@ -814,6 +815,12 @@ const Styles = styled.div `
     font-size: 80%;
     // margin-top: 2%;
     font-family: dm sans;
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* Limit to 2 lines */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-height: 1.5;
 }
 
     //! - - Section 1 (right pane) - - //
@@ -4859,7 +4866,7 @@ export default class Dashboard extends Component {
                                                         <p><span style={{color: "#2890b9"}}>Last edited:</span> 18:02pm 08/05/24</p>
                                                     </div>
                                                 </div>
-                                                <label style={{textAlign: "left"}}>Testing the cgpt vid feature. Generated moving neon grid floor...</label>
+                                                <label style={{textAlign: "left"}}>Testing the cgpt vid feature. Generated moving neon grid floor, likes counter and morphing shape.</label>
                                             </div>
                                         </div>
                                         <div 
@@ -4877,7 +4884,7 @@ export default class Dashboard extends Component {
                                                         <span style={{backgroundColor: this.state.latestProject2Hovered ? "#2890b9" : "#8a8a8a"}}>Split Video</span>
                                                     </div>
                                                     <div className="session-item-details-right">
-                                                        <p><span style={{color: "#2890b9"}}>Last edited:</span> 18:02pm 08/05/24</p>
+                                                        <p><span style={{color: "#2890b9"}}>Last edited:</span> 11:32am 08/05/24</p>
                                                     </div>
                                                 </div>
                                                 <label style={{textAlign: "left"}}>Tiktok draft for jenny's new account. DEADLINE: 08/10 3pm.</label>
@@ -5266,11 +5273,17 @@ export default class Dashboard extends Component {
                                     <button>+ New Project</button>
                                 </div>
                             </div>
+                            {this.state.showProjectsPlaceholder && 
+                                <div className="projects-placeholder">
+                                    <img src="/assets/projects-placeholder.png"/>
+                                    <p>No existing projects.</p>
+                                </div>
+                            }
+                            {this.state.showProjectsList && 
+                                <div className="projects-placholder">
 
-                            <div className="projects-placeholder">
-                                <img src="/assets/projects-placeholder.png"/>
-                                <p>No existing projects.</p>
-                            </div>
+                                </div>
+                            }
                         </div>
                         <div className="rp-sec2-right-parent">
                             <div className="examples-header">
