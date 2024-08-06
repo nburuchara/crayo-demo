@@ -1428,6 +1428,12 @@ const Styles = styled.div `
 
     // -  PROJECT LIST CELL - //
 
+.project-list-body {
+    height: 82.5%;
+    overflow: auto;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
 
 .project-list-cell {
     border-bottom: 1px solid #8a8a8a !important;
@@ -1435,6 +1441,7 @@ const Styles = styled.div `
     border-top-right-radius: 6px;
     padding-top: 0.7%;
     padding-bottom: 0.3%;
+    cursor: pointer;
 }
 
 .project-list-cell:after {
@@ -1983,6 +1990,28 @@ export default class Dashboard extends Component {
             //* - - PROJECTS PLACEHOLDER / LIST - - *//
             showProjectsPlaceholder: false,
             showProjectsList: true,
+
+            project1Hovered: false,
+            project1Clicked: false,
+            project2Hovered: false,
+            project2Clicked: false,
+            project3Hovered: false,
+            project3Clicked: false,
+            project4Hovered: false,
+            project4Clicked: false,
+            project5Hovered: false,
+            project5Clicked: false,
+            project6Hovered: false,
+            project6Clicked: false,
+            project7Hovered: false,
+            project7Clicked: false,
+            project8Hovered: false,
+            project8Clicked: false,
+            project9Hovered: false,
+            project9Clicked: false,
+            project10Hovered: false,
+            project10Clicked: false,
+
 
                 //! - - SECTION 2 (WINDOW 2 - RIGHT PANE) - - !//
 
@@ -4217,6 +4246,158 @@ export default class Dashboard extends Component {
 
         //! - - SECTION 2 FUNCTIONS - - !//
 
+        //* - - WINDOW 1 - - *//
+
+    project1ListEnter = () => {
+        this.setState({ project1Hovered: true })
+    }
+    project1ListLeave = () => {
+        this.setState({ project1Hovered: false })
+    }
+    project1ListClicked = () => {
+        if (this.state.project1Clicked === false) {
+            this.setState({ project1Clicked: true })
+        } else {
+            this.setState({ project1Clicked: false })
+        }
+        
+    }
+
+    project2ListEnter = () => {
+        this.setState({ project2Hovered: true })
+    }
+    project2ListLeave = () => {
+        this.setState({ project2Hovered: false })
+    }
+    project2ListClicked = () => {
+        if (this.state.project2Clicked === false) {
+            this.setState({ project2Clicked: true })
+        } else {
+            this.setState({ project2Clicked: false })
+        }
+        
+    }
+
+    project3ListEnter = () => {
+        this.setState({ project3Hovered: true })
+    }
+    project3ListLeave = () => {
+        this.setState({ project3Hovered: false })
+    }
+    project3ListClicked = () => {
+        if (this.state.project3Clicked === false) {
+            this.setState({ project3Clicked: true })
+        } else {
+            this.setState({ project3Clicked: false })
+        }
+        
+    }
+    
+    project4ListEnter = () => {
+        this.setState({ project4Hovered: true })
+    }
+    project4ListLeave = () => {
+        this.setState({ project4Hovered: false })
+    }
+    project4ListClicked = () => {
+        if (this.state.project4Clicked === false) {
+            this.setState({ project4Clicked: true })
+        } else {
+            this.setState({ project4Clicked: false })
+        }
+        
+    }
+
+    project5ListEnter = () => {
+        this.setState({ project5Hovered: true })
+    }
+    project5ListLeave = () => {
+        this.setState({ project5Hovered: false })
+    }
+    project5ListClicked = () => {
+        if (this.state.project5Clicked === false) {
+            this.setState({ project5Clicked: true })
+        } else {
+            this.setState({ project5Clicked: false })
+        }
+        
+    }
+
+    project6ListEnter = () => {
+        this.setState({ project6Hovered: true })
+    }
+    project6ListLeave = () => {
+        this.setState({ project6Hovered: false })
+    }
+    project6ListClicked = () => {
+        if (this.state.project6Clicked === false) {
+            this.setState({ project6Clicked: true })
+        } else {
+            this.setState({ project6Clicked: false })
+        }
+        
+    }
+
+    project7ListEnter = () => {
+        this.setState({ project7Hovered: true })
+    }
+    project7ListLeave = () => {
+        this.setState({ project7Hovered: false })
+    }
+    project7ListClicked = () => {
+        if (this.state.project7Clicked === false) {
+            this.setState({ project7Clicked: true })
+        } else {
+            this.setState({ project7Clicked: false })
+        }
+        
+    }
+
+    project8ListEnter = () => {
+        this.setState({ project8Hovered: true })
+    }
+    project8ListLeave = () => {
+        this.setState({ project8Hovered: false })
+    }
+    project8ListClicked = () => {
+        if (this.state.project8Clicked === false) {
+            this.setState({ project8Clicked: true })
+        } else {
+            this.setState({ project8Clicked: false })
+        }
+        
+    }
+
+    project9ListEnter = () => {
+        this.setState({ project9Hovered: true })
+    }
+    project9ListLeave = () => {
+        this.setState({ project9Hovered: false })
+    }
+    project9ListClicked = () => {
+        if (this.state.project9Clicked === false) {
+            this.setState({ project9Clicked: true })
+        } else {
+            this.setState({ project9Clicked: false })
+        }
+        
+    }
+
+    project10ListEnter = () => {
+        this.setState({ project10Hovered: true })
+    }
+    project10ListLeave = () => {
+        this.setState({ project10Hovered: false })
+    }
+    project10ListClicked = () => {
+        if (this.state.project10Clicked === false) {
+            this.setState({ project10Clicked: true })
+        } else {
+            this.setState({ project10Clicked: false })
+        }
+        
+    }
+
         //* - - WINDOW 2 - - *//
 
     next = () => {
@@ -5454,7 +5635,7 @@ export default class Dashboard extends Component {
                                 <div className="projects-placeholder">
 
                                     {/* - - TABLE HEADER - -  */}
-
+                                    
                                     <div className="project-list-header">
                                         <div className="project-list-header-1">
                                             <img src="/assets/projects-empty-checkbox-header.png"/>
@@ -5470,53 +5651,104 @@ export default class Dashboard extends Component {
                                         </div>
                                     </div>
 
-                                    {/* - - TABLE BODY - -  */}
+                                        {/* - - TABLE BODY - -  */}
+                                    <div className="project-list-body">
+                                        <div 
+                                        onMouseEnter={this.project1ListEnter}
+                                        onMouseLeave={this.project1ListLeave}
+                                        style={{backgroundColor: this.state.project1Hovered ? "#eef7fd" : ""}}
+                                        className="project-list-cell">
+                                            <div className="project-list-cell-1">
+                                                <img src="/assets/projects-empty-checkbox.png"/>
+                                            </div>
+                                            <div className="project-list-cell-2">
+                                                <h5>ChatGPT Video Tester</h5>
+                                            </div>
+                                            <div className="project-list-cell-3">
+                                                <h5>ChatGPT Video</h5>
+                                            </div>
+                                            <div className="project-list-cell-4">
+                                                <h5>18:02pm 08/05/24</h5>
+                                            </div>
+                                        </div>
 
-                                    <div className="project-list-cell">
-                                        <div className="project-list-cell-1">
-                                            <img src="/assets/projects-empty-checkbox.png"/>
+                                        <div 
+                                        onMouseEnter={this.project2ListEnter}
+                                        onMouseLeave={this.project2ListLeave}
+                                        style={{backgroundColor: this.state.project2Hovered ? "#eef7fd" : ""}}
+                                        className="project-list-cell">
+                                            <div className="project-list-cell-1">
+                                                <img src="/assets/projects-empty-checkbox.png"/>
+                                            </div>
+                                            <div className="project-list-cell-2">
+                                                <h5>tiktok for Jenny</h5>
+                                            </div>
+                                            <div className="project-list-cell-3">
+                                                <h5>Split Video</h5>
+                                            </div>
+                                            <div className="project-list-cell-4">
+                                                <h5>11:35pm 08/05/24</h5>
+                                            </div>
                                         </div>
-                                        <div className="project-list-cell-2">
-                                            <h5>ChatGPT Video Tester</h5>
+
+                                        <div 
+                                        onMouseEnter={this.project3ListEnter}
+                                        onMouseLeave={this.project3ListLeave}
+                                        style={{backgroundColor: this.state.project3Hovered ? "#eef7fd" : ""}}
+                                        className="project-list-cell">
+                                            <div className="project-list-cell-1">
+                                                <img src="/assets/projects-empty-checkbox.png"/>
+                                            </div>
+                                            <div className="project-list-cell-2">
+                                                <h5>day in the life draft</h5>
+                                            </div>
+                                            <div className="project-list-cell-3">
+                                                <h5>Voiceover Video</h5>
+                                            </div>
+                                            <div className="project-list-cell-4">
+                                                <h5>02:09am 08/03/24</h5>
+                                            </div>
                                         </div>
-                                        <div className="project-list-cell-3">
-                                            <h5>ChatGPT Video</h5>
+
+                                        <div 
+                                        onMouseEnter={this.project4ListEnter}
+                                        onMouseLeave={this.project4ListLeave}
+                                        style={{backgroundColor: this.state.project4Hovered ? "#eef7fd" : ""}}
+                                        className="project-list-cell">
+                                            <div className="project-list-cell-1">
+                                                <img src="/assets/projects-empty-checkbox.png"/>
+                                            </div>
+                                            <div className="project-list-cell-2">
+                                                <h5>voiceover testing 3</h5>
+                                            </div>
+                                            <div className="project-list-cell-3">
+                                                <h5>Voiceover Video</h5>
+                                            </div>
+                                            <div className="project-list-cell-4">
+                                                <h5>00:18am 08/03/24</h5>
+                                            </div>
                                         </div>
-                                        <div className="project-list-cell-4">
-                                            <h5>18:02pm 08/12/24</h5>
+
+                                        <div 
+                                        onMouseEnter={this.project5ListEnter}
+                                        onMouseLeave={this.project5ListLeave}
+                                        style={{backgroundColor: this.state.project5Hovered ? "#eef7fd" : ""}}
+                                        className="project-list-cell">
+                                            <div className="project-list-cell-1">
+                                                <img src="/assets/projects-empty-checkbox.png"/>
+                                            </div>
+                                            <div className="project-list-cell-2">
+                                                <h5>voiceover testing 2</h5>
+                                            </div>
+                                            <div className="project-list-cell-3">
+                                                <h5>Voiceover Video</h5>
+                                            </div>
+                                            <div className="project-list-cell-4">
+                                                <h5>23:50am 08/02/24</h5>
+                                            </div>
                                         </div>
+
                                     </div>
-
-                                    <div className="project-list-cell">
-                                        <div className="project-list-cell-1">
-                                            <img src="/assets/projects-empty-checkbox.png"/>
-                                        </div>
-                                        <div className="project-list-cell-2">
-                                            <h5>tiktok for Jenny</h5>
-                                        </div>
-                                        <div className="project-list-cell-3">
-                                            <h5>Split Video</h5>
-                                        </div>
-                                        <div className="project-list-cell-4">
-                                            <h5>11:35pm 08/12/24</h5>
-                                        </div>
-                                    </div>
-
-                                    <div className="project-list-cell">
-                                        <div className="project-list-cell-1">
-                                            <img src="/assets/projects-empty-checkbox.png"/>
-                                        </div>
-                                        <div className="project-list-cell-2">
-                                            <h5>day in the life draft</h5>
-                                        </div>
-                                        <div className="project-list-cell-3">
-                                            <h5>Voiceover Video</h5>
-                                        </div>
-                                        <div className="project-list-cell-4">
-                                            <h5>02:09am 08/03/24</h5>
-                                        </div>
-                                    </div>
-
                                 </div>
                             }
                         </div>
