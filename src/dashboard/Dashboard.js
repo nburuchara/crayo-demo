@@ -987,6 +987,17 @@ const Styles = styled.div `
     transition: transform 500ms, opacity 500ms;
 }
 
+.dialog-slide-left-exit {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+.dialog-slide-left-exit-active {
+    transform: translateX(-30%);
+    opacity: 0;
+    transition: transform 500ms, opacity 500ms;
+}
+
     // # WINDOW 1 FLOATING IMAGE
 
 .window1-pic {
@@ -4381,13 +4392,33 @@ export default class Dashboard extends Component {
                 })
             } else {
                 this.setState({
-                    showGoToProjectsBtn: false, showDeleteProjectsBtn: true, showProjectsPlaceholderBtn: false
+                    showGoToProjectsBtn: false, showProjectsPlaceholderBtn: false
                 })
+                setTimeout(() => {
+                    this.setState({
+                        showDeleteProjectsBtn: true
+                    })
+                }, 1100)
             }
             this.setState({ project1Clicked: true, deletingProjectsCount: this.state.deletingProjectsCount+1 })
         } else {
             if (!this.state.project2Clicked && !this.state.project3Clicked && !this.state.project4Clicked && !this.state.project5Clicked && !this.state.project6Clicked && !this.state.project7Clicked && !this.state.project8Clicked && !this.state.project9Clicked && !this.state.project10Clicked) {
-
+                this.setState({
+                    showProjectsPlaceholderBtn: true, showGoToProjectsBtn: false, deletingProjectsCount: this.state.deletingProjectsCount-1
+                })
+            } else {
+                this.setState({ deletingProjectsCount: this.state.deletingProjectsCount-1 }, () => {
+                    if (this.state.deletingProjectsCount === 1) {
+                        this.setState({
+                            showDeleteProjectsBtn: false
+                        })
+                        setTimeout(() => {
+                            this.setState({
+                                showGoToProjectsBtn: true
+                            })
+                        }, 1100)
+                    }
+                })
             }
             this.setState({ project1Clicked: false })
         } 
@@ -4403,8 +4434,40 @@ export default class Dashboard extends Component {
     }
     project2ListClicked = () => {
         if (this.state.project2Clicked === false) {
-            this.setState({ project2Clicked: true })
+            if (!this.state.project1Clicked && !this.state.project3Clicked && !this.state.project4Clicked && !this.state.project5Clicked && !this.state.project6Clicked && !this.state.project7Clicked && !this.state.project8Clicked && !this.state.project9Clicked && !this.state.project10Clicked) {
+                this.setState({
+                    showDeleteProjectsBtn: false, showGoToProjectsBtn: true, showProjectsPlaceholderBtn: false
+                })
+            } else {
+                this.setState({
+                    showGoToProjectsBtn: false, showProjectsPlaceholderBtn: false
+                })
+                setTimeout(() => {
+                    this.setState({
+                        showDeleteProjectsBtn: true
+                    })
+                }, 1100)
+            }
+            this.setState({ project2Clicked: true, deletingProjectsCount: this.state.deletingProjectsCount+1 })
         } else {
+            if (!this.state.project1Clicked && !this.state.project3Clicked && !this.state.project4Clicked && !this.state.project5Clicked && !this.state.project6Clicked && !this.state.project7Clicked && !this.state.project8Clicked && !this.state.project9Clicked && !this.state.project10Clicked) {
+                this.setState({
+                    showProjectsPlaceholderBtn: true, showGoToProjectsBtn: false, deletingProjectsCount: this.state.deletingProjectsCount-1
+                })
+            } else {
+                this.setState({ deletingProjectsCount: this.state.deletingProjectsCount-1 }, () => {
+                    if (this.state.deletingProjectsCount === 1) {
+                        this.setState({
+                            showDeleteProjectsBtn: false
+                        })
+                        setTimeout(() => {
+                            this.setState({
+                                showGoToProjectsBtn: true
+                            })
+                        }, 1100)
+                    }
+                })
+            }
             this.setState({ project2Clicked: false })
         }
         
@@ -5772,7 +5835,7 @@ export default class Dashboard extends Component {
                                 <div className="projects-header-middle">
                                     <CSSTransition
                                     in={this.state.showGoToProjectsBtn}
-                                    timeout={{enter: 1000, exit: 0}}
+                                    timeout={{enter: 1000, exit: 1000}}
                                     classNames="dialog-slide-left"
                                     unmountOnExit
                                     >   
@@ -5792,15 +5855,27 @@ export default class Dashboard extends Component {
                                     </CSSTransition>
                                     <CSSTransition
                                     in={this.state.showDeleteProjectsBtn}
-                                    timeout={{enter: 1000, exit: 0}}
+                                    timeout={{enter: 1000, exit: 1000}}
                                     classNames="dialog-slide-left"
                                     unmountOnExit
                                     >
-                                        <button>Delete ({this.state.deletingProjectsCount})</button>
+                                        <div>
+                                            <div className="projects-header-middle-left">
+                                                <span>
+                                                    <img 
+                                                    onMouseEnter={this.deleteSingleItemEnter}
+                                                    onMouseLeave={this.deleteSingleItemLeave}
+                                                    style={{backgroundColor: "#ffe1e1", cursor: "default"}} src="/assets/delete-multiple-projects-icon.png"/>
+                                                </span> 
+                                            </div>
+                                            <div className="projects-header-middle-right">
+                                                <button style={{backgroundColor: "white", color: "#da3e3e", fontWeight: "bold", border: "1px solid #da3e3e", padding: "4.8%"}}>Delete ({this.state.deletingProjectsCount})</button>
+                                            </div>
+                                        </div>
                                     </CSSTransition>
                                     <CSSTransition
                                     in={this.state.showProjectsPlaceholderBtn}
-                                    timeout={{enter: 1000, exit: 0}}
+                                    timeout={{enter: 1000, exit: 1000}}
                                     classNames="dialog-slide-left"
                                     unmountOnExit
                                     >
