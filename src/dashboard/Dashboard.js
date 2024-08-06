@@ -4856,7 +4856,7 @@ export default class Dashboard extends Component {
                                                         <span style={{backgroundColor: this.state.latestProject1Hovered ? "#2890b9" : "#8a8a8a"}}>ChatGPT Video</span>
                                                     </div>
                                                     <div className="session-item-details-right">
-                                                        <p><span style={{color: "#2890b9"}}>Updated:</span> 18:02pm 08/05/24</p>
+                                                        <p><span style={{color: "#2890b9"}}>Last edited:</span> 18:02pm 08/05/24</p>
                                                     </div>
                                                 </div>
                                                 <label style={{textAlign: "left"}}>Testing the cgpt vid feature. Generated moving neon grid floor...</label>
@@ -4877,7 +4877,7 @@ export default class Dashboard extends Component {
                                                         <span style={{backgroundColor: this.state.latestProject2Hovered ? "#2890b9" : "#8a8a8a"}}>Split Video</span>
                                                     </div>
                                                     <div className="session-item-details-right">
-                                                        <p><span style={{color: "#2890b9"}}>Updated:</span> 18:02pm 08/05/24</p>
+                                                        <p><span style={{color: "#2890b9"}}>Last edited:</span> 18:02pm 08/05/24</p>
                                                     </div>
                                                 </div>
                                                 <label style={{textAlign: "left"}}>Tiktok draft for jenny's new account. DEADLINE: 08/10 3pm.</label>
@@ -4898,7 +4898,7 @@ export default class Dashboard extends Component {
                                                         <span style={{backgroundColor: this.state.latestProject3Hovered ? "#2890b9" : "#8a8a8a"}}>Voiceover Video</span>
                                                     </div>
                                                     <div className="session-item-details-right">
-                                                        <p><span style={{color: "#2890b9"}}>Updated:</span> 02:02am 08/03/24</p>
+                                                        <p><span style={{color: "#2890b9"}}>Last edited:</span> 02:02am 08/03/24</p>
                                                     </div>
                                                 </div>
                                                 <label style={{textAlign: "left"}}>my first draft for my day in the life vid. </label>
