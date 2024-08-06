@@ -4581,8 +4581,40 @@ export default class Dashboard extends Component {
     }
     project5ListClicked = () => {
         if (this.state.project5Clicked === false) {
-            this.setState({ project5Clicked: true })
+            if (!this.state.project1Clicked && !this.state.project2Clicked && !this.state.project3Clicked && !this.state.project4Clicked && !this.state.project6Clicked && !this.state.project7Clicked && !this.state.project8Clicked && !this.state.project9Clicked && !this.state.project10Clicked) {
+                this.setState({
+                    showDeleteProjectsBtn: false, showGoToProjectsBtn: true, showProjectsPlaceholderBtn: false
+                })
+            } else {
+                this.setState({
+                    showGoToProjectsBtn: false, showProjectsPlaceholderBtn: false
+                })
+                setTimeout(() => {
+                    this.setState({
+                        showDeleteProjectsBtn: true
+                    })
+                }, 600)
+            }
+            this.setState({ project5Clicked: true, deletingProjectsCount: this.state.deletingProjectsCount+1 })
         } else {
+            if (!this.state.project1Clicked && !this.state.project2Clicked && !this.state.project3Clicked && !this.state.project4Clicked && !this.state.project6Clicked && !this.state.project7Clicked && !this.state.project8Clicked && !this.state.project9Clicked && !this.state.project10Clicked) {
+                this.setState({
+                    showProjectsPlaceholderBtn: true, showGoToProjectsBtn: false, deletingProjectsCount: this.state.deletingProjectsCount-1
+                })
+            } else {
+                this.setState({ deletingProjectsCount: this.state.deletingProjectsCount-1 }, () => {
+                    if (this.state.deletingProjectsCount === 1) {
+                        this.setState({
+                            showDeleteProjectsBtn: false
+                        })
+                        setTimeout(() => {
+                            this.setState({
+                                showGoToProjectsBtn: true
+                            })
+                        }, 600)
+                    }
+                })
+            }
             this.setState({ project5Clicked: false })
         }
         
@@ -4598,8 +4630,40 @@ export default class Dashboard extends Component {
     }
     project6ListClicked = () => {
         if (this.state.project6Clicked === false) {
-            this.setState({ project6Clicked: true })
+            if (!this.state.project1Clicked && !this.state.project2Clicked && !this.state.project3Clicked && !this.state.project4Clicked && !this.state.project5Clicked && !this.state.project7Clicked && !this.state.project8Clicked && !this.state.project9Clicked && !this.state.project10Clicked) {
+                this.setState({
+                    showDeleteProjectsBtn: false, showGoToProjectsBtn: true, showProjectsPlaceholderBtn: false
+                })
+            } else {
+                this.setState({
+                    showGoToProjectsBtn: false, showProjectsPlaceholderBtn: false
+                })
+                setTimeout(() => {
+                    this.setState({
+                        showDeleteProjectsBtn: true
+                    })
+                }, 600)
+            }
+            this.setState({ project6Clicked: true, deletingProjectsCount: this.state.deletingProjectsCount+1 })
         } else {
+            if (!this.state.project1Clicked && !this.state.project2Clicked && !this.state.project3Clicked && !this.state.project4Clicked && !this.state.project5Clicked && !this.state.project7Clicked && !this.state.project8Clicked && !this.state.project9Clicked && !this.state.project10Clicked) {
+                this.setState({
+                    showProjectsPlaceholderBtn: true, showGoToProjectsBtn: false, deletingProjectsCount: this.state.deletingProjectsCount-1
+                })
+            } else {
+                this.setState({ deletingProjectsCount: this.state.deletingProjectsCount-1 }, () => {
+                    if (this.state.deletingProjectsCount === 1) {
+                        this.setState({
+                            showDeleteProjectsBtn: false
+                        })
+                        setTimeout(() => {
+                            this.setState({
+                                showGoToProjectsBtn: true
+                            })
+                        }, 600)
+                    }
+                })
+            }
             this.setState({ project6Clicked: false })
         }
         
@@ -4615,8 +4679,40 @@ export default class Dashboard extends Component {
     }
     project7ListClicked = () => {
         if (this.state.project7Clicked === false) {
-            this.setState({ project7Clicked: true })
+            if (!this.state.project1Clicked && !this.state.project2Clicked && !this.state.project3Clicked && !this.state.project4Clicked && !this.state.project5Clicked && !this.state.project6Clicked && !this.state.project8Clicked && !this.state.project9Clicked && !this.state.project10Clicked) {
+                this.setState({
+                    showDeleteProjectsBtn: false, showGoToProjectsBtn: true, showProjectsPlaceholderBtn: false
+                })
+            } else {
+                this.setState({
+                    showGoToProjectsBtn: false, showProjectsPlaceholderBtn: false
+                })
+                setTimeout(() => {
+                    this.setState({
+                        showDeleteProjectsBtn: true
+                    })
+                }, 600)
+            }
+            this.setState({ project7Clicked: true, deletingProjectsCount: this.state.deletingProjectsCount+1 })
         } else {
+            if (!this.state.project1Clicked && !this.state.project2Clicked && !this.state.project3Clicked && !this.state.project4Clicked && !this.state.project5Clicked && !this.state.project6Clicked && !this.state.project8Clicked && !this.state.project9Clicked && !this.state.project10Clicked) {
+                this.setState({
+                    showProjectsPlaceholderBtn: true, showGoToProjectsBtn: false, deletingProjectsCount: this.state.deletingProjectsCount-1
+                })
+            } else {
+                this.setState({ deletingProjectsCount: this.state.deletingProjectsCount-1 }, () => {
+                    if (this.state.deletingProjectsCount === 1) {
+                        this.setState({
+                            showDeleteProjectsBtn: false
+                        })
+                        setTimeout(() => {
+                            this.setState({
+                                showGoToProjectsBtn: true
+                            })
+                        }, 600)
+                    }
+                })
+            }
             this.setState({ project7Clicked: false })
         }
         
@@ -4632,8 +4728,40 @@ export default class Dashboard extends Component {
     }
     project8ListClicked = () => {
         if (this.state.project8Clicked === false) {
-            this.setState({ project8Clicked: true })
+            if (!this.state.project1Clicked && !this.state.project2Clicked && !this.state.project3Clicked && !this.state.project4Clicked && !this.state.project5Clicked && !this.state.project6Clicked && !this.state.project7Clicked && !this.state.project9Clicked && !this.state.project10Clicked) {
+                this.setState({
+                    showDeleteProjectsBtn: false, showGoToProjectsBtn: true, showProjectsPlaceholderBtn: false
+                })
+            } else {
+                this.setState({
+                    showGoToProjectsBtn: false, showProjectsPlaceholderBtn: false
+                })
+                setTimeout(() => {
+                    this.setState({
+                        showDeleteProjectsBtn: true
+                    })
+                }, 600)
+            }
+            this.setState({ project8Clicked: true, deletingProjectsCount: this.state.deletingProjectsCount+1 })
         } else {
+            if (!this.state.project1Clicked && !this.state.project2Clicked && !this.state.project3Clicked && !this.state.project4Clicked && !this.state.project5Clicked && !this.state.project6Clicked && !this.state.project7Clicked && !this.state.project9Clicked && !this.state.project10Clicked) {
+                this.setState({
+                    showProjectsPlaceholderBtn: true, showGoToProjectsBtn: false, deletingProjectsCount: this.state.deletingProjectsCount-1
+                })
+            } else {
+                this.setState({ deletingProjectsCount: this.state.deletingProjectsCount-1 }, () => {
+                    if (this.state.deletingProjectsCount === 1) {
+                        this.setState({
+                            showDeleteProjectsBtn: false
+                        })
+                        setTimeout(() => {
+                            this.setState({
+                                showGoToProjectsBtn: true
+                            })
+                        }, 600)
+                    }
+                })
+            }
             this.setState({ project8Clicked: false })
         }
         
@@ -4649,8 +4777,40 @@ export default class Dashboard extends Component {
     }
     project9ListClicked = () => {
         if (this.state.project9Clicked === false) {
-            this.setState({ project9Clicked: true })
+            if (!this.state.project1Clicked && !this.state.project2Clicked && !this.state.project3Clicked && !this.state.project4Clicked && !this.state.project5Clicked && !this.state.project6Clicked && !this.state.project7Clicked && !this.state.project8Clicked && !this.state.project10Clicked) {
+                this.setState({
+                    showDeleteProjectsBtn: false, showGoToProjectsBtn: true, showProjectsPlaceholderBtn: false
+                })
+            } else {
+                this.setState({
+                    showGoToProjectsBtn: false, showProjectsPlaceholderBtn: false
+                })
+                setTimeout(() => {
+                    this.setState({
+                        showDeleteProjectsBtn: true
+                    })
+                }, 600)
+            }
+            this.setState({ project9Clicked: true, deletingProjectsCount: this.state.deletingProjectsCount+1 })
         } else {
+            if (!this.state.project1Clicked && !this.state.project2Clicked && !this.state.project3Clicked && !this.state.project4Clicked && !this.state.project5Clicked && !this.state.project6Clicked && !this.state.project7Clicked && !this.state.project8Clicked && !this.state.project10Clicked) {
+                this.setState({
+                    showProjectsPlaceholderBtn: true, showGoToProjectsBtn: false, deletingProjectsCount: this.state.deletingProjectsCount-1
+                })
+            } else {
+                this.setState({ deletingProjectsCount: this.state.deletingProjectsCount-1 }, () => {
+                    if (this.state.deletingProjectsCount === 1) {
+                        this.setState({
+                            showDeleteProjectsBtn: false
+                        })
+                        setTimeout(() => {
+                            this.setState({
+                                showGoToProjectsBtn: true
+                            })
+                        }, 600)
+                    }
+                })
+            }
             this.setState({ project9Clicked: false })
         }
         
@@ -4666,8 +4826,40 @@ export default class Dashboard extends Component {
     }
     project10ListClicked = () => {
         if (this.state.project10Clicked === false) {
-            this.setState({ project10Clicked: true })
+            if (!this.state.project1Clicked && !this.state.project2Clicked && !this.state.project3Clicked && !this.state.project4Clicked && !this.state.project5Clicked && !this.state.project6Clicked && !this.state.project7Clicked && !this.state.project8Clicked && !this.state.project9Clicked) {
+                this.setState({
+                    showDeleteProjectsBtn: false, showGoToProjectsBtn: true, showProjectsPlaceholderBtn: false
+                })
+            } else {
+                this.setState({
+                    showGoToProjectsBtn: false, showProjectsPlaceholderBtn: false
+                })
+                setTimeout(() => {
+                    this.setState({
+                        showDeleteProjectsBtn: true
+                    })
+                }, 600)
+            }
+            this.setState({ project10Clicked: true, deletingProjectsCount: this.state.deletingProjectsCount+1 })
         } else {
+            if (!this.state.project1Clicked && !this.state.project2Clicked && !this.state.project3Clicked && !this.state.project4Clicked && !this.state.project5Clicked && !this.state.project6Clicked && !this.state.project7Clicked && !this.state.project8Clicked && !this.state.project9Clicked) {
+                this.setState({
+                    showProjectsPlaceholderBtn: true, showGoToProjectsBtn: false, deletingProjectsCount: this.state.deletingProjectsCount-1
+                })
+            } else {
+                this.setState({ deletingProjectsCount: this.state.deletingProjectsCount-1 }, () => {
+                    if (this.state.deletingProjectsCount === 1) {
+                        this.setState({
+                            showDeleteProjectsBtn: false
+                        })
+                        setTimeout(() => {
+                            this.setState({
+                                showGoToProjectsBtn: true
+                            })
+                        }, 600)
+                    }
+                })
+            }
             this.setState({ project10Clicked: false })
         }
         
