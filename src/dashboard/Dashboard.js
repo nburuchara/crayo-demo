@@ -5744,7 +5744,45 @@ export default class Dashboard extends Component {
                                                 <h5>Voiceover Video</h5>
                                             </div>
                                             <div className="project-list-cell-4">
-                                                <h5>23:50am 08/02/24</h5>
+                                                <h5>23:50pm 08/02/24</h5>
+                                            </div>
+                                        </div>
+
+                                        <div 
+                                        onMouseEnter={this.project6ListEnter}
+                                        onMouseLeave={this.project6ListLeave}
+                                        style={{backgroundColor: this.state.project6Hovered ? "#eef7fd" : ""}}
+                                        className="project-list-cell">
+                                            <div className="project-list-cell-1">
+                                                <img src="/assets/projects-empty-checkbox.png"/>
+                                            </div>
+                                            <div className="project-list-cell-2">
+                                                <h5>voiceover testing 1</h5>
+                                            </div>
+                                            <div className="project-list-cell-3">
+                                                <h5>Voiceover Video</h5>
+                                            </div>
+                                            <div className="project-list-cell-4">
+                                                <h5>23:33pm 08/02/24</h5>
+                                            </div>
+                                        </div>
+
+                                        <div 
+                                        onMouseEnter={this.project7ListEnter}
+                                        onMouseLeave={this.project7ListLeave}
+                                        style={{backgroundColor: this.state.project7Hovered ? "#eef7fd" : ""}}
+                                        className="project-list-cell">
+                                            <div className="project-list-cell-1">
+                                                <img src="/assets/projects-empty-checkbox.png"/>
+                                            </div>
+                                            <div className="project-list-cell-2">
+                                                <h5>blur vid sample</h5>
+                                            </div>
+                                            <div className="project-list-cell-3">
+                                                <h5>Blur Video</h5>
+                                            </div>
+                                            <div className="project-list-cell-4">
+                                                <h5>16:28pm 07/31/24</h5>
                                             </div>
                                         </div>
 
