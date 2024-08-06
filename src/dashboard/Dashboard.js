@@ -1426,8 +1426,82 @@ const Styles = styled.div `
     font-weight: normal;
 }
 
+    // -  PROJECT LIST CELL - //
 
-    // # PROJECTS COLUMN 4 (LAST EDITED)
+
+.project-list-cell {
+    // border: 1px solid black !important;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+}
+
+.project-list-cell:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.project-list-cell-1 {
+    float: left;
+    width: 10%;
+    text-align: center;
+    // border: 1px solid black;
+}
+
+.project-list-cell-2 {
+    float: left;
+    width: 32%;
+    text-align: left;
+    // border-right: 1px solid white;
+}
+
+.project-list-cell-3 {
+    float: left;
+    width: 25%;
+    text-align: left;
+    // border-right: 1px solid white;
+}
+
+.project-list-cell-4 {
+    float: left;
+    width: 30%;
+    text-align: left;
+    // border-right: 1px solid white;
+}
+
+// # PROJECTS COLUMN 1 CELL (CHECKBOX)
+
+.project-list-cell-1 img {
+    margin-top: 8.1% !important;
+    width: 50% !important;
+}
+
+    // # PROJECTS COLUMN 2 CELL (PROJECT NAME)
+
+.project-list-cell-2 h5 {
+    margin-top: 3.85%;
+    font-family: dm sans;
+    margin-left: 5%;
+    font-weight: normal;
+}
+
+    // # PROJECTS COLUMN 3 CELL (CONTENT TYPE)
+
+.project-list-cell-3 h5 {
+    margin-top: 5%;
+    font-family: dm sans;
+    margin-left: 8%;
+    font-weight: normal;
+}
+
+    // # PROJECTS COLUMN 4 CELL (LAST EDITED)
+
+.project-list-cell-4 h5 {
+    margin-top: 4.6%;
+    font-family: dm sans;
+    margin-left: 8%;
+    font-weight: normal;
+}
 
     //! - - Section 2 (right pane) - - //
 
@@ -5391,16 +5465,16 @@ export default class Dashboard extends Component {
                                     </div>
                                     <div className="project-list-cell">
                                         <div className="project-list-cell-1">
-                                            <img src="/assets/projects-empty-checkbox-header.png"/>
+                                            <img src="/assets/projects-empty-checkbox.png"/>
                                         </div>
                                         <div className="project-list-cell-2">
-                                            <p>ChatGPT Video Tester</p>
+                                            <h5>ChatGPT Video Tester</h5>
                                         </div>
                                         <div className="project-list-cell-3">
-                                            <p>ChatGPT Video</p>
+                                            <h5>ChatGPT Video</h5>
                                         </div>
                                         <div className="project-list-cell-4">
-                                            <p>18:02 pm</p>
+                                            <h5>18:02 pm</h5>
                                         </div>
                                     </div>
                                 </div>
