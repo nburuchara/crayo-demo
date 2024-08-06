@@ -1565,9 +1565,15 @@ const Styles = styled.div `
 
 .projects-header-left {
     float: left;
-    width: 70%;
+    width: 40%;
     text-align: left;
     // border: 1px solid black;
+}
+
+.projects-header-middle {
+    float: left;
+    width: 30%;
+    text-align: right;
 }
 
 .projects-header-right {
@@ -1599,8 +1605,22 @@ const Styles = styled.div `
 
     // # PROJECTS HEADER CONTAINER BUTTON
 
-.projects-header-right button {
+.projects-header-middle button {
     width: 88%;
+    padding: 6%;
+    margin-top: 5%;
+    border-radius: 8px;
+    background-color: #2890b9;
+    border: 2px solid #2890b9;
+    color: white;
+    font-weight: bold;
+    font-family: dm sans;
+    cursor: pointer;
+    font-size: 85%;
+}
+
+.projects-header-right button {
+    width: 86%;
     padding: 6%;
     margin-top: 5%;
     border-radius: 8px;
@@ -1986,11 +2006,6 @@ export default class Dashboard extends Component {
             popularApp6Hovered: false,
 
                 //! - - SECTION 2 (WINDOW 1 - RIGHT PANE) - - !//
-
-            //* - - PROJECTS BUTTON TEXT - - *//
-            showNewProjectBtn: true,
-            showGoToProjectBtn: false,
-            showDeleteProjectsBtn: false,
 
             //* - - PROJECTS PLACEHOLDER / LIST - - *//
             showProjectsPlaceholder: false,
@@ -4317,18 +4332,8 @@ export default class Dashboard extends Component {
     }
     project1ListClicked = () => {
         if (this.state.project1Clicked === false) {
-            if (this.state.project2Clicked === false && this.state.project3Clicked === false && this.state.project4Clicked === false && this.state.project5Clicked === false && this.state.project6Clicked === false && this.state.project7Clicked === false && this.state.project8Clicked === false && this.state.project9Clicked === false && this.state.project10Clicked === false) {
-                this.setState({ showNewProjectBtn: false, showGoToProjectBtn: true })
-            } else {
-                //* show delete button
-            }
             this.setState({ project1Clicked: true })
         } else {
-            if (this.state.project2Clicked === false && this.state.project3Clicked === false && this.state.project4Clicked === false && this.state.project5Clicked === false && this.state.project6Clicked === false && this.state.project7Clicked === false && this.state.project8Clicked === false && this.state.project9Clicked === false && this.state.project10Clicked === false) {
-                this.setState({ showNewProjectBtn: true, showGoToProjectBtn: false })
-            } else {
-                //* show delete button
-            }
             this.setState({ project1Clicked: false })
         } 
     }
@@ -5706,35 +5711,17 @@ export default class Dashboard extends Component {
                         <div className="rp-sec2-left-parent">
                             <div className="projects-header">
                                 <div className="projects-header-left">
-                                    <h2>My Projects</h2>
-                                    <p>Create a new project.</p>
+                                    <h2 style={{marginLeft: "6%"}}>My Projects</h2>
+                                    <p style={{marginLeft: "6%"}}>Create a new project.</p>
+                                </div>
+                                <div className="projects-header-middle">
+                                    <button>
+                                        <label>+ New Project</label>
+                                    </button>
                                 </div>
                                 <div className="projects-header-right">
-                                    <button style={{backgroundColor: this.state.showGoToProjectBtn ? "white" : "", border: this.state.showGoToProjectBtn ? "2px solid #2890b9" : ""}}>
-                                        <CSSTransition
-                                        in={this.state.showNewProjectBtn}
-                                        timeout={{enter: 1500, exit: 0}}
-                                        classNames="dialog-slide-down"
-                                        unmountOnExit
-                                        >
-                                            <label>+ New Project</label>
-                                        </CSSTransition>
-                                        <CSSTransition
-                                        in={this.state.showGoToProjectBtn}
-                                        timeout={{enter: 1500, exit: 0}}
-                                        classNames="dialog-slide-down"
-                                        unmountOnExit
-                                        >
-                                            <label style={{color: this.state.showGoToProjectBtn ? "#2890b9" : ""}}>Go to Project</label>
-                                        </CSSTransition>
-                                        <CSSTransition
-                                        in={this.state.showDeleteProjectsBtn}
-                                        timeout={{enter: 1500, exit: 0}}
-                                        classNames="dialog-slide-down"
-                                        unmountOnExit
-                                        >
-                                            <label style={{color: this.state.showDeleteProjectsBtn ? "red" : ""}}>Delete</label>
-                                        </CSSTransition>
+                                    <button>
+                                        <label>+ New Project</label>
                                     </button>
                                 </div>
                             </div>
