@@ -1625,7 +1625,7 @@ const Styles = styled.div `
 }
 
 .projects-header-middle img {
-    width: 30%;
+    width: 25%;
     margin-top: 11.5%;
     padding: 7%;  
     border-radius: 50%; 
@@ -1635,15 +1635,15 @@ const Styles = styled.div `
 
 .projects-header-middle-right button {
     width: 92%;
-    padding: 4.2%;
-    margin-top: 5.1%;
+    padding: 3.8%;
+    margin-top: 5.5%;
     border-radius: 9px;
     background-color: #2890b9;
     border: 2px solid #2890b9;
     color: white;
     font-family: dm sans;
     cursor: pointer;
-    font-size: 85%;
+    font-size: 80%;
 }
 
 .projects-header-right button {
@@ -1656,7 +1656,7 @@ const Styles = styled.div `
     color: white;
     font-family: dm sans;
     cursor: pointer;
-    font-size: 85%;
+    font-size: 80%;
     margin-right: 7.5%;
 }
 
