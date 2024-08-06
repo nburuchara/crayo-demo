@@ -1567,19 +1567,20 @@ const Styles = styled.div `
     float: left;
     width: 40%;
     text-align: left;
-    // border: 1px solid black;
 }
 
 .projects-header-middle {
     float: left;
-    width: 30%;
+    width: 35%;
     text-align: right;
+    // background-color: black;
 }
 
 .projects-header-right {
-    float: left;
-    width: 30%;
-    text-align: center;
+    float: right;
+    width: 25%;
+    text-align: right;
+    // background-color: yellow;
 }
 
     // # PROJECTS HEADER CONTAINER TEXT
@@ -1606,31 +1607,30 @@ const Styles = styled.div `
     // # PROJECTS HEADER CONTAINER BUTTON
 
 .projects-header-middle button {
-    width: 88%;
-    padding: 6%;
-    margin-top: 5%;
-    border-radius: 8px;
+    width: 65%;
+    padding: 2.3%;
+    margin-top: 4%;
+    border-radius: 9px;
     background-color: #2890b9;
     border: 2px solid #2890b9;
     color: white;
-    font-weight: bold;
     font-family: dm sans;
     cursor: pointer;
     font-size: 85%;
 }
 
 .projects-header-right button {
-    width: 86%;
-    padding: 6%;
+    width: 85%;
+    padding: 3.5%;
     margin-top: 5%;
-    border-radius: 8px;
+    border-radius: 9px;
     background-color: #2890b9;
     border: 2px solid #2890b9;
     color: white;
-    font-weight: bold;
     font-family: dm sans;
     cursor: pointer;
     font-size: 85%;
+    margin-right: 7%;
 }
 
     // # PROJECTS PLACEHOLDER CONTAINER
@@ -1639,8 +1639,9 @@ const Styles = styled.div `
     border: 1px solid #9a9a9a;
     margin-left: 2%;
     margin-right: 2%;
-    height: 74%;
+    height: 77.5%;
     border-radius: 8px;
+    padding-botto
 }
 
 .projects-placeholder img {
@@ -2006,6 +2007,12 @@ export default class Dashboard extends Component {
             popularApp6Hovered: false,
 
                 //! - - SECTION 2 (WINDOW 1 - RIGHT PANE) - - !//
+
+            //* - - PROJECTS BUTTONS - - *//
+            showGoToProjectsBtn: false,
+            showDeleteProjectsBtn: false,
+            showProjectsPlaceholderBtn: true,
+            deletingProjectsCount: 0,
 
             //* - - PROJECTS PLACEHOLDER / LIST - - *//
             showProjectsPlaceholder: false,
@@ -4332,8 +4339,20 @@ export default class Dashboard extends Component {
     }
     project1ListClicked = () => {
         if (this.state.project1Clicked === false) {
-            this.setState({ project1Clicked: true })
+            if (!this.state.project2Clicked && !this.state.project3Clicked && !this.state.project4Clicked && !this.state.project5Clicked && !this.state.project6Clicked && !this.state.project7Clicked && !this.state.project8Clicked && !this.state.project9Clicked && !this.state.project10Clicked) {
+                this.setState({
+                    showDeleteProjectsBtn: false, showGoToProjectsBtn: true, showProjectsPlaceholderBtn: false
+                })
+            } else {
+                this.setState({
+                    showGoToProjectsBtn: false, showDeleteProjectsBtn: true, showProjectsPlaceholderBtn: false
+                })
+            }
+            this.setState({ project1Clicked: true, deletingProjectsCount: this.state.deletingProjectsCount+1 })
         } else {
+            if (!this.state.project2Clicked && !this.state.project3Clicked && !this.state.project4Clicked && !this.state.project5Clicked && !this.state.project6Clicked && !this.state.project7Clicked && !this.state.project8Clicked && !this.state.project9Clicked && !this.state.project10Clicked) {
+
+            }
             this.setState({ project1Clicked: false })
         } 
     }
@@ -5715,14 +5734,33 @@ export default class Dashboard extends Component {
                                     <p style={{marginLeft: "6%"}}>Create a new project.</p>
                                 </div>
                                 <div className="projects-header-middle">
-                                    <button>
-                                        <label>+ New Project</label>
-                                    </button>
+                                <CSSTransition
+                                in={this.state.showGoToProjectsBtn}
+                                timeout={{enter: 1000, exit: 0}}
+                                classNames="dialog-slide-left"
+                                unmountOnExit
+                                >
+                                    <button>Go to Project</button>
+                                </CSSTransition>
+                                <CSSTransition
+                                in={this.state.showDeleteProjectsBtn}
+                                timeout={{enter: 1000, exit: 0}}
+                                classNames="dialog-slide-left"
+                                unmountOnExit
+                                >
+                                    <button>Delete ({this.state.deletingProjectsCount})</button>
+                                </CSSTransition>
+                                <CSSTransition
+                                in={this.state.showProjectsPlaceholderBtn}
+                                timeout={{enter: 1000, exit: 0}}
+                                classNames="dialog-slide-left"
+                                unmountOnExit
+                                >
+                                    <button style={{backgroundColor: "transparent", border: "1px solid transparent", cursor: "default"}}> </button>
+                                </CSSTransition>
                                 </div>
                                 <div className="projects-header-right">
-                                    <button>
-                                        <label>+ New Project</label>
-                                    </button>
+                                    <button>+ New Project</button>
                                 </div>
                             </div>
                             {this.state.showProjectsPlaceholder && 
