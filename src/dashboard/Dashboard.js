@@ -1650,7 +1650,7 @@ const Styles = styled.div `
     width: 92%;
     padding: 3.8%;
     margin-top: 5.5%;
-    border-radius: 9px;
+    border-radius: 7px;
     background-color: #2890b9;
     border: 2px solid #2890b9;
     color: white;
@@ -1663,7 +1663,7 @@ const Styles = styled.div `
     width: 85%;
     padding: 3.5%;
     margin-top: 5%;
-    border-radius: 9px;
+    border-radius: 7px;
     background-color: #2890b9;
     border: 2px solid #2890b9;
     color: white;
