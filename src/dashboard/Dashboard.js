@@ -1991,6 +1991,8 @@ export default class Dashboard extends Component {
             showProjectsPlaceholder: false,
             showProjectsList: true,
 
+            selectAllProjectsHovered: false,
+            selectAllProjectsClicked: false,
             project1Hovered: false,
             project1Clicked: false,
             project2Hovered: false,
@@ -4248,10 +4250,19 @@ export default class Dashboard extends Component {
 
         //* - - WINDOW 1 - - *//
 
+    selectAllProjectsEnter = () => {
+        this.setState({ selectAllProjectsHovered: true })
+    }
+    selectAllProjectsLeave = () => {
+        if (!this.state.selectAllProjectsClicked) {
+            this.setState({ selectAllProjectsHovered: false })
+        }
+    }
     selectAllProjects = () => {
 
         if (!this.state.project2Clicked || !this.state.project3Clicked || !this.state.project4Clicked || !this.state.project5Clicked || !this.state.project6Clicked || !this.state.project7Clicked || !this.state.project8Clicked || !this.state.project9Clicked || !this.state.project10Clicked) {
             this.setState({
+                selectAllProjectsClicked: true,
                 project1Clicked: true,
                 project2Clicked: true,
                 project3Clicked: true,
@@ -4265,16 +4276,27 @@ export default class Dashboard extends Component {
             })
         } else if (this.state.project2Clicked && this.state.project3Clicked && this.state.project4Clicked && this.state.project5Clicked && this.state.project6Clicked && this.state.project7Clicked && this.state.project8Clicked && this.state.project9Clicked && this.state.project10Clicked) {
             this.setState({
+                selectAllProjectsClicked: false,
                 project1Clicked: false,
+                project1Hovered: false,
                 project2Clicked: false,
+                project2Hovered: false,
                 project3Clicked: false,
+                project3Hovered: false,
                 project4Clicked: false,
+                project4Hovered: false,
                 project5Clicked: false,
+                project5Hovered: false,
                 project6Clicked: false,
+                project6Hovered: false,
                 project7Clicked: false,
+                project7Hovered: false,
+                project8Hovered: false,
                 project8Clicked: false,
                 project9Clicked: false,
+                project9Hovered: false,
                 project10Clicked: false,
+                project10Hovered: false,
             })
         }
 
@@ -5673,7 +5695,9 @@ export default class Dashboard extends Component {
                                     <p>Create a new project.</p>
                                 </div>
                                 <div className="projects-header-right">
-                                    <button>+ New Project</button>
+                                    <button>
+                                        <label>+ New Project</label>
+                                    </button>
                                 </div>
                             </div>
                             {this.state.showProjectsPlaceholder && 
@@ -5689,7 +5713,10 @@ export default class Dashboard extends Component {
                                     
                                     <div className="project-list-header">
                                         <div className="project-list-header-1">
-                                            <img onClick={this.selectAllProjects} src="/assets/projects-empty-checkbox-header.png"/>
+                                            <img 
+                                            onMouseEnter={this.selectAllProjectsEnter}
+                                            onMouseLeave={this.selectAllProjectsLeave}
+                                            onClick={this.selectAllProjects} style={{cursor: "pointer"}} src={this.state.selectAllProjectsHovered || this.state.selectAllProjectsClicked ? "/assets/projects-checked-checkbox-header.png" : "/assets/projects-empty-checkbox-header.png"}/>
                                         </div>
                                         <div className="project-list-header-2">
                                             <h5>Project name</h5>
@@ -5711,7 +5738,7 @@ export default class Dashboard extends Component {
                                         style={{backgroundColor: this.state.project1Hovered || this.state.project1Clicked ? "#eef7fd" : ""}}
                                         className="project-list-cell">
                                             <div className="project-list-cell-1">
-                                                <img src={this.state.project1Clicked ? "/assets/projects-checked-checkbox.png" : "/assets/projects-empty-checkbox.png"}/>
+                                                <img src={this.state.project1Hovered || this.state.project1Clicked ? "/assets/projects-checked-checkbox.png" : "/assets/projects-empty-checkbox.png"}/>
                                             </div>
                                             <div className="project-list-cell-2">
                                                 <h5>ChatGPT Video Tester</h5>
@@ -5731,7 +5758,7 @@ export default class Dashboard extends Component {
                                         style={{backgroundColor: this.state.project2Hovered || this.state.project2Clicked ? "#eef7fd" : ""}}
                                         className="project-list-cell">
                                             <div className="project-list-cell-1">
-                                                <img src={this.state.project2Clicked ? "/assets/projects-checked-checkbox.png" : "/assets/projects-empty-checkbox.png"}/>
+                                                <img src={this.state.project2Hovered || this.state.project2Clicked ? "/assets/projects-checked-checkbox.png" : "/assets/projects-empty-checkbox.png"}/>
                                             </div>
                                             <div className="project-list-cell-2">
                                                 <h5>tiktok for Jenny</h5>
@@ -5751,7 +5778,7 @@ export default class Dashboard extends Component {
                                         style={{backgroundColor: this.state.project3Hovered || this.state.project3Clicked ? "#eef7fd" : ""}}
                                         className="project-list-cell">
                                             <div className="project-list-cell-1">
-                                                <img src={this.state.project3Clicked ? "/assets/projects-checked-checkbox.png" : "/assets/projects-empty-checkbox.png"}/>
+                                                <img src={this.state.project3Hovered || this.state.project3Clicked ? "/assets/projects-checked-checkbox.png" : "/assets/projects-empty-checkbox.png"}/>
                                             </div>
                                             <div className="project-list-cell-2">
                                                 <h5>day in the life draft</h5>
@@ -5771,7 +5798,7 @@ export default class Dashboard extends Component {
                                         style={{backgroundColor: this.state.project4Hovered || this.state.project4Clicked ? "#eef7fd" : ""}}
                                         className="project-list-cell">
                                             <div className="project-list-cell-1">
-                                                <img src={this.state.project4Clicked ? "/assets/projects-checked-checkbox.png" : "/assets/projects-empty-checkbox.png"}/>
+                                                <img src={this.state.project4Hovered || this.state.project4Clicked ? "/assets/projects-checked-checkbox.png" : "/assets/projects-empty-checkbox.png"}/>
                                             </div>
                                             <div className="project-list-cell-2">
                                                 <h5>voiceover testing 3</h5>
@@ -5791,7 +5818,7 @@ export default class Dashboard extends Component {
                                         style={{backgroundColor: this.state.project5Hovered || this.state.project5Clicked ? "#eef7fd" : ""}}
                                         className="project-list-cell">
                                             <div className="project-list-cell-1">
-                                                <img src={this.state.project5Clicked ? "/assets/projects-checked-checkbox.png" : "/assets/projects-empty-checkbox.png"}/>
+                                                <img src={this.state.project5Hovered || this.state.project5Clicked ? "/assets/projects-checked-checkbox.png" : "/assets/projects-empty-checkbox.png"}/>
                                             </div>
                                             <div className="project-list-cell-2">
                                                 <h5>voiceover testing 2</h5>
@@ -5811,7 +5838,7 @@ export default class Dashboard extends Component {
                                         style={{backgroundColor: this.state.project6Hovered || this.state.project6Clicked ? "#eef7fd" : ""}}
                                         className="project-list-cell">
                                             <div className="project-list-cell-1">
-                                                <img src={this.state.project6Clicked ? "/assets/projects-checked-checkbox.png" : "/assets/projects-empty-checkbox.png"}/>
+                                                <img src={this.state.project6Hovered || this.state.project6Clicked ? "/assets/projects-checked-checkbox.png" : "/assets/projects-empty-checkbox.png"}/>
                                             </div>
                                             <div className="project-list-cell-2">
                                                 <h5>voiceover testing 1</h5>
@@ -5831,7 +5858,7 @@ export default class Dashboard extends Component {
                                         style={{backgroundColor: this.state.project7Hovered || this.state.project7Clicked ? "#eef7fd" : ""}}
                                         className="project-list-cell">
                                             <div className="project-list-cell-1">
-                                                <img src={this.state.project7Clicked ? "/assets/projects-checked-checkbox.png" : "/assets/projects-empty-checkbox.png"}/>
+                                                <img src={this.state.project7Hovered || this.state.project7Clicked ? "/assets/projects-checked-checkbox.png" : "/assets/projects-empty-checkbox.png"}/>
                                             </div>
                                             <div className="project-list-cell-2">
                                                 <h5>blur vid sample</h5>
@@ -5851,7 +5878,7 @@ export default class Dashboard extends Component {
                                         style={{backgroundColor: this.state.project8Hovered || this.state.project8Clicked ? "#eef7fd" : ""}}
                                         className="project-list-cell">
                                             <div className="project-list-cell-1">
-                                                <img src={this.state.project8Clicked ? "/assets/projects-checked-checkbox.png" : "/assets/projects-empty-checkbox.png"}/>
+                                                <img src={this.state.project8Hovered || this.state.project8Clicked ? "/assets/projects-checked-checkbox.png" : "/assets/projects-empty-checkbox.png"}/>
                                             </div>
                                             <div className="project-list-cell-2">
                                                 <h5>My morning routine</h5>
@@ -5871,7 +5898,7 @@ export default class Dashboard extends Component {
                                         style={{backgroundColor: this.state.project9Hovered || this.state.project9Clicked ? "#eef7fd" : ""}}
                                         className="project-list-cell">
                                             <div className="project-list-cell-1">
-                                                <img src={this.state.project9Clicked ? "/assets/projects-checked-checkbox.png" : "/assets/projects-empty-checkbox.png"}/>
+                                                <img src={this.state.project9Hovered || this.state.project9Clicked ? "/assets/projects-checked-checkbox.png" : "/assets/projects-empty-checkbox.png"}/>
                                             </div>
                                             <div className="project-list-cell-2">
                                                 <h5>Chatgpt NEW tester </h5>
@@ -5891,7 +5918,7 @@ export default class Dashboard extends Component {
                                         style={{backgroundColor: this.state.project10Hovered || this.state.project10Clicked ? "#eef7fd" : ""}}
                                         className="project-list-cell">
                                             <div className="project-list-cell-1">
-                                                <img src={this.state.project10Clicked ? "/assets/projects-checked-checkbox.png" : "/assets/projects-empty-checkbox.png"}/>
+                                                <img src={this.state.project10Hovered || this.state.project10Clicked ? "/assets/projects-checked-checkbox.png" : "/assets/projects-empty-checkbox.png"}/>
                                             </div>
                                             <div className="project-list-cell-2">
                                                 <h5>Chatgpt tester </h5>
