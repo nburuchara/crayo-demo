@@ -2054,6 +2054,8 @@ export default class Dashboard extends Component {
             showProjectsPlaceholderBtn: true,
             deletingProjectsCount: 0,
             deleteSingleItemHovered: false,
+            deleteProjectBtnHovered: false,
+            goToProjectsBtnHovered: false,
 
             //* - - PROJECTS PLACEHOLDER / LIST - - *//
             showProjectsPlaceholder: false,
@@ -4321,9 +4323,23 @@ export default class Dashboard extends Component {
     deleteSingleItemEnter = () => {
         this.setState({ deleteSingleItemHovered: true })
     }
-
     deleteSingleItemLeave = () => {
         this.setState({ deleteSingleItemHovered: false })
+    }
+
+    deleteProjectBtnEnter = () => {
+        this.setState({ deleteProjectBtnHovered: true })
+    }
+    deleteProjectBtnLeave = () => {
+        this.setState({ deleteProjectBtnHovered: false })
+    }
+
+    goToProjectBtnEnter = () => {
+        this.setState({ goToProjectsBtnHovered: true })
+    }
+
+    goToProjectBtnLeave = () => {
+        this.setState({ goToProjectsBtnHovered: false })
     }
 
     selectAllProjectsEnter = () => {
@@ -4886,6 +4902,8 @@ export default class Dashboard extends Component {
         }
         
     }
+
+
 
         //* - - WINDOW 2 - - *//
 
@@ -6128,7 +6146,11 @@ export default class Dashboard extends Component {
                                                 </span> 
                                             </div>
                                             <div className="projects-header-middle-right">
-                                                <button>Go to Project</button>
+                                                <button
+                                                onMouseEnter={this.goToProjectBtnEnter}
+                                                onMouseLeave={this.goToProjectBtnLeave}
+                                                style={{backgroundColor: this.state.goToProjectsBtnHovered ? "#2890b9" : "white", color: this.state.goToProjectsBtnHovered ? "white" : "#2890b9", border: "1px solid #2890b9", fontWeight: this.state.goToProjectsBtnHovered ? "bold" : "", padding: "4.8%"}}
+                                                >Go to Project</button>
                                             </div>
                                         </div>
                                     </CSSTransition>
@@ -6147,8 +6169,11 @@ export default class Dashboard extends Component {
                                                     style={{backgroundColor: "#ffe1e1", cursor: "default"}} src="/assets/delete-multiple-projects-icon.png"/>
                                                 </span> 
                                             </div>
-                                            <div className="projects-header-middle-right">
-                                                <button style={{backgroundColor: "white", color: "#da3e3e", fontWeight: "bold", border: "1px solid #da3e3e", padding: "4.8%"}}>Delete ({this.state.deletingProjectsCount})</button>
+                                            <div 
+                                            onMouseEnter={this.deleteProjectBtnEnter}
+                                            onMouseLeave={this.deleteProjectBtnLeave}
+                                            className="projects-header-middle-right">
+                                                <button style={{backgroundColor: this.state.deleteProjectBtnHovered ? "#da3e3e" : "white", color: this.state.deleteProjectBtnHovered  ? "white" : "#da3e3e", fontWeight: "bold", border: "1px solid #da3e3e", padding: "4.8%"}}>Delete ({this.state.deletingProjectsCount})</button>
                                             </div>
                                         </div>
                                     </CSSTransition>
