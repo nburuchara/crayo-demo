@@ -1472,8 +1472,8 @@ const Styles = styled.div `
 // # PROJECTS COLUMN 1 CELL (CHECKBOX)
 
 .project-list-cell-1 img {
-    margin-top: 8.1% !important;
-    width: 50% !important;
+    margin-top: 4% !important;
+    width: 45% !important;
 }
 
     // # PROJECTS COLUMN 2 CELL (PROJECT NAME)
