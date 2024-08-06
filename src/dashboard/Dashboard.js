@@ -1987,6 +1987,11 @@ export default class Dashboard extends Component {
 
                 //! - - SECTION 2 (WINDOW 1 - RIGHT PANE) - - !//
 
+            //* - - PROJECTS BUTTON TEXT - - *//
+            showNewProjectBtn: true,
+            showGoToProjectBtn: false,
+            showDeleteProjectsBtn: false,
+
             //* - - PROJECTS PLACEHOLDER / LIST - - *//
             showProjectsPlaceholder: false,
             showProjectsList: true,
@@ -4312,8 +4317,18 @@ export default class Dashboard extends Component {
     }
     project1ListClicked = () => {
         if (this.state.project1Clicked === false) {
+            if (this.state.project2Clicked === false && this.state.project3Clicked === false && this.state.project4Clicked === false && this.state.project5Clicked === false && this.state.project6Clicked === false && this.state.project7Clicked === false && this.state.project8Clicked === false && this.state.project9Clicked === false && this.state.project10Clicked === false) {
+                this.setState({ showNewProjectBtn: false, showGoToProjectBtn: true })
+            } else {
+                //* show delete button
+            }
             this.setState({ project1Clicked: true })
         } else {
+            if (this.state.project2Clicked === false && this.state.project3Clicked === false && this.state.project4Clicked === false && this.state.project5Clicked === false && this.state.project6Clicked === false && this.state.project7Clicked === false && this.state.project8Clicked === false && this.state.project9Clicked === false && this.state.project10Clicked === false) {
+                this.setState({ showNewProjectBtn: true, showGoToProjectBtn: false })
+            } else {
+                //* show delete button
+            }
             this.setState({ project1Clicked: false })
         } 
     }
@@ -5695,8 +5710,31 @@ export default class Dashboard extends Component {
                                     <p>Create a new project.</p>
                                 </div>
                                 <div className="projects-header-right">
-                                    <button>
-                                        <label>+ New Project</label>
+                                    <button style={{backgroundColor: this.state.showGoToProjectBtn ? "white" : "", border: this.state.showGoToProjectBtn ? "2px solid #2890b9" : ""}}>
+                                        <CSSTransition
+                                        in={this.state.showNewProjectBtn}
+                                        timeout={{enter: 1500, exit: 0}}
+                                        classNames="dialog-slide-down"
+                                        unmountOnExit
+                                        >
+                                            <label>+ New Project</label>
+                                        </CSSTransition>
+                                        <CSSTransition
+                                        in={this.state.showGoToProjectBtn}
+                                        timeout={{enter: 1500, exit: 0}}
+                                        classNames="dialog-slide-down"
+                                        unmountOnExit
+                                        >
+                                            <label style={{color: this.state.showGoToProjectBtn ? "#2890b9" : ""}}>Go to Project</label>
+                                        </CSSTransition>
+                                        <CSSTransition
+                                        in={this.state.showDeleteProjectsBtn}
+                                        timeout={{enter: 1500, exit: 0}}
+                                        classNames="dialog-slide-down"
+                                        unmountOnExit
+                                        >
+                                            <label style={{color: this.state.showDeleteProjectsBtn ? "red" : ""}}>Delete</label>
+                                        </CSSTransition>
                                     </button>
                                 </div>
                             </div>
