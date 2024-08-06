@@ -5705,7 +5705,7 @@ export default class Dashboard extends Component {
                                                         <span style={{backgroundColor: this.state.latestProject1Hovered ? "#2890b9" : "#8a8a8a"}}>ChatGPT Video</span>
                                                     </div>
                                                     <div className="session-item-details-right">
-                                                        <p style={{color: this.state.latestProject1Hovered ? "#000000" : "#5e626a"}}><span style={{color: "#2890b9"}}>⨀</span> 18:02pm 08/05/24</p>
+                                                        <p style={{color: this.state.latestProject1Hovered ? "#000000" : "#5e626a"}}><span style={{color: "#2890b9"}}>✎</span> 18:02pm 08/05/24</p>
                                                     </div>
                                                 </div>
                                                 <label style={{textAlign: "left"}}>Testing the cgpt vid feature. Generated moving neon grid floor, a likes counter and morphing shape.</label>
@@ -5726,7 +5726,7 @@ export default class Dashboard extends Component {
                                                         <span style={{backgroundColor: this.state.latestProject2Hovered ? "#2890b9" : "#8a8a8a"}}>Split Video</span>
                                                     </div>
                                                     <div className="session-item-details-right">
-                                                        <p style={{color: this.state.latestProject2Hovered ? "#000000" : "#5e626a"}}><span style={{color: "#2890b9"}}>⨀</span> 11:35am 08/05/24</p>
+                                                        <p style={{color: this.state.latestProject2Hovered ? "#000000" : "#5e626a"}}><span style={{color: "#2890b9"}}>✎</span> 11:35am 08/05/24</p>
                                                     </div>
                                                 </div>
                                                 <label style={{textAlign: "left"}}>Second post for jenny's new account. DEADLINE: 08/10 3pm (latest).</label>
@@ -5747,7 +5747,7 @@ export default class Dashboard extends Component {
                                                         <span style={{backgroundColor: this.state.latestProject3Hovered ? "#2890b9" : "#8a8a8a"}}>Voiceover Video</span>
                                                     </div>
                                                     <div className="session-item-details-right">
-                                                        <p style={{color: this.state.latestProject3Hovered ? "#000000" : "#5e626a"}}><span style={{color: "#2890b9"}}>⨀</span> 02:09am 08/03/24</p>
+                                                        <p style={{color: this.state.latestProject3Hovered ? "#000000" : "#5e626a"}}><span style={{color: "#2890b9"}}>✎</span> 02:09am 08/03/24</p>
                                                     </div>
                                                 </div>
                                                 <label style={{textAlign: "left"}}>my first draft for my day in the life vid. </label>
