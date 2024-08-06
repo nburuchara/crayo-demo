@@ -1343,8 +1343,13 @@ const Styles = styled.div `
 
     //! - - Sections 2 (V2 Window 1 - right pane) - - !//
 
+    // - - PROJECT LIST - - //
+
 .project-list-header {
-    border: 1px solid black !important;
+    background-color: #2890b9;
+    // border: 1px solid black !important;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
 }
 
 .project-list-header:after {
@@ -1357,32 +1362,72 @@ const Styles = styled.div `
     float: left;
     width: 10%;
     text-align: center;
+    // border: 1px solid black;
 }
 
 .project-list-header-2 {
     float: left;
-    width: 45%;
-    text-align: center;
+    width: 32%;
+    text-align: left;
+    // border-right: 1px solid white;
 }
 
 .project-list-header-3 {
     float: left;
-    width: 15%;
-    text-align: center;
+    width: 25%;
+    text-align: left;
+    // border-right: 1px solid white;
 }
 
 .project-list-header-4 {
     float: left;
-    width: 15%;
-    text-align: center;
+    width: 30%;
+    text-align: left;
+    // border-right: 1px solid white;
 }
 
-.project-list-header-5 {
-    float: left;
-    width: 15%;
-    text-align: center;
+    // # PROJECTS COLUMN 1 HEADER (CHECKBOX)
+
+.project-list-header-1 img {
+    margin-top: 8.1% !important;
+    width: 50% !important;
 }
 
+    // # PROJECTS COLUMN 2 HEADER (PROJECT NAME)
+
+.project-list-header-2 h5 {
+    margin-top: 5.8%;
+    margin-bottom: 6%;
+    font-family: dm sans;
+    margin-left: 5%;
+    color: white;
+    font-weight: normal;
+}
+
+    // # PROJECTS COLUMN 3 HEADER (CONTENT TYPE)
+
+.project-list-header-3 h5 {
+    margin-top: 7.3%;
+    margin-bottom: 6%;
+    font-family: dm sans;
+    margin-left: 8%;
+    color: white;
+    font-weight: normal;
+}
+
+    // # PROJECTS COLUMN 4 HEADER (LAST EDITED)
+
+.project-list-header-4 h5 {
+    margin-top: 6%;
+    margin-bottom: 5%;
+    font-family: dm sans;
+    margin-left: 8%;
+    color: white;
+    font-weight: normal;
+}
+
+
+    // # PROJECTS COLUMN 4 (LAST EDITED)
 
     //! - - Section 2 (right pane) - - //
 
@@ -5332,19 +5377,30 @@ export default class Dashboard extends Component {
                                 <div className="projects-placeholder">
                                     <div className="project-list-header">
                                         <div className="project-list-header-1">
-                                            <p><img/></p>
+                                            <img src="/assets/projects-empty-checkbox-header.png"/>
                                         </div>
                                         <div className="project-list-header-2">
-
+                                            <h5>Project name</h5>
                                         </div>
                                         <div className="project-list-header-3">
-
+                                            <h5>Content Type</h5>
                                         </div>
                                         <div className="project-list-header-4">
-
+                                            <h5>Last edited</h5>
                                         </div>
-                                        <div className="project-list-header-5">
-
+                                    </div>
+                                    <div className="project-list-cell">
+                                        <div className="project-list-cell-1">
+                                            <img src="/assets/projects-empty-checkbox-header.png"/>
+                                        </div>
+                                        <div className="project-list-cell-2">
+                                            <p>ChatGPT Video Tester</p>
+                                        </div>
+                                        <div className="project-list-cell-3">
+                                            <p>ChatGPT Video</p>
+                                        </div>
+                                        <div className="project-list-cell-4">
+                                            <p>18:02 pm</p>
                                         </div>
                                     </div>
                                 </div>
