@@ -767,7 +767,7 @@ const Styles = styled.div `
 
 .session-item-details-left {
     float: left;
-    width: 35%;
+    width: 45%;
     text-align: left;
     // border-right: 1px solid black;
     height: 100%;
@@ -775,7 +775,7 @@ const Styles = styled.div `
 
 .session-item-details-right {
     float: left;
-    width: 65%;
+    width: 55%;
     text-align: right;
     // border-right: 1px solid black;
 }
@@ -787,7 +787,7 @@ const Styles = styled.div `
     // all: unset !important;
     margin-top: 0px !important;
     // background-color: #8a8a8a !important;
-    font-size: 50% !important;
+    font-size: 45% !important;
     font-family: dm sans !important;
     color: white !important;
     padding: 3% !important;
@@ -803,7 +803,7 @@ const Styles = styled.div `
 .session-item-details-right p { 
     text-align: right !important;
     color: black !important;
-    font-size: 60% !important;
+    font-size: 50% !important;
     margin-top: 5.8% !important;
 }
 
@@ -4857,7 +4857,7 @@ export default class Dashboard extends Component {
                                                         <span style={{backgroundColor: this.state.latestProject1Hovered ? "#2890b9" : "#8a8a8a"}}>ChatGPT Video</span>
                                                     </div>
                                                     <div className="session-item-details-right">
-                                                        <p><span style={{color: "#2890b9"}}>Last edited:</span> 18:02pm 08/05/24</p>
+                                                        <p><span style={{color: "#2890b9"}}>Updated:</span> 18:02pm 08/05/24</p>
                                                     </div>
                                                 </div>
                                                 <label style={{textAlign: "left"}}>Testing the cgpt vid feature. Generated moving neon grid floor...</label>
@@ -4878,7 +4878,7 @@ export default class Dashboard extends Component {
                                                         <span style={{backgroundColor: this.state.latestProject2Hovered ? "#2890b9" : "#8a8a8a"}}>Split Video</span>
                                                     </div>
                                                     <div className="session-item-details-right">
-                                                        <p><span style={{color: "#2890b9"}}>Last edited:</span> 18:02pm 08/05/24</p>
+                                                        <p><span style={{color: "#2890b9"}}>Updated:</span> 18:02pm 08/05/24</p>
                                                     </div>
                                                 </div>
                                                 <label style={{textAlign: "left"}}>Tiktok draft for jenny's new account. DEADLINE: 08/10 3pm.</label>
@@ -4899,7 +4899,7 @@ export default class Dashboard extends Component {
                                                         <span style={{backgroundColor: this.state.latestProject3Hovered ? "#2890b9" : "#8a8a8a"}}>Voiceover Video</span>
                                                     </div>
                                                     <div className="session-item-details-right">
-                                                        <p><span style={{color: "#2890b9"}}>Last edited:</span> 02:02am 08/03/24</p>
+                                                        <p><span style={{color: "#2890b9"}}>Updated:</span> 02:02am 08/03/24</p>
                                                     </div>
                                                 </div>
                                                 <label style={{textAlign: "left"}}>my first draft for my day in the life vid. </label>
