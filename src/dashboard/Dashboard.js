@@ -269,7 +269,6 @@ const Styles = styled.div `
 }
 
     //! - - Left pane footer - - !//
-    
 
 .left-pane-footer-container {
     position: absolute;
@@ -316,6 +315,15 @@ const Styles = styled.div `
     margin-top: 0px;
     padding-top: 21%;
     color: white;
+}
+
+.left-pane-footer-right p {
+    margin-top: 7%;
+    margin-bottom: 0px;
+    font-size: 65%;
+    font-family: dm sans;
+    font-weight: bold;
+    color: #5e626a;
 }
 
     //! - - (Navbar - SHRANK) - - //
