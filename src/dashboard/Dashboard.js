@@ -1430,9 +1430,11 @@ const Styles = styled.div `
 
 
 .project-list-cell {
-    // border: 1px solid black !important;
+    border-bottom: 1px solid #8a8a8a !important;
     border-top-left-radius: 6px;
     border-top-right-radius: 6px;
+    padding-top: 0.7%;
+    padding-bottom: 0.3%;
 }
 
 .project-list-cell:after {
@@ -1445,53 +1447,53 @@ const Styles = styled.div `
     float: left;
     width: 10%;
     text-align: center;
-    // border: 1px solid black;
 }
 
 .project-list-cell-2 {
     float: left;
     width: 32%;
     text-align: left;
-    // border-right: 1px solid white;
 }
 
 .project-list-cell-3 {
     float: left;
     width: 25%;
     text-align: left;
-    // border-right: 1px solid white;
 }
 
 .project-list-cell-4 {
     float: left;
     width: 30%;
     text-align: left;
-    // border-right: 1px solid white;
 }
 
 // # PROJECTS COLUMN 1 CELL (CHECKBOX)
 
 .project-list-cell-1 img {
-    margin-top: 4% !important;
+    margin-top: 5% !important;
+    margin-left: 2% !important;
     width: 45% !important;
+    margin-bottom: 3%;
 }
 
     // # PROJECTS COLUMN 2 CELL (PROJECT NAME)
 
 .project-list-cell-2 h5 {
-    margin-top: 3.85%;
+    margin-top: 3.9%;
     font-family: dm sans;
     margin-left: 5%;
     font-weight: normal;
+    margin-bottom: 4.5%;
 }
 
     // # PROJECTS COLUMN 3 CELL (CONTENT TYPE)
 
 .project-list-cell-3 h5 {
-    margin-top: 5%;
+    margin-top: 5.1%;
     font-family: dm sans;
     margin-left: 8%;
     font-weight: normal;
+    margin-bottom: 4.5%;
 }
 
     // # PROJECTS COLUMN 4 CELL (LAST EDITED)
@@ -1501,6 +1503,7 @@ const Styles = styled.div `
     font-family: dm sans;
     margin-left: 8%;
     font-weight: normal;
+    margin-bottom: 4.5%;
 }
 
     //! - - Section 2 (right pane) - - //
@@ -5034,7 +5037,7 @@ export default class Dashboard extends Component {
                                                         <p><span style={{color: "#2890b9"}}>Last edited:</span> 18:02pm 08/05/24</p>
                                                     </div>
                                                 </div>
-                                                <label style={{textAlign: "left"}}>Testing the cgpt vid feature. Generated moving neon grid floor, likes counter and morphing shape.</label>
+                                                <label style={{textAlign: "left"}}>Testing the cgpt vid feature. Generated moving neon grid floor, a likes counter and morphing shape.</label>
                                             </div>
                                         </div>
                                         <div 
@@ -5052,7 +5055,7 @@ export default class Dashboard extends Component {
                                                         <span style={{backgroundColor: this.state.latestProject2Hovered ? "#2890b9" : "#8a8a8a"}}>Split Video</span>
                                                     </div>
                                                     <div className="session-item-details-right">
-                                                        <p><span style={{color: "#2890b9"}}>Last edited:</span> 11:32am 08/05/24</p>
+                                                        <p><span style={{color: "#2890b9"}}>Last edited:</span> 11:35am 08/05/24</p>
                                                     </div>
                                                 </div>
                                                 <label style={{textAlign: "left"}}>Second post for jenny's new account. DEADLINE: 08/10 3pm (latest).</label>
@@ -5073,7 +5076,7 @@ export default class Dashboard extends Component {
                                                         <span style={{backgroundColor: this.state.latestProject3Hovered ? "#2890b9" : "#8a8a8a"}}>Voiceover Video</span>
                                                     </div>
                                                     <div className="session-item-details-right">
-                                                        <p><span style={{color: "#2890b9"}}>Last edited:</span> 02:02am 08/03/24</p>
+                                                        <p><span style={{color: "#2890b9"}}>Last edited:</span> 02:09am 08/03/24</p>
                                                     </div>
                                                 </div>
                                                 <label style={{textAlign: "left"}}>my first draft for my day in the life vid. </label>
@@ -5449,6 +5452,9 @@ export default class Dashboard extends Component {
                             }
                             {this.state.showProjectsList && 
                                 <div className="projects-placeholder">
+
+                                    {/* - - TABLE HEADER - -  */}
+
                                     <div className="project-list-header">
                                         <div className="project-list-header-1">
                                             <img src="/assets/projects-empty-checkbox-header.png"/>
@@ -5463,6 +5469,9 @@ export default class Dashboard extends Component {
                                             <h5>Last edited</h5>
                                         </div>
                                     </div>
+
+                                    {/* - - TABLE BODY - -  */}
+
                                     <div className="project-list-cell">
                                         <div className="project-list-cell-1">
                                             <img src="/assets/projects-empty-checkbox.png"/>
@@ -5474,9 +5483,40 @@ export default class Dashboard extends Component {
                                             <h5>ChatGPT Video</h5>
                                         </div>
                                         <div className="project-list-cell-4">
-                                            <h5>18:02 pm</h5>
+                                            <h5>18:02pm 08/12/24</h5>
                                         </div>
                                     </div>
+
+                                    <div className="project-list-cell">
+                                        <div className="project-list-cell-1">
+                                            <img src="/assets/projects-empty-checkbox.png"/>
+                                        </div>
+                                        <div className="project-list-cell-2">
+                                            <h5>tiktok for Jenny</h5>
+                                        </div>
+                                        <div className="project-list-cell-3">
+                                            <h5>Split Video</h5>
+                                        </div>
+                                        <div className="project-list-cell-4">
+                                            <h5>11:35pm 08/12/24</h5>
+                                        </div>
+                                    </div>
+
+                                    <div className="project-list-cell">
+                                        <div className="project-list-cell-1">
+                                            <img src="/assets/projects-empty-checkbox.png"/>
+                                        </div>
+                                        <div className="project-list-cell-2">
+                                            <h5>day in the life draft</h5>
+                                        </div>
+                                        <div className="project-list-cell-3">
+                                            <h5>Voiceover Video</h5>
+                                        </div>
+                                        <div className="project-list-cell-4">
+                                            <h5>02:09am 08/03/24</h5>
+                                        </div>
+                                    </div>
+
                                 </div>
                             }
                         </div>
