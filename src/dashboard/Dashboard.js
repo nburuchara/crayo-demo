@@ -384,8 +384,8 @@ const Styles = styled.div `
 }
 
 .right-pane-header-left input:focus {
-    outline: 2px solid #2980b9;
-    border: 1px solid #2980b9;
+    outline: 2px solid #2890B9;
+    border: 1px solid #2890B9;
 }
 
 
@@ -788,7 +788,7 @@ const Styles = styled.div `
     margin-top: 0px !important;
     // margin-bottom: 1.5% !important;
     // background-color: #8a8a8a !important;
-    font-size: 55% !important;
+    font-size: 60% !important;
     font-family: dm sans !important;
     color: white !important;
     padding: 3% !important;
@@ -803,7 +803,6 @@ const Styles = styled.div `
 
 .session-item-details-right p { 
     text-align: right !important;
-    color: #5e626a !important;
     font-size: 62% !important;
     margin-top: 5.8% !important;
     margin-top: 2% !important;
@@ -965,7 +964,7 @@ const Styles = styled.div `
   }
   
   .wash-button:hover {
-    background-color: #2980b9; /* Change background color on hover */
+    background-color: #2890B9; /* Change background color on hover */
     color: white;
     width: 48%;
   }
@@ -1046,7 +1045,7 @@ const Styles = styled.div `
     margin-left: 5%;
     font-weight: bold;
     font-family: dm sans;
-    color: #2980b9;
+    color: #2890B9;
 }
 
     // - TUTORIAL CONTAINER - //
@@ -1094,7 +1093,7 @@ const Styles = styled.div `
     margin-left: 5%;
     font-weight: bold;
     font-family: dm sans;
-    color: #2980b9;
+    color: #2890B9;
 }
 
     // # TUTORIAL HEADER IMG
@@ -1178,9 +1177,9 @@ const Styles = styled.div `
     // # TUTORIAL CELL MAIN TEXT
 
 .tutorial-cell-right h5 {
-    margin-top: 2%;
+    margin-top: 0%;
     margin-bottom: 1%;
-    font-size: 75%;
+    font-size: 80%;
     margin-left: 5%;
     margin-right: 5%;
     font-family: dm sans;
@@ -1226,7 +1225,7 @@ const Styles = styled.div `
     margin-top: 6%;
     margin-bottom: 0px;
     font-size: 75%;
-    color: #2980B9;
+    color: #2890B9;
     font-weight: 900;
 }
 
@@ -1245,9 +1244,9 @@ const Styles = styled.div `
 }
 
 .tutorial-cell-header button:hover {
-    background-color: #2980B9;
+    background-color: #2890B9;
     color: white;
-    border: 2px solid #2980B9;
+    border: 2px solid #2890B9;
 }
 
     // # TUTORIAL FOOTER
@@ -1282,7 +1281,7 @@ const Styles = styled.div `
     margin-left: 4%;
     font-weight: bold;
     font-family: dm sans;
-    color: #2980b9;
+    color: #2890B9;
 }
 
     // - POPULAR APPS - //
@@ -3986,7 +3985,7 @@ export default class Dashboard extends Component {
             const highlightedName = (
                 <span>
                     {option.name.substring(0, startIndex)}
-                    <span style={{ fontWeight: "bold", color: "#2980b9" }}>
+                    <span style={{ fontWeight: "bold", color: "#2890B9" }}>
                         {option.name.substring(startIndex, endIndex)}
                     </span>
                     {option.name.substring(endIndex)}
@@ -4083,10 +4082,10 @@ export default class Dashboard extends Component {
     tutorialCell1Enter = () => {
         this.setState({
             tutorialCell1Hovered: true,
-            tutorialCell1BorderColor: "#2980B9",
+            tutorialCell1BorderColor: "#2890B9",
             tutorialCell1MainTextColor: "",
-            tutorialCell1TimerColor: "#2980B9",
-            tutorialCell1ImgBgColor: "#2980B9"
+            tutorialCell1TimerColor: "#2890B9",
+            tutorialCell1ImgBgColor: "#2890B9"
         })
     }
     tutorialCell1Leave = () => {
@@ -4103,10 +4102,10 @@ export default class Dashboard extends Component {
     tutorialCell2Enter = () => {
         this.setState({
             tutorialCell2Hovered: true,
-            tutorialCell2BorderColor: "#2980B9",
+            tutorialCell2BorderColor: "#2890B9",
             tutorialCell2MainTextColor: "",
-            tutorialCell2TimerColor: "#2980B9",
-            tutorialCell2ImgBgColor: "#2980B9"
+            tutorialCell2TimerColor: "#2890B9",
+            tutorialCell2ImgBgColor: "#2890B9"
         })
     }
     tutorialCell2Leave = () => {
@@ -4123,10 +4122,10 @@ export default class Dashboard extends Component {
     tutorialCell3Enter = () => {
         this.setState({
             tutorialCell3Hovered: true,
-            tutorialCell3BorderColor: "#2980B9",
+            tutorialCell3BorderColor: "#2890B9",
             tutorialCell3MainTextColor: "",
-            tutorialCell3TimerColor: "#2980B9",
-            tutorialCell3ImgBgColor: "#2980B9"
+            tutorialCell3TimerColor: "#2890B9",
+            tutorialCell3ImgBgColor: "#2890B9"
         })
     }
     tutorialCell3Leave = () => {
@@ -4143,10 +4142,10 @@ export default class Dashboard extends Component {
     tutorialCell4Enter = () => {
         this.setState({
             tutorialCell4Hovered: true,
-            tutorialCell4BorderColor: "#2980B9",
+            tutorialCell4BorderColor: "#2890B9",
             tutorialCell4MainTextColor: "",
-            tutorialCell4TimerColor: "#2980B9",
-            tutorialCell4ImgBgColor: "#2980B9"
+            tutorialCell4TimerColor: "#2890B9",
+            tutorialCell4ImgBgColor: "#2890B9"
         })
     }
     tutorialCell4Leave = () => {
@@ -4163,10 +4162,10 @@ export default class Dashboard extends Component {
     tutorialCell5Enter = () => {
         this.setState({
             tutorialCell5Hovered: true,
-            tutorialCell5BorderColor: "#2980B9",
+            tutorialCell5BorderColor: "#2890B9",
             tutorialCell5MainTextColor: "",
-            tutorialCell5TimerColor: "#2980B9",
-            tutorialCell5ImgBgColor: "#2980B9"
+            tutorialCell5TimerColor: "#2890B9",
+            tutorialCell5ImgBgColor: "#2890B9"
         })
     }
     tutorialCell5Leave = () => {
@@ -4183,10 +4182,10 @@ export default class Dashboard extends Component {
     tutorialCell6Enter = () => {
         this.setState({
             tutorialCell6Hovered: true,
-            tutorialCell6BorderColor: "#2980B9",
+            tutorialCell6BorderColor: "#2890B9",
             tutorialCell6MainTextColor: "",
-            tutorialCell6TimerColor: "#2980B9",
-            tutorialCell6ImgBgColor: "#2980B9"
+            tutorialCell6TimerColor: "#2890B9",
+            tutorialCell6ImgBgColor: "#2890B9"
         })
     }
     tutorialCell6Leave = () => {
@@ -4203,10 +4202,10 @@ export default class Dashboard extends Component {
     tutorialCell7Enter = () => {
         this.setState({
             tutorialCell7Hovered: true,
-            tutorialCell7BorderColor: "#2980B9",
+            tutorialCell7BorderColor: "#2890B9",
             tutorialCell7MainTextColor: "",
-            tutorialCell7TimerColor: "#2980B9",
-            tutorialCell7ImgBgColor: "#2980B9"
+            tutorialCell7TimerColor: "#2890B9",
+            tutorialCell7ImgBgColor: "#2890B9"
         })
     }
     tutorialCell7Leave = () => {
@@ -4223,10 +4222,10 @@ export default class Dashboard extends Component {
     tutorialCell8Enter = () => {
         this.setState({
             tutorialCell8Hovered: true,
-            tutorialCell8BorderColor: "#2980B9",
+            tutorialCell8BorderColor: "#2890B9",
             tutorialCell8MainTextColor: "",
-            tutorialCell8TimerColor: "#2980B9",
-            tutorialCell8ImgBgColor: "#2980B9"
+            tutorialCell8TimerColor: "#2890B9",
+            tutorialCell8ImgBgColor: "#2890B9"
         })
     }
     tutorialCell8Leave = () => {
@@ -5703,7 +5702,7 @@ export default class Dashboard extends Component {
                                                         <span style={{backgroundColor: this.state.latestProject1Hovered ? "#2890b9" : "#8a8a8a"}}>ChatGPT Video</span>
                                                     </div>
                                                     <div className="session-item-details-right">
-                                                        <p><span style={{color: "#2890b9"}}>⨀</span> 18:02pm 08/05/24</p>
+                                                        <p style={{color: this.state.latestProject1Hovered ? "#000000" : "#5e626a"}}><span style={{color: "#2890b9"}}>⨀</span> 18:02pm 08/05/24</p>
                                                     </div>
                                                 </div>
                                                 <label style={{textAlign: "left"}}>Testing the cgpt vid feature. Generated moving neon grid floor, a likes counter and morphing shape.</label>
@@ -5724,7 +5723,7 @@ export default class Dashboard extends Component {
                                                         <span style={{backgroundColor: this.state.latestProject2Hovered ? "#2890b9" : "#8a8a8a"}}>Split Video</span>
                                                     </div>
                                                     <div className="session-item-details-right">
-                                                        <p><span style={{color: "#2890b9"}}>⨀</span> 11:35am 08/05/24</p>
+                                                        <p style={{color: this.state.latestProject2Hovered ? "#000000" : "#5e626a"}}><span style={{color: "#2890b9"}}>⨀</span> 11:35am 08/05/24</p>
                                                     </div>
                                                 </div>
                                                 <label style={{textAlign: "left"}}>Second post for jenny's new account. DEADLINE: 08/10 3pm (latest).</label>
@@ -5745,7 +5744,7 @@ export default class Dashboard extends Component {
                                                         <span style={{backgroundColor: this.state.latestProject3Hovered ? "#2890b9" : "#8a8a8a"}}>Voiceover Video</span>
                                                     </div>
                                                     <div className="session-item-details-right">
-                                                        <p><span style={{color: "#2890b9"}}>⨀</span> 02:09am 08/03/24</p>
+                                                        <p style={{color: this.state.latestProject3Hovered ? "#000000" : "#5e626a"}}><span style={{color: "#2890b9"}}>⨀</span> 02:09am 08/03/24</p>
                                                     </div>
                                                 </div>
                                                 <label style={{textAlign: "left"}}>my first draft for my day in the life vid. </label>
