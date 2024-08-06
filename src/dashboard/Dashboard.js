@@ -4398,7 +4398,7 @@ export default class Dashboard extends Component {
                     this.setState({
                         showDeleteProjectsBtn: true
                     })
-                }, 1100)
+                }, 600)
             }
             this.setState({ project1Clicked: true, deletingProjectsCount: this.state.deletingProjectsCount+1 })
         } else {
@@ -4416,7 +4416,7 @@ export default class Dashboard extends Component {
                             this.setState({
                                 showGoToProjectsBtn: true
                             })
-                        }, 1100)
+                        }, 600)
                     }
                 })
             }
@@ -4446,7 +4446,7 @@ export default class Dashboard extends Component {
                     this.setState({
                         showDeleteProjectsBtn: true
                     })
-                }, 1100)
+                }, 600)
             }
             this.setState({ project2Clicked: true, deletingProjectsCount: this.state.deletingProjectsCount+1 })
         } else {
@@ -4464,7 +4464,7 @@ export default class Dashboard extends Component {
                             this.setState({
                                 showGoToProjectsBtn: true
                             })
-                        }, 1100)
+                        }, 600)
                     }
                 })
             }
@@ -4483,8 +4483,40 @@ export default class Dashboard extends Component {
     }
     project3ListClicked = () => {
         if (this.state.project3Clicked === false) {
-            this.setState({ project3Clicked: true })
+            if (!this.state.project1Clicked && !this.state.project2Clicked && !this.state.project4Clicked && !this.state.project5Clicked && !this.state.project6Clicked && !this.state.project7Clicked && !this.state.project8Clicked && !this.state.project9Clicked && !this.state.project10Clicked) {
+                this.setState({
+                    showDeleteProjectsBtn: false, showGoToProjectsBtn: true, showProjectsPlaceholderBtn: false
+                })
+            } else {
+                this.setState({
+                    showGoToProjectsBtn: false, showProjectsPlaceholderBtn: false
+                })
+                setTimeout(() => {
+                    this.setState({
+                        showDeleteProjectsBtn: true
+                    })
+                }, 600)
+            }
+            this.setState({ project3Clicked: true, deletingProjectsCount: this.state.deletingProjectsCount+1 })
         } else {
+            if (!this.state.project1Clicked && !this.state.project2Clicked && !this.state.project4Clicked && !this.state.project5Clicked && !this.state.project6Clicked && !this.state.project7Clicked && !this.state.project8Clicked && !this.state.project9Clicked && !this.state.project10Clicked) {
+                this.setState({
+                    showProjectsPlaceholderBtn: true, showGoToProjectsBtn: false, deletingProjectsCount: this.state.deletingProjectsCount-1
+                })
+            } else {
+                this.setState({ deletingProjectsCount: this.state.deletingProjectsCount-1 }, () => {
+                    if (this.state.deletingProjectsCount === 1) {
+                        this.setState({
+                            showDeleteProjectsBtn: false
+                        })
+                        setTimeout(() => {
+                            this.setState({
+                                showGoToProjectsBtn: true
+                            })
+                        }, 600)
+                    }
+                })
+            }
             this.setState({ project3Clicked: false })
         }
         
@@ -4500,8 +4532,40 @@ export default class Dashboard extends Component {
     }
     project4ListClicked = () => {
         if (this.state.project4Clicked === false) {
-            this.setState({ project4Clicked: true })
+            if (!this.state.project1Clicked && !this.state.project2Clicked && !this.state.project3Clicked && !this.state.project5Clicked && !this.state.project6Clicked && !this.state.project7Clicked && !this.state.project8Clicked && !this.state.project9Clicked && !this.state.project10Clicked) {
+                this.setState({
+                    showDeleteProjectsBtn: false, showGoToProjectsBtn: true, showProjectsPlaceholderBtn: false
+                })
+            } else {
+                this.setState({
+                    showGoToProjectsBtn: false, showProjectsPlaceholderBtn: false
+                })
+                setTimeout(() => {
+                    this.setState({
+                        showDeleteProjectsBtn: true
+                    })
+                }, 600)
+            }
+            this.setState({ project4Clicked: true, deletingProjectsCount: this.state.deletingProjectsCount+1 })
         } else {
+            if (!this.state.project1Clicked && !this.state.project2Clicked && !this.state.project3Clicked && !this.state.project5Clicked && !this.state.project6Clicked && !this.state.project7Clicked && !this.state.project8Clicked && !this.state.project9Clicked && !this.state.project10Clicked) {
+                this.setState({
+                    showProjectsPlaceholderBtn: true, showGoToProjectsBtn: false, deletingProjectsCount: this.state.deletingProjectsCount-1
+                })
+            } else {
+                this.setState({ deletingProjectsCount: this.state.deletingProjectsCount-1 }, () => {
+                    if (this.state.deletingProjectsCount === 1) {
+                        this.setState({
+                            showDeleteProjectsBtn: false
+                        })
+                        setTimeout(() => {
+                            this.setState({
+                                showGoToProjectsBtn: true
+                            })
+                        }, 600)
+                    }
+                })
+            }
             this.setState({ project4Clicked: false })
         }
         
@@ -5835,7 +5899,7 @@ export default class Dashboard extends Component {
                                 <div className="projects-header-middle">
                                     <CSSTransition
                                     in={this.state.showGoToProjectsBtn}
-                                    timeout={{enter: 1000, exit: 1000}}
+                                    timeout={{enter: 500, exit: 500}}
                                     classNames="dialog-slide-left"
                                     unmountOnExit
                                     >   
@@ -5855,7 +5919,7 @@ export default class Dashboard extends Component {
                                     </CSSTransition>
                                     <CSSTransition
                                     in={this.state.showDeleteProjectsBtn}
-                                    timeout={{enter: 1000, exit: 1000}}
+                                    timeout={{enter: 500, exit: 500}}
                                     classNames="dialog-slide-left"
                                     unmountOnExit
                                     >
@@ -5875,7 +5939,7 @@ export default class Dashboard extends Component {
                                     </CSSTransition>
                                     <CSSTransition
                                     in={this.state.showProjectsPlaceholderBtn}
-                                    timeout={{enter: 1000, exit: 1000}}
+                                    timeout={{enter: 500, exit: 500}}
                                     classNames="dialog-slide-left"
                                     unmountOnExit
                                     >
