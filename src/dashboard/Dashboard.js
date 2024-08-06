@@ -786,8 +786,9 @@ const Styles = styled.div `
 .session-item-details-left span {
     // all: unset !important;
     margin-top: 0px !important;
+    // margin-bottom: 1.5% !important;
     // background-color: #8a8a8a !important;
-    font-size: 45% !important;
+    font-size: 55% !important;
     font-family: dm sans !important;
     color: white !important;
     padding: 3% !important;
@@ -803,7 +804,7 @@ const Styles = styled.div `
 .session-item-details-right p { 
     text-align: right !important;
     color: black !important;
-    font-size: 50% !important;
+    font-size: 60% !important;
     margin-top: 5.8% !important;
 }
 
@@ -811,10 +812,8 @@ const Styles = styled.div `
 
 .continue-session-item-right label {
     font-size: 80%;
-    margin-top: 0px;
+    // margin-top: 2%;
     font-family: dm sans;
-    line-height: 0.005;
-
 }
 
     //! - - Section 1 (right pane) - - //
