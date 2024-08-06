@@ -776,7 +776,7 @@ const Styles = styled.div `
 .session-item-details-right {
     float: left;
     width: 55%;
-    text-align: right;
+    text-align: eft;
     // border-right: 1px solid black;
 }
 
@@ -803,17 +803,18 @@ const Styles = styled.div `
 
 .session-item-details-right p { 
     text-align: right !important;
-    color: black !important;
-    font-size: 60% !important;
+    color: #5e626a !important;
+    font-size: 62% !important;
     margin-top: 5.8% !important;
     margin-top: 2% !important;
 }
+
 
 // # CONTINUE SESSION CONTENT DESCRIPTION
 
 .continue-session-item-right label {
     font-size: 80%;
-    // margin-top: 2%;
+    margin-top: 2%;
     font-family: dm sans;
     display: -webkit-box;
     -webkit-line-clamp: 2; /* Limit to 2 lines */
@@ -4347,7 +4348,20 @@ export default class Dashboard extends Component {
                 project8Clicked: true,
                 project9Clicked: true,
                 project10Clicked: true,
+                deletingProjectsCount: 10,
             })
+            if (!this.state.showDeleteProjectsBtn === true) {
+                this.setState({
+                    showProjectsPlaceholderBtn: false,
+                    showGoToProjectsBtn: false
+                }, () => {
+                    setTimeout(() => {
+                        this.setState({
+                            showDeleteProjectsBtn: true
+                        })
+                    }, 600)
+                })
+            }
         } else if (this.state.project2Clicked && this.state.project3Clicked && this.state.project4Clicked && this.state.project5Clicked && this.state.project6Clicked && this.state.project7Clicked && this.state.project8Clicked && this.state.project9Clicked && this.state.project10Clicked) {
             this.setState({
                 selectAllProjectsClicked: false,
@@ -4371,7 +4385,14 @@ export default class Dashboard extends Component {
                 project9Hovered: false,
                 project10Clicked: false,
                 project10Hovered: false,
+                deletingProjectsCount: 0,
+                showDeleteProjectsBtn: false
             })
+            setTimeout(() => {
+                this.setState({
+                    showProjectsPlaceholderBtn: true
+                })
+            }, 600)
         }
 
     }
@@ -5682,7 +5703,7 @@ export default class Dashboard extends Component {
                                                         <span style={{backgroundColor: this.state.latestProject1Hovered ? "#2890b9" : "#8a8a8a"}}>ChatGPT Video</span>
                                                     </div>
                                                     <div className="session-item-details-right">
-                                                        <p><span style={{color: "#2890b9"}}>Last edited:</span> 18:02pm 08/05/24</p>
+                                                        <p><span style={{color: "#2890b9"}}>⨀</span> 18:02pm 08/05/24</p>
                                                     </div>
                                                 </div>
                                                 <label style={{textAlign: "left"}}>Testing the cgpt vid feature. Generated moving neon grid floor, a likes counter and morphing shape.</label>
@@ -5703,7 +5724,7 @@ export default class Dashboard extends Component {
                                                         <span style={{backgroundColor: this.state.latestProject2Hovered ? "#2890b9" : "#8a8a8a"}}>Split Video</span>
                                                     </div>
                                                     <div className="session-item-details-right">
-                                                        <p><span style={{color: "#2890b9"}}>Last edited:</span> 11:35am 08/05/24</p>
+                                                        <p><span style={{color: "#2890b9"}}>⨀</span> 11:35am 08/05/24</p>
                                                     </div>
                                                 </div>
                                                 <label style={{textAlign: "left"}}>Second post for jenny's new account. DEADLINE: 08/10 3pm (latest).</label>
@@ -5724,7 +5745,7 @@ export default class Dashboard extends Component {
                                                         <span style={{backgroundColor: this.state.latestProject3Hovered ? "#2890b9" : "#8a8a8a"}}>Voiceover Video</span>
                                                     </div>
                                                     <div className="session-item-details-right">
-                                                        <p><span style={{color: "#2890b9"}}>Last edited:</span> 02:09am 08/03/24</p>
+                                                        <p><span style={{color: "#2890b9"}}>⨀</span> 02:09am 08/03/24</p>
                                                     </div>
                                                 </div>
                                                 <label style={{textAlign: "left"}}>my first draft for my day in the life vid. </label>
