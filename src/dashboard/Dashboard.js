@@ -783,10 +783,10 @@ const Styles = styled.div `
 
     // # CONTINUE SESSION DETAILS CONTENT TYPE
 
-.session-item-details-left button {
-    all: unset !important;
+.session-item-details-left span {
+    // all: unset !important;
     margin-top: 0px !important;
-    background-color: #8a8a8a !important;
+    // background-color: #8a8a8a !important;
     font-size: 50% !important;
     font-family: dm sans !important;
     color: white !important;
@@ -4854,7 +4854,7 @@ export default class Dashboard extends Component {
                                                 <h5>ChatGPT Video Tester</h5>
                                                 <div className="session-item-details">
                                                     <div className="session-item-details-left">
-                                                        <button>ChatGPT Video</button>
+                                                        <span style={{backgroundColor: this.state.latestProject1Hovered ? "#2890b9" : "#8a8a8a"}}>ChatGPT Video</span>
                                                     </div>
                                                     <div className="session-item-details-right">
                                                         <p><span style={{color: "#2890b9"}}>Last edited:</span> 18:02pm 08/05/24</p>
@@ -4873,6 +4873,15 @@ export default class Dashboard extends Component {
                                             </div>
                                             <div className="continue-session-item-right">
                                                 <h5>tiktok for Jenny</h5>
+                                                <div className="session-item-details">
+                                                    <div className="session-item-details-left">
+                                                        <span style={{backgroundColor: this.state.latestProject2Hovered ? "#2890b9" : "#8a8a8a"}}>Split Video</span>
+                                                    </div>
+                                                    <div className="session-item-details-right">
+                                                        <p><span style={{color: "#2890b9"}}>Last edited:</span> 18:02pm 08/05/24</p>
+                                                    </div>
+                                                </div>
+                                                <label style={{textAlign: "left"}}>Tiktok draft for jenny's new account. DEADLINE: 08/10 3pm.</label>
                                             </div>
                                         </div>
                                         <div 
@@ -4885,6 +4894,15 @@ export default class Dashboard extends Component {
                                             </div>
                                             <div className="continue-session-item-right">
                                                 <h5>day in the life draft</h5>
+                                                <div className="session-item-details">
+                                                    <div className="session-item-details-left">
+                                                        <span style={{backgroundColor: this.state.latestProject3Hovered ? "#2890b9" : "#8a8a8a"}}>Voiceover Video</span>
+                                                    </div>
+                                                    <div className="session-item-details-right">
+                                                        <p><span style={{color: "#2890b9"}}>Last edited:</span> 02:02am 08/03/24</p>
+                                                    </div>
+                                                </div>
+                                                <label style={{textAlign: "left"}}>my first draft for my day in the life vid. </label>
                                             </div>
                                         </div>
                                     </div>
