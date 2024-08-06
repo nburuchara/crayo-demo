@@ -821,6 +821,7 @@ const Styles = styled.div `
     overflow: hidden;
     text-overflow: ellipsis;
     line-height: 1.5;
+    cursor: pointer;
 }
 
     //! - - Section 1 (right pane) - - //
@@ -1340,6 +1341,48 @@ const Styles = styled.div `
     font-family: dm sans;
 }
 
+    //! - - Sections 2 (V2 Window 1 - right pane) - - !//
+
+.project-list-header {
+    border: 1px solid black !important;
+}
+
+.project-list-header:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.project-list-header-1 {
+    float: left;
+    width: 10%;
+    text-align: center;
+}
+
+.project-list-header-2 {
+    float: left;
+    width: 45%;
+    text-align: center;
+}
+
+.project-list-header-3 {
+    float: left;
+    width: 15%;
+    text-align: center;
+}
+
+.project-list-header-4 {
+    float: left;
+    width: 15%;
+    text-align: center;
+}
+
+.project-list-header-5 {
+    float: left;
+    width: 15%;
+    text-align: center;
+}
+
 
     //! - - Section 2 (right pane) - - //
 
@@ -1813,7 +1856,13 @@ export default class Dashboard extends Component {
             popularApp5Hovered: false,
             popularApp6Hovered: false,
 
-                //! - - SECTION 1 (RIGHT PANE) - - !//
+                //! - - SECTION 2 (WINDOW 1 - RIGHT PANE) - - !//
+
+            //* - - PROJECTS PLACEHOLDER / LIST - - *//
+            showProjectsPlaceholder: false,
+            showProjectsList: true,
+
+                //! - - SECTION 2 (WINDOW 2 - RIGHT PANE) - - !//
 
             //* - - CONTENT EXAMPLES VAR(S - - *//
             currentSlide: 0,
@@ -4887,7 +4936,7 @@ export default class Dashboard extends Component {
                                                         <p><span style={{color: "#2890b9"}}>Last edited:</span> 11:32am 08/05/24</p>
                                                     </div>
                                                 </div>
-                                                <label style={{textAlign: "left"}}>Tiktok draft for jenny's new account. DEADLINE: 08/10 3pm.</label>
+                                                <label style={{textAlign: "left"}}>Second post for jenny's new account. DEADLINE: 08/10 3pm (latest).</label>
                                             </div>
                                         </div>
                                         <div 
@@ -5280,8 +5329,24 @@ export default class Dashboard extends Component {
                                 </div>
                             }
                             {this.state.showProjectsList && 
-                                <div className="projects-placholder">
+                                <div className="projects-placeholder">
+                                    <div className="project-list-header">
+                                        <div className="project-list-header-1">
+                                            <p><img/></p>
+                                        </div>
+                                        <div className="project-list-header-2">
 
+                                        </div>
+                                        <div className="project-list-header-3">
+
+                                        </div>
+                                        <div className="project-list-header-4">
+
+                                        </div>
+                                        <div className="project-list-header-5">
+
+                                        </div>
+                                    </div>
                                 </div>
                             }
                         </div>
