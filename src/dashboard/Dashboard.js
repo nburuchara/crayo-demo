@@ -510,11 +510,12 @@ const Styles = styled.div `
 
 .searchResults {
     overflow-y: auto;
-    width: 85%;
-    position: relative;
+    width: 40%;
+    position: fixed;
     background-color: white;
-    height: 100%;
-    border: 1px solid #cccccc;
+    height: auto;
+    max-height: 35%;
+    border: 1px solid #8a8aa8;
     border-radius: 7px;
     // border-bottom-right-radius: 7px;
     padding: 0.5%;
@@ -2193,8 +2194,8 @@ export default class Dashboard extends Component {
             goToProjectsBtnHovered: false,
 
             //* - - PROJECTS PLACEHOLDER / LIST - - *//
-            showProjectsPlaceholder: true,
-            showProjectsList: false,
+            showProjectsPlaceholder: false,
+            showProjectsList: true,
 
             selectAllProjectsHovered: false,
             selectAllProjectsClicked: false,
@@ -5851,7 +5852,7 @@ export default class Dashboard extends Component {
                             placeholder="Search..."
                             />
                             {searchInput !== "" && (
-                                <div className='searchResults'>
+                                <div style={{width: this.state.leftPaneMinimized ? "47%" : ""}} className='searchResults'>
                                     {isSearchLoading && 
                                         <div>
                                             <p>Loading...</p>
@@ -5859,7 +5860,7 @@ export default class Dashboard extends Component {
                                     }
                                     {!isSearchLoading && resultsFound && 
                                         Object.entries(groupedOptions).map(([category, options]) => (
-                                            <div style={{borderBottom: "1px solid #ccc", paddingTop: "0.5%", paddingBottom: "0.5%", position: "sticky"}} key={category}>
+                                            <div style={{borderBottom: "1px solid #ccc", paddingTop: "1.2%", paddingBottom: "1.2%", position: "sticky"}} key={category}>
                                                 {options.map(option => (
                                                     <div 
                                                     onClick={() => this.searchedTermClicked(category, option, option.page)}
@@ -6491,7 +6492,7 @@ export default class Dashboard extends Component {
 
                                         {/* - - TABLE BODY - -  */}
 
-                                    <div className="project-list-body">
+                                    <div style={{height: this.state.leftPaneMinimized ? "78%" : ""}} className="project-list-body">
                                         <div 
                                         onMouseEnter={this.project1ListEnter}
                                         onMouseLeave={this.project1ListLeave}
