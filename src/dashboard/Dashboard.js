@@ -1531,7 +1531,7 @@ const Styles = styled.div `
     font-family: dm sans;
     margin-left: 5%;
     color: white;
-    font-weight: normal;
+    font-weight: bold;
 }
 
     // # PROJECTS COLUMN 3 HEADER (CONTENT TYPE)
@@ -1542,7 +1542,7 @@ const Styles = styled.div `
     font-family: dm sans;
     margin-left: 8%;
     color: white;
-    font-weight: normal;
+    font-weight: bold;
 }
 
     // # PROJECTS COLUMN 4 HEADER (LAST EDITED)
@@ -1553,7 +1553,7 @@ const Styles = styled.div `
     font-family: dm sans;
     margin-left: 8%;
     color: white;
-    font-weight: normal;
+    font-weight: bold;
 }
 
     // -  PROJECT LIST CELL - //
@@ -1664,6 +1664,8 @@ const Styles = styled.div `
     height: 100%;
     border-radius: 10px;
     background-color: white;
+    display: grid;
+    padding-bottom: 1%;
     // box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.06), 0 6px 20px 0 rgba(0, 0, 0, 0.08);
 }
 
@@ -1672,10 +1674,11 @@ const Styles = styled.div `
     width: 49%;
     text-align: center;
     border: 1px solid #9a9a9a;
-    margin-left: 1.65%;
+    margin-left: 1.5%;
     height: 100%;
     border-radius: 10px;
     background-color: white;
+    padding-bottom: 1%;
     // box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.06), 0 6px 20px 0 rgba(0, 0, 0, 0.06);
 }
 
@@ -1794,9 +1797,8 @@ const Styles = styled.div `
     border: 1px solid #9a9a9a;
     margin-left: 2%;
     margin-right: 2%;
-    height: 77.5%;
+    height: 28.5vh;
     border-radius: 8px;
-    padding-botto
 }
 
 .projects-placeholder img {
@@ -1968,6 +1970,16 @@ const Styles = styled.div `
 }
 
 
+    //! - - - - - CUSTOM HEIGHTS CSS - - - - - - !//
+
+@media screen and (max-height: 844px) {
+
+
+
+
+}
+
+
 `
 //* - TRIE NODE IMPLEMENTATION (for search functionality) - *//
 class TrieNode {
@@ -2046,9 +2058,12 @@ export default class Dashboard extends Component {
             moreOptionClicked: false,
             moreSubActive: "",
 
+            showNavbarUserOptions: false,
             settingsBtnHovered: false,
             logoutBtnHovered: false,
             navbarAccountBtnHovered: false,
+            navbarUserBtnClicked: false,
+
 
             //* - - SHRANK DASHBOARD OPTIONS VAR(S) - - *//
             shrankDashboardOptionHovered: false,
@@ -2177,8 +2192,8 @@ export default class Dashboard extends Component {
             goToProjectsBtnHovered: false,
 
             //* - - PROJECTS PLACEHOLDER / LIST - - *//
-            showProjectsPlaceholder: false,
-            showProjectsList: true,
+            showProjectsPlaceholder: true,
+            showProjectsList: false,
 
             selectAllProjectsHovered: false,
             selectAllProjectsClicked: false,
@@ -2202,7 +2217,6 @@ export default class Dashboard extends Component {
             project9Clicked: false,
             project10Hovered: false,
             project10Clicked: false,
-
 
                 //! - - SECTION 2 (WINDOW 2 - RIGHT PANE) - - !//
 
@@ -3913,6 +3927,20 @@ export default class Dashboard extends Component {
     }
     navbarAccountBtnLeave = () => {
         this.setState({ navbarAccountBtnHovered: false })
+    }
+
+    navbarUserBtnOptionClicked = () => {
+        if (this.state.showNavbarUserOptions === false) {
+            this.setState({
+                navbarUserBtnClicked: true,
+                showNavbarUserOptions: true
+            })
+        } else {
+            this.setState({
+                navbarUserBtnClicked: false,
+                showNavbarUserOptions: false
+            })
+        }
     }
 
         //* - - SHRANK DASHBOARD OPTION - - *//
@@ -5641,7 +5669,7 @@ export default class Dashboard extends Component {
                                 
                                 <div className="left-pane-footer-container">
                                     <CSSTransition
-                                    in={this.state.showMoreSuboptions}
+                                    in={this.state.showNavbarUserOptions}
                                     timeout={{enter: 500, exit: 500}}
                                     classNames="dialog-slide-up"
                                     unmountOnExit
@@ -5673,9 +5701,10 @@ export default class Dashboard extends Component {
                                         </div>
                                     </CSSTransition>
                                     <div 
+                                    onClick={this.navbarUserBtnOptionClicked}
                                     onMouseEnter={this.navbarAccountBtnEnter}
                                     onMouseLeave={this.navbarAccountBtnLeave}
-                                    style={{border: this.state.navbarAccountBtnHovered ? "1px solid #8a8a8a" : ""}}
+                                    style={{border: this.state.navbarAccountBtnHovered || this.state.navbarUserBtnClicked ? "1px solid #8a8a8a" : ""}}
                                     className="left-pane-footer-row">
                                         <div className="left-pane-footer-left">
                                             <div className="fixedUserNavbarContainer">
@@ -5683,9 +5712,9 @@ export default class Dashboard extends Component {
                                             </div>
                                         </div>
                                         <div 
-                                        style={{backgroundColor: this.state.navbarAccountBtnHovered ? "white" : ""}}
+                                        style={{backgroundColor: this.state.navbarAccountBtnHovered || this.state.navbarUserBtnClicked ? "white" : ""}}
                                         className="left-pane-footer-right">
-                                            <p style={{color: this.state.navbarAccountBtnHovered ? "#000" : ""}}>normanburuchara90@gmail.com</p>
+                                            <p style={{color: this.state.navbarAccountBtnHovered || this.state.navbarUserBtnClicked ? "#000" : ""}}>normanburuchara90@gmail.com</p>
                                         </div>
                                     </div>
                                 </div>
@@ -6404,6 +6433,7 @@ export default class Dashboard extends Component {
                                     </div>
 
                                         {/* - - TABLE BODY - -  */}
+
                                     <div className="project-list-body">
                                         <div 
                                         onMouseEnter={this.project1ListEnter}
