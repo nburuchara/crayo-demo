@@ -270,17 +270,21 @@ const Styles = styled.div `
 
     //! - - Left pane footer - - !//
 
+    // - - LEFT PANE FOOTER CONTAINERS - - //
+
 .left-pane-footer-container {
     position: absolute;
     bottom: 0;
     // border: 1px solid black;
     width: 99%;
+    padding-bottom: 3.5vh;
 }
 
 .left-pane-footer-row {
     height: 5vh;
     border-radius: 8px;
-    border: 1px solid #8a8a8a;
+    border: 1px solid #ccc;
+    cursor: pointer;
 }
 
 .left-pane-footer-row:after {
@@ -299,31 +303,34 @@ const Styles = styled.div `
     float: left;
     width: 82%;
     text-align: center;
+    border-top-right-radius: 7px;
+    border-bottom-right-radius: 7px;
 }
 
     //  - - FIXED NAVBAR USER / SETTINGS - - //
 
 .fixedUserNavbarContainer {
     width: 100%;
-    border-top-left-radius: 7px;
-    border-bottom-left-radius: 7px;
     height: 5vh; 
     background-color: #c2175b;
+    border-top-left-radius: 7px;
+    border-bottom-left-radius: 7px;
 }
 
 .fixedUserNavbarContainer h3 {
     margin-top: 0px;
-    padding-top: 21%;
+    padding-top: 1.25vh;
     color: white;
 }
 
 .left-pane-footer-right p {
-    margin-top: 7%;
-    margin-bottom: 0px;
+    margin-top: 1.65vh;
+    margin-bottom: 1.69vh;
     font-size: 65%;
     font-family: dm sans;
     font-weight: bold;
-    color: #5e626a;
+    color: #6a6a6a;
+    padding-
 }
 
     //! - - (Navbar - SHRANK) - - //
@@ -1962,6 +1969,8 @@ export default class Dashboard extends Component {
             moreOptionHovered: false,
             moreOptionClicked: false,
             moreSubActive: "",
+
+            navbarAccountBtnHovered: false,
 
             //* - - SHRANK DASHBOARD OPTIONS VAR(S) - - *//
             shrankDashboardOptionHovered: false,
@@ -3805,6 +3814,15 @@ export default class Dashboard extends Component {
         }
     }
 
+        //* - - NAVBAR ACCOUNT BUTTON - - *//
+
+    navbarAccountBtnEnter = () => {
+        this.setState({ navbarAccountBtnHovered: true })
+    }
+    navbarAccountBtnLeave = () => {
+        this.setState({ navbarAccountBtnHovered: false })
+    }
+
         //* - - SHRANK DASHBOARD OPTION - - *//
 
     shrankDashboardEnter = () => {
@@ -5530,14 +5548,23 @@ export default class Dashboard extends Component {
 
                                 
                                 <div className="left-pane-footer-container">
-                                    <div className="left-pane-footer-row">
+                                    <div className="left-pane-footer-options">
+
+                                    </div>
+                                    <div 
+                                    onMouseEnter={this.navbarAccountBtnEnter}
+                                    onMouseLeave={this.navbarAccountBtnLeave}
+                                    style={{border: this.state.navbarAccountBtnHovered ? "1px solid #8a8a8a" : ""}}
+                                    className="left-pane-footer-row">
                                         <div className="left-pane-footer-left">
                                             <div className="fixedUserNavbarContainer">
                                                 <h3>N</h3>
                                             </div>
                                         </div>
-                                        <div className="left-pane-footer-right">
-                                            <p>normanburuchara90@gmail.com</p>
+                                        <div 
+                                        style={{backgroundColor: this.state.navbarAccountBtnHovered ? "white" : ""}}
+                                        className="left-pane-footer-right">
+                                            <p style={{color: this.state.navbarAccountBtnHovered ? "#000" : ""}}>normanburuchara90@gmail.com</p>
                                         </div>
                                     </div>
                                 </div>
