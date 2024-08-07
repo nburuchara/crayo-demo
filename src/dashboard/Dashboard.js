@@ -283,9 +283,13 @@ const Styles = styled.div `
 .left-pane-footer-options-container {
     height: 10.5vh;
     border: 1px solid #8a8a8a;
-    margin-bottom: 2.5%;
+    margin-bottom: 3%;
     border-radius: 8px;
     background-color: white;
+}
+
+.left-pane-footer-options {
+    height: 5.15vh;
 }
 
 .left-pane-footer-options:after {
@@ -296,14 +300,14 @@ const Styles = styled.div `
 
 .left-pane-footer-options-left {
     float: left;
-    width: 15%;
+    width: 20%;
     text-align: center;
-    border-right: 1px solid black;
+    // border-right: 1px solid black;
 }
 
 .left-pane-footer-options-right {
     float: left;
-    width: 85%;
+    width: 80%;
     text-align: left;
 }
 
@@ -333,18 +337,47 @@ const Styles = styled.div `
     border-top-right-radius: 7px;
     border-bottom-right-radius: 7px;
 }
+
+.dialog-slide-up-enter {
+    transform: translateY(15%);
+    opacity: 0;
+}
+
+.dialog-slide-up-enter-active {
+    transform: translateY(0);
+    opacity: 1;
+    transition: transform 500ms, opacity 500ms;
+}
+
+.dialog-slide-up-exit {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.dialog-slide-up-exit-active {
+    transform: translateY(10%);
+    opacity: 0;
+    transition: transform 500ms, opacity 500ms;
+}
+
     // - - FIXED NAVBAR USER OPTIONS - - //
 
     // # ACCOUNT OPTIONS IMAGE
 
 .left-pane-footer-options-left img {
-    width: 15%;
+    width: 45%;
+    margin-top: 1.35vh;
+    margin-bottom: 0.79vh;
 }
 
     // # ACCOUNT OPTIONS TEXT
 
-.left-pane-footer-options-left img {
-
+.left-pane-footer-options-right p {
+    margin-bottom: 0px;
+    margin-top: 1.4vh;
+    margin-left: 3.5%;
+    font-size: 90%;
+    font-family: dm sans;
 }
 
     //  - - FIXED NAVBAR USER BUTTON - - //
@@ -374,7 +407,6 @@ const Styles = styled.div `
     font-family: dm sans;
     font-weight: bold;
     color: #6a6a6a;
-    padding-
 }
 
     //! - - (Navbar - SHRANK) - - //
@@ -1446,6 +1478,8 @@ const Styles = styled.div `
     // border: 1px solid black !important;
     border-top-left-radius: 6px;
     border-top-right-radius: 6px;
+    padding-bottom: 0.95%;
+    padding-top: 0.95%;
 }
 
 .project-list-header:after {
@@ -1525,16 +1559,14 @@ const Styles = styled.div `
     // -  PROJECT LIST CELL - //
 
 .project-list-body {
-    height: 82.5%;
+    height: 80%;
     overflow: auto;
     border-bottom-left-radius: 8px;
     border-bottom-right-radius: 8px;
 }
 
 .project-list-cell {
-    border-bottom: 1px solid #8a8a8a !important;
-    border-top-left-radius: 6px;
-    border-top-right-radius: 6px;
+    border-top: 1px solid #8a8a8a !important;
     padding-top: 0.7%;
     padding-bottom: 0.3%;
     cursor: pointer;
@@ -2014,6 +2046,8 @@ export default class Dashboard extends Component {
             moreOptionClicked: false,
             moreSubActive: "",
 
+            settingsBtnHovered: false,
+            logoutBtnHovered: false,
             navbarAccountBtnHovered: false,
 
             //* - - SHRANK DASHBOARD OPTIONS VAR(S) - - *//
@@ -3860,6 +3894,20 @@ export default class Dashboard extends Component {
 
         //* - - NAVBAR ACCOUNT BUTTON - - *//
 
+    settingsBtnEnter = () => {
+        this.setState({ settingsBtnHovered: true })
+    }
+    settingsBtnLeave = () => {
+        this.setState({ settingsBtnHovered: false })
+    }
+
+    logoutBtnEnter = () => {
+        this.setState({ logoutBtnHovered: true })
+    }
+    logoutBtnLeave = () => {
+        this.setState({ logoutBtnHovered: false })
+    }
+
     navbarAccountBtnEnter = () => {
         this.setState({ navbarAccountBtnHovered: true })
     }
@@ -5592,16 +5640,38 @@ export default class Dashboard extends Component {
 
                                 
                                 <div className="left-pane-footer-container">
-                                    <div className="left-pane-footer-options-container">
-                                        <div className="left-pane-footer-options">
-                                            <div className="left-pane-footer-options-left">
-                                                
+                                    <CSSTransition
+                                    in={this.state.showMoreSuboptions}
+                                    timeout={{enter: 500, exit: 500}}
+                                    classNames="dialog-slide-up"
+                                    unmountOnExit
+                                    >
+                                        <div className="left-pane-footer-options-container">
+                                            <div 
+                                            onMouseEnter={this.settingsBtnEnter}
+                                            onMouseLeave={this.settingsBtnLeave}
+                                            style={{borderBottom: "1px solid #ccc", borderTopRightRadius: "8px", borderTopLeftRadius: "8px", backgroundColor: this.state.settingsBtnHovered ? "#eef7fd" : "", cursor: "pointer"}} className="left-pane-footer-options">
+                                                <div className="left-pane-footer-options-left">
+                                                    <img src={this.state.settingsBtnHovered ? "/assets/account-settings-icon-color.png" : "/assets/account-settings-icon.png"}/>
+                                                </div>
+                                                <div className="left-pane-footer-options-right">
+                                                    <p style={{color: this.state.settingsBtnHovered ? "#1c4c75" : ""}}>Settings</p>
+                                                </div>
                                             </div>
-                                            <div className="left-pane-footer-options-right">
-
+                                            <div 
+                                            onMouseEnter={this.logoutBtnEnter}
+                                            onMouseLeave={this.logoutBtnLeave}
+                                            style={{borderBottom: "1px solid #ccc", borderBottomRightRadius: "8px", borderBottomLeftRadius: "8px", backgroundColor: this.state.logoutBtnHovered ? "#eef7fd" : "", cursor: "pointer"}}
+                                            className="left-pane-footer-options">
+                                                <div className="left-pane-footer-options-left">
+                                                    <img src={this.state.logoutBtnHovered ? "/assets/account-logout-icon-color.png" : "/assets/account-logout-icon.png"}/>
+                                                </div>
+                                                <div className="left-pane-footer-options-right">
+                                                    <p style={{color: this.state.logoutBtnHovered ? "#1c4c75" : ""}}>Logout</p>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
+                                    </CSSTransition>
                                     <div 
                                     onMouseEnter={this.navbarAccountBtnEnter}
                                     onMouseLeave={this.navbarAccountBtnLeave}
