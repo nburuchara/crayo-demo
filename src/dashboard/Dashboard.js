@@ -280,6 +280,33 @@ const Styles = styled.div `
     padding-bottom: 3.5vh;
 }
 
+.left-pane-footer-options-container {
+    height: 10.5vh;
+    border: 1px solid #8a8a8a;
+    margin-bottom: 2.5%;
+    border-radius: 8px;
+    background-color: white;
+}
+
+.left-pane-footer-options:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.left-pane-footer-options-left {
+    float: left;
+    width: 15%;
+    text-align: center;
+    border-right: 1px solid black;
+}
+
+.left-pane-footer-options-right {
+    float: left;
+    width: 85%;
+    text-align: left;
+}
+
 .left-pane-footer-row {
     height: 5vh;
     border-radius: 8px;
@@ -306,8 +333,21 @@ const Styles = styled.div `
     border-top-right-radius: 7px;
     border-bottom-right-radius: 7px;
 }
+    // - - FIXED NAVBAR USER OPTIONS - - //
 
-    //  - - FIXED NAVBAR USER / SETTINGS - - //
+    // # ACCOUNT OPTIONS IMAGE
+
+.left-pane-footer-options-left img {
+    width: 15%;
+}
+
+    // # ACCOUNT OPTIONS TEXT
+
+.left-pane-footer-options-left img {
+
+}
+
+    //  - - FIXED NAVBAR USER BUTTON - - //
 
 .fixedUserNavbarContainer {
     width: 100%;
@@ -317,11 +357,15 @@ const Styles = styled.div `
     border-bottom-left-radius: 7px;
 }
 
+    // # USER BUTTON EMAIL LOGO
+
 .fixedUserNavbarContainer h3 {
     margin-top: 0px;
     padding-top: 1.25vh;
     color: white;
 }
+
+    // # USER BUTTON EMAIL TEXT
 
 .left-pane-footer-right p {
     margin-top: 1.65vh;
@@ -5548,8 +5592,15 @@ export default class Dashboard extends Component {
 
                                 
                                 <div className="left-pane-footer-container">
-                                    <div className="left-pane-footer-options">
+                                    <div className="left-pane-footer-options-container">
+                                        <div className="left-pane-footer-options">
+                                            <div className="left-pane-footer-options-left">
+                                                
+                                            </div>
+                                            <div className="left-pane-footer-options-right">
 
+                                            </div>
+                                        </div>
                                     </div>
                                     <div 
                                     onMouseEnter={this.navbarAccountBtnEnter}
