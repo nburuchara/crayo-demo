@@ -2058,6 +2058,7 @@ export default class Dashboard extends Component {
             moreOptionClicked: false,
             moreSubActive: "",
 
+            showFixedUserBtn: true,
             showNavbarUserOptions: false,
             settingsBtnHovered: false,
             logoutBtnHovered: false,
@@ -2299,9 +2300,22 @@ export default class Dashboard extends Component {
             this.setState({
                 dashboardOptionClicked: true,
                 showDashboardSuboptions: true,
+            }, () => {
+                if (this.state.createOptionClicked || this.state.toolsOptionClicked) {
+                    //* Hide the user button
+                    this.setState({ 
+                        showFixedUserBtn: false
+                     })
+                }
             })
         } else {
-            this.setState({ dashboardOptionClicked: false, showDashboardSuboptions: false, shrankDashboardOptionHovered: false })
+            this.setState({ dashboardOptionClicked: false, showDashboardSuboptions: false, shrankDashboardOptionHovered: false }, () => {
+                if (!this.state.createOptionClicked && !this.state.toolsOptionClicked) {
+                    this.setState({
+                        showFixedUserBtn: true
+                    })
+                }
+            })
         }
     }
 
@@ -2582,9 +2596,21 @@ export default class Dashboard extends Component {
             this.setState({
                 createOptionClicked: true,
                 showCreateSuboptions: true,
+            }, () => {
+                if (this.state.dashboardOptionClicked || this.state.toolsOptionClicked || this.state.moreOptionClicked) {
+                    this.setState({
+                        showFixedUserBtn: false
+                    })
+                }
             })
         } else {
-            this.setState({ createOptionClicked: false, showCreateSuboptions: false, shrankCreateOptionHovered: false })
+            this.setState({ createOptionClicked: false, showCreateSuboptions: false, shrankCreateOptionHovered: false }, () => {
+                if (!this.state.toolsOptionClicked) {
+                    this.setState({
+                        showFixedUserBtn: true
+                    })
+                }
+            })
         }
     }
 
@@ -3161,9 +3187,22 @@ export default class Dashboard extends Component {
             this.setState({
                 toolsOptionClicked: true,
                 showToolsSuboptions: true,
+            }, () => {
+                if (this.state.dashboardOptionClicked || this.state.createOptionClicked || this.state.moreOptionClicked) {
+                    //* Hide function
+                    this.setState({
+                        showFixedUserBtn: false
+                    })
+                }
             })
         } else {
-            this.setState({ toolsOptionClicked: false, showToolsSuboptions: false, shrankToolsOptionHovered: false })
+            this.setState({ toolsOptionClicked: false, showToolsSuboptions: false, shrankToolsOptionHovered: false }, () => {
+                if (!this.state.createOptionClicked) {
+                    this.setState({
+                        showFixedUserBtn: true
+                    })
+                }
+            })
         }
     }
 
@@ -3741,9 +3780,22 @@ export default class Dashboard extends Component {
             this.setState({
                 moreOptionClicked: true,
                 showMoreSuboptions: true,
+            }, () => {
+                if (this.state.createOptionClicked || this.state.toolsOptionClicked) {
+                    //* Hide usr btn
+                    this.setState({
+                        showFixedUserBtn: false
+                    })
+                }
             })
         } else {
-            this.setState({ moreOptionClicked: false, showMoreSuboptions: false, shrankMoreOptionHovered: false })
+            this.setState({ moreOptionClicked: false, showMoreSuboptions: false, shrankMoreOptionHovered: false }, () => {
+                if (!this.state.createOptionClicked && !this.state.toolsOptionClicked) {
+                    this.setState({
+                        showFixedUserBtn: true
+                    })
+                }
+            })
         }
     }
 
@@ -5666,59 +5718,64 @@ export default class Dashboard extends Component {
                                     </div>
                                 </CSSTransition>
 
-                                
-                                <div className="left-pane-footer-container">
-                                    <CSSTransition
-                                    in={this.state.showNavbarUserOptions}
-                                    timeout={{enter: 500, exit: 500}}
-                                    classNames="dialog-slide-up"
-                                    unmountOnExit
-                                    >
-                                        <div className="left-pane-footer-options-container">
-                                            <div 
-                                            onMouseEnter={this.settingsBtnEnter}
-                                            onMouseLeave={this.settingsBtnLeave}
-                                            style={{borderBottom: "1px solid #ccc", borderTopRightRadius: "8px", borderTopLeftRadius: "8px", backgroundColor: this.state.settingsBtnHovered ? "#eef7fd" : "", cursor: "pointer"}} className="left-pane-footer-options">
-                                                <div className="left-pane-footer-options-left">
-                                                    <img src={this.state.settingsBtnHovered ? "/assets/account-settings-icon-color.png" : "/assets/account-settings-icon.png"}/>
+                                <CSSTransition
+                                in={this.state.showFixedUserBtn}
+                                timeout={{enter: 500, exit: 500}}
+                                classNames="dialog-slide-left"
+                                unmountOnExit
+                                >
+                                    <div className="left-pane-footer-container">
+                                        <CSSTransition
+                                        in={this.state.showNavbarUserOptions}
+                                        timeout={{enter: 500, exit: 500}}
+                                        classNames="dialog-slide-up"
+                                        unmountOnExit
+                                        >
+                                            <div className="left-pane-footer-options-container">
+                                                <div 
+                                                onMouseEnter={this.settingsBtnEnter}
+                                                onMouseLeave={this.settingsBtnLeave}
+                                                style={{borderBottom: "1px solid #ccc", borderTopRightRadius: "8px", borderTopLeftRadius: "8px", backgroundColor: this.state.settingsBtnHovered ? "#eef7fd" : "", cursor: "pointer"}} className="left-pane-footer-options">
+                                                    <div className="left-pane-footer-options-left">
+                                                        <img src={this.state.settingsBtnHovered ? "/assets/account-settings-icon-color.png" : "/assets/account-settings-icon.png"}/>
+                                                    </div>
+                                                    <div className="left-pane-footer-options-right">
+                                                        <p style={{color: this.state.settingsBtnHovered ? "#1c4c75" : ""}}>Settings</p>
+                                                    </div>
                                                 </div>
-                                                <div className="left-pane-footer-options-right">
-                                                    <p style={{color: this.state.settingsBtnHovered ? "#1c4c75" : ""}}>Settings</p>
+                                                <div 
+                                                onMouseEnter={this.logoutBtnEnter}
+                                                onMouseLeave={this.logoutBtnLeave}
+                                                style={{borderBottom: "1px solid #ccc", borderBottomRightRadius: "8px", borderBottomLeftRadius: "8px", backgroundColor: this.state.logoutBtnHovered ? "#eef7fd" : "", cursor: "pointer"}}
+                                                className="left-pane-footer-options">
+                                                    <div className="left-pane-footer-options-left">
+                                                        <img src={this.state.logoutBtnHovered ? "/assets/account-logout-icon-color.png" : "/assets/account-logout-icon.png"}/>
+                                                    </div>
+                                                    <div className="left-pane-footer-options-right">
+                                                        <p style={{color: this.state.logoutBtnHovered ? "#1c4c75" : ""}}>Logout</p>
+                                                    </div>
                                                 </div>
                                             </div>
-                                            <div 
-                                            onMouseEnter={this.logoutBtnEnter}
-                                            onMouseLeave={this.logoutBtnLeave}
-                                            style={{borderBottom: "1px solid #ccc", borderBottomRightRadius: "8px", borderBottomLeftRadius: "8px", backgroundColor: this.state.logoutBtnHovered ? "#eef7fd" : "", cursor: "pointer"}}
-                                            className="left-pane-footer-options">
-                                                <div className="left-pane-footer-options-left">
-                                                    <img src={this.state.logoutBtnHovered ? "/assets/account-logout-icon-color.png" : "/assets/account-logout-icon.png"}/>
-                                                </div>
-                                                <div className="left-pane-footer-options-right">
-                                                    <p style={{color: this.state.logoutBtnHovered ? "#1c4c75" : ""}}>Logout</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </CSSTransition>
-                                    <div 
-                                    onClick={this.navbarUserBtnOptionClicked}
-                                    onMouseEnter={this.navbarAccountBtnEnter}
-                                    onMouseLeave={this.navbarAccountBtnLeave}
-                                    style={{border: this.state.navbarAccountBtnHovered || this.state.navbarUserBtnClicked ? "1px solid #8a8a8a" : ""}}
-                                    className="left-pane-footer-row">
-                                        <div className="left-pane-footer-left">
-                                            <div className="fixedUserNavbarContainer">
-                                                <h3>N</h3>
-                                            </div>
-                                        </div>
+                                        </CSSTransition>
                                         <div 
-                                        style={{backgroundColor: this.state.navbarAccountBtnHovered || this.state.navbarUserBtnClicked ? "white" : ""}}
-                                        className="left-pane-footer-right">
-                                            <p style={{color: this.state.navbarAccountBtnHovered || this.state.navbarUserBtnClicked ? "#000" : ""}}>normanburuchara90@gmail.com</p>
+                                        onClick={this.navbarUserBtnOptionClicked}
+                                        onMouseEnter={this.navbarAccountBtnEnter}
+                                        onMouseLeave={this.navbarAccountBtnLeave}
+                                        style={{border: this.state.navbarAccountBtnHovered || this.state.navbarUserBtnClicked ? "1px solid #8a8a8a" : ""}}
+                                        className="left-pane-footer-row">
+                                            <div className="left-pane-footer-left">
+                                                <div className="fixedUserNavbarContainer">
+                                                    <h3>N</h3>
+                                                </div>
+                                            </div>
+                                            <div 
+                                            style={{backgroundColor: this.state.navbarAccountBtnHovered || this.state.navbarUserBtnClicked ? "white" : "#f1f3f7"}}
+                                            className="left-pane-footer-right">
+                                                <p style={{color: this.state.navbarAccountBtnHovered || this.state.navbarUserBtnClicked ? "#000" : ""}}>normanburuchara90@gmail.com</p>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-
+                                </CSSTransition>
                             </div>
                         </div>
                     </CSSTransition>
@@ -5913,7 +5970,7 @@ export default class Dashboard extends Component {
                                     <div className="tutorial-header">
                                         <div className="tutorial-header-left">
                                             <h2>Continue Creating</h2>
-                                            <p>Finish creating your latest content masterpiece.</p>
+                                            <p>Pick up where you left off and create your next short-form masterpiece.</p>
                                         </div>
                                         <div className="tutorial-header-right">
                                             <img style={{paddingTop: "3%"}} src="/assets/continue-session-pic.png"/>
