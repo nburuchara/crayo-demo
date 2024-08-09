@@ -5842,7 +5842,7 @@ export default class Dashboard extends Component {
                                         <label>Upgrade</label>
                                     </div>
                                 </div>
-                                <div style={{backgroundColor: this.state.userNameBgColor, color: this.state.userNameTxtColor, border: `1px solid ${this.state.userNameBgColor}`, paddingTop: this.state.leftPaneMinimized ? "2.35%" : "", paddingBottom: this.state.leftPaneMinimized ? "3.35%" : ""}} className="top-pane-btn-3">
+                                <div onClick={this.mainUserNavbarClicked} style={{backgroundColor: this.state.userNameBgColor, color: this.state.userNameTxtColor, border: `1px solid ${this.state.userNameBgColor}`, paddingTop: this.state.leftPaneMinimized ? "2.35%" : "", paddingBottom: this.state.leftPaneMinimized ? "3.35%" : ""}} className="top-pane-btn-3">
                                     <h1>N</h1>
                                 </div>
                             </div>
@@ -5862,7 +5862,41 @@ export default class Dashboard extends Component {
                             onMouseLeave={this.versionButtonLeave}
                             onClick={this.versionButtonOptionClicked}
                             >V2: {this.state.versionButtonText}</button>
-                        </div>     
+                        </div>  
+                            <CSSTransition
+                            in={this.state.showMainNavbarUserOptions}
+                            timeout={{enter: 500, exit: 500}}
+                            classNames="dialog-slide-up"
+                            unmountOnExit
+                            >
+                                <div style={{height: "5vh", width: "13%", position: "fixed", marginLeft: "65%", marginTop: "0.5%"}}>
+                                    <div className="left-pane-footer-options-container">
+                                        <div 
+                                        onMouseEnter={this.mainSettingsBtnEnter}
+                                        onMouseLeave={this.mainSettingsBtnLeave}
+                                        style={{borderBottom: "1px solid #ccc", borderTopRightRadius: "8px", borderTopLeftRadius: "8px", backgroundColor: this.state.mainSettingsBtnHovered ? "#eef7fd" : "", cursor: "pointer"}} className="left-pane-footer-options">
+                                            <div className="left-pane-footer-options-left">
+                                                <img src={this.state.mainSettingsBtnHovered ? "/assets/account-settings-icon-color.png" : "/assets/account-settings-icon.png"}/>
+                                            </div>
+                                            <div className="left-pane-footer-options-right">
+                                                <p style={{color: this.state.mainSettingsBtnHovered ? "#1c4c75" : ""}}>Settings</p>
+                                            </div>
+                                        </div>
+                                        <div 
+                                        onMouseEnter={this.mainLogoutBtnEnter}
+                                        onMouseLeave={this.mainLogoutBtnLeave}
+                                        style={{borderBottom: "1px solid #ccc", borderBottomRightRadius: "8px", borderBottomLeftRadius: "8px", backgroundColor: this.state.mainLogoutBtnHovered ? "#eef7fd" : "", cursor: "pointer"}}
+                                        className="left-pane-footer-options">
+                                            <div className="left-pane-footer-options-left">
+                                                <img src={this.state.mainLogoutBtnHovered ? "/assets/account-logout-icon-color.png" : "/assets/account-logout-icon.png"}/>
+                                            </div>
+                                            <div className="left-pane-footer-options-right">
+                                                <p style={{color: this.state.mainLogoutBtnHovered ? "#1c4c75" : ""}}>Logout</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </CSSTransition>   
                     </div>
                     <div className="right-pane-section-1">
                         {this.state.showVersion1Sec1Window1 && 
