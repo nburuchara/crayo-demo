@@ -2109,6 +2109,7 @@ export default class Dashboard extends Component {
             //* - - USER NAME BTN VAR(s) - - *//
             userNameBgColor: "#c2175b",
             userNameTxtColor: "white",
+            showMainNavbarUserOptions: false,
 
                 //! - - VERSION BUTTON - - !//
 
@@ -4200,7 +4201,34 @@ export default class Dashboard extends Component {
         this.setState({ joinDiscordBorderColor: "#ccc", joinDiscordHovered: false })
     }
 
+    mainUserNavbarOptionClicked = () => {
+        if (this.state.showMainNavbarUserOptions === false) {
+            this.setState({ showMainNavbarUserOptions: true })
+        } else {
+            this.setState({ showMainNavbarUserOptions: false })
+        }
+    }
 
+    mainSettingsBtnEnter = () => {
+        this.setState({  mainSettingsBtnHovered: true })
+    }
+    mainSettingsBtnLeave = () => {
+        this.setState({ mainSettingsBtnHovered: false })
+    }
+
+    mainLogoutBtnEnter = () => {
+        this.setState({ mainLogoutBtnHovered: true })
+    }
+    mainLogoutBtnLeave = () => {
+        this.setState({ mainLogoutBtnHovered: false })
+    }
+
+        //! - - SECTION 1 FUNCTIONS - - !//
+
+        //* - - WINDOW 1 - - *//
+
+        //? - - VERSION 1 - - ?//
+        
     startCreatingEnter = () => {
         this.setState({ startCreatingArrow: true, startCreatingIconWidth: "15%", startCreatingBtnWidth: "90%"})
     }
@@ -4208,15 +4236,11 @@ export default class Dashboard extends Component {
         this.setState({ startCreatingArrow: false, startCreatingIconWidth: "0px", startCreatingBtnWidth: "auto", })
     }
 
-
-        //! - - SECTION 1 FUNCTIONS - - !//
-
-        //* - - WINDOW 1 - - *//
+        //? - - VERSION 2 - - ?//
 
     latestProject1Enter = () => {
         this.setState({ latestProject1Hovered: true })
     }
-
     latestProject1Leave = () => {
         this.setState({ latestProject1Hovered: false })
     }
@@ -4224,7 +4248,6 @@ export default class Dashboard extends Component {
     latestProject2Enter = () => {
         this.setState({ latestProject2Hovered: true })
     }
-
     latestProject2Leave = () => {
         this.setState({ latestProject2Hovered: false })
     }
@@ -4232,7 +4255,6 @@ export default class Dashboard extends Component {
     latestProject3Enter = () => {
         this.setState({ latestProject3Hovered: true })
     }
-
     latestProject3Leave = () => {
         this.setState({ latestProject3Hovered: false })
     }
@@ -5060,7 +5082,6 @@ export default class Dashboard extends Component {
     }
 
 
-
         //* - - WINDOW 2 - - *//
 
     next = () => {
@@ -5845,7 +5866,7 @@ export default class Dashboard extends Component {
                                         <label>Upgrade</label>
                                     </div>
                                 </div>
-                                <div onClick={this.mainUserNavbarClicked} style={{backgroundColor: this.state.userNameBgColor, color: this.state.userNameTxtColor, border: `1px solid ${this.state.userNameBgColor}`, paddingTop: this.state.leftPaneMinimized ? "2.35%" : "", paddingBottom: this.state.leftPaneMinimized ? "3.35%" : ""}} className="top-pane-btn-3">
+                                <div onClick={this.mainUserNavbarOptionClicked} style={{backgroundColor: this.state.userNameBgColor, color: this.state.userNameTxtColor, border: `1px solid ${this.state.userNameBgColor}`, paddingTop: this.state.leftPaneMinimized ? "2.35%" : "", paddingBottom: this.state.leftPaneMinimized ? "3.35%" : ""}} className="top-pane-btn-3">
                                     <h1>N</h1>
                                 </div>
                             </div>
@@ -5872,7 +5893,7 @@ export default class Dashboard extends Component {
                             classNames="dialog-slide-up"
                             unmountOnExit
                             >
-                                <div style={{height: "5vh", width: "13%", position: "fixed", marginLeft: "65%", marginTop: "0.5%"}}>
+                                <div style={{height: "5vh", width: "13%", position: "fixed", marginLeft: this.state.leftPaneMinimized ? "77.5%" : "65%", marginTop: this.state.leftPaneMinimized ? "0.3%" : "0.5%"}}>
                                     <div className="left-pane-footer-options-container">
                                         <div 
                                         onMouseEnter={this.mainSettingsBtnEnter}
