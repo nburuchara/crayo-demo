@@ -1,5 +1,7 @@
 const results = [
 
+    
+    {"id": "998573", "name": "All Apps", "category": "Apps", "page": "Event types", "lastCat": "top"},
     {"id": "998573", "name": "AI Avatars", "category": "Apps", "subCat1": "Tools", "page": "Event types", "lastCat": "top"},
     {"id": "998573", "name": "AI Brainstorm", "category": "Apps", "subCat1": "Tools", "page": "Event types", "lastCat": "top"},
     {"id": "998573", "name": "AI Images", "category": "Apps", "subCat1": "Tools", "page": "Event types", "lastCat": "top"},
@@ -20,6 +22,11 @@ const results = [
     {"id": "998573", "name": "Voiceover Story", "category": "Apps", "subCat1": "Popular Apps", "page": "Event types", "lastCat": "top"},
     {"id": "998573", "name": "Download YouTube Videos", "category": "Apps", "subCat1": "Popular Apps", "page": "Event types", "lastCat": "top"},
     {"id": "998573", "name": "All Apps", "category": "Apps", "subCat1": "Popular Apps", "page": "Event types", "lastCat": "top"},
+    {"id": "998573", "name": "Create splitscreen content w/ our gameplay library.", "category": "Apps", "subCat1": "Popular Apps", "subCat2": "Splitscreen Video", "page": "Event types", "lastCat": "top"},
+    {"id": "998573", "name": "Create AI avatars to say anything for UGC content.", "category": "Apps", "subCat1": "Popular Apps", "subCat2": "AI Avatars", "page": "Event types", "lastCat": "top"},
+    {"id": "998573", "name": "Create wholesome, scary, or any type of story using AI voices.", "category": "Apps", "subCat1": "Popular Apps", "subCat2": "Voiceover Story", "page": "Event types", "lastCat": "top"},
+    {"id": "998573", "name": "Get YouTube videos in MP4 format directly in Crayo.", "category": "Apps", "subCat1": "Popular Apps", "subCat2": "Download YouTube Videos", "page": "Event types", "lastCat": "top"},
+
 
     {"id": "998573", "name": "Main Editor", "category": "Apps", "subCat1": "Dashboard", "page": "Event types", "lastCat": "top"},
     {"id": "998573", "name": "My Assets", "category": "Apps", "subCat1": "Dashboard", "page": "Event types", "lastCat": "top"},
@@ -27,6 +34,7 @@ const results = [
 
     {"id": "998573", "name": "Join the Discord", "category": "More Options", "subCat1": "More Options", "page": "Event types", "lastCat": "top"},
     {"id": "998573", "name": "Affiliate Program", "category": "More Options", "subCat1": "Community", "page": "Event types", "lastCat": "top"},
+
 
     {"id": "998573", "name": "Content Samples", "category": "Content", "page": "Event types", "lastCat": "top"},
     {"id": "998573", "name": "Influencers", "category": "Content", "subCat1": "Content Samples", "page": "Event types", "lastCat": "top"},
