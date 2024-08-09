@@ -403,10 +403,15 @@ const Styles = styled.div `
 .left-pane-footer-right p {
     margin-top: 1.65vh;
     margin-bottom: 1.69vh;
-    font-size: 65%;
+    font-size: 60%;
     font-family: dm sans;
     font-weight: bold;
     color: #6a6a6a;
+    overflow: hidden;          /* Hide the overflowing text */
+    display: -webkit-box;      /* Use the flexible box layout */
+    -webkit-box-orient: vertical; /* Set the box orientation to vertical */
+    -webkit-line-clamp: 1;     /* Number of lines to show before truncating */
+    line-clamp: 1;             /* Standard property for other browsers (future-proof) */
 }
 
     //! - - (Navbar - SHRANK) - - //
@@ -1423,7 +1428,7 @@ const Styles = styled.div `
 
 .popular-apps-cell { 
     float: left;
-    width: 48%;
+    width: 46%;
     text-align: center;
     border: 1px solid #ccc;
     border-radius: 9px;
@@ -5874,8 +5879,8 @@ export default class Dashboard extends Component {
                                         ))
                                     }
                                     {!isSearchLoading && !resultsFound && 
-                                        <div>
-                                            <p style={{marginLeft: "0.5%", fontFamily: "dm sans"}}>No results found</p>
+                                        <div style={{textAlign: "center"}}>
+                                            <p style={{fontFamily: "dm sans", fontWeight: "bold", marginTop: "4.25%", color: "#2890b9"}}>No results found</p>
                                         </div>
                                     }
                                 </div>
@@ -6305,7 +6310,7 @@ export default class Dashboard extends Component {
                                     <div 
                                     onMouseEnter={this.popularApp1Enter}
                                     onMouseLeave={this.popularApp1Leave}
-                                    style={{marginRight: "2.8%", border: `1px solid ${this.state.popularApp1Hovered ? "#2890b9" : "#8a8a8a"}`, borderBottom: `5px solid ${this.state.popularApp1Hovered ? "#2890b9" : "#8a8a8a"}`}} className="popular-apps-cell">
+                                    style={{marginRight: "6%", border: `1px solid ${this.state.popularApp1Hovered ? "#2890b9" : "#8a8a8a"}`, borderBottom: `5px solid ${this.state.popularApp1Hovered ? "#2890b9" : "#8a8a8a"}`}} className="popular-apps-cell">
                                         <div style={{background: "white", borderBottom: this.state.popularApp1Hovered ? `1px solid #2890b9` : `1px solid #8a8a8a`}} className="popular-apps-cell-img-container">
                                             <img src="/assets/split-screen-pic3.gif"/>
                                         </div>
@@ -6333,7 +6338,7 @@ export default class Dashboard extends Component {
                                     <div 
                                     onMouseEnter={this.popularApp3Enter}
                                     onMouseLeave={this.popularApp3Leave}
-                                    style={{marginRight: "2.8%", border: `1px solid ${this.state.popularApp3Hovered ? "#2890b9" : "#8a8a8a"}`, borderBottom: `5px solid ${this.state.popularApp3Hovered ? "#2890b9" : "#8a8a8a"}`}} className="popular-apps-cell">
+                                    style={{marginRight: "6%", border: `1px solid ${this.state.popularApp3Hovered ? "#2890b9" : "#8a8a8a"}`, borderBottom: `5px solid ${this.state.popularApp3Hovered ? "#2890b9" : "#8a8a8a"}`}} className="popular-apps-cell">
                                         <div style={{background: "white", borderBottom: this.state.popularApp3Hovered ? `1px solid #2890b9` : `1px solid #8a8a8a`}} className="popular-apps-cell-img-container">
                                             <img src="/assets/ai-avatar-pic.gif"/>
                                         </div>
@@ -6361,7 +6366,7 @@ export default class Dashboard extends Component {
                                     <div 
                                     onMouseEnter={this.popularApp5Enter}
                                     onMouseLeave={this.popularApp5Leave}
-                                    style={{marginRight: "2.8%", border: `1px solid ${this.state.popularApp5Hovered ? "#2890b9" : "#8a8a8a"}`, borderBottom: `5px solid ${this.state.popularApp5Hovered ? "#2890b9" : "#8a8a8a"}`}} className="popular-apps-cell">
+                                    style={{marginRight: "6%", border: `1px solid ${this.state.popularApp5Hovered ? "#2890b9" : "#8a8a8a"}`, borderBottom: `5px solid ${this.state.popularApp5Hovered ? "#2890b9" : "#8a8a8a"}`}} className="popular-apps-cell">
                                         <div style={{background: "white", borderBottom: this.state.popularApp5Hovered ? `1px solid #2890b9` : `1px solid #8a8a8a`}} className="popular-apps-cell-img-container">
                                             <img src="/assets/download-pic2.gif"/>
                                         </div>
@@ -6398,7 +6403,7 @@ export default class Dashboard extends Component {
                             <div className="projects-header">
                                 <div className="projects-header-left">
                                     <h2 style={{marginLeft: "6%"}}>My Projects</h2>
-                                    <p style={{marginLeft: "6%"}}>Create a new project.</p>
+                                    <p style={{marginLeft: "6%"}}>{this.state.showProjectsPlaceholder ? "Create a new project." : "Dive back into a project"}</p>
                                 </div>
                                 <div className="projects-header-middle">
                                     <CSSTransition
@@ -7048,7 +7053,7 @@ export default class Dashboard extends Component {
     }
 
     desktop4Render = () => {
-
+        
     }
     desktop3Render = () => {
 
