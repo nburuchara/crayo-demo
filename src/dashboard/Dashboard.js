@@ -333,6 +333,7 @@ const Styles = styled.div `
 .left-pane-footer-right {
     float: left;
     width: 82%;
+    height: 5vh;
     text-align: center;
     border-top-right-radius: 7px;
     border-bottom-right-radius: 7px;
@@ -401,8 +402,8 @@ const Styles = styled.div `
     // # USER BUTTON EMAIL TEXT
 
 .left-pane-footer-right p {
-    margin-top: 1.65vh;
-    margin-bottom: 1.69vh;
+    margin-top: 1.75vh;
+    // margin-bottom: 1.vh;
     font-size: 60%;
     font-family: dm sans;
     font-weight: bold;
