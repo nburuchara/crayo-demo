@@ -3829,45 +3829,7 @@ export default class Dashboard extends Component {
                 moreSubActive: "Affiliate Program",
                 
                 //* - CLOSING NON-DASHBOARD OPTIONS - *//
-                createSubActive: "",
-                createSub1Clicked: false,
-                createSub2Clicked: false,
-                createSub3Clicked: false,
-                createSub4Clicked: false,
-                createSub5Clicked: false,
-                createSub6Clicked: false,
-                showCreateSub1Loading: false,
-                showCreateSub1Loaded: false,
-                showCreateSub2Loading: false,
-                showCreateSub2Loaded: false,
-                showCreateSub3Loading: false,
-                showCreateSub3Loaded: false,
-                showCreateSub4Loading: false,
-                showCreateSub4Loaded: false,
-                showCreateSub5Loading: false,
-                showCreateSub5Loaded: false,
-                showCreateSub6Loading: false,
-                showCreateSub6Loaded: false,
-
-                toolsSubActive: "",
-                toolsSub1Clicked: false,
-                toolsSub2Clicked: false,
-                toolsSub3Clicked: false,
-                toolsSub4Clicked: false,
-                toolsSub5Clicked: false,
-                toolsSub6Clicked: false,
-                showToolsSub1Loading: false,
-                showToolsSub1Loaded: false,
-                showToolsSub2Loading: false,
-                showToolsSub2Loaded: false,
-                showToolsSub3Loading: false,
-                showToolsSub3Loaded: false,
-                showToolsSub4Loading: false,
-                showToolsSub4Loaded: false,
-                showToolsSub5Loading: false,
-                showToolsSub5Loaded: false,
-                showToolsSub6Loading: false,
-                showToolsSub6Loaded: false,
+               
 
             }, () => {
                 setTimeout(() => {
@@ -3908,45 +3870,7 @@ export default class Dashboard extends Component {
                 moreSubActive: "Discord",
                 
                 //* - CLOSING NON-DASHBOARD OPTIONS - *//
-                createSubActive: "",
-                createSub1Clicked: false,
-                createSub2Clicked: false,
-                createSub3Clicked: false,
-                createSub4Clicked: false,
-                createSub5Clicked: false,
-                createSub6Clicked: false,
-                showCreateSub1Loading: false,
-                showCreateSub1Loaded: false,
-                showCreateSub2Loading: false,
-                showCreateSub2Loaded: false,
-                showCreateSub3Loading: false,
-                showCreateSub3Loaded: false,
-                showCreateSub4Loading: false,
-                showCreateSub4Loaded: false,
-                showCreateSub5Loading: false,
-                showCreateSub5Loaded: false,
-                showCreateSub6Loading: false,
-                showCreateSub6Loaded: false,
-
-                toolsSubActive: "",
-                toolsSub1Clicked: false,
-                toolsSub2Clicked: false,
-                toolsSub3Clicked: false,
-                toolsSub4Clicked: false,
-                toolsSub5Clicked: false,
-                toolsSub6Clicked: false,
-                showToolsSub1Loading: false,
-                showToolsSub1Loaded: false,
-                showToolsSub2Loading: false,
-                showToolsSub2Loaded: false,
-                showToolsSub3Loading: false,
-                showToolsSub3Loaded: false,
-                showToolsSub4Loading: false,
-                showToolsSub4Loaded: false,
-                showToolsSub5Loading: false,
-                showToolsSub5Loaded: false,
-                showToolsSub6Loading: false,
-                showToolsSub6Loaded: false,
+               
 
             }, () => {
                 setTimeout(() => {
@@ -5937,7 +5861,7 @@ export default class Dashboard extends Component {
                             onMouseEnter={this.versionButtonEnter}
                             onMouseLeave={this.versionButtonLeave}
                             onClick={this.versionButtonOptionClicked}
-                            >Version 2: {this.state.versionButtonText}</button>
+                            >V2: {this.state.versionButtonText}</button>
                         </div>     
                     </div>
                     <div className="right-pane-section-1">
