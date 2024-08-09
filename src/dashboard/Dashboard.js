@@ -527,6 +527,7 @@ const Styles = styled.div `
     padding: 0.5%;
     padding-top: 0px;
     margin-top: 1.5%;
+    z-index: 5;
 }
 
     // - SEARCH RESULT CELL - //
@@ -2127,8 +2128,8 @@ export default class Dashboard extends Component {
                 //! - - SECTION 1 (V1 - RIGHT PANE) - - !//
 
             //* - - VERSIONS (RIGHT PANE) - - *//
-            showVersion1Sec1Window1: false,
-            showVersion2Sec1Window1: true,
+            showVersion1Sec1Window1: true,
+            showVersion2Sec1Window1: false,
 
             //* - - 'START CREATING' BUTTON - - *//
             startCreatingBtnWidth: "auto",
@@ -2204,8 +2205,8 @@ export default class Dashboard extends Component {
             goToProjectsBtnHovered: false,
 
             //* - - PROJECTS PLACEHOLDER / LIST - - *//
-            showProjectsPlaceholder: false,
-            showProjectsList: true,
+            showProjectsPlaceholder: true,
+            showProjectsList: false,
 
             selectAllProjectsHovered: false,
             selectAllProjectsClicked: false,
@@ -4173,12 +4174,20 @@ export default class Dashboard extends Component {
         if (this.state.versionButtonText === "OFF") {
             this.setState({
                 version1ButtonClicked: true,
-                versionButtonText: "ON"
+                versionButtonText: "ON",
+                showVersion1Sec1Window1: false,
+                showVersion2Sec1Window1: true,
+                showProjectsList: true,
+                showProjectsPlaceholder: false
             })
         } else {
             this.setState({
                 version1ButtonClicked: false,
-                versionButtonText: "OFF"
+                versionButtonText: "OFF",
+                showVersion1Sec1Window1: true,
+                showVersion2Sec1Window1: false,
+                showProjectsList: false,
+                showProjectsPlaceholder: true
             })
         }
     }
