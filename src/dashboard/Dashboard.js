@@ -1650,6 +1650,7 @@ const Styles = styled.div `
     margin-bottom: 4.5%;
 }
 
+
     //! - - Section 2 (right pane) - - //
 
 .right-pane-section-2 {
@@ -5704,7 +5705,7 @@ export default class Dashboard extends Component {
                                             <div 
                                             style={{backgroundColor: this.state.navbarAccountBtnHovered || this.state.navbarUserBtnClicked ? "white" : "#f1f3f7"}}
                                             className="left-pane-footer-right">
-                                                <p style={{color: this.state.navbarAccountBtnHovered || this.state.navbarUserBtnClicked ? "#000" : ""}}>normanburuchara90@gmail.com</p>
+                                                <p style={{color: this.state.navbarAccountBtnHovered || this.state.navbarUserBtnClicked ? "#000" : "#5e626a"}}>normanburuchara90@gmail.com</p>
                                             </div>
                                         </div>
                                     </div>
@@ -5937,7 +5938,7 @@ export default class Dashboard extends Component {
                                     <div className="tutorial-header">
                                         <div className="tutorial-header-left">
                                             <h2>Continue Creating</h2>
-                                            <p>Pick up where you left off and create your next short-form masterpiece.</p>
+                                            <p style={{fontWeight: 'normal',  color: "#2185ad"}}>Pick up where you left off and create your next short-form masterpiece.</p>
                                         </div>
                                         <div className="tutorial-header-right">
                                             <img style={{paddingTop: "3%"}} src="/assets/continue-session-pic.png"/>
@@ -6016,7 +6017,7 @@ export default class Dashboard extends Component {
                             <div className="tutorial-header">
                                 <div className="tutorial-header-left">
                                     <h2>Video Guides</h2>
-                                    <p>Watch our video guides to learn how you can get the most out of Crayo.</p>
+                                    <p style={{fontWeight: 'normal', color: "#2185ad"}}>Watch our video guides to learn how you can get the most out of Crayo.</p>
                                 </div>
                                 <div className="tutorial-header-right">
                                     <img src="/assets/desktop-pic.png"/>
@@ -6263,7 +6264,7 @@ export default class Dashboard extends Component {
                         </div>
                         <div className="rp-sec1-right-parent">
                             <h1>Popular Apps</h1>
-                            <h2>Try our user-favorite apps.</h2>
+                            <h2 style={{fontWeight: 'normal', color: "#2185ad"}}>Try our user-favorite apps.</h2>
                             <div style={{borderBottom: "1px solid #8a8a8a", marginLeft: "4%", marginRight: "4%", marginTop: "5.3%"}}></div>
                             <div className="popular-apps-container">
 
@@ -6364,7 +6365,7 @@ export default class Dashboard extends Component {
                             <div className="projects-header">
                                 <div className="projects-header-left">
                                     <h2 style={{marginLeft: "6%"}}>My Projects</h2>
-                                    <p style={{marginLeft: "6%"}}>{this.state.showProjectsPlaceholder ? "Create a new project." : "Dive back into a project"}</p>
+                                    <p style={{marginLeft: "6%", fontWeight: "normal",  color: "#2185ad"}}>{this.state.showProjectsPlaceholder ? "Create a new project." : "Dive back into a project"}</p>
                                 </div>
                                 <div className="projects-header-middle">
                                     <CSSTransition
@@ -6667,7 +6668,7 @@ export default class Dashboard extends Component {
                             <div className="examples-header">
                                 <div className="examples-header-left">
                                     <h2>Crayo Content Samples</h2>
-                                    <p>See how solo creators and brands are using Crayo.</p>
+                                    <p style={{fontWeight: "normal",  color: "#2185ad"}}>See how solo creators and brands are using Crayo.</p>
                                 </div>
                                 <div className="examples-header-right">
 
