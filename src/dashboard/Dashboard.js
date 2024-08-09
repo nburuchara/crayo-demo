@@ -824,6 +824,7 @@ const Styles = styled.div `
 }
 
 .continue-session-item {
+    height: auto;
     border: 1px solid #8a8a8a;
     margin-top: 4%;
     margin-left: 4%;
@@ -941,6 +942,7 @@ const Styles = styled.div `
     font-family: dm sans;
     display: -webkit-box;
     -webkit-line-clamp: 2; /* Limit to 2 lines */
+    line-clamp: 3;
     -webkit-box-orient: vertical;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -5961,7 +5963,7 @@ export default class Dashboard extends Component {
                                                         <p style={{color: this.state.latestProject1Hovered ? "#000000" : "#5e626a"}}><span style={{color: "#2890b9"}}>✎</span> 18:02pm 08/05/24</p>
                                                     </div>
                                                 </div>
-                                                <label style={{textAlign: "left"}}>Testing the cgpt vid feature. Generated moving neon grid floor, a likes counter and morphing shape.</label>
+                                                <label style={{textAlign: "left", WebkitLineClamp: this.state.latestProject1Hovered? "3" : ""}}>Testing the cgpt vid feature. Generated moving neon grid floor, a likes counter and morphing shape.</label>
                                             </div>
                                         </div>
                                         <div 
@@ -5988,7 +5990,7 @@ export default class Dashboard extends Component {
                                         <div 
                                         onMouseEnter={this.latestProject3Enter}
                                         onMouseLeave={this.latestProject3Leave}
-                                        style={{border: this.state.latestProject3Hovered ? "1.2px solid #2890b9" : "1px solid #8a8a8a", borderBottom: this.state.latestProject3Hovered ? "5px solid #2890b9" : "5px solid #8a8a8a"}}
+                                        style={{border: this.state.latestProject3Hovered ? "1.2px solid #2890b9" : "1px solid #8a8a8a", borderBottom: this.state.latestProject3Hovered ? "5px solid #2890b9" : "5px solid #8a8a8a", marginBottom: "5%"}}
                                         className="continue-session-item">
                                             <div className="continue-session-item-left">
                                                 <img src={this.state.latestProject3Hovered ? "/assets/continue-session-video-animated.gif" : "/assets/continue-session-video-still.png"}/>
