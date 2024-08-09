@@ -13,6 +13,14 @@ const results = [
     {"id": "998573", "name": "Voiceover Video", "category": "Apps", "subCat1": "Create", "page": "Event types", "lastCat": "top"},
     {"id": "998573", "name": "YT Downloader", "category": "Apps", "subCat1": "Tools", "page": "Event types", "lastCat": "top"},
 
+    {"id": "998573", "name": "Popular Apps", "category": "Apps", "subCat1": "Popular Apps", "page": "Event types", "lastCat": "top"},
+    {"id": "998573", "name": "Splitscreen Video", "category": "Apps", "subCat1": "Popular Apps", "page": "Event types", "lastCat": "top"},
+    {"id": "998573", "name": "Fake Texts Video", "category": "Apps", "subCat1": "Popular Apps", "page": "Event types", "lastCat": "top"},
+    {"id": "998573", "name": "AI Avatars", "category": "Apps", "subCat1": "Popular Apps", "page": "Event types", "lastCat": "top"},
+    {"id": "998573", "name": "Voiceover Story", "category": "Apps", "subCat1": "Popular Apps", "page": "Event types", "lastCat": "top"},
+    {"id": "998573", "name": "Download YouTube Videos", "category": "Apps", "subCat1": "Popular Apps", "page": "Event types", "lastCat": "top"},
+    {"id": "998573", "name": "All Apps", "category": "Apps", "subCat1": "Popular Apps", "page": "Event types", "lastCat": "top"},
+
     {"id": "998573", "name": "Main Editor", "category": "Apps", "subCat1": "Dashboard", "page": "Event types", "lastCat": "top"},
     {"id": "998573", "name": "My Assets", "category": "Apps", "subCat1": "Dashboard", "page": "Event types", "lastCat": "top"},
     {"id": "998573", "name": "My Projects", "category": "Apps", "subCat1": "Dashboard", "page": "Event types", "lastCat": "top"},
@@ -71,8 +79,16 @@ const results = [
     {"id": "998573", "name": "Learn how to add any YouTube video directly into your content via Crayo.", "category": "Learning", "subCat1": "YouTube Downloader Guidee", "page": "Event types", "lastCat": "top"},
 
 
-
-    {"id": "998573", "name": "bl", "category": "Learning", "page": "Event types", "lastCat": "top"},
+    {"id": "998573", "name": "blur vid sample", "category": "Projects", "subCat1": "Blur Video", "page": "Event types", "lastCat": "top"},
+    {"id": "998573", "name": "ChatGPT NEW tester", "category": "Projects", "subCat1": "ChatGPT Video", "page": "Event types", "lastCat": "top"},
+    {"id": "998573", "name": "ChatGPT tester", "category": "Projects", "subCat1": "ChatGPT Video", "page": "Event types", "lastCat": "top"},
+    {"id": "998573", "name": "ChatGPT Video Tester", "category": "Projects", "subCat1": "ChatGPT Video", "page": "Event types", "lastCat": "top"},
+    {"id": "998573", "name": "day in the life draft", "category": "Projects", "subCat1": "Voiceover Video", "page": "Event types", "lastCat": "top"},
+    {"id": "998573", "name": "My morning routine", "category": "Projects", "subCat1": "Split Video", "page": "Event types", "lastCat": "top"},
+    {"id": "998573", "name": "tiktok for Jenny", "category": "Projects", "subCat1": "Split Video", "page": "Event types", "lastCat": "top"},
+    {"id": "998573", "name": "voiceover testing 1", "category": "Projects", "subCat1": "Voiceover Video", "page": "Event types", "lastCat": "top"},
+    {"id": "998573", "name": "voiceover testing 2", "category": "Projects", "subCat1": "Voiceover Video", "page": "Event types", "lastCat": "top"},
+    {"id": "998573", "name": "voiceover testing 3", "category": "Projects", "subCat1": "Voiceover Video", "page": "Event types", "lastCat": "top"},
 
 
   
