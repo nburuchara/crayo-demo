@@ -4276,7 +4276,7 @@ export default class Dashboard extends Component {
             tutorialCell1BorderColor: "#2890B9",
             tutorialCell1MainTextColor: "",
             tutorialCell1TimerColor: "#2890B9",
-            tutorialCell1ImgBgColor: "#2890B9"
+            tutorialCell1ImgBgColor: "#2980B9"
         })
     }
     tutorialCell1Leave = () => {
@@ -4296,7 +4296,7 @@ export default class Dashboard extends Component {
             tutorialCell2BorderColor: "#2890B9",
             tutorialCell2MainTextColor: "",
             tutorialCell2TimerColor: "#2890B9",
-            tutorialCell2ImgBgColor: "#2890B9"
+            tutorialCell2ImgBgColor: "#2980B9"
         })
     }
     tutorialCell2Leave = () => {
@@ -4316,7 +4316,7 @@ export default class Dashboard extends Component {
             tutorialCell3BorderColor: "#2890B9",
             tutorialCell3MainTextColor: "",
             tutorialCell3TimerColor: "#2890B9",
-            tutorialCell3ImgBgColor: "#2890B9"
+            tutorialCell3ImgBgColor: "#2980B9"
         })
     }
     tutorialCell3Leave = () => {
@@ -4336,7 +4336,7 @@ export default class Dashboard extends Component {
             tutorialCell4BorderColor: "#2890B9",
             tutorialCell4MainTextColor: "",
             tutorialCell4TimerColor: "#2890B9",
-            tutorialCell4ImgBgColor: "#2890B9"
+            tutorialCell4ImgBgColor: "#2980B9"
         })
     }
     tutorialCell4Leave = () => {
@@ -4356,7 +4356,7 @@ export default class Dashboard extends Component {
             tutorialCell5BorderColor: "#2890B9",
             tutorialCell5MainTextColor: "",
             tutorialCell5TimerColor: "#2890B9",
-            tutorialCell5ImgBgColor: "#2890B9"
+            tutorialCell5ImgBgColor: "#2980B9"
         })
     }
     tutorialCell5Leave = () => {
@@ -4376,7 +4376,7 @@ export default class Dashboard extends Component {
             tutorialCell6BorderColor: "#2890B9",
             tutorialCell6MainTextColor: "",
             tutorialCell6TimerColor: "#2890B9",
-            tutorialCell6ImgBgColor: "#2890B9"
+            tutorialCell6ImgBgColor: "#2980B9"
         })
     }
     tutorialCell6Leave = () => {
@@ -4396,7 +4396,7 @@ export default class Dashboard extends Component {
             tutorialCell7BorderColor: "#2890B9",
             tutorialCell7MainTextColor: "",
             tutorialCell7TimerColor: "#2890B9",
-            tutorialCell7ImgBgColor: "#2890B9"
+            tutorialCell7ImgBgColor: "#2980B9"
         })
     }
     tutorialCell7Leave = () => {
@@ -4416,7 +4416,7 @@ export default class Dashboard extends Component {
             tutorialCell8BorderColor: "#2890B9",
             tutorialCell8MainTextColor: "",
             tutorialCell8TimerColor: "#2890B9",
-            tutorialCell8ImgBgColor: "#2890B9"
+            tutorialCell8ImgBgColor: "#2980B9"
         })
     }
     tutorialCell8Leave = () => {

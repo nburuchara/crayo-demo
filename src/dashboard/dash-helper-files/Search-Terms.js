@@ -26,7 +26,7 @@ const results = [
     {"id": "998573", "name": "My Assets", "category": "Apps", "subCat1": "Dashboard", "page": "Event types", "lastCat": "top"},
     {"id": "998573", "name": "My Projects", "category": "Apps", "subCat1": "Dashboard", "page": "Event types", "lastCat": "top"},
 
-    {"id": "998573", "name": "Join the Discord", "category": "More Options", "subCat1": "More Options", "page": "Event types", "lastCat": "top"},
+    {"id": "998573", "name": "Join the Discord", "category": "More Options", "subCat1": "Community", "page": "Event types", "lastCat": "top"},
     {"id": "998573", "name": "Affiliate Program", "category": "More Options", "subCat1": "Community", "page": "Event types", "lastCat": "top"},
 
 
